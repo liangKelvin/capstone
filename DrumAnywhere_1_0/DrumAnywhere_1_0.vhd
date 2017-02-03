@@ -68,6 +68,23 @@ library ieee;
 		SRAM_LB_N	:	out	std_logic;
 		SRAM_CE_N	:	out	std_logic
 		
+		-- CLOCK port
+		CLOCK_50 		:  in  		std_logic;
+		CLOCK_27 		:  in  		std_logic;
+      
+		--I2C interface
+		I2C_SCLK			:  out		std_logic;
+		I2C_SDAT			:  inout		std_logic;
+					 
+		--AUDIO 
+		AUD_ADCLRCK 	:  inout 	std_logic; 
+		AUD_ADCDAT 		:  in 		std_logic; 
+		AUD_DACLRCK 	:  inout 	std_logic; 
+		AUD_DACDAT 		:  out 		std_logic; 
+		AUD_XCK 			:  out 		std_logic; 
+		AUD_BCLK 		:  inout 	std_logic; 
+
+		
 	);
 end DrumAnywhere_1_0;
 
@@ -104,7 +121,16 @@ architecture structure of DrumAnywhere_1_0 is
             character_lcd_0_external_interface_BLON : out   std_logic;                                        -- BLON
             character_lcd_0_external_interface_EN   : out   std_logic;                                        -- EN
             character_lcd_0_external_interface_RS   : out   std_logic;                                        -- RS
-            character_lcd_0_external_interface_RW   : out   std_logic                                         -- RW
+            character_lcd_0_external_interface_RW   : out   std_logic;                                         -- RW
+				clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
+            reset_1_reset_n                                  : in    std_logic                     := 'X';             -- reset_n
+            audio_and_video_config_0_external_interface_SDAT : inout std_logic                     := 'X';             -- SDAT
+            audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
+            audio_0_external_interface_ADCDAT                : in    std_logic                     := 'X';             -- ADCDAT
+            audio_0_external_interface_ADCLRCK               : in    std_logic                     := 'X';             -- ADCLRCK
+            audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
+            audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
+            audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X'              -- DACLRCK
         );
     end component niosII_system;
 
@@ -152,7 +178,16 @@ begin
             character_lcd_0_external_interface_BLON => LCD_BLON, 
             character_lcd_0_external_interface_EN   => LCD_EN,   
             character_lcd_0_external_interface_RS   => LCD_RS,   
-            character_lcd_0_external_interface_RW   => LCD_RW    
+            character_lcd_0_external_interface_RW   => LCD_RW,
+				clk_1_clk                                        => CLOCK_27,                                        --                                       clk_0.clk
+            reset_1_reset_n                                  => CONNECTED_TO_reset_0_reset_n,                                  --                                     reset_0.reset_n
+            audio_and_video_config_0_external_interface_SDAT => I2C_SDAT, 							-- audio_and_video_config_0_external_interface.SDAT
+            audio_and_video_config_0_external_interface_SCLK => I2C_SCLK, 							--                                            .SCLK
+            audio_0_external_interface_ADCDAT                => AUD_ADCDAT,                --                  audio_0_external_interface.ADCDAT
+            audio_0_external_interface_ADCLRCK               => AUD_ADCLRCK,               --                                            .ADCLRCK
+            audio_0_external_interface_BCLK                  => AUD_BCLK,                  --                                            .BCLK
+            audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
+            audio_0_external_interface_DACLRCK               => AUD_DACLRCK                --
         );
 
 end structure;

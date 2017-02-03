@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="159" />
+   <connections preferredWidth="239" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -14,6 +14,7 @@
    <frequency preferredWidth="366" />
   </columns>
  </clocktable>
- <library expandedCategories="Project,Library" />
+ <library expandedCategories="Library,Project" />
  <window width="1460" height="856" x="-9" y="20" />
+ <hdlexample language="VHDL" />
 </preferences>
