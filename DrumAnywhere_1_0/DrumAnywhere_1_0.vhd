@@ -66,10 +66,9 @@ library ieee;
 		SRAM_OE_N	:	out	std_logic;
 		SRAM_UB_N	:	out 	std_logic;
 		SRAM_LB_N	:	out	std_logic;
-		SRAM_CE_N	:	out	std_logic
+		SRAM_CE_N	:	out	std_logic;
 		
 		-- CLOCK port
-		CLOCK_50 		:  in  		std_logic;
 		CLOCK_27 		:  in  		std_logic;
       
 		--I2C interface
@@ -82,7 +81,7 @@ library ieee;
 		AUD_DACLRCK 	:  inout 	std_logic; 
 		AUD_DACDAT 		:  out 		std_logic; 
 		AUD_XCK 			:  out 		std_logic; 
-		AUD_BCLK 		:  inout 	std_logic; 
+		AUD_BCLK 		:  inout 	std_logic 
 
 		
 	);
@@ -123,14 +122,15 @@ architecture structure of DrumAnywhere_1_0 is
             character_lcd_0_external_interface_RS   : out   std_logic;                                        -- RS
             character_lcd_0_external_interface_RW   : out   std_logic;                                         -- RW
 				clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
-            reset_1_reset_n                                  : in    std_logic                     := 'X';             -- reset_n
             audio_and_video_config_0_external_interface_SDAT : inout std_logic                     := 'X';             -- SDAT
             audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
             audio_0_external_interface_ADCDAT                : in    std_logic                     := 'X';             -- ADCDAT
             audio_0_external_interface_ADCLRCK               : in    std_logic                     := 'X';             -- ADCLRCK
             audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
             audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
-            audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X'              -- DACLRCK
+            audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';
+				up_clocks_0_sys_clk_clk                          : out   std_logic;                                         -- clk				-- DACLRCK
+				up_clocks_0_audio_clk_clk                            : out   std_logic
         );
     end component niosII_system;
 
@@ -138,6 +138,7 @@ architecture structure of DrumAnywhere_1_0 is
 -- The specific SDRAM chip in our system	 
 	 signal BA	: std_logic_vector (1 downto 0);
 	 signal DQM	:	std_logic_vector (1 downto 0);
+	 signal sys_clk : std_logic;
 	 
 
 begin
@@ -180,15 +181,16 @@ begin
             character_lcd_0_external_interface_RS   => LCD_RS,   
             character_lcd_0_external_interface_RW   => LCD_RW,
 				clk_1_clk                                        => CLOCK_27,                                        --                                       clk_0.clk
-            reset_1_reset_n                                  => CONNECTED_TO_reset_0_reset_n,                                  --                                     reset_0.reset_n
             audio_and_video_config_0_external_interface_SDAT => I2C_SDAT, 							-- audio_and_video_config_0_external_interface.SDAT
             audio_and_video_config_0_external_interface_SCLK => I2C_SCLK, 							--                                            .SCLK
             audio_0_external_interface_ADCDAT                => AUD_ADCDAT,                --                  audio_0_external_interface.ADCDAT
             audio_0_external_interface_ADCLRCK               => AUD_ADCLRCK,               --                                            .ADCLRCK
             audio_0_external_interface_BCLK                  => AUD_BCLK,                  --                                            .BCLK
             audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
-            audio_0_external_interface_DACLRCK               => AUD_DACLRCK                --
-        );
+            audio_0_external_interface_DACLRCK               => AUD_DACLRCK,                --
+				up_clocks_0_sys_clk_clk                          => sys_clk,                           --                         up_clocks_0_sys_clk.clk
+				up_clocks_0_audio_clk_clk									 => AUD_XCK
+		 );
 
 end structure;
 

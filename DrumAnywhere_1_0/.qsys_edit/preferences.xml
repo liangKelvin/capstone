@@ -5,6 +5,8 @@
   <columns>
    <connections preferredWidth="239" />
    <irq preferredWidth="34" />
+   <inputclock preferredWidth="149" />
+   <name preferredWidth="263" />
   </columns>
  </systemtable>
  <clocktable>
