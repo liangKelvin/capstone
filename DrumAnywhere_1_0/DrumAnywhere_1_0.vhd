@@ -1,15 +1,6 @@
--- Nancy Minderman
--- nancy.minderman@ualberta.ca
--- This file makes extensive use of Altera template structures.
--- This file is the top-level file for lab 1 winter 2014 for version 12.1sp1 on Windows 7
-
-
--- A library clause declares a name as a library.  It 
--- does not create the library; it simply forward declares 
--- it. 
+--Made by Justin, Jake, Kelvin and Shivansh of group 4
+--Drum Anywhere
 library ieee;
-
--- Commonly imported packages:
 
 	-- STD_LOGIC and STD_LOGIC_VECTOR types, and relevant functions
 	use ieee.std_logic_1164.all;
@@ -81,7 +72,13 @@ library ieee;
 		AUD_DACLRCK 	:  inout 	std_logic; 
 		AUD_DACDAT 		:  out 		std_logic; 
 		AUD_XCK 			:  out 		std_logic; 
-		AUD_BCLK 		:  inout 	std_logic 
+		AUD_BCLK 		:  inout 	std_logic;
+		
+		--SDCARD
+		SD_DAT  
+      SD_CMD
+      SD_CLK
+      SD_DAT3  
 
 		
 	);
@@ -130,7 +127,11 @@ architecture structure of DrumAnywhere_1_0 is
             audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
             audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';
 				up_clocks_0_sys_clk_clk                          : out   std_logic;                                         -- clk				-- DACLRCK
-				up_clocks_0_audio_clk_clk                            : out   std_logic
+				up_clocks_0_audio_clk_clk                            : out   std_logic;
+				spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
+            spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
+            spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
+            spi_0_external_SS_n                              : out   std_logic                                         -- SS_n
         );
     end component niosII_system;
 
@@ -189,7 +190,11 @@ begin
             audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
             audio_0_external_interface_DACLRCK               => AUD_DACLRCK,                --
 				up_clocks_0_sys_clk_clk                          => sys_clk,                           --                         up_clocks_0_sys_clk.clk
-				up_clocks_0_audio_clk_clk									 => AUD_XCK
+				up_clocks_0_audio_clk_clk									 => AUD_XCK,
+				spi_0_external_MISO                              => SD_DAT,                              --                              spi_0_external.MISO
+            spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
+            spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
+            spi_0_external_SS_n                              => SD_DAT3                              --        
 		 );
 
 end structure;
