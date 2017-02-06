@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="239" />
+   <connections preferredWidth="47" />
    <irq preferredWidth="34" />
    <inputclock preferredWidth="149" />
    <name preferredWidth="263" />
@@ -11,13 +11,12 @@
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="384" />
-   <clocksource preferredWidth="384" />
-   <frequency preferredWidth="366" />
+   <clockname preferredWidth="377" />
+   <clocksource preferredWidth="377" />
+   <frequency preferredWidth="360" />
   </columns>
  </clocktable>
- <library
-   expandedCategories="Library/Interface Protocols,Library/Interface Protocols/Serial,Library,Project" />
+ <library expandedCategories="Library,Project" />
  <window width="1440" height="855" x="-9" y="20" />
  <hdlexample language="VHDL" />
 </preferences>

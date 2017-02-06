@@ -75,10 +75,10 @@ library ieee;
 		AUD_BCLK 		:  inout 	std_logic;
 		
 		--SDCARD
-		SD_DAT  
-      SD_CMD
-      SD_CLK
-      SD_DAT3  
+		SD_DAT         : in     std_logic;
+      SD_CMD			: out		std_LOGIC;
+      SD_CLK			: out		std_LOGIC;
+      SD_DAT3			: out		std_LOGIC
 
 		
 	);
@@ -102,7 +102,6 @@ architecture structure of DrumAnywhere_1_0 is
             sdram_0_wire_dqm                        : out   std_logic_vector(1 downto 0);                     -- dqm
             sdram_0_wire_ras_n                      : out   std_logic;                                        -- ras_n
             sdram_0_wire_we_n                       : out   std_logic;                                        -- we_n
-            altpll_0_c0_clk                         : out   std_logic;                                        -- clk
             green_leds_external_connection_export   : out   DE2_LED_GREEN;                     -- export
             switch_external_connection_export       : in    std_logic                     := 'X';             -- export
             sram_0_external_interface_DQ            : inout DE2_SRAM_DATA_BUS := (others => 'X'); -- DQ
@@ -164,8 +163,7 @@ begin
             sdram_0_wire_dq                         => DRAM_DQ,                         
             sdram_0_wire_dqm                        => DQM,                        
             sdram_0_wire_ras_n                      => DRAM_RAS_N,                     
-            sdram_0_wire_we_n                       => DRAM_WE_N,                       
-            altpll_0_c0_clk                         => DRAM_CLK,                        
+            sdram_0_wire_we_n                       => DRAM_WE_N,                                        
             green_leds_external_connection_export   => LEDG,  
             switch_external_connection_export       => SW(0),       
             sram_0_external_interface_DQ            => SRAM_DQ,           
@@ -190,7 +188,7 @@ begin
             audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
             audio_0_external_interface_DACLRCK               => AUD_DACLRCK,                --
 				up_clocks_0_sys_clk_clk                          => sys_clk,                           --                         up_clocks_0_sys_clk.clk
-				up_clocks_0_audio_clk_clk									 => AUD_XCK,
+				up_clocks_0_audio_clk_clk								 => AUD_XCK,
 				spi_0_external_MISO                              => SD_DAT,                              --                              spi_0_external.MISO
             spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
             spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
