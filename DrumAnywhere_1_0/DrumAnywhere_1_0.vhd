@@ -1,15 +1,6 @@
--- Nancy Minderman
--- nancy.minderman@ualberta.ca
--- This file makes extensive use of Altera template structures.
--- This file is the top-level file for lab 1 winter 2014 for version 12.1sp1 on Windows 7
-
-
--- A library clause declares a name as a library.  It 
--- does not create the library; it simply forward declares 
--- it. 
+-- Made by group 4 Drum Anywhere
+-- Justin Jake Kelvin and Shivansh
 library ieee;
-
--- Commonly imported packages:
 
 	-- STD_LOGIC and STD_LOGIC_VECTOR types, and relevant functions
 	use ieee.std_logic_1164.all;
@@ -129,7 +120,7 @@ architecture structure of DrumAnywhere_1_0 is
             audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
             audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
             audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';
-				up_clocks_0_sys_clk_clk                          : out   std_logic;                                         -- clk				-- DACLRCK
+	    up_clocks_0_sys_clk_clk                          : out   std_logic;                                         -- clk				-- DACLRCK
 				up_clocks_0_audio_clk_clk                            : out   std_logic
         );
     end component niosII_system;
