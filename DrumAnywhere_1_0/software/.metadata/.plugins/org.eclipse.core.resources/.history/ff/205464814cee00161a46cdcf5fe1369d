@@ -42,15 +42,12 @@
 #define   TASK_STACKSIZE       2048
 OS_STK    task1_stk[TASK_STACKSIZE];
 OS_STK    task2_stk[TASK_STACKSIZE];
-OS_STK	  task3_stk[TASK_STACKSIZE];
 
 /* Definition of Task Priorities */
 
 #define TASK1_PRIORITY      1
 #define TASK2_PRIORITY      2
-#define TASK3_PRIORITY		3
 
-#define PI 3.14159265
 #define     BUFFER_SIZE    128
 
 OS_EVENT *lcd_sem;
@@ -90,10 +87,8 @@ void audio_data_task(void* pdata)
     alt_up_av_config_dev *audio_config_dev;
 
     unsigned int l_buf[BUFFER_SIZE];
-    unsigned int tone_buf[BUFFER_SIZE];
     int i = 0;
     int writeSizeL = 0;
-	int switch_register = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_BASE);
 
     /* Open Devices */
     audio_dev = alt_up_audio_open_dev ("/dev/audio_0");
@@ -124,7 +119,6 @@ void audio_data_task(void* pdata)
     //main loop
     while(1)
     {
-    		/*
             //read the data from the left buffer
             writeSizeL = alt_up_audio_read_fifo(audio_dev, l_buf, BUFFER_SIZE, ALT_UP_AUDIO_LEFT);
 
@@ -133,23 +127,10 @@ void audio_data_task(void* pdata)
             {
                 l_buf[i] = l_buf[i] + 0x7fff;
             }
-            */
 
-			switch_register = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_BASE);
-
-			if(switch_register == 1) {
-			    for(i = 0; i < 1000; i++)
-			    {
-			      // Do we need to shift the values by 0x7fff like above for l_buff?
-			      tone_buf[i] = sin(1000 * (2 * PI) * i / 32000);
-			    }
-				//write data to the L and R buffers; R buffer will receive a copy of L buffer data
-				alt_up_audio_write_fifo (audio_dev, tone_buf, 1000, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo (audio_dev, tone_buf, 1000, ALT_UP_AUDIO_LEFT);
-			}
-			else{
-				OSTimeDlyHMSM(0, 0, 0, 50);
-			}
+            //write data to the L and R buffers; R buffer will receive a copy of L buffer data
+            alt_up_audio_write_fifo (audio_dev, l_buf, writeSizeL, ALT_UP_AUDIO_RIGHT);
+            alt_up_audio_write_fifo (audio_dev, l_buf, writeSizeL, ALT_UP_AUDIO_LEFT);
 
     }
 
@@ -176,17 +157,6 @@ int main(void)
                   TASK2_PRIORITY,
                   TASK2_PRIORITY,
                   task2_stk,
-                  TASK_STACKSIZE,
-                  NULL,
-                  0);
-
-
-  OSTaskCreateExt(audio_data_task,
-                  NULL,
-                  (void *)&task2_stk[TASK_STACKSIZE-1],
-                  TASK3_PRIORITY,
-                  TASK3_PRIORITY,
-                  task3_stk,
                   TASK_STACKSIZE,
                   NULL,
                   0);

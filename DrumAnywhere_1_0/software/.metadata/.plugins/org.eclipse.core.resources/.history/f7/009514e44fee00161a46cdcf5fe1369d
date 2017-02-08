@@ -144,8 +144,8 @@ void audio_data_task(void* pdata)
 			      tone_buf[i] = sin(1000 * (2 * PI) * i / 32000);
 			    }
 				//write data to the L and R buffers; R buffer will receive a copy of L buffer data
-				alt_up_audio_write_fifo (audio_dev, tone_buf, 1000, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo (audio_dev, tone_buf, 1000, ALT_UP_AUDIO_LEFT);
+				alt_up_audio_write_fifo (audio_dev, &(tone_buf), 1000, ALT_UP_AUDIO_RIGHT);
+				alt_up_audio_write_fifo (audio_dev, &(tone_buf), 1000, ALT_UP_AUDIO_LEFT);
 			}
 			else{
 				OSTimeDlyHMSM(0, 0, 0, 50);

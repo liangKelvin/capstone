@@ -4,6 +4,10 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.843284641;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.843284641.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1292484288;cdt.managedbuild.tool.gnu.cpp.compiler.input.1433989538">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/drivers/inc"/>
 <includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/"/>
@@ -315,6 +319,10 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.843284641;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.843284641.;cdt.managedbuild.tool.gnu.c.compiler.base.1211218024;cdt.managedbuild.tool.gnu.c.compiler.input.1280301261">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/drivers/inc"/>
 <includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/DrumAnywhere_1_0/software/attempt2_bsp/"/>
