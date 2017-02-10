@@ -63,14 +63,16 @@ void task1(void* pdata)
 	INT8U error;
 	while(1)
 	{
+		/*
 		previous_value = switch_register;
 		switch_register = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_BASE);
 
 		if(previous_value != switch_register) {
 			error = OSSemPost(lcd_sem);
 		}
-
-		OSTimeDlyHMSM(0, 0, 0, 50);
+		*/
+		//printf("Hello from task1\n");
+		OSTimeDlyHMSM(0, 0, 3, 0);
 	}
 }
 /* Prints "Hello World" and sleeps for three seconds */
@@ -78,7 +80,7 @@ void task2(void* pdata)
 {
   while (1)
   { 
-    printf("Hello from task2\n");
+    //printf("Hello from task2\n");
     OSTimeDlyHMSM(0, 0, 3, 0);
   }
 }
@@ -89,10 +91,10 @@ void audio_data_task(void* pdata)
     alt_up_audio_dev *audio_dev;
     alt_up_av_config_dev *audio_config_dev;
 
-    unsigned int l_buf[BUFFER_SIZE];
+    //unsigned int l_buf[BUFFER_SIZE];
     unsigned int tone_buf[BUFFER_SIZE];
     int i = 0;
-    int writeSizeL = 0;
+    //int writeSizeL = 0;
 	int switch_register = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_BASE);
 
     /* Open Devices */
@@ -121,6 +123,11 @@ void audio_data_task(void* pdata)
     alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
     alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
 
+    for(i = 0; i < 128; i++){
+	  // Do we need to shift the values by 0x7fff like above for l_buff?
+	  tone_buf[i] = (sin(1000 * (2 * PI) * i / 44100))*12000 + 0x7fff;
+	  printf("%d\n",tone_buf[i]);
+	}
     //main loop
     while(1)
     {
@@ -138,14 +145,11 @@ void audio_data_task(void* pdata)
 			switch_register = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_BASE);
 
 			if(switch_register == 1) {
-			    for(i = 0; i < 1000; i++)
-			    {
-			      // Do we need to shift the values by 0x7fff like above for l_buff?
-			      tone_buf[i] = sin(1000 * (2 * PI) * i / 32000);
-			    }
+				printf("BEEP from audio task\n");
+				OSTimeDlyHMSM(0, 0, 0, 500);
 				//write data to the L and R buffers; R buffer will receive a copy of L buffer data
-				alt_up_audio_write_fifo (audio_dev, tone_buf, 1000, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo (audio_dev, tone_buf, 1000, ALT_UP_AUDIO_LEFT);
+				alt_up_audio_write_fifo (audio_dev, tone_buf, 128, ALT_UP_AUDIO_RIGHT);
+				alt_up_audio_write_fifo (audio_dev, tone_buf, 128, ALT_UP_AUDIO_LEFT);
 			}
 			else{
 				OSTimeDlyHMSM(0, 0, 0, 50);
@@ -183,7 +187,7 @@ int main(void)
 
   OSTaskCreateExt(audio_data_task,
                   NULL,
-                  (void *)&task2_stk[TASK_STACKSIZE-1],
+                  (void *)&task3_stk[TASK_STACKSIZE-1],
                   TASK3_PRIORITY,
                   TASK3_PRIORITY,
                   task3_stk,

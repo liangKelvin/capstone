@@ -27,7 +27,6 @@
 			sram_0_external_interface_CE_N                   : out   std_logic;                                        -- CE_N
 			sram_0_external_interface_OE_N                   : out   std_logic;                                        -- OE_N
 			sram_0_external_interface_WE_N                   : out   std_logic;                                        -- WE_N
-			clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
 			audio_and_video_config_0_external_interface_SDAT : inout std_logic                     := 'X';             -- SDAT
 			audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
 			audio_0_external_interface_ADCDAT                : in    std_logic                     := 'X';             -- ADCDAT
@@ -35,8 +34,8 @@
 			audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
 			audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
 			audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';             -- DACLRCK
-			up_clocks_0_sys_clk_clk                          : out   std_logic;                                        -- clk
-			up_clocks_0_audio_clk_clk                        : out   std_logic                                         -- clk
+			up_clocks_0_audio_clk_clk                        : out   std_logic;                                        -- clk
+			clk_1_clk                                        : in    std_logic                     := 'X'              -- clk
 		);
 	end component niosII_system;
 

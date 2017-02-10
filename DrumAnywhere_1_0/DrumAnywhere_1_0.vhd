@@ -120,8 +120,7 @@ architecture structure of DrumAnywhere_1_0 is
             audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
             audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
             audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';
-				up_clocks_0_sys_clk_clk                          : out   std_logic;                                         -- clk				-- DACLRCK
-				up_clocks_0_audio_clk_clk                            : out   std_logic
+				up_clocks_0_audio_clk_clk                        : out   std_logic                                         -- clk				-- DACLRCK
         );
     end component niosII_system;
 
@@ -179,7 +178,6 @@ begin
             audio_0_external_interface_BCLK                  => AUD_BCLK,                  --                                            .BCLK
             audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
             audio_0_external_interface_DACLRCK               => AUD_DACLRCK,                --
-				up_clocks_0_sys_clk_clk                          => sys_clk,                           --                         up_clocks_0_sys_clk.clk
 				up_clocks_0_audio_clk_clk								 => AUD_XCK
 		 );
 
