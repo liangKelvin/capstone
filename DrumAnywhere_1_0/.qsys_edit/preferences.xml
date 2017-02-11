@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="239" />
+   <connections preferredWidth="287" />
    <irq preferredWidth="34" />
    <inputclock preferredWidth="149" />
    <name preferredWidth="263" />
@@ -16,8 +16,7 @@
    <frequency preferredWidth="366" />
   </columns>
  </clocktable>
- <library
-   expandedCategories="Library/Interface Protocols,Library/Interface Protocols/Serial,Library,Project" />
+ <library expandedCategories="Project,Library,Library/University Program" />
  <window width="1440" height="855" x="-9" y="20" />
  <hdlexample language="VHDL" />
 </preferences>

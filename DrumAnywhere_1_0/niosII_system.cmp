@@ -35,7 +35,8 @@
 			audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
 			audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';             -- DACLRCK
 			up_clocks_0_audio_clk_clk                        : out   std_logic;                                        -- clk
-			clk_1_clk                                        : in    std_logic                     := 'X'              -- clk
+			clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
+			reset_0_reset_n                                  : in    std_logic                     := 'X'              -- reset_n
 		);
 	end component niosII_system;
 
