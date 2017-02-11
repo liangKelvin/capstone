@@ -40,7 +40,7 @@
    {
       datum baseAddress
       {
-         value = "17862736";
+         value = "17862800";
          type = "String";
       }
    }
@@ -48,7 +48,7 @@
    {
       datum baseAddress
       {
-         value = "17862720";
+         value = "17862784";
          type = "String";
       }
    }
@@ -56,7 +56,7 @@
    {
       datum baseAddress
       {
-         value = "17862800";
+         value = "17862864";
          type = "String";
       }
    }
@@ -64,7 +64,7 @@
    {
       datum baseAddress
       {
-         value = "17862816";
+         value = "17862880";
          type = "String";
       }
    }
@@ -117,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "17862808";
+         value = "17862872";
          type = "String";
       }
    }
@@ -165,15 +165,7 @@
    {
       datum baseAddress
       {
-         value = "17862784";
-         type = "String";
-      }
-   }
-   element sdram_0.s1
-   {
-      datum baseAddress
-      {
-         value = "8388608";
+         value = "17862848";
          type = "String";
       }
    }
@@ -181,7 +173,7 @@
    {
       datum baseAddress
       {
-         value = "17862752";
+         value = "17862816";
          type = "String";
       }
    }
@@ -197,7 +189,15 @@
    {
       datum baseAddress
       {
-         value = "17862768";
+         value = "17862832";
+         type = "String";
+      }
+   }
+   element sdram_0.s1
+   {
+      datum baseAddress
+      {
+         value = "8388608";
          type = "String";
       }
    }
@@ -205,8 +205,16 @@
    {
       datum baseAddress
       {
-         value = "17862656";
+         value = "17862720";
          type = "String";
+      }
+   }
+   element sd_card_spi_master
+   {
+      datum _sortIndex
+      {
+         value = "16";
+         type = "int";
       }
    }
    element sdram_0
@@ -219,6 +227,14 @@
       datum megawizard_uipreferences
       {
          value = "{output_language=VERILOG, output_directory=/afs/ualberta.ca/home/j/f/jferris/ECE492/DA_492}";
+         type = "String";
+      }
+   }
+   element sd_card_spi_master.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "17862688";
          type = "String";
       }
    }
@@ -277,7 +293,7 @@
  <parameter name="projectName">DrumAnywhere_1_0.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1486244271619" />
+ <parameter name="timeStamp" value="1486758637724" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript><![CDATA[# request a specific version of the scripting API
 package require -exact qsys 12.1
@@ -334,6 +350,11 @@ proc compose {} {
    internal="up_clocks_0.audio_clk"
    type="clock"
    dir="start" />
+ <interface
+   name="spi_0_external"
+   internal="sd_card_spi_master.external"
+   type="conduit"
+   dir="end" />
  <module kind="clock_source" version="12.1" enabled="1" name="clk_0">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -439,8 +460,8 @@ proc compose {} {
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x1109040' end='0x1109050' /><slave name='audio_0.avalon_audio_slave' start='0x1109050' end='0x1109060' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='timer_0.s1' start='0x1109000' end='0x1109020' /><slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x1109040' end='0x1109050' /><slave name='audio_0.avalon_audio_slave' start='0x1109050' end='0x1109060' /><slave name='switch.s1' start='0x1109060' end='0x1109070' /><slave name='green_leds.s1' start='0x1109070' end='0x1109080' /><slave name='altpll_0.pll_slave' start='0x1109080' end='0x1109090' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1109090' end='0x1109098' /><slave name='sysid_qsys_0.control_slave' start='0x1109098' end='0x11090A0' /><slave name='character_lcd_0.avalon_lcd_slave' start='0x11090A0' end='0x11090A2' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='sd_card_spi_master.spi_control_port' start='0x1109020' end='0x1109040' /><slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x1109080' end='0x1109090' /><slave name='audio_0.avalon_audio_slave' start='0x1109090' end='0x11090A0' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='sd_card_spi_master.spi_control_port' start='0x1109020' end='0x1109040' /><slave name='timer_0.s1' start='0x1109040' end='0x1109060' /><slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x1109080' end='0x1109090' /><slave name='audio_0.avalon_audio_slave' start='0x1109090' end='0x11090A0' /><slave name='switch.s1' start='0x11090A0' end='0x11090B0' /><slave name='green_leds.s1' start='0x11090B0' end='0x11090C0' /><slave name='altpll_0.pll_slave' start='0x11090C0' end='0x11090D0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11090D0' end='0x11090D8' /><slave name='sysid_qsys_0.control_slave' start='0x11090D8' end='0x11090E0' /><slave name='character_lcd_0.avalon_lcd_slave' start='0x11090E0' end='0x11090E2' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone II" />
   <parameter name="internalIrqMaskSystemInfo" value="7" />
@@ -808,6 +829,26 @@ proc compose {} {
   <parameter name="AUTO_CLK_IN_PRIMARY_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
  </module>
+ <module
+   kind="altera_avalon_spi"
+   version="12.1"
+   enabled="1"
+   name="sd_card_spi_master">
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="clockPhase" value="0" />
+  <parameter name="clockPolarity" value="0" />
+  <parameter name="dataWidth" value="8" />
+  <parameter name="disableAvalonFlowControl" value="false" />
+  <parameter name="inputClockRate" value="50000000" />
+  <parameter name="insertDelayBetweenSlaveSelectAndSClk" value="false" />
+  <parameter name="insertSync" value="false" />
+  <parameter name="lsbOrderedFirst" value="false" />
+  <parameter name="masterSPI" value="true" />
+  <parameter name="numberOfSlaves" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="targetClockRate" value="50000000" />
+  <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
+ </module>
  <connection
    kind="avalon"
    version="12.1"
@@ -845,7 +886,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="altpll_0.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109080" />
+  <parameter name="baseAddress" value="0x011090c0" />
  </connection>
  <connection
    kind="clock"
@@ -918,7 +959,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109098" />
+  <parameter name="baseAddress" value="0x011090d8" />
  </connection>
  <connection
    kind="reset"
@@ -936,7 +977,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="timer_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109000" />
+  <parameter name="baseAddress" value="0x01109040" />
  </connection>
  <connection
    kind="reset"
@@ -954,7 +995,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109090" />
+  <parameter name="baseAddress" value="0x011090d0" />
  </connection>
  <connection
    kind="reset"
@@ -984,7 +1025,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="character_lcd_0.avalon_lcd_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090a0" />
+  <parameter name="baseAddress" value="0x011090e0" />
  </connection>
  <connection
    kind="reset"
@@ -1002,7 +1043,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="green_leds.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109070" />
+  <parameter name="baseAddress" value="0x011090b0" />
  </connection>
  <connection
    kind="reset"
@@ -1020,7 +1061,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="switch.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109060" />
+  <parameter name="baseAddress" value="0x011090a0" />
  </connection>
  <connection
    kind="interrupt"
@@ -1093,7 +1134,7 @@ proc compose {} {
    start="nios2_qsys_0.instruction_master"
    end="audio_0.avalon_audio_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109050" />
+  <parameter name="baseAddress" value="0x01109090" />
  </connection>
  <connection
    kind="avalon"
@@ -1101,7 +1142,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="audio_0.avalon_audio_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109050" />
+  <parameter name="baseAddress" value="0x01109090" />
  </connection>
  <connection
    kind="avalon"
@@ -1109,7 +1150,7 @@ proc compose {} {
    start="nios2_qsys_0.instruction_master"
    end="audio_and_video_config_0.avalon_av_config_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109040" />
+  <parameter name="baseAddress" value="0x01109080" />
  </connection>
  <connection
    kind="avalon"
@@ -1117,7 +1158,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="audio_and_video_config_0.avalon_av_config_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109040" />
+  <parameter name="baseAddress" value="0x01109080" />
  </connection>
  <connection
    kind="clock"
@@ -1186,4 +1227,35 @@ proc compose {} {
    version="12.1"
    start="altpll_0.c1"
    end="audio_and_video_config_0.clock_reset" />
+ <connection
+   kind="clock"
+   version="12.1"
+   start="altpll_0.c1"
+   end="sd_card_spi_master.clk" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clk_0.clk_reset"
+   end="sd_card_spi_master.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="sd_card_spi_master.reset" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="nios2_qsys_0.instruction_master"
+   end="sd_card_spi_master.spi_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01109020" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="nios2_qsys_0.data_master"
+   end="sd_card_spi_master.spi_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01109020" />
+ </connection>
 </system>

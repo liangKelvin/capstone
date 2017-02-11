@@ -1,1 +1,1 @@
-DrumAnywhere_1_0/SOURCE
+DrumAnywhere_1_0/FIT

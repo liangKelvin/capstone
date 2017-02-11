@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project sdCard ****
+
+make all 
+Info: Building ../sdCard_bsp/
+make --no-print-directory -C ../sdCard_bsp/
+[BSP build complete]
+[sdCard build complete]
+
+**** Build Finished ****

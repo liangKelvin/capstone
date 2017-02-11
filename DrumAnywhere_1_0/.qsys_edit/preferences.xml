@@ -17,7 +17,7 @@
   </columns>
  </clocktable>
  <library
-   expandedCategories="Library/Interface Protocols,Library/Interface Protocols/Serial,Library,Project" />
+   expandedCategories="Library/Interface Protocols,Project,Library/Interface Protocols/Serial,Library" />
  <window width="1440" height="855" x="-9" y="20" />
  <hdlexample language="VHDL" />
 </preferences>
