@@ -77,8 +77,8 @@ library ieee;
 		 --SD card 
 		SD_DAT                             : in    std_logic                     := 'X';             -- MISO
       SD_CMD                             : out   std_logic;                                        -- MOSI
-      SD_CLK                            : out   std_logic;                                        -- SCLK
-      SD_DAT3                             : out   std_logic                                         -- SS_n
+      SD_CLK                             : out   std_logic;                                        -- SCLK
+      SD_DAT3                            : out   std_logic                                         -- SS_n
 		
 	);
 end DrumAnywhere_1_0;

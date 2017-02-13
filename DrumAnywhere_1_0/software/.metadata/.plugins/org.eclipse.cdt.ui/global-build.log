@@ -5,14 +5,195 @@ make all
 Info: Building ../sdcard_bsp/
 make --no-print-directory -C ../sdcard_bsp/
 [BSP build complete]
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
 Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
 nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
 hello_ucosii.c: In function 'main':
 Info: Linking sdcard.elf
-hello_ucosii.c:82: warning: pointer targets in passing argument 4 of 'file_fwrite' differ in signedness
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
 nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
-hello_ucosii.c:83: warning: pointer targets in passing argument 4 of 'file_fwrite' differ in signedness
-nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1486769707 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:104: warning: format '%s' expects type 'char *', but argument 2 has type 'int'
+hello_ucosii.c:104: warning: format '%s' expects type 'char *', but argument 2 has type 'int'
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
 Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
 Info:              8039 KBytes free for stack + heap.
 Info: Creating sdcard.objdump
@@ -27,6 +208,19 @@ make all
 Info: Building ../sdcard_bsp/
 make --no-print-directory -C ../sdcard_bsp/
 [BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8039 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
 [sdcard build complete]
 
 **** Build Finished ****
@@ -37,6 +231,65 @@ make all
 Info: Building ../sdcard_bsp/
 make --no-print-directory -C ../sdcard_bsp/
 [BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8038 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
+hello_ucosii.c: In function 'main':
+Info: Linking sdcard.elf
+hello_ucosii.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/hello_ucosii.o -lm 
+hello_ucosii.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+hello_ucosii.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8039 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
+[sdcard build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project sdcard ****
+
+make all 
+Info: Building ../sdcard_bsp/
+make --no-print-directory -C ../sdcard_bsp/
+[BSP build complete]
+Info: Compiling sdCardREAD.c to obj/default/sdCardREAD.o
+nios2-elf-gcc -xc -MP -MMD -c -I../sdcard_bsp//UCOSII/inc -I../sdcard_bsp//HAL/inc -I../sdcard_bsp/ -I../sdcard_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/sdCardREAD.o sdCardREAD.c
+sdCardREAD.c: In function 'main':
+Info: Linking sdcard.elf
+sdCardREAD.c:78: warning: implicit declaration of function 'malloc'
+nios2-elf-g++  -T'../sdcard_bsp//linker.x' -msys-crt0='../sdcard_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../sdcard_bsp/ -Lefsl   -Wl,-Map=sdcard.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o sdcard.elf obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/sdCardREAD.o -lm 
+sdCardREAD.c:78: warning: incompatible implicit declaration of built-in function 'malloc'
+nios2-elf-insert sdcard.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487017027 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/../../niosII_system.sopcinfo
+sdCardREAD.c:108: warning: implicit declaration of function 'free'
+Info: (sdcard.elf) 146 KBytes program size (code + initialized data).
+Info:              8039 KBytes free for stack + heap.
+Info: Creating sdcard.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source sdcard.elf >sdcard.objdump
 [sdcard build complete]
 
 **** Build Finished ****

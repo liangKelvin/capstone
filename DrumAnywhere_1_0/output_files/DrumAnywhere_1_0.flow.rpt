@@ -1,5 +1,5 @@
 Flow report for DrumAnywhere_1_0
-Fri Feb 10 16:37:09 2017
+Mon Feb 13 13:19:13 2017
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 10 16:37:09 2017          ;
+; Flow Status                        ; Successful - Mon Feb 13 13:19:13 2017          ;
 ; Quartus II 32-bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DrumAnywhere_1_0                               ;
 ; Top-level Entity Name              ; DrumAnywhere_1_0                               ;
 ; Family                             ; Cyclone II                                     ;
 ; Device                             ; EP2C35F672C6                                   ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 3,828 / 33,216 ( 12 % )                        ;
-;     Total combinational functions  ; 3,586 / 33,216 ( 11 % )                        ;
-;     Dedicated logic registers      ; 2,231 / 33,216 ( 7 % )                         ;
-; Total registers                    ; 2299                                           ;
+; Total logic elements               ; 3,830 / 33,216 ( 12 % )                        ;
+;     Total combinational functions  ; 3,593 / 33,216 ( 11 % )                        ;
+;     Dedicated logic registers      ; 2,236 / 33,216 ( 7 % )                         ;
+; Total registers                    ; 2304                                           ;
 ; Total pins                         ; 114 / 475 ( 24 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 150,528 / 483,840 ( 31 % )                     ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/10/2017 16:35:02 ;
+; Start date & time ; 02/13/2017 13:16:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DrumAnywhere_1_0    ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.148676970022293                     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 0.148701701624395                     ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -92,12 +92,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:18     ; 1.0                     ; 453 MB              ; 00:01:31                           ;
-; Fitter                    ; 00:00:22     ; 2.2                     ; 534 MB              ; 00:00:28                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 339 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 349 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 330 MB              ; 00:00:03                           ;
-; Total                     ; 00:01:53     ; --                      ; --                  ; 00:02:07                           ;
+; Analysis & Synthesis      ; 00:01:22     ; 1.0                     ; 453 MB              ; 00:01:30                           ;
+; Fitter                    ; 00:00:26     ; 2.1                     ; 533 MB              ; 00:00:30                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 340 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 351 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:06     ; 1.0                     ; 330 MB              ; 00:00:03                           ;
+; Total                     ; 00:02:00     ; --                      ; --                  ; 00:02:08                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -142,7 +142,6 @@ ACDS_VERSION := 12.1sp1
 ELF := sdcard.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += hello_ucosii.c
 C_SRCS += efsl/debug.c
 C_SRCS += efsl/dir.c
 C_SRCS += efsl/disc.c
@@ -161,6 +160,7 @@ C_SRCS += efsl/plibc.c
 C_SRCS += efsl/sd.c
 C_SRCS += efsl/time.c
 C_SRCS += efsl/ui.c
+C_SRCS += sdCardREAD.c
 CXX_SRCS :=
 ASM_SRCS :=
 

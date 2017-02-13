@@ -126,7 +126,7 @@ euint8 if_spiSend(hwInterface *iface, euint8 outgoing)
  
 	if( (status & 0x100) !=0)
     	printf("\n error in spi error in spi");
-    //printf("sd_data %d", SD_Data);
+  
 	return (SD_Data);
 }
 /*****************************************************************************/

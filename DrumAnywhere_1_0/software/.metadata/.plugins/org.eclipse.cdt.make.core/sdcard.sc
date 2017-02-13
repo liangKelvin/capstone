@@ -2,7 +2,7 @@
 <?scdStore version="2"?>
 
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1583950172;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1583950172.;cdt.managedbuild.tool.gnu.cpp.compiler.base.311528405;cdt.managedbuild.tool.gnu.cpp.compiler.input.662372503">
+<instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.2077814128;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.2077814128.;cdt.managedbuild.tool.gnu.cpp.compiler.base.55879466;cdt.managedbuild.tool.gnu.cpp.compiler.input.209851611">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/HAL/inc"/>
@@ -314,7 +314,7 @@
 <definedSymbol symbol="__ucosii__=1"/>
 </collector>
 </instance>
-<instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1583950172;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1583950172.;cdt.managedbuild.tool.gnu.c.compiler.base.413137148;cdt.managedbuild.tool.gnu.c.compiler.input.1559791730">
+<instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.2077814128;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.2077814128.;cdt.managedbuild.tool.gnu.c.compiler.base.821735262;cdt.managedbuild.tool.gnu.c.compiler.input.1040844599">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/sdcard_bsp/HAL/inc"/>

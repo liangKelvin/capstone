@@ -108,6 +108,7 @@ euint8 sd_Resp8b(hwInterface *iface)
 		if(resp != 0xff)
 			return(resp);
 	}
+		
 	return(resp);
 }
 /*****************************************************************************/
