@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Fri Feb 10 17:40:55 MST 2017
+ * Generated: Mon Feb 13 13:49:49 MST 2017
  */
 
 /*
@@ -143,8 +143,8 @@
  */
 
 #define ALT_DEVICE_FAMILY "Cyclone II"
+#define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
-#define ALT_LEGACY_INTERRUPT_API_PRESENT
 #define ALT_LOG_PORT "/dev/null"
 #define ALT_LOG_PORT_BASE 0x0
 #define ALT_LOG_PORT_DEV null
@@ -194,8 +194,8 @@
 
 #define ALT_MODULE_CLASS_audio_0 altera_up_avalon_audio
 #define AUDIO_0_BASE 0x1109050
-#define AUDIO_0_IRQ 2
-#define AUDIO_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define AUDIO_0_IRQ -1
+#define AUDIO_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define AUDIO_0_NAME "/dev/audio_0"
 #define AUDIO_0_SPAN 16
 #define AUDIO_0_TYPE "altera_up_avalon_audio"
@@ -405,7 +405,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1486773470
+#define SYSID_QSYS_0_TIMESTAMP 1487018718
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

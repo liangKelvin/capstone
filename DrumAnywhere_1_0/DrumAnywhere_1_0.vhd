@@ -113,13 +113,13 @@ architecture structure of DrumAnywhere_1_0 is
             character_lcd_0_external_interface_RS   : out   std_logic;                                        -- RS
             character_lcd_0_external_interface_RW   : out   std_logic;                                         -- RW
 				clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
-            audio_and_video_config_0_external_interface_SDAT : inout std_logic                     := 'X';             -- SDAT
+            audio_and_video_config_0_external_interface_SDAT : inout std_logic;             -- SDAT
             audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
-            audio_0_external_interface_ADCDAT                : in    std_logic                     := 'X';             -- ADCDAT
-            audio_0_external_interface_ADCLRCK               : in    std_logic                     := 'X';             -- ADCLRCK
-            audio_0_external_interface_BCLK                  : in    std_logic                     := 'X';             -- BCLK
+            audio_0_external_interface_ADCDAT                : in    std_logic;             -- ADCDAT
+            audio_0_external_interface_ADCLRCK               : in    std_logic;             -- ADCLRCK
+            audio_0_external_interface_BCLK                  : in    std_logic;             -- BCLK
             audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
-            audio_0_external_interface_DACLRCK               : in    std_logic                     := 'X';
+            audio_0_external_interface_DACLRCK               : in    std_logic;
 				up_clocks_0_audio_clk_clk                        : out   std_logic                                         -- clk				-- DACLRCK
         );
     end component niosII_system;
