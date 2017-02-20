@@ -72,7 +72,14 @@ library ieee;
 		AUD_DACLRCK 	:  inout 	std_logic; 
 		AUD_DACDAT 		:  out 		std_logic; 
 		AUD_XCK 			:  out 		std_logic; 
-		AUD_BCLK 		:  inout 	std_logic 
+		AUD_BCLK 		:  inout 	std_logic;
+		
+		--SD Card
+		
+		SD_DAT         : in       std_logic;
+		SD_DAT3			: out			std_logic;
+		SD_CLK			: out			std_logic;
+		SD_CMD			: out			std_logic
 
 		
 	);
@@ -120,7 +127,11 @@ architecture structure of DrumAnywhere_1_0 is
             audio_0_external_interface_BCLK                  : in    std_logic;             -- BCLK
             audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
             audio_0_external_interface_DACLRCK               : in    std_logic;
-				up_clocks_0_audio_clk_clk                        : out   std_logic                                         -- clk				-- DACLRCK
+				up_clocks_0_audio_clk_clk                        : out   std_logic;					-- clk				-- DACLRCK
+				spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
+            spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
+            spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
+            spi_0_external_SS_n                              : out   std_logic                                         -- SS_n
         );
     end component niosII_system;
 
@@ -178,7 +189,11 @@ begin
             audio_0_external_interface_BCLK                  => AUD_BCLK,                  --                                            .BCLK
             audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
             audio_0_external_interface_DACLRCK               => AUD_DACLRCK,                --
-				up_clocks_0_audio_clk_clk								 => AUD_XCK
+				up_clocks_0_audio_clk_clk								 => AUD_XCK,
+				spi_0_external_MISO                              => SD_DAT,                              --                              spi_0_external.MISO
+            spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
+            spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
+            spi_0_external_SS_n                              => SD_DAT3                              --    
 		 );
 
 end structure;
