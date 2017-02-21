@@ -4,6 +4,11 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1119781503;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1119781503.;cdt.managedbuild.tool.gnu.cpp.compiler.base.390530264;cdt.managedbuild.tool.gnu.cpp.compiler.input.1763841858">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/drivers/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone/efsl"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/"/>
@@ -316,6 +321,11 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1119781503;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1119781503.;cdt.managedbuild.tool.gnu.c.compiler.base.1752769147;cdt.managedbuild.tool.gnu.c.compiler.input.1804333959">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/drivers/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/t/jtdavids/ECE492/capstone/DrumAnywhere_1_0/software/capstone/efsl"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/"/>

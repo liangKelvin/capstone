@@ -70,7 +70,7 @@ sdCardInfo sdRead();
 
 /* Handle audio data movement */
 void audio_data_task(void* pdata) {
-	/*
+
 	sdCardInfo sd = sdRead();
 //	unsigned int l_buf[sizeof(filebuffer)];
 //		int i = 0;
@@ -100,7 +100,7 @@ void audio_data_task(void* pdata) {
 		alt_up_av_config_reset(audio_config_dev);
 		alt_up_audio_reset_audio_core(audio_dev);
 
-		// Write to configuration registers in the audio codec; see datasheet for what these values mean
+		/* Write to configuration registers in the audio codec; see datasheet for what these values mean */
 		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x0, 0x17);
 		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x1, 0x17);
 		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x2, 0x68);
@@ -118,20 +118,11 @@ void audio_data_task(void* pdata) {
 			printf("%c", sd.fileBuffer[j]);
 		}
 
-	 	*/
-		while(1)
-		{
-			//alt_up_audio_write_fifo (audio_dev, sd.fileBuffer, 253412, ALT_UP_AUDIO_RIGHT);
-			//alt_up_audio_write_fifo (audio_dev, sd.fileBuffer, 253412, ALT_UP_AUDIO_LEFT);
-			OSTimeDlyHMSM(0, 0, 0, 500);
-		}
-
-}
-void IMU_task(void* pdata) {
-
 
 		while(1)
 		{
+			alt_up_audio_write_fifo (audio_dev, sd.fileBuffer, 253412, ALT_UP_AUDIO_RIGHT);
+			alt_up_audio_write_fifo (audio_dev, sd.fileBuffer, 253412, ALT_UP_AUDIO_LEFT);
 			OSTimeDlyHMSM(0, 0, 0, 500);
 		}
 
@@ -150,15 +141,6 @@ int main(void)
                   TASK_STACKSIZE,
                   NULL,
                   0);
-  OSTaskCreateExt(IMU_task,
-                    NULL,
-                    (void *)&task1_stk[TASK_STACKSIZE-1],
-                    TASK1_PRIORITY,
-                    TASK1_PRIORITY,
-                    task1_stk,
-                    TASK_STACKSIZE,
-                    NULL,
-                    0);
 
   lcd_sem = OSSemCreate(0);
   sdRead();
