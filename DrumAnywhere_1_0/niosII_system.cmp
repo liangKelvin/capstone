@@ -40,7 +40,9 @@
 			spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
 			spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
 			spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
-			spi_0_external_SS_n                              : out   std_logic                                         -- SS_n
+			spi_0_external_SS_n                              : out   std_logic;                                        -- SS_n
+			i2c_scl_external_connection_export               : out   std_logic;                                        -- export
+			i2c_sda_external_connection_export               : inout std_logic                     := 'X'              -- export
 		);
 	end component niosII_system;
 
