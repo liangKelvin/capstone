@@ -1557,3 +1557,731 @@ Caused by: org.eclipse.swt.SWTError: No more handles [Unknown Mozilla path (MOZI
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:08:29.356
 !MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY org.eclipse.ui 4 0 2017-02-20 14:20:42.766
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at com.altera.sbtgui.project.fieldeditor.RelativePathListEditor.getNewInputObject(RelativePathListEditor.java:284)
+	at com.altera.sbtgui.project.fieldeditor.RelativePathListEditor.addtoList(RelativePathListEditor.java:222)
+	at com.altera.sbtgui.project.fieldeditor.RelativePathListEditor$1.widgetSelected(RelativePathListEditor.java:121)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.run(PropertyDialogAction.java:158)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:30:46.294
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:30:47.659
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:32:30.474
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:32:30.673
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:32:32.040
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:33:14.613
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:33:14.811
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:33:16.183
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:34:27.808
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:34:28.006
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:34:29.371
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:35:44.041
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:35:45.408
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:39:22.554
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:39:23.922
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:40:05.381
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:40:05.584
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:40:06.952
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:40:51.061
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:40:51.265
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:40:52.633
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:45:00.985
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:45:01.183
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:45:02.550
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:45:29.208
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:45:29.421
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:45:30.791
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:48:26.428
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:48:27.799
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:49:35.050
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:49:35.256
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:49:36.626
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:54:27.242
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:54:27.450
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:54:28.824
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:57:08.329
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:57:09.693
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:58:37.623
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:58:37.835
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:58:39.197
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:59:10.441
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:59:10.642
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:59:12.010
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:59:51.207
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:59:51.417
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 14:59:52.787
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:00:09.684
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:00:09.896
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:00:11.270
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:01:04.945
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:01:05.153
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:01:06.529
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:01:40.998
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:01:41.204
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:01:42.572
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:02:22.612
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:02:22.816
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:02:24.184
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:04:39.390
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:04:39.593
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:04:40.962
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:04:54.486
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:04:54.689
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:04:56.057
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:05:25.504
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:05:25.713
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:05:27.081
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:06:01.393
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:06:01.595
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:06:02.963
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:06:50.243
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:06:50.446
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:06:51.807
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:08:45.648
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:08:45.848
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:08:47.216
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:09:39.178
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:09:39.374
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:09:40.741
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:10:54.876
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:10:55.083
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:10:56.452
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:11:09.850
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:11:10.057
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:11:11.428
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:14:20.051
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:14:20.259
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:14:21.625
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:15:19.189
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:15:19.387
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:15:20.757
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:17:21.247
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:17:21.451
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:17:22.821
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:19:44.642
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:19:44.851
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:19:46.220
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:30:42.029
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:30:42.239
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:30:43.606
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:34:33.056
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:34:33.260
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:34:34.631
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:44:53.556
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:44:53.762
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:44:55.136
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:46:05.234
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:46:05.434
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:46:06.804
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:47:48.089
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:47:49.455
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:57:11.897
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:57:12.433
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 15:57:13.816
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:01:44.573
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:01:44.834
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:01:46.211
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:03:32.981
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:03:33.264
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:03:34.635
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:05:51.430
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:05:51.637
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:05:53.021
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:20.181
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:20.392
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:21.765
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:39.144
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:39.347
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:40.717
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:54.309
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:54.520
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:06:55.894
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:07:22.867
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:07:23.066
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:07:24.439
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:08:31.237
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:08:31.443
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:08:32.817
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:12:58.037
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:12:59.402
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:14:14.103
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:14:14.309
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:14:15.683
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:15:05.378
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:15:05.579
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:15:06.950
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:15:44.971
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:15:45.182
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:15:46.551
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:17:20.431
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:17:20.645
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:17:22.021
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:18:26.610
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:18:26.817
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:18:28.190
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:18:49.513
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:18:52.375
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:19:35.789
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:19:36.016
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:19:37.393
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:22:59.837
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:23:00.047
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:23:01.414
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:24:15.000
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:24:15.211
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:24:16.583
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:12.394
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:12.613
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:13.980
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:41.936
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:42.134
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:43.502
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:53.848
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:54.060
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:25:55.655
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:26:58.041
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:26:58.240
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:26:59.610
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:28:14.255
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:28:14.453
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:28:15.824
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:28:44.433
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:28:44.637
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:28:46.003
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:29:00.128
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:29:00.336
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:29:01.836
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+!SESSION 2017-02-20 16:34:38.183 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:35:39.287
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:35:40.799
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:36:14.514
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:36:14.730
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:36:16.096
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:37:10.463
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:37:12.030
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+!SESSION 2017-02-20 16:55:56.554 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:57:12.161
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:57:13.667
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:57:26.146
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:57:26.366
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:57:27.735
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:58:46.686
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:58:46.893
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 16:58:48.261
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+!SESSION 2017-02-20 17:04:46.129 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:05:34.217
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:05:35.726
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:08:04.414
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:08:04.634
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:08:06.003
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:08:55.912
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:08:56.121
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-20 17:08:57.489
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+!SESSION 2017-02-23 12:02:38.806 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:04:54.356
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:04:55.860
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:05:45.853
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:05:46.063
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:05:47.430
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:06:30.651
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:06:30.857
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x11090b8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 12:06:32.221
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x11090b8 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf]

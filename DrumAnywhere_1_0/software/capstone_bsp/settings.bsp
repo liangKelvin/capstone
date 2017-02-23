@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 17, 2017 1:39:48 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1487363988066</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 20, 2017 5:05:16 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1487635516854</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../niosII_system.sopcinfo</SopcDesignFile>
