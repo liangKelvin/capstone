@@ -47,14 +47,22 @@ OS_STK    task2_stk[TASK_STACKSIZE];
 /* Prints "Hello World" and sleeps for three seconds */
 void task1(void* pdata)
 {
-  alt_u8 ReadBuf[7];
+  alt_u8 ReadBuf[1];
+  alt_u8 deviceAddress = 0x69;
+  alt_u8 registerAddress = 0x75;
+  alt_u16 buflen = 1;
+
   while (1)
   { 
     printf("Hello from task1\n");
-    I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
-    I2C_ReadFromDevice(I2C_SCL_BASE,I2C_SDA_BASE, ox71, ox75, ReadBuf, 1);
-    I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
-    OSTimeDlyHMSM(0, 0, 3, 0);
+    //I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
+    /*if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, deviceAddress, registerAddress, (alt_u8*)&ReadBuf, buflen, true)){
+
+    }*/
+    //I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+    I2C_Read(I2C_SCL_BASE, I2C_SDA_BASE,deviceAddress, registerAddress, (alt_u8*)&ReadBuf);
+    printf("WHO AM I: %0x\n", ReadBuf[0]);
+    OSTimeDlyHMSM(0, 0, 1, 0);
 
   }
 }
@@ -63,8 +71,8 @@ void task2(void* pdata)
 {
   while (1)
   { 
-    printf("Hello from task2\n");
-    OSTimeDlyHMSM(0, 0, 3, 0);
+    //printf("Hello from task2\n");
+    OSTimeDlyHMSM(0, 0, 1, 0);
   }
 }
 /* The main function creates two task and starts multi-tasking */

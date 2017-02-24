@@ -18,6 +18,6 @@
  </clocktable>
  <library
    expandedCategories="Project,Library,Library/Peripherals,Library/Peripherals/Microcontroller Peripherals" />
- <window width="1460" height="856" x="539" y="94" />
+ <window width="1440" height="855" x="-9" y="20" />
  <hdlexample language="VHDL" />
 </preferences>

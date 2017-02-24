@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Feb 23 17:57:11 2017
+Fitter Status : Successful - Fri Feb 24 14:06:48 2017
 Quartus II 32-bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Full Version
 Revision Name : DrumAnywhere_1_0
 Top-level Entity Name : DrumAnywhere_1_0
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 4,128 / 33,216 ( 12 % )
-    Total combinational functions : 3,775 / 33,216 ( 11 % )
+Total logic elements : 4,137 / 33,216 ( 12 % )
+    Total combinational functions : 3,779 / 33,216 ( 11 % )
     Dedicated logic registers : 2,540 / 33,216 ( 8 % )
 Total registers : 2608
 Total pins : 150 / 475 ( 32 % )

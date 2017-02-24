@@ -48,7 +48,7 @@ OS_STK    task2_stk[TASK_STACKSIZE];
 void task1(void* pdata)
 {
   alt_u8 ReadBuf[1];
-  alt_u8 deviceAddress = 0x71;
+  alt_u8 deviceAddress = 0x68;
   alt_u8 registerAddress = 0x75;
   alt_u16 buflen = 1;
 
@@ -56,10 +56,12 @@ void task1(void* pdata)
   { 
     printf("Hello from task1\n");
     I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
-    I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, deviceAddress, registerAddress, (alt_u8*)&ReadBuf, buflen, true);
-    //I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+    if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, deviceAddress, registerAddress, (alt_u8*)&ReadBuf, buflen, true)){
+
+    }
+    I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
     printf("WHO AM I: %0x\n", ReadBuf[0]);
-    OSTimeDlyHMSM(0, 0, 3, 0);
+    OSTimeDlyHMSM(0, 0, 1, 0);
 
   }
 }
@@ -68,8 +70,8 @@ void task2(void* pdata)
 {
   while (1)
   { 
-    printf("Hello from task2\n");
-    OSTimeDlyHMSM(0, 0, 3, 0);
+    //printf("Hello from task2\n");
+    OSTimeDlyHMSM(0, 0, 1, 0);
   }
 }
 /* The main function creates two task and starts multi-tasking */
