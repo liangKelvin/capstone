@@ -5,65 +5,6 @@ make all
 Info: Building ../I2Ctesting_bsp/
 make --no-print-directory -C ../I2Ctesting_bsp/
 [BSP build complete]
-Info: Compiling i2c/I2C.c to obj/default/i2c/I2C.o
-nios2-elf-gcc -xc -MP -MMD -c -I../I2Ctesting_bsp//UCOSII/inc -I../I2Ctesting_bsp//HAL/inc -I../I2Ctesting_bsp/ -I../I2Ctesting_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/i2c/I2C.o i2c/I2C.c
-i2c/I2C.c: In function 'I2C_WriteToDevice':
-Info: Linking I2Ctesting.elf
-i2c/I2C.c:87: warning: implicit declaration of function 'printf'
-nios2-elf-g++  -T'../I2Ctesting_bsp//linker.x' -msys-crt0='../I2Ctesting_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../I2Ctesting_bsp/ -Li2c   -Wl,-Map=I2Ctesting.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o I2Ctesting.elf obj/default/hello_ucosii.o obj/default/i2c/I2C.o -lm 
-i2c/I2C.c:87: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'I2C_WriteToDeviceRegister':
-i2c/I2C.c:115: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'I2C_WriteMore':
-i2c/I2C.c:136: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'i2c_selectAddress':
-i2c/I2C.c:230: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'i2c_start':
-i2c/I2C.c:241: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_DIRECTION'
-i2c/I2C.c:244: warning: implicit declaration of function 'IOWR_ALTERA_AVALON_PIO_DATA'
-i2c/I2C.c:246: warning: implicit declaration of function 'usleep'
-i2c/I2C.c: In function 'i2c_write':
-i2c/I2C.c:293: warning: implicit declaration of function 'IORD_ALTERA_AVALON_PIO_DATA'
-obj/default/i2c/I2C.o: In function `i2c_start':
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:241: undefined reference to `IOWR_ALTERA_AVALON_PIO_DIRECTION'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:244: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:245: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:247: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:249: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-obj/default/i2c/I2C.o: In function `i2c_stop':
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:258: undefined reference to `IOWR_ALTERA_AVALON_PIO_DIRECTION'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:259: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:261: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:263: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-obj/default/i2c/I2C.o: In function `i2c_write':
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:276: undefined reference to `IOWR_ALTERA_AVALON_PIO_DIRECTION'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:280: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:284: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:288: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:292: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:293: undefined reference to `IORD_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:295: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:300: undefined reference to `IOWR_ALTERA_AVALON_PIO_DIRECTION'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:303: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:304: undefined reference to `IORD_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:306: undefined reference to `IORD_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:309: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-obj/default/i2c/I2C.o: In function `i2c_read':
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:322: undefined reference to `IOWR_ALTERA_AVALON_PIO_DIRECTION'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:323: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:329: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:330: undefined reference to `IORD_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:332: undefined reference to `IORD_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:342: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:347: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:348: undefined reference to `IOWR_ALTERA_AVALON_PIO_DIRECTION'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:350: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:352: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:353: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:354: undefined reference to `IORD_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:356: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/I2Ctesting/i2c/I2C.c:358: undefined reference to `IOWR_ALTERA_AVALON_PIO_DATA'
-collect2: ld returned 1 exit status
-make: *** [I2Ctesting.elf] Error 1
+[I2Ctesting build complete]
 
 **** Build Finished ****

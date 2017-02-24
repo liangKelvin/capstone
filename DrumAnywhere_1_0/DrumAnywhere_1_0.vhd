@@ -198,8 +198,8 @@ begin
             spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
             spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
             spi_0_external_SS_n                              => SD_DAT3,                              --    
-				i2c_scl_external_connection_export               => GPIO_0(9),               --                 i2c_scl_external_connection.export
-            i2c_sda_external_connection_export               => GPIO_0(10)                --         
+				i2c_scl_external_connection_export               => GPIO_0(27),               --                 i2c_scl_external_connection.export
+            i2c_sda_external_connection_export               => GPIO_0(28)                --         
 		 );
 
 end structure;

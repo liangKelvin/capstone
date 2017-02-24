@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+[i2c build complete]
+
+**** Build Finished ****
