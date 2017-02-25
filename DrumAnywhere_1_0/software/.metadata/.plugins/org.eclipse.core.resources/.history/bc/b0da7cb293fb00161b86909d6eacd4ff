@@ -35,7 +35,7 @@
 #include "includes.h"
 #include "stdbool.h"
 
-#define CLK_DELAY_TIME		1 // microseconds
+#define CLK_DELAY_TIME		100 // microseconds
 
 bool I2C_WriteToDevice(alt_u32 clk_base, alt_u32 data_base, alt_8 deviceAddr, alt_u8 *pData, alt_u16 len);
 bool I2C_WriteToDeviceRegister(alt_u32 clk_base, alt_u32 data_base, alt_8 deviceAddr,

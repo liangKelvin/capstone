@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="33" version="2.0">
+<workbench progressCount="34" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="0" y="28">
 <fastViewData fastViewLocation="1024"/>
@@ -13,12 +13,12 @@
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="162" y="36"/>
 <coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="88" y="36"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="126" y="36"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="82" y="36"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="110" y="36"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="74" y="36"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="36"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -27,10 +27,26 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" partName="hello_ucosii.c" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/hello_ucosii.c" title="hello_ucosii.c" tooltip="i2c/hello_ucosii.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/hello_ucosii.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="4" selectionOffset="2541" selectionTopPixel="630"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="I2C.h" partName="I2C.h" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c/I2C.h" title="I2C.h" tooltip="i2c/i2c/I2C.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/i2c/I2C.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1470" selectionTopPixel="359"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="I2C.c" partName="I2C.c" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c/I2C.c" title="I2C.c" tooltip="i2c/i2c/I2C.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/i2c/I2C.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="1802" selectionTopPixel="3211"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -44,7 +60,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Warnings (6 items)"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="471" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
@@ -64,7 +80,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.altera.sbtgui.ui.cPerspective">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="com.altera.sbtgui.ui.cPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -268,7 +284,73 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/hello_ucosii.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/i2c/I2C.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/i2c/I2C.c"/>
+</editors>
+<item historyLabel="hello_ucosii.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="I2C.h" index="1">
+<position info="not_deleted" x="1610" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="3325" y="25"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="3515" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="6326" y="17"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="6414" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="7359" y="9"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="4550" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="6326" y="17"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="6411" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="7359" y="9"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="8360" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="1802" y="8"/>
+</item>
+<item historyLabel="I2C.h" index="1">
+<position info="not_deleted" x="1470" y="0"/>
+</item>
+<item historyLabel="hello_ucosii.c" index="0">
+<position info="not_deleted" x="2570" y="0"/>
+</item>
+<item historyLabel="I2C.h" index="1">
+<position info="not_deleted" x="1470" y="0"/>
+</item>
+<item historyLabel="I2C.c" index="2">
+<position info="not_deleted" x="1802" y="8"/>
+</item>
+<item historyLabel="hello_ucosii.c" index="0">
+<position info="not_deleted" x="2910" y="0"/>
+</item>
+<item historyLabel="I2C.h" index="1">
+<position info="not_deleted" x="1470" y="0"/>
+</item>
+<item active="true" historyLabel="hello_ucosii.c" index="0">
+<position info="not_deleted" x="2910" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -286,6 +368,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="I2C.c" tooltip="i2c/i2c/I2C.c">
+<persistable path="/i2c/i2c/I2C.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="I2C.h" tooltip="i2c/i2c/I2C.h">
+<persistable path="/i2c/i2c/I2C.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="i2c/hello_ucosii.c">
+<persistable path="/i2c/hello_ucosii.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2cmaster.h" tooltip="i2ctest/i2c/i2cmaster.h">
 <persistable path="/i2ctest/i2c/i2cmaster.h"/>
 </file>
@@ -295,17 +386,8 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="i2ctest/hello_ucosii.c">
 <persistable path="/i2ctest/hello_ucosii.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="I2C.h" tooltip="i2c/i2c/I2C.h">
-<persistable path="/i2c/i2c/I2C.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="I2C.c" tooltip="i2c/i2c/I2C.c">
-<persistable path="/i2c/i2c/I2C.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="i2c_bsp/system.h">
 <persistable path="/i2c_bsp/system.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="i2c/hello_ucosii.c">
-<persistable path="/i2c/hello_ucosii.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="I2Ctesting_bsp/system.h">
 <persistable path="/I2Ctesting_bsp/system.h"/>
