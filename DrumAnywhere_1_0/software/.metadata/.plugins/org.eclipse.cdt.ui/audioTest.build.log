@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project audioTest ****
+
+make all 
+Info: Building ../audioTest_bsp/
+make --no-print-directory -C ../audioTest_bsp/
+[BSP build complete]
+[audioTest build complete]
+
+**** Build Finished ****

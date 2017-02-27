@@ -86,8 +86,8 @@ output					sys_reset_n;
 localparam SYS_CLK_MULT	= 1;
 localparam SYS_CLK_DIV	= 1;
 
-localparam AUD_CLK_MULT	= 14;
-localparam AUD_CLK_DIV	= 31;
+localparam AUD_CLK_MULT	= 5;
+localparam AUD_CLK_DIV	= 8;
 
 /*****************************************************************************
  *                 Internal Wires and Registers Declarations                 *

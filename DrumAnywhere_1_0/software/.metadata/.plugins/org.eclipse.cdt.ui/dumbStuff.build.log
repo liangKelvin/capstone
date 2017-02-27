@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project dumbStuff ****
+
+make all 
+Info: Building ../dumbStuff_bsp/
+make --no-print-directory -C ../dumbStuff_bsp/
+[BSP build complete]
+[dumbStuff build complete]
+
+**** Build Finished ****

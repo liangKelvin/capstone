@@ -76,88 +76,122 @@ typedef struct {
 
 typedef struct {
 	euint8 *fileBuffer;
-	eint16 *fileBufL;
-	eint16 *fileBufR;
+	unsigned int *fileBufL;
+	unsigned int *fileBufR;
 	HEADER wavHeader;
 	int buffersize;
 	int numberSamples;
 }sdCardInfo;
 
 sdCardInfo sdRead();
+sdCardInfo sdCard;
+unsigned int l_buf[BUFFER_SIZE];
+alt_up_audio_dev * audio_dev;
 
-
-
-/* Handle audio data movement */
-void audio_data_task(void* pdata) {
-
-	sdCardInfo sd = sdRead();
-	unsigned int l_buf[BUFFER_SIZE];
-		int i = 0;
-
-	    for(i = 0; i < BUFFER_SIZE; i++){
-		  // Do we need to shift the values by 0x7fff like above for l_buff?
-	    	//
-		  l_buf[i] = (sin(2000 * (2 * PI) * i / 44100))*0x3fff;
-		}
-		int writeSize_l = 128;
-
-		alt_up_audio_dev * audio_dev;
-		alt_up_av_config_dev * audio_config_dev;
-
-		audio_config_dev = alt_up_av_config_open_dev("/dev/audio_and_video_config_0");
-		if ( audio_config_dev == NULL)
-			printf("Error: could not open audio config device \n");
-		else
-			printf("Opened audio config device \n");
-
-		audio_dev = alt_up_audio_open_dev ("/dev/audio_0");
-		if ( audio_dev == NULL)
-			printf("Error: could not open audio device \n");
-		else
-			printf("Opened audio device \n");
-
-		alt_up_av_config_reset(audio_config_dev);
-		alt_up_audio_reset_audio_core(audio_dev);
-
-		/* Write to configuration registers in the audio codec; see datasheet for what these values mean */
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x0, 0x17);
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x1, 0x17);
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x2, 0x68);
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x3, 0x68);
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x4, 0x15);
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
-		alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
-
-		while(1)
-		{
-			alt_up_audio_write_fifo (audio_dev, sd.fileBufR, sd.numberSamples, ALT_UP_AUDIO_RIGHT);
-			alt_up_audio_write_fifo (audio_dev, sd.fileBufL, sd.numberSamples, ALT_UP_AUDIO_LEFT);
-			//OSTimeDlyHMSM(0, 0, 0, 500);
-		}
-
-}
+///* Handle audio data movement */
+//void audio_isr (void * context, alt_u32 id) {
+//
+//
+//	alt_up_audio_dev * audio_dev = (alt_up_audio_dev *) context;
+//    int size1 = alt_up_audio_write_fifo (audio_dev, l_buf, 128, ALT_UP_AUDIO_RIGHT);
+//	int size2 = alt_up_audio_write_fifo (audio_dev, l_buf, 128, ALT_UP_AUDIO_LEFT);
+//
+//	int total = size1 + size2;
+//	printf("size1: %d size2: %d total printed %d\n",size1, size2, total);
+//
+//}
 
 /* The main function creates two task and starts multi-tasking */
-int main(void)
-{
+int main(void) {
 
-  OSTaskCreateExt(audio_data_task,
-                  NULL,
-                  (void *)&task3_stk[TASK_STACKSIZE-1],
-                  TASK3_PRIORITY,
-                  TASK3_PRIORITY,
-                  task3_stk,
-                  TASK_STACKSIZE,
-                  NULL,
-                  0);
 
-  lcd_sem = OSSemCreate(0);
-  //sdRead();
-  OSStart();
-  return 0;
+	alt_up_av_config_dev * audio_config_dev;
+	audio_config_dev = alt_up_av_config_open_dev("/dev/audio_and_video_config_0");
+
+	if ( audio_config_dev == NULL)
+		printf("Error: could not open audio config device \n");
+	else
+		printf("Opened audio config device \n");
+
+	audio_dev = alt_up_audio_open_dev ("/dev/audio_0");
+	if ( audio_dev == NULL)
+		printf("Error: could not open audio device \n");
+	else
+		printf("Opened audio device \n");
+
+	alt_up_av_config_reset(audio_config_dev);
+	alt_up_audio_reset_audio_core(audio_dev);
+
+	/* Write to configuration registers in the audio codec; see datasheet for what these values mean */
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x0, 0x17);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x1, 0x17);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x2, 0x68);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x3, 0x68);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x4, 0x15);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
+//	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x7, 0x02);
+//	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x12);
+
+
+	sdCard = sdRead();
+
+	int i;
+	for(i = 0; i < BUFFER_SIZE; i++){
+	  // Do we need to shift the values by 0x7fff like above for l_buff?
+		//
+	  l_buf[i] = (sin(2000 * (2 * PI) * i / 32000))*0x6fff;
+	  //printf(" sin: %d\n", l_buf[i]);
+	}
+
+	int k = 0;
+	int count = 0;
+	while(1) {
+
+		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+		if(fifospace >= 128) {
+			if(count >= sdCard.numberSamples) {
+				count = 0;
+			}
+				alt_up_audio_write_fifo(audio_dev, sdCard.fileBufL + count, 128, ALT_UP_AUDIO_RIGHT);
+				alt_up_audio_write_fifo(audio_dev, sdCard.fileBufR + count, 128, ALT_UP_AUDIO_LEFT);
+				count += 128;
+
+		}
+	}
+		//printf("fifo: %d\n", fifospace);
+
+//			printf("%d\n",*leftChannel);
+//			leftChannel++;
+//			k++;
+//			if(k == 128) {
+//				k = 0;
+//			}
+
+//	alt_up_audio_disable_write_interrupt(audio_dev);
+//	alt_up_audio_disable_read_interrupt(audio_dev);
+//	alt_irq_register(AUDIO_0_IRQ, (void*)audio_dev, audio_isr);
+//	alt_up_audio_enable_write_interrupt(audio_dev);
+
+
+//	short leftChannel;
+//	long samples = sdCard.numberSamples;
+//	unsigned int * temp = sdCard.fileBufL + samples;
+//
+//	while(1) {
+//		int size = 0;
+//		int i;
+//		for(i = 0; i < sdCard.numberSamples; i += 128) {
+//		   int size = alt_up_audio_write_fifo (audio_dev, sdCard.fileBufL[i], 128, ALT_UP_AUDIO_RIGHT);
+//		   int size2 =alt_up_audio_write_fifo (audio_dev, sdCard.fileBufR[i], 128, ALT_UP_AUDIO_LEFT);
+//
+//		}
+//		printf("size: %d\n", size);
+		//OSTimeDlyHMSM(0,0,0,250);
+//	}
 }
 
-sdCardInfo sdRead(){
+sdCardInfo sdRead() {
 
 	// Create EFSL containers
 		EmbeddedFileSystem efsl;
@@ -165,8 +199,6 @@ sdCardInfo sdRead(){
 		char fileName[LIST_MAXLENFILENAME] = {"crash.wav"};
 		File readFile;
 		sdCardInfo sdCard;
-
-
 
 		// Initialises the filesystem on the SD card, if the filesystem does not
 		// init properly then it displays an error message.
@@ -223,7 +255,6 @@ sdCardInfo sdRead(){
 			printf("Error:\tCould not close file properly\n");
 		}
 
-
 		//Header Info
 		sdCard.wavHeader.riff[0] = sdCard.fileBuffer[0];
 		sdCard.wavHeader.riff[1] = sdCard.fileBuffer[1];
@@ -278,7 +309,8 @@ sdCardInfo sdRead(){
 		printf("data chunk header: %s\n", sdCard.wavHeader.data_chunk_header);
 		printf("data size: %d\n", sdCard.wavHeader.data_size);
 
-		sdCard.numberSamples = (8*sdCard.wavHeader.data_size)/(sdCard.wavHeader.channels*sdCard.wavHeader.bits_per_sample);
+//		sdCard.numberSamples = (8*sdCard.wavHeader.data_size)/(sdCard.wavHeader.channels*sdCard.wavHeader.bits_per_sample);
+		sdCard.numberSamples = 63342;
 		printf("Samples: %d\n", sdCard.numberSamples);
 		sdCard.fileBufL = malloc(sdCard.numberSamples * sizeof(eint16));
 		sdCard.fileBufR = malloc(sdCard.numberSamples * sizeof(eint16));
@@ -287,6 +319,7 @@ sdCardInfo sdRead(){
 		for(i = 0; i < sdCard.numberSamples; i++) {
 			sdCard.fileBufL[i] = sdCard.fileBuffer[i*4+44] | (sdCard.fileBuffer[i*4+45] << 8);
 			sdCard.fileBufR[i] = sdCard.fileBuffer[i*4+44] | (sdCard.fileBuffer[i*4+45] << 8);
+
 //			printf("LEFT: %d\n", sdCard.fileBufL[i]);
 //			printf("RIGHT: %d\n", sdCard.fileBufR[i]);
 		}
@@ -308,6 +341,11 @@ sdCardInfo sdRead(){
 		// Free the file buffer memory
 		//free(fileBuffer);
 	}
+
+
+//void loadToRam () {
+//	sdCardInfo sd = sdRead();
+//}
 
 /******************************************************************************
 *                                                                             *

@@ -2,11 +2,14 @@ obj/default/audio.o: audio.c ../capstone_bsp//HAL/inc/includes.h \
   ../capstone_bsp//HAL/inc/os_cpu.h \
   ../capstone_bsp//HAL/inc/sys/alt_irq.h ../capstone_bsp//HAL/inc/nios2.h \
   ../capstone_bsp//HAL/inc/alt_types.h ../capstone_bsp/system.h \
-  ../capstone_bsp/linker.h ../capstone_bsp//UCOSII/inc/os_cfg.h \
+  ../capstone_bsp/linker.h ../capstone_bsp//HAL/inc/priv/alt_legacy_irq.h \
+  ../capstone_bsp/system.h ../capstone_bsp//HAL/inc/nios2.h \
+  ../capstone_bsp//HAL/inc/alt_types.h \
+  ../capstone_bsp//HAL/inc/sys/alt_irq.h \
+  ../capstone_bsp//UCOSII/inc/os_cfg.h \
   ../capstone_bsp//HAL/inc/sys/alt_alarm.h \
   ../capstone_bsp//HAL/inc/sys/alt_llist.h \
-  ../capstone_bsp//HAL/inc/priv/alt_alarm.h \
-  ../capstone_bsp//HAL/inc/alt_types.h ../capstone_bsp/system.h \
+  ../capstone_bsp//HAL/inc/priv/alt_alarm.h ../capstone_bsp/system.h \
   ../capstone_bsp//UCOSII/inc/ucos_ii.h \
   ../capstone_bsp//UCOSII/inc/os_cfg.h ../capstone_bsp//HAL/inc/os_cpu.h \
   ../capstone_bsp//drivers/inc/altera_up_avalon_audio.h \
@@ -42,6 +45,16 @@ obj/default/audio.o: audio.c ../capstone_bsp//HAL/inc/includes.h \
 
 ../capstone_bsp/linker.h:
 
+../capstone_bsp//HAL/inc/priv/alt_legacy_irq.h:
+
+../capstone_bsp/system.h:
+
+../capstone_bsp//HAL/inc/nios2.h:
+
+../capstone_bsp//HAL/inc/alt_types.h:
+
+../capstone_bsp//HAL/inc/sys/alt_irq.h:
+
 ../capstone_bsp//UCOSII/inc/os_cfg.h:
 
 ../capstone_bsp//HAL/inc/sys/alt_alarm.h:
@@ -49,8 +62,6 @@ obj/default/audio.o: audio.c ../capstone_bsp//HAL/inc/includes.h \
 ../capstone_bsp//HAL/inc/sys/alt_llist.h:
 
 ../capstone_bsp//HAL/inc/priv/alt_alarm.h:
-
-../capstone_bsp//HAL/inc/alt_types.h:
 
 ../capstone_bsp/system.h:
 
