@@ -130,8 +130,8 @@ int main(void) {
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x4, 0x15);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
-//	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x7, 0x10);
-	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x7, 0x02);
+//	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x12);
 
 
 	sdCard = sdRead();
@@ -154,7 +154,7 @@ int main(void) {
 				count = 0;
 			}
 				alt_up_audio_write_fifo(audio_dev, sdCard.fileBufL + count, 128, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo(audio_dev, sdCard.fileBufL + count, 128, ALT_UP_AUDIO_LEFT);
+				alt_up_audio_write_fifo(audio_dev, sdCard.fileBufR + count, 128, ALT_UP_AUDIO_LEFT);
 				count += 128;
 
 		}
