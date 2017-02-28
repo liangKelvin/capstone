@@ -144,6 +144,7 @@ ELF := i2c.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += hello_ucosii.c
 C_SRCS += i2c/I2C.c
+C_SRCS += MPU9250/mpu9250.c
 CXX_SRCS :=
 ASM_SRCS :=
 

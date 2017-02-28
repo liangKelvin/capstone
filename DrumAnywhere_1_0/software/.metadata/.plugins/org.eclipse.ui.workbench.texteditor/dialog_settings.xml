@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="311" key="DIALOG_WIDTH"/>
+		<item value="100" key="DIALOG_Y_ORIGIN"/>
+		<item value="479" key="DIALOG_HEIGHT"/>
+		<item value="566" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="deviceAddress" key="selection"/>
+		<list key="findhistory">
+			<item value="MPU9250_ADDRESS"/>
+			<item value="Serial.print"/>
+			<item value="int16_t"/>
+			<item value="SMPLRT_DIV"/>
+			<item value="int32_t"/>
+			<item value="uint_t"/>
+			<item value="uint8_t"/>
+			<item value="ALT_U8"/>
+		</list>
+		<list key="replacehistory">
+			<item value="deviceAddress"/>
+			<item value="printf"/>
+			<item value="alt_u16"/>
+			<item value="alt_u32"/>
+			<item value="alt_u8"/>
+			<item value="alt"/>
+			<item value="ALT_U8"/>
+		</list>
+	</section>
+</section>
