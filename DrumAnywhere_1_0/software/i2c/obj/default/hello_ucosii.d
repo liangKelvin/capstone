@@ -6,7 +6,8 @@ obj/default/hello_ucosii.o: hello_ucosii.c ../i2c_bsp//HAL/inc/includes.h \
   ../i2c_bsp//HAL/inc/priv/alt_alarm.h ../i2c_bsp//HAL/inc/alt_types.h \
   ../i2c_bsp/system.h ../i2c_bsp//UCOSII/inc/ucos_ii.h \
   ../i2c_bsp//UCOSII/inc/os_cfg.h ../i2c_bsp//HAL/inc/os_cpu.h i2c/I2C.h \
-  ../i2c_bsp//HAL/inc/includes.h MPU9250/mpu9250.h
+  ../i2c_bsp//HAL/inc/includes.h MPU9250/mpu9250.h \
+  ../i2c_bsp//HAL/inc/includes.h ../i2c_bsp/system.h
 
 ../i2c_bsp//HAL/inc/includes.h:
 
@@ -45,3 +46,7 @@ i2c/I2C.h:
 ../i2c_bsp//HAL/inc/includes.h:
 
 MPU9250/mpu9250.h:
+
+../i2c_bsp//HAL/inc/includes.h:
+
+../i2c_bsp/system.h:

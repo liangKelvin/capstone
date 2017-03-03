@@ -46,8 +46,8 @@ OS_STK    task2_stk[TASK_STACKSIZE];
 
 
 /* Prints "Hello World" and sleeps for three seconds */
-void task1(void* pdata)
-{
+void task1(void* pdata){
+
   alt_u8 ReadBuf[6];
   //alt_u8 deviceAddress1 = 0x68;
   alt_u8 deviceAddress2 = 0xD0;
@@ -74,26 +74,45 @@ void task1(void* pdata)
   	printf("%.1f", selfTest[4]); printf("%% of factory value\n");
   	printf("z-axis self test: gyration trim within : ");
   	printf("%.1f", selfTest[5]); printf("%% of factory value\n");
+
+
+  	alt_u8 Data[2];
+    alt_32 xaxis[3] = {0};
+    I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
+    // Read the six raw data registers into data array
+    I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, 0xD0, ACCEL_ZOUT_H, &Data[0],2, true);
+    // Turn the MSB and LSB into a signed 16-bit value
+    xaxis[0] = (alt_16)(((alt_16)Data[0] << 8) | Data[1]) ;
   while (1)
   { 
-    printf("Hello from task1\n");
+
+	// Read the six raw data registers into data array
+	I2C_ReadMore(I2C_SCL_BASE, I2C_SDA_BASE, &Data[0],2, true);
+	// Turn the MSB and LSB into a signed 16-bit value
+	xaxis[0] = (alt_16)(((alt_16)Data[0] << 8) | Data[1]) ;
+	//printf("Hello from task2\n");
+	printf("xaxis = %d\n", xaxis[0]);
+
+	/* printf("Hello from task1\n");
     I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
 	if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, 0xD0, registerAddress, (alt_u8*)&ReadBuf[0], 6, true)){
 
 	  }
 	printf("WHO AM I: %0x\n", ReadBuf[0]);
 	I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
-
-    OSTimeDlyHMSM(0, 0, 1, 0);
+	*/
+    OSTimeDlyHMSM(0, 0, 0, 1);
 
   }
 }
 /* Prints "Hello World" and sleeps for three seconds */
 void task2(void* pdata)
 {
+
+
   while (1)
   { 
-    //printf("Hello from task2\n");
+
     OSTimeDlyHMSM(0, 0, 1, 0);
   }
 }
