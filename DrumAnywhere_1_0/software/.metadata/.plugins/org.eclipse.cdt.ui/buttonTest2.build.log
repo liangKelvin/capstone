@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project buttonTest2 ****
+
+make all 
+Info: Building ../buttonTest2_bsp/
+make --no-print-directory -C ../buttonTest2_bsp/
+[BSP build complete]
+[buttonTest2 build complete]
+
+**** Build Finished ****

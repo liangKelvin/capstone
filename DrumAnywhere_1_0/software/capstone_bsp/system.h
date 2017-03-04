@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Fri Feb 24 16:49:16 MST 2017
+ * Generated: Fri Mar 03 16:07:01 MST 2017
  */
 
 /*
@@ -53,6 +53,33 @@
 
 /* Include definitions from linker script generator */
 #include "linker.h"
+
+
+/*
+ * Buttons configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_Buttons altera_avalon_pio
+#define BUTTONS_BASE 0x1109060
+#define BUTTONS_BIT_CLEARING_EDGE_REGISTER 0
+#define BUTTONS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BUTTONS_CAPTURE 0
+#define BUTTONS_DATA_WIDTH 4
+#define BUTTONS_DO_TEST_BENCH_WIRING 0
+#define BUTTONS_DRIVEN_SIM_VALUE 0x0
+#define BUTTONS_EDGE_TYPE "NONE"
+#define BUTTONS_FREQ 50000000u
+#define BUTTONS_HAS_IN 1
+#define BUTTONS_HAS_OUT 0
+#define BUTTONS_HAS_TRI 0
+#define BUTTONS_IRQ 5
+#define BUTTONS_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define BUTTONS_IRQ_TYPE "LEVEL"
+#define BUTTONS_NAME "/dev/Buttons"
+#define BUTTONS_RESET_VALUE 0x0
+#define BUTTONS_SPAN 16
+#define BUTTONS_TYPE "altera_avalon_pio"
 
 
 /*
@@ -198,7 +225,7 @@
  */
 
 #define ALT_MODULE_CLASS_audio_0 altera_up_avalon_audio
-#define AUDIO_0_BASE 0x1109070
+#define AUDIO_0_BASE 0x1109080
 #define AUDIO_0_IRQ 3
 #define AUDIO_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define AUDIO_0_NAME "/dev/audio_0"
@@ -212,7 +239,7 @@
  */
 
 #define ALT_MODULE_CLASS_audio_and_video_config_0 altera_up_avalon_audio_and_video_config
-#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x1109060
+#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x1109070
 #define AUDIO_AND_VIDEO_CONFIG_0_IRQ -1
 #define AUDIO_AND_VIDEO_CONFIG_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define AUDIO_AND_VIDEO_CONFIG_0_NAME "/dev/audio_and_video_config_0"
@@ -403,33 +430,6 @@
 
 
 /*
- * switch configuration
- *
- */
-
-#define ALT_MODULE_CLASS_switch altera_avalon_pio
-#define SWITCH_BASE 0x1109080
-#define SWITCH_BIT_CLEARING_EDGE_REGISTER 0
-#define SWITCH_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define SWITCH_CAPTURE 0
-#define SWITCH_DATA_WIDTH 1
-#define SWITCH_DO_TEST_BENCH_WIRING 0
-#define SWITCH_DRIVEN_SIM_VALUE 0x0
-#define SWITCH_EDGE_TYPE "NONE"
-#define SWITCH_FREQ 50000000u
-#define SWITCH_HAS_IN 1
-#define SWITCH_HAS_OUT 0
-#define SWITCH_HAS_TRI 0
-#define SWITCH_IRQ 4
-#define SWITCH_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define SWITCH_IRQ_TYPE "LEVEL"
-#define SWITCH_NAME "/dev/switch"
-#define SWITCH_RESET_VALUE 0x0
-#define SWITCH_SPAN 16
-#define SWITCH_TYPE "altera_avalon_pio"
-
-
-/*
  * sysid_qsys_0 configuration
  *
  */
@@ -441,7 +441,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1487979978
+#define SYSID_QSYS_0_TIMESTAMP 1488579771
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

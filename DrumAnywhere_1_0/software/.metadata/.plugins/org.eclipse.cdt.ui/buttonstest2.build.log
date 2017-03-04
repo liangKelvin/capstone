@@ -1,0 +1,7 @@
+
+**** Clean-only build of configuration Nios II for project buttonstest2 ****
+
+make clean 
+[buttonstest2 clean complete]
+
+**** Build Finished ****

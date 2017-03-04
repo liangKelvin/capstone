@@ -5,6 +5,36 @@ make all
 Info: Building ../capstone_bsp/
 make --no-print-directory -C ../capstone_bsp/
 [BSP build complete]
-[capstone build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+audio.c: In function 'main':
+audio.c:164: warning: unused variable 'k'
+audio.c:145: warning: unused variable 'sd_pointer'
+audio.c: In function 'sdRead':
+audio.c:207: error: request for member 'fileBuffer' in something not a structure or union
+audio.c:208: error: request for member 'buffersize' in something not a structure or union
+audio.c:211: error: request for member 'fileBuffer' in something not a structure or union
+audio.c:219: error: request for member 'fileBuffer' in something not a structure or union
+audio.c:228: error: incompatible types in assignment
+audio.c:231: error: request for member 'numberSamples' in something not a structure or union
+audio.c:231: error: request for member 'wavHeader' in something not a structure or union
+audio.c:231: error: request for member 'wavHeader' in something not a structure or union
+audio.c:231: error: request for member 'wavHeader' in something not a structure or union
+audio.c:232: error: request for member 'numberSamples' in something not a structure or union
+audio.c:233: error: request for member 'fileBufL' in something not a structure or union
+audio.c:233: error: request for member 'numberSamples' in something not a structure or union
+audio.c:234: error: request for member 'fileBufR' in something not a structure or union
+audio.c:234: error: request for member 'numberSamples' in something not a structure or union
+audio.c:237: error: request for member 'numberSamples' in something not a structure or union
+audio.c:238: error: request for member 'fileBufL' in something not a structure or union
+audio.c:238: error: request for member 'fileBuffer' in something not a structure or union
+audio.c:238: error: request for member 'fileBuffer' in something not a structure or union
+audio.c:239: error: request for member 'fileBufR' in something not a structure or union
+audio.c:239: error: request for member 'fileBuffer' in something not a structure or union
+audio.c:239: error: request for member 'fileBuffer' in something not a structure or union
+audio.c: At top level:
+audio.c:275: error: conflicting types for 'parseHeader'
+audio.c:88: error: previous declaration of 'parseHeader' was here
+make: *** [obj/default/audio.o] Error 1
 
 **** Build Finished ****

@@ -1,0 +1,1582 @@
+Archive member included because of file (symbol)
+
+../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+                              ../buttonTest2_bsp//obj/HAL/src/crt0.o (alt_load)
+../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+                              ../buttonTest2_bsp//obj/HAL/src/crt0.o (alt_main)
+../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (alt_envsem)
+../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (alt_heapsem)
+../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (OSInit)
+../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (OSDebugInit)
+../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (OS_FlagInit)
+../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (OS_MemInit)
+../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (OS_QInit)
+../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (OSSemCreate)
+../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+                              obj/default/hello_ucosii.o (OSTaskCreateExt)
+../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (OSTimeDly)
+../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (alt_irq_init)
+../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o) (altera_avalon_jtag_uart_read_fd)
+../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o) (altera_avalon_jtag_uart_init)
+../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o) (altera_avalon_jtag_uart_ioctl)
+../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o) (altera_avalon_jtag_uart_read)
+../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o) (altera_avalon_jtag_uart_write)
+../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o) (alt_avalon_timer_sc_init)
+../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+                              obj/default/hello_ucosii.o (alt_up_character_lcd_init)
+../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o) (alt_alarm_start)
+../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (close)
+../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o) (alt_dcache_flush_all)
+../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o) (alt_dev_list)
+../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o) (alt_dev_llist_insert)
+../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (_do_ctors)
+../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (_do_dtors)
+../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o) (alt_errno)
+../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o) (alt_find_dev)
+../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o) (alt_icache_flush_all)
+../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (alt_io_redirect)
+../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o) (alt_irq_register)
+../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o) (alt_irq_active)
+../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o) (open)
+../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o) (alt_release_fd)
+../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o) (_alt_tick_rate)
+../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o) (altera_nios2_qsys_irq_init)
+../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (OSIntCtxSw)
+../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_task.o) (OSTaskStkInit)
+../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o) (alt_find_file)
+../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o) (alt_get_fd)
+../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o) (alt_icache_flush)
+../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o) (alt_irq_entry)
+../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o) (alt_irq_handler)
+../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o) (alt_exception)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (atexit)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o) (exit)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o) (_impure_ptr)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o) (errno)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o) (memcmp)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o) (memcpy)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o) (memset)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o) (strlen)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+                              /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o) (__register_exitproc)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+                              /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o) (__call_exitprocs)
+/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+                              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o) (__udivsi3)
+../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+                              /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o) (_exit)
+
+Allocating common symbols
+Common symbol       size              file
+
+alt_irq             0x100             ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+task1_stk           0x2000            obj/default/hello_ucosii.o
+OSLockNesting       0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSRunning           0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSIdleCtr           0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSPrioHighRdy       0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+errno               0x4               /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+alt_heapsem         0x4               ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+OSFlagTbl           0x370             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSPrioCur           0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTCBList           0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+alt_fd_list_lock    0x4               ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+OSMemTbl            0xc30             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTickStepState     0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTaskStatStk       0x800             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSCtxSwCtr          0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+button              0x4               obj/default/hello_ucosii.o
+myLCD               0x4               obj/default/hello_ucosii.o
+OSIdleCtrMax        0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTCBFreeList       0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSCPUUsage          0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTaskCtr           0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSMemFreeList       0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSQTbl              0x1e0             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTCBHighRdy        0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSQFreeList         0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSRdyGrp            0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+_atexit0            0x190             /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+OSRdyTbl            0x3               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSEventFreeList     0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSIntNesting        0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTCBCur            0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTime              0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTaskIdleStk       0x800             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSEventTbl          0xb40             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTCBTbl            0x510             ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSFlagFreeList      0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSStatRdy           0x1               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+OSTCBPrioTbl        0x54              ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+alt_envsem          0x4               ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+OSIdleCtrRun        0x4               ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sdram_0          0x00800000         0x00800000
+sram_0           0x01080000         0x00080000
+reset            0x01104000         0x00000020
+onchip_memory2_0 0x01104020         0x00003fe0
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ../buttonTest2_bsp//obj/HAL/src/crt0.o
+LOAD obj/default/hello_ucosii.o
+LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libstdc++.a
+LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libm.a
+LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a
+START GROUP
+LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a
+LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a
+LOAD ../buttonTest2_bsp//libucosii_bsp.a
+END GROUP
+LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a
+                0x00800000                __alt_mem_sdram_0 = 0x800000
+                0x01080000                __alt_mem_sram_0 = 0x1080000
+                0x01104000                __alt_mem_onchip_memory2_0 = 0x1104000
+
+.entry          0x01104000       0x20
+ *(.entry)
+ .entry         0x01104000       0x20 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+                0x01104000                __reset
+
+.exceptions     0x01104020      0x1a0 load address 0x00800000
+                0x01104020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x01104020                . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ .exceptions.entry.label
+                0x01104020        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x01104020                alt_irq_entry
+ .exceptions.entry.label
+                0x01104020        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x01104020                alt_exception
+ *(.exceptions.entry.user)
+ *(.exceptions.entry)
+ .exceptions.entry
+                0x01104020       0x54 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ .exceptions.irqtest
+                0x01104074       0x10 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ .exceptions.irqhandler
+                0x01104084        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ .exceptions.irqreturn
+                0x01104088        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ *(.exceptions.notirq.label)
+ .exceptions.notirq.label
+                0x0110408c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ .exceptions.notirq
+                0x0110408c        0x8 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ .exceptions.unknown
+                0x01104094        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ *(.exceptions.exit.label)
+ .exceptions.exit.label
+                0x01104098        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .exceptions.exit.label
+                0x01104098        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ .exceptions.exit
+                0x01104098       0x54 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ *(.exceptions)
+ .exceptions    0x011040ec       0xd4 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+                0x011040ec                alt_irq_handler
+                0x011041c0                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x00800000                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+
+.text           0x008001a0     0xba78
+                0x008001a0                PROVIDE (stext, ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x008001a0       0x4c ../buttonTest2_bsp//obj/HAL/src/crt0.o
+                0x008001a0                _start
+ .text          0x008001ec      0x20c obj/default/hello_ucosii.o
+                0x008001ec                task1
+                0x00800370                main
+ .text          0x008003f8       0xec ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+                0x008003f8                alt_load
+ .text          0x008004e4       0xc8 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+                0x008004e4                alt_main
+ .text          0x008005ac      0x108 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+                0x008005ac                __env_lock
+                0x00800658                __env_unlock
+ .text          0x008006b4      0x1d8 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+                0x008006b4                __malloc_lock
+                0x008007bc                __malloc_unlock
+ .text          0x0080088c     0x2128 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+                0x0080088c                OSEventNameGet
+                0x008009bc                OSEventNameSet
+                0x00800b00                OSEventPendMulti
+                0x008011b4                OSInit
+                0x00801208                OSIntEnter
+                0x00801284                OSIntExit
+                0x00801384                OSSchedLock
+                0x00801410                OSSchedUnlock
+                0x008014f4                OSStart
+                0x00801564                OSStatInit
+                0x00801610                OSTimeTick
+                0x00801850                OSVersion
+                0x00801870                OS_Dummy
+                0x0080188c                OS_EventTaskRdy
+                0x00801a20                OS_EventTaskWait
+                0x00801b30                OS_EventTaskWaitMulti
+                0x00801c84                OS_EventTaskRemove
+                0x00801d3c                OS_EventTaskRemoveMulti
+                0x00801e40                OS_EventWaitListInit
+                0x0080220c                OS_MemClr
+                0x00802260                OS_MemCopy
+                0x008022cc                OS_Sched
+                0x00802410                OS_StrCopy
+                0x00802490                OS_StrLen
+                0x008024e8                OS_TaskIdle
+                0x00802544                OS_TaskStat
+                0x0080260c                OS_TaskStatStkChk
+                0x008026d4                OS_TCBInit
+ .text          0x008029b4      0x18c ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+                0x008029b4                OSDebugInit
+ .text          0x00802b40     0x193c ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+                0x00802b40                OSFlagAccept
+                0x00802e74                OSFlagCreate
+                0x00802fb0                OSFlagDel
+                0x00803258                OSFlagNameGet
+                0x0080339c                OSFlagNameSet
+                0x008034f0                OSFlagPend
+                0x00803b34                OSFlagPendGetFlagsRdy
+                0x00803b9c                OSFlagPost
+                0x00803f44                OSFlagQuery
+                0x008041dc                OS_FlagInit
+                0x008043d0                OS_FlagUnlink
+ .text          0x0080447c      0x808 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+                0x0080447c                OSMemCreate
+                0x00804698                OSMemGet
+                0x0080479c                OSMemNameGet
+                0x008048a8                OSMemNameSet
+                0x008049c8                OSMemPut
+                0x00804ab8                OSMemQuery
+                0x00804bb4                OS_MemInit
+ .text          0x00804c84     0x1334 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+                0x00804c84                OSQAccept
+                0x00804dd8                OSQCreate
+                0x00804fec                OSQDel
+                0x008052ec                OSQFlush
+                0x008053b4                OSQPend
+                0x008056d4                OSQPendAbort
+                0x00805850                OSQPost
+                0x008059d0                OSQPostFront
+                0x00805b58                OSQPostOpt
+                0x00805d8c                OSQQuery
+                0x00805f0c                OS_QInit
+ .text          0x00805fb8      0xbc8 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+                0x00805fb8                OSSemAccept
+                0x00806078                OSSemCreate
+                0x0080618c                OSSemDel
+                0x0080642c                OSSemPend
+                0x008066a8                OSSemPendAbort
+                0x00806824                OSSemPost
+                0x0080694c                OSSemQuery
+                0x00806a7c                OSSemSet
+ .text          0x00806b80     0x1a40 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+                0x00806b80                OSTaskChangePrio
+                0x008070f4                OSTaskCreate
+                0x008072c8                OSTaskCreateExt
+                0x008074c8                OSTaskDel
+                0x008078d4                OSTaskDelReq
+                0x00807a44                OSTaskNameGet
+                0x00807bfc                OSTaskNameSet
+                0x00807dc0                OSTaskResume
+                0x00807fd8                OSTaskStkChk
+                0x008081d4                OSTaskSuspend
+                0x00808400                OSTaskQuery
+                0x00808544                OS_TaskStkClr
+ .text          0x008085c0      0x598 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+                0x008085c0                OSTimeDly
+                0x0080870c                OSTimeDlyHMSM
+                0x00808880                OSTimeDlyResume
+                0x00808a90                OSTimeGet
+                0x00808af4                OSTimeSet
+ .text          0x00808b58       0xf8 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+                0x00808b58                alt_irq_init
+                0x00808b8c                alt_sys_init
+ .text          0x00808c50      0x148 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+                0x00808c50                altera_avalon_jtag_uart_read_fd
+                0x00808ca8                altera_avalon_jtag_uart_write_fd
+                0x00808d00                altera_avalon_jtag_uart_close_fd
+                0x00808d48                altera_avalon_jtag_uart_ioctl_fd
+ .text          0x00808d98      0x580 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+                0x00808d98                altera_avalon_jtag_uart_init
+                0x008092a4                altera_avalon_jtag_uart_close
+ .text          0x00809318       0xf4 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+                0x00809318                altera_avalon_jtag_uart_ioctl
+ .text          0x0080940c      0x2c0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+                0x0080940c                altera_avalon_jtag_uart_read
+ .text          0x008096cc      0x2dc ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x008096cc                altera_avalon_jtag_uart_write
+ .text          0x008099a8       0xfc ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+                0x00809a1c                alt_avalon_timer_sc_init
+ .text          0x00809aa4      0x530 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+                0x00809aa4                get_DDRAM_addr
+                0x00809b20                alt_up_character_lcd_send_cmd
+                0x00809b54                alt_up_character_lcd_init
+                0x00809b88                alt_up_character_lcd_open_dev
+                0x00809bc8                alt_up_character_lcd_write
+                0x00809c40                alt_up_character_lcd_string
+                0x00809cb8                alt_up_character_lcd_write_fd
+                0x00809d04                alt_up_character_lcd_set_cursor_pos
+                0x00809d7c                alt_up_character_lcd_shift_cursor
+                0x00809e2c                alt_up_character_lcd_shift_display
+                0x00809edc                alt_up_character_lcd_erase_pos
+                0x00809f6c                alt_up_character_lcd_cursor_off
+                0x00809fa0                alt_up_character_lcd_cursor_blink_on
+ .text          0x00809fd4      0x154 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+                0x00809fd4                alt_alarm_start
+ .text          0x0080a128      0x15c ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+                0x0080a128                close
+ .text          0x0080a284       0x44 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+                0x0080a284                alt_dcache_flush_all
+ .text          0x0080a2c8       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .text          0x0080a2f4      0x114 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+                0x0080a2f4                alt_dev_llist_insert
+ .text          0x0080a408       0x64 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+                0x0080a408                _do_ctors
+ .text          0x0080a46c       0x64 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+                0x0080a46c                _do_dtors
+ .text          0x0080a4d0        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .text          0x0080a4d0       0x94 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+                0x0080a4d0                alt_find_dev
+ .text          0x0080a564       0x30 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+                0x0080a564                alt_icache_flush_all
+ .text          0x0080a594      0x13c ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+                0x0080a658                alt_io_redirect
+ .text          0x0080a6d0      0x1c0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+                0x0080a6d0                alt_irq_register
+ .text          0x0080a890        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .text          0x0080a890      0x2c4 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+                0x0080a96c                open
+ .text          0x0080ab54       0x60 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+                0x0080ab54                alt_release_fd
+ .text          0x0080abb4      0x1a8 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+                0x0080abb4                alt_alarm_stop
+                0x0080ac4c                alt_tick
+ .text          0x0080ad5c       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+                0x0080ad5c                altera_nios2_qsys_irq_init
+ .text          0x0080ad7c       0xd0 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+                0x0080ad7c                OSCtxSw
+                0x0080ad7c                OSIntCtxSw
+                0x0080ae08                OSStartHighRdy
+                0x0080ae28                OSStartTsk
+ .text          0x0080ae4c      0x418 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+                0x0080ae4c                OSTaskStkInit
+                0x0080b15c                OSTaskCreateHook
+                0x0080b17c                OSTaskDelHook
+                0x0080b19c                OSTaskSwHook
+                0x0080b1b8                OSTaskStatHook
+                0x0080b1d4                OSTimeTickHook
+                0x0080b1f0                OSInitHookBegin
+                0x0080b20c                OSInitHookEnd
+                0x0080b228                OSTaskIdleHook
+                0x0080b244                OSTCBInitHook
+ .text          0x0080b264      0x120 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+                0x0080b264                alt_find_file
+ .text          0x0080b384       0xf4 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+                0x0080b384                alt_get_fd
+ .text          0x0080b478       0x90 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+                0x0080b478                alt_icache_flush
+ .text          0x0080b508        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .text          0x0080b508        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .text          0x0080b508        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .text          0x0080b508       0x14 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+                0x0080b508                atexit
+ .text          0x0080b51c       0x38 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+                0x0080b51c                exit
+ .text          0x0080b554        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x0080b554        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .text          0x0080b554       0x74 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0080b554                memcmp
+ .text          0x0080b5c8       0xa0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0080b5c8                memcpy
+ .text          0x0080b668       0x98 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+                0x0080b668                memset
+ .text          0x0080b700       0x74 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+                0x0080b700                strlen
+ .text          0x0080b774      0x134 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+                0x0080b774                __register_exitproc
+ .text          0x0080b8a8      0x1b4 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+                0x0080b8ac                __call_exitprocs
+ .text          0x0080ba5c      0x14c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+                0x0080bad8                __divsi3
+                0x0080bb38                __modsi3
+                0x0080bb98                __udivsi3
+                0x0080bba0                __umodsi3
+ .text          0x0080bba8       0x6c ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+                0x0080bbe8                _exit
+ *(.gnu.warning.*)
+ *(.fini)
+                0x0080bc14                PROVIDE (__etext, ABSOLUTE (.))
+                0x0080bc14                PROVIDE (_etext, ABSOLUTE (.))
+                0x0080bc14                PROVIDE (etext, ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x0080bc14                . = ALIGN (0x4)
+                0x0080bc14                PROVIDE (__preinit_array_start, ABSOLUTE (.))
+ *(.preinit_array)
+                0x0080bc14                PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                0x0080bc14                PROVIDE (__init_array_start, ABSOLUTE (.))
+ *(.init_array)
+                0x0080bc14                PROVIDE (__init_array_end, ABSOLUTE (.))
+                0x0080bc14                PROVIDE (__fini_array_start, ABSOLUTE (.))
+ *(.fini_array)
+                0x0080bc14                PROVIDE (__fini_array_end, ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table)
+ *(.dynamic)
+                0x0080bc14                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+ *(.ctors)
+ *(SORT(.ctors.*))
+ .ctors.65535   0x0080bc14        0x4 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+                0x0080bc18                PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                0x0080bc18                PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+ *(.dtors)
+ *(SORT(.dtors.*))
+                0x0080bc18                PROVIDE (__DTOR_END__, ABSOLUTE (.))
+ *(.jcr)
+                0x0080bc18                . = ALIGN (0x4)
+
+.rodata         0x0080bc18      0x1ec
+                0x0080bc18                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x0080bc18                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0080bc18       0x48 obj/default/hello_ucosii.o
+ .rodata        0x0080bc60       0x14 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .rodata        0x0080bc74      0x120 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+                0x0080bc74                OSUnMapTbl
+ .rodata        0x0080bd94       0x5c ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .rodata        0x0080bdf0        0xc ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .rodata        0x0080bdfc        0x4 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .rodata.str1.4
+                0x0080be00        0x4 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ *(.rodata1)
+                0x0080be04                . = ALIGN (0x4)
+                0x0080be04                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x0080bc18                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+
+.rwdata         0x0080be04     0x1748 load address 0x0080d54c
+                0x0080be04                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x0080be04                . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .data          0x0080be04        0x0 obj/default/hello_ucosii.o
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .data          0x0080be04        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .data          0x0080be04     0x10f8 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .data          0x0080cefc        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0080cefc      0x1a8 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+                0x0080cefc                alt_dev_null
+                0x0080cf24                alt_fd_list
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .data          0x0080d0a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .data          0x0080d0a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .data          0x0080d0a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .data          0x0080d0a4      0x400 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .data          0x0080d4a4        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .data          0x0080d4a4        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+                0x008154a4                _gp = ABSOLUTE ((. + 0x8000))
+                0x008154a4                PROVIDE (gp, _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x0080d4a4        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .sdata         0x0080d4a8        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .sdata         0x0080d4ac       0x74 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+                0x0080d4ac                OSDebugEn
+                0x0080d4b0                OSEndiannessTest
+                0x0080d4b4                OSEventEn
+                0x0080d4b6                OSEventMax
+                0x0080d4b8                OSEventNameSize
+                0x0080d4ba                OSEventSize
+                0x0080d4bc                OSEventTblSize
+                0x0080d4be                OSEventMultiEn
+                0x0080d4c0                OSFlagEn
+                0x0080d4c2                OSFlagGrpSize
+                0x0080d4c4                OSFlagNodeSize
+                0x0080d4c6                OSFlagWidth
+                0x0080d4c8                OSFlagMax
+                0x0080d4ca                OSFlagNameSize
+                0x0080d4cc                OSLowestPrio
+                0x0080d4ce                OSMboxEn
+                0x0080d4d0                OSMemEn
+                0x0080d4d2                OSMemMax
+                0x0080d4d4                OSMemNameSize
+                0x0080d4d6                OSMemSize
+                0x0080d4d8                OSMemTblSize
+                0x0080d4da                OSMutexEn
+                0x0080d4dc                OSPtrSize
+                0x0080d4de                OSQEn
+                0x0080d4e0                OSQMax
+                0x0080d4e2                OSQSize
+                0x0080d4e4                OSRdyTblSize
+                0x0080d4e6                OSSemEn
+                0x0080d4e8                OSStkWidth
+                0x0080d4ea                OSTaskCreateEn
+                0x0080d4ec                OSTaskCreateExtEn
+                0x0080d4ee                OSTaskDelEn
+                0x0080d4f0                OSTaskIdleStkSize
+                0x0080d4f2                OSTaskProfileEn
+                0x0080d4f4                OSTaskMax
+                0x0080d4f6                OSTaskNameSize
+                0x0080d4f8                OSTaskStatEn
+                0x0080d4fa                OSTaskStatStkSize
+                0x0080d4fc                OSTaskStatStkChkEn
+                0x0080d4fe                OSTaskSwHookEn
+                0x0080d500                OSTCBPrioTblMax
+                0x0080d502                OSTCBSize
+                0x0080d504                OSTicksPerSec
+                0x0080d506                OSTimeTickHookEn
+                0x0080d508                OSVersionNbr
+                0x0080d50a                OSTmrEn
+                0x0080d50c                OSTmrCfgMax
+                0x0080d50e                OSTmrCfgNameSize
+                0x0080d510                OSTmrCfgWheelSize
+                0x0080d512                OSTmrCfgTicksPerSec
+                0x0080d514                OSTmrSize
+                0x0080d516                OSTmrTblSize
+                0x0080d518                OSTmrWheelSize
+                0x0080d51a                OSTmrWheelTblSize
+                0x0080d51c                OSDataSize
+ .sdata         0x0080d520       0x14 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+                0x0080d520                alt_fs_list
+                0x0080d528                alt_dev_list
+                0x0080d530                alt_max_fd
+ .sdata         0x0080d534        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+                0x0080d534                alt_errno
+ .sdata         0x0080d538        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+                0x0080d538                alt_priority_mask
+ .sdata         0x0080d53c        0x8 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+                0x0080d53c                alt_alarm_list
+ .sdata         0x0080d544        0x8 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+                0x0080d544                _impure_ptr
+                0x0080d548                _global_impure_ptr
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x0080d54c                . = ALIGN (0x4)
+                0x0080d54c                _edata = ABSOLUTE (.)
+                0x0080d54c                PROVIDE (edata, ABSOLUTE (.))
+                0x0080d54c                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0080d54c                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+
+.bss            0x0080ec94     0x553c
+                0x0080ec94                __bss_start = ABSOLUTE (.)
+                0x0080ec94                PROVIDE (__sbss_start, ABSOLUTE (.))
+                0x0080ec94                PROVIDE (___sbss_start, ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0080ec94        0x8 obj/default/hello_ucosii.o
+                0x0080ec94                button
+                0x0080ec98                myLCD
+ .sbss          0x0080ec9c        0xc ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+                0x0080ec9c                alt_argc
+                0x0080eca0                alt_argv
+                0x0080eca4                alt_envp
+ .sbss          0x0080eca8        0x8 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+                0x0080ecac                alt_envsem
+ .sbss          0x0080ecb0        0x8 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+                0x0080ecb4                alt_heapsem
+ .sbss          0x0080ecb8       0x50 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+                0x0080ecb8                OSLockNesting
+                0x0080ecb9                OSRunning
+                0x0080ecbc                OSIdleCtr
+                0x0080ecc0                OSPrioHighRdy
+                0x0080ecc1                OSPrioCur
+                0x0080ecc4                OSTCBList
+                0x0080ecc8                OSTickStepState
+                0x0080eccc                OSCtxSwCtr
+                0x0080ecd0                OSIdleCtrMax
+                0x0080ecd4                OSTCBFreeList
+                0x0080ecd8                OSCPUUsage
+                0x0080ecd9                OSTaskCtr
+                0x0080ecdc                OSMemFreeList
+                0x0080ece0                OSTCBHighRdy
+                0x0080ece4                OSQFreeList
+                0x0080ece8                OSRdyGrp
+                0x0080ece9                OSRdyTbl
+                0x0080ecec                OSEventFreeList
+                0x0080ecf0                OSIntNesting
+                0x0080ecf4                OSTCBCur
+                0x0080ecf8                OSTime
+                0x0080ecfc                OSFlagFreeList
+                0x0080ed00                OSStatRdy
+                0x0080ed04                OSIdleCtrRun
+ .sbss          0x0080ed08        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+                0x0080ed08                alt_fd_list_lock
+ .sbss          0x0080ed0c        0x4 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+                0x0080ed0c                alt_irq_active
+ .sbss          0x0080ed10        0x8 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+                0x0080ed10                _alt_tick_rate
+                0x0080ed14                _alt_nticks
+ .sbss          0x0080ed18        0x4 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+                0x0080ed18                errno
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                0x0080ed1c                PROVIDE (__sbss_end, ABSOLUTE (.))
+                0x0080ed1c                PROVIDE (___sbss_end, ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .bss           0x0080ed1c        0x0 obj/default/hello_ucosii.o
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .bss           0x0080ed1c        0x0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .bss           0x0080ed1c        0x0 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+ *(COMMON)
+ COMMON         0x0080ed1c     0x2000 obj/default/hello_ucosii.o
+                0x0080ed1c                task1_stk
+ COMMON         0x00810d1c     0x3224 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+                0x00810d1c                OSFlagTbl
+                0x0081108c                OSMemTbl
+                0x00811cbc                OSTaskStatStk
+                0x008124bc                OSQTbl
+                0x0081269c                OSTaskIdleStk
+                0x00812e9c                OSEventTbl
+                0x008139dc                OSTCBTbl
+                0x00813eec                OSTCBPrioTbl
+ COMMON         0x00813f40      0x100 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+                0x00813f40                alt_irq
+ COMMON         0x00814040      0x190 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+                0x00814040                _atexit0
+                0x008141d0                . = ALIGN (0x4)
+                0x008141d0                __bss_end = ABSOLUTE (.)
+
+.sdram_0        0x008141d0        0x0
+                0x008141d0                PROVIDE (_alt_partition_sdram_0_start, ABSOLUTE (.))
+ *(.sdram_0. sdram_0.*)
+                0x008141d0                . = ALIGN (0x4)
+                0x008141d0                PROVIDE (_alt_partition_sdram_0_end, ABSOLUTE (.))
+                0x008141d0                _end = ABSOLUTE (.)
+                0x008141d0                end = ABSOLUTE (.)
+                0x008141d0                __alt_stack_base = ABSOLUTE (.)
+                0x008141d0                PROVIDE (_alt_partition_sdram_0_load_addr, LOADADDR (.sdram_0))
+
+.sram_0         0x01080000        0x0 load address 0x008141d0
+                0x01080000                PROVIDE (_alt_partition_sram_0_start, ABSOLUTE (.))
+ *(.sram_0. sram_0.*)
+                0x01080000                . = ALIGN (0x4)
+                0x01080000                PROVIDE (_alt_partition_sram_0_end, ABSOLUTE (.))
+                0x008141d0                PROVIDE (_alt_partition_sram_0_load_addr, LOADADDR (.sram_0))
+
+.onchip_memory2_0
+                0x011041c0        0x0 load address 0x008141d0
+                0x011041c0                PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
+ *(.onchip_memory2_0. onchip_memory2_0.*)
+                0x011041c0                . = ALIGN (0x4)
+                0x011041c0                PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
+                0x008141d0                PROVIDE (_alt_partition_onchip_memory2_0_load_addr, LOADADDR (.onchip_memory2_0))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x26
+ *(.comment)
+ .comment       0x00000000       0x26 obj/default/hello_ucosii.o
+                                 0x27 (size before relaxing)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .comment       0x00000000       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .comment       0x00000000       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x718
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x00000028       0x20 obj/default/hello_ucosii.o
+ .debug_aranges
+                0x00000048       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_aranges
+                0x00000068       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_aranges
+                0x00000088       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_aranges
+                0x000000a8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_aranges
+                0x000000c8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_aranges
+                0x000000e8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_aranges
+                0x00000108       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_aranges
+                0x00000128       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_aranges
+                0x00000148       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_aranges
+                0x00000168       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_aranges
+                0x00000188       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_aranges
+                0x000001a8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_aranges
+                0x000001c8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x000001e8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_aranges
+                0x00000208       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_aranges
+                0x00000228       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_aranges
+                0x00000248       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_aranges
+                0x00000268       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_aranges
+                0x00000288       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_aranges
+                0x000002a8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_aranges
+                0x000002c8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_aranges
+                0x000002e8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_aranges
+                0x00000308       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x00000328       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_aranges
+                0x00000348       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_aranges
+                0x00000368       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_aranges
+                0x00000388       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_aranges
+                0x000003a8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_aranges
+                0x000003c8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x000003e8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_aranges
+                0x00000408       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_aranges
+                0x00000428       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_aranges
+                0x00000448       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_aranges
+                0x00000468       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_aranges
+                0x00000488       0x20 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_aranges
+                0x000004a8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+ .debug_aranges
+                0x000004c8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_aranges
+                0x000004e8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_aranges
+                0x00000508       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_aranges
+                0x00000528       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_aranges
+                0x00000548       0x30 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .debug_aranges
+                0x00000578       0x28 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_aranges
+                0x000005a0       0x38 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .debug_aranges
+                0x000005d8       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_aranges
+                0x000005f8       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_aranges
+                0x00000618       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000638       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x00000658       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_aranges
+                0x00000678       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_aranges
+                0x00000698       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_aranges
+                0x000006b8       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_aranges
+                0x000006d8       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_aranges
+                0x000006f8       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_pubnames
+                0x00000000     0x16cb
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x48 obj/default/hello_ucosii.o
+ .debug_pubnames
+                0x00000048       0x1f ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_pubnames
+                0x00000067       0x46 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_pubnames
+                0x000000ad       0x41 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_pubnames
+                0x000000ee       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_pubnames
+                0x00000136      0x3f8 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_pubnames
+                0x0000052e      0x3c5 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_pubnames
+                0x000008f3       0xd0 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_pubnames
+                0x000009c3       0x7c ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_pubnames
+                0x00000a3f       0xa9 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_pubnames
+                0x00000ae8       0x8a ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_pubnames
+                0x00000b72       0xe5 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_pubnames
+                0x00000c57       0x62 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_pubnames
+                0x00000cb9       0x34 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_pubnames
+                0x00000ced       0xa5 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_pubnames
+                0x00000d92       0x55 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_pubnames
+                0x00000de7       0x34 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_pubnames
+                0x00000e1b       0x33 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_pubnames
+                0x00000e4e       0x34 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_pubnames
+                0x00000e82       0x2f ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_pubnames
+                0x00000eb1      0x1cd ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_pubnames
+                0x0000107e       0x26 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_pubnames
+                0x000010a4       0x1c ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_pubnames
+                0x000010c0       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_pubnames
+                0x000010eb       0x78 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_pubnames
+                0x00001163       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_pubnames
+                0x0000118e       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_pubnames
+                0x000011ae       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_pubnames
+                0x000011ce       0x20 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .debug_pubnames
+                0x000011ee       0x23 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_pubnames
+                0x00001211       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_pubnames
+                0x0000123c       0x26 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_pubnames
+                0x00001262       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_pubnames
+                0x00001289       0x3b ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .debug_pubnames
+                0x000012c4       0x1b ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_pubnames
+                0x000012df       0x25 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_pubnames
+                0x00001304       0x68 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_pubnames
+                0x0000136c       0x31 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_pubnames
+                0x0000139d       0xcd ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_pubnames
+                0x0000146a       0x24 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_pubnames
+                0x0000148e       0x21 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_pubnames
+                0x000014af       0x27 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_pubnames
+                0x000014d6       0x32 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_pubnames
+                0x00001508       0x2a /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_pubnames
+                0x00001532       0x1b /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_pubnames
+                0x0000154d       0x39 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .debug_pubnames
+                0x00001586       0x1c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .debug_pubnames
+                0x000015a2       0x1d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_pubnames
+                0x000015bf       0x1d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_pubnames
+                0x000015dc       0x1d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_pubnames
+                0x000015f9       0x1d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_pubnames
+                0x00001616       0x2a /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_pubnames
+                0x00001640       0x27 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_pubnames
+                0x00001667       0x48 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_pubnames
+                0x000016af       0x1c ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_info     0x00000000    0x18bbb
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000       0x8e ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x0000008e      0x516 obj/default/hello_ucosii.o
+ .debug_info    0x000005a4      0x2a0 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_info    0x00000844      0x423 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_info    0x00000c67     0x1219 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_info    0x00001e80     0x1375 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_info    0x000031f5     0x1c2f ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_info    0x00004e24     0x1174 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_info    0x00005f98     0x128a ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_info    0x00007222      0x854 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_info    0x00007a76     0x10c4 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_info    0x00008b3a      0xd2c ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_info    0x00009866     0x13a2 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_info    0x0000ac08      0xa26 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_info    0x0000b62e      0xb49 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_info    0x0000c177      0xa18 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_info    0x0000cb8f      0x9a3 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_info    0x0000d532      0x682 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_info    0x0000dbb4      0x83e ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_info    0x0000e3f2      0x835 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x0000ec27      0x3de ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_info    0x0000f005      0x942 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_info    0x0000f947      0x488 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_info    0x0000fdcf      0x501 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_info    0x000102d0      0x182 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x00010452      0x823 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_info    0x00010c75      0x2ca ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_info    0x00010f3f      0x122 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_info    0x00011061      0x121 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_info    0x00011182      0x177 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .debug_info    0x000112f9      0x4b2 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_info    0x000117ab      0x16f ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0001191a      0x72f ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_info    0x00012049      0x482 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_info    0x000124cb      0x17a ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .debug_info    0x00012645      0x5b0 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_info    0x00012bf5      0x495 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_info    0x0001308a      0x457 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_info    0x000134e1      0x1bd ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_info    0x0001369e       0x96 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+ .debug_info    0x00013734     0x1319 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_info    0x00014a4d      0x4b9 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_info    0x00014f06      0x64b ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_info    0x00015551      0x1b7 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_info    0x00015708       0x97 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .debug_info    0x0001579f      0x305 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_info    0x00015aa4       0x9d ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .debug_info    0x00015b41      0x181 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_info    0x00015cc2      0x93f /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_info    0x00016601      0x93d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .debug_info    0x00016f3e       0x8c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .debug_info    0x00016fca      0x115 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_info    0x000170df      0x106 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_info    0x000171e5      0x113 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_info    0x000172f8       0xdb /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_info    0x000173d3      0x99c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_info    0x00017d6f      0x9e2 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_info    0x00018751      0x21c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_info    0x0001896d      0x24e ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_abbrev   0x00000000     0x4214
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x12 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x00000012      0x11b obj/default/hello_ucosii.o
+ .debug_abbrev  0x0000012d       0x88 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_abbrev  0x000001b5      0x120 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_abbrev  0x000002d5      0x1b3 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_abbrev  0x00000488      0x234 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_abbrev  0x000006bc      0x2aa ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_abbrev  0x00000966      0x114 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_abbrev  0x00000a7a      0x21b ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_abbrev  0x00000c95      0x235 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_abbrev  0x00000eca      0x20d ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_abbrev  0x000010d7      0x20d ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_abbrev  0x000012e4      0x20e ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_abbrev  0x000014f2      0x1de ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_abbrev  0x000016d0      0x1b9 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x00001889      0x13c ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_abbrev  0x000019c5      0x21e ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_abbrev  0x00001be3      0x135 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_abbrev  0x00001d18      0x1ee ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_abbrev  0x00001f06      0x1ea ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x000020f0      0x137 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_abbrev  0x00002227      0x127 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_abbrev  0x0000234e      0x172 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_abbrev  0x000024c0      0x102 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_abbrev  0x000025c2       0x57 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x00002619      0x10a ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_abbrev  0x00002723       0xf6 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_abbrev  0x00002819       0x76 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_abbrev  0x0000288f       0x76 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_abbrev  0x00002905       0x5e ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .debug_abbrev  0x00002963       0xd6 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_abbrev  0x00002a39       0x3f ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x00002a78       0xf7 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_abbrev  0x00002b6f      0x180 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_abbrev  0x00002cef       0x44 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .debug_abbrev  0x00002d33      0x119 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_abbrev  0x00002e4c       0xd3 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_abbrev  0x00002f1f      0x161 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_abbrev  0x00003080       0x64 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_abbrev  0x000030e4       0x14 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+ .debug_abbrev  0x000030f8      0x1d0 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_abbrev  0x000032c8       0xd6 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_abbrev  0x0000339e      0x173 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_abbrev  0x00003511       0x7a ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_abbrev  0x0000358b       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .debug_abbrev  0x0000359d      0x124 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_abbrev  0x000036c1       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .debug_abbrev  0x000036d3       0xb7 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_abbrev  0x0000378a      0x16e /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_abbrev  0x000038f8      0x157 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .debug_abbrev  0x00003a4f       0x3b /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .debug_abbrev  0x00003a8a       0x7c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x00003b06       0xb5 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x00003bbb       0xb8 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_abbrev  0x00003c73       0x8b /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_abbrev  0x00003cfe      0x1ae /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_abbrev  0x00003eac      0x1de /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_abbrev  0x0000408a       0xe0 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_abbrev  0x0000416a       0xaa ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_line     0x00000000     0xe999
+ *(.debug_line)
+ .debug_line    0x00000000       0x72 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x00000072      0x3e4 obj/default/hello_ucosii.o
+ .debug_line    0x00000456      0x21f ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_line    0x00000675      0x365 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_line    0x000009da      0x2e0 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_line    0x00000cba      0x39c ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_line    0x00001056     0x1684 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_line    0x000026da      0x3a9 ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_line    0x00002a83     0x1208 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_line    0x00003c8b      0x7ab ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_line    0x00004436      0xe8c ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_line    0x000052c2      0xa44 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_line    0x00005d06     0x114d ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_line    0x00006e53      0x550 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_line    0x000073a3      0x39d ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_line    0x00007740      0x338 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_line    0x00007a78      0x5b7 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_line    0x0000802f      0x375 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_line    0x000083a4      0x4b3 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_line    0x00008857      0x4c1 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x00008d18      0x2d2 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_line    0x00008fea      0x4e1 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_line    0x000094cb      0x2fd ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_line    0x000097c8      0x315 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_line    0x00009add      0x1d5 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x00009cb2      0x2d9 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_line    0x00009f8b      0x262 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_line    0x0000a1ed       0x83 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_line    0x0000a270       0x83 ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_line    0x0000a2f3      0x1b2 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .debug_line    0x0000a4a5      0x2f6 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_line    0x0000a79b      0x1c5 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000a960      0x33f ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_line    0x0000ac9f      0x375 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_line    0x0000b014       0x72 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_vars.o)
+ .debug_line    0x0000b086      0x37b ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_line    0x0000b401      0x295 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_line    0x0000b696      0x337 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_line    0x0000b9cd      0x1ef ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_line    0x0000bbbc       0x86 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_a.o)
+ .debug_line    0x0000bc42      0x349 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_line    0x0000bf8b      0x307 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_line    0x0000c292      0x337 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_line    0x0000c5c9      0x201 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_line    0x0000c7ca       0x6b ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .debug_line    0x0000c835      0x2e5 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_line    0x0000cb1a       0xab ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .debug_line    0x0000cbc5      0x200 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_line    0x0000cdc5      0x238 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_line    0x0000cffd      0x22d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+ .debug_line    0x0000d22a      0x1df /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+ .debug_line    0x0000d409      0x29f /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_line    0x0000d6a8      0x1ac /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_line    0x0000d854      0x301 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_line    0x0000db55      0x26d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_line    0x0000ddc2      0x313 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_line    0x0000e0d5      0x367 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_line    0x0000e43c      0x2c6 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_line    0x0000e702      0x297 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_frame    0x00000000     0x16ac
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x48 obj/default/hello_ucosii.o
+ .debug_frame   0x00000048       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_frame   0x00000090       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_frame   0x000000bc       0x4c ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_frame   0x00000108       0x4c ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_frame   0x00000154      0x3e4 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_frame   0x00000538       0x2c ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_frame   0x00000564      0x180 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_frame   0x000006e4       0xd4 ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_frame   0x000007b8      0x144 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_frame   0x000008fc       0xf0 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_frame   0x000009ec      0x160 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_frame   0x00000b4c       0xa0 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_frame   0x00000bec       0x64 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_frame   0x00000c50       0x80 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_frame   0x00000cd0       0x80 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_frame   0x00000d50       0x2c ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_frame   0x00000d7c       0x2c ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_frame   0x00000da8       0x2c ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x00000dd4       0x48 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_frame   0x00000e1c      0x17c ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_frame   0x00000f98       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_frame   0x00000fc4       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_frame   0x0000100c       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00001038       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_frame   0x00001064       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_frame   0x000010ac       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_frame   0x000010d8       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_frame   0x00001104       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_frame   0x00001130       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x0000115c       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_frame   0x000011a4       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_frame   0x000011d0       0x64 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_frame   0x00001234       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_frame   0x00001260       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_frame   0x000012a8       0x2c ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_frame   0x000012d4      0x128 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_frame   0x000013fc       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_frame   0x00001428       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_frame   0x00001454       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_frame   0x00001480       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_frame   0x000014ac       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_frame   0x000014cc       0x28 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_frame   0x000014f4       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00001514       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00001534       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_frame   0x00001554       0x20 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_frame   0x00001574       0x34 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_frame   0x000015a8       0x4c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x000015f4       0x70 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_frame   0x00001664       0x48 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_str      0x00000000      0xf02
+ *(.debug_str)
+ .debug_str     0x00000000       0x2b obj/default/hello_ucosii.o
+ .debug_str     0x0000002b       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_str     0x0000003d       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_str     0x0000004f       0x36 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_str     0x00000085       0x36 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_str     0x000000bb       0x46 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_str     0x00000101       0x2b ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_str     0x0000012c       0x4e ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_str     0x0000017a       0x2c ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_str     0x000001a6       0x36 ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_str     0x000001dc       0x36 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_str     0x00000212       0x23 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_str     0x00000235       0x1f ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_str     0x00000254       0x51 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_str     0x000002a5       0x12 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_str     0x000002b7       0x1a ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_str     0x000002d1       0x12 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_str     0x000002e3       0x22 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_str     0x00000305       0x22 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_str     0x00000327       0x12 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_str     0x00000339       0x55 ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_str     0x0000038e       0x23 ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_str     0x000003b1       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_str     0x000003c3       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_str     0x000003d5       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_str     0x000003e7       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_str     0x000003f9       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_errno.o)
+ .debug_str     0x0000040b       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_str     0x0000041d       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_str     0x0000042f       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_str     0x00000441       0x21 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_str     0x00000462       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_str     0x00000474       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_str     0x00000486       0x1a ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_str     0x000004a0       0x12 ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_str     0x000004b2       0x20 ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_str     0x000004d2       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_str     0x000004e4       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_str     0x000004f6       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_str     0x00000508       0x12 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_str     0x0000051a      0x17e /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+                                0x1c4 (size before relaxing)
+ .debug_str     0x00000698      0x384 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+                                0x511 (size before relaxing)
+ .debug_str     0x00000a1c       0xd6 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-impure.o)
+                                0x51f (size before relaxing)
+ .debug_str     0x00000af2       0x3d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-int_errno.o)
+                                0x168 (size before relaxing)
+ .debug_str     0x00000b2f       0xda /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+                                0x16f (size before relaxing)
+ .debug_str     0x00000c09       0x69 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+                                0x12d (size before relaxing)
+ .debug_str     0x00000c72       0x56 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+                                0x183 (size before relaxing)
+ .debug_str     0x00000cc8       0x42 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+                                0x182 (size before relaxing)
+ .debug_str     0x00000d0a       0x51 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+                                0x529 (size before relaxing)
+ .debug_str     0x00000d5b       0x7b /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+                                0x553 (size before relaxing)
+ .debug_str     0x00000dd6      0x110 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+                                0x1b9 (size before relaxing)
+ .debug_str     0x00000ee6       0x1c ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_loc      0x00000000     0x23ed
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x56 obj/default/hello_ucosii.o
+ .debug_loc     0x00000056       0x56 ../buttonTest2_bsp//libucosii_bsp.a(alt_load.o)
+ .debug_loc     0x000000ac       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_main.o)
+ .debug_loc     0x000000d7       0x57 ../buttonTest2_bsp//libucosii_bsp.a(alt_env_lock.o)
+ .debug_loc     0x0000012e       0x57 ../buttonTest2_bsp//libucosii_bsp.a(alt_malloc_lock.o)
+ .debug_loc     0x00000185      0x5e2 ../buttonTest2_bsp//libucosii_bsp.a(os_core.o)
+ .debug_loc     0x00000767       0x2b ../buttonTest2_bsp//libucosii_bsp.a(os_dbg.o)
+ .debug_loc     0x00000792      0x232 ../buttonTest2_bsp//libucosii_bsp.a(os_flag.o)
+ .debug_loc     0x000009c4      0x12d ../buttonTest2_bsp//libucosii_bsp.a(os_mem.o)
+ .debug_loc     0x00000af1      0x1da ../buttonTest2_bsp//libucosii_bsp.a(os_q.o)
+ .debug_loc     0x00000ccb      0x158 ../buttonTest2_bsp//libucosii_bsp.a(os_sem.o)
+ .debug_loc     0x00000e23      0x207 ../buttonTest2_bsp//libucosii_bsp.a(os_task.o)
+ .debug_loc     0x0000102a       0xd7 ../buttonTest2_bsp//libucosii_bsp.a(os_time.o)
+ .debug_loc     0x00001101       0x81 ../buttonTest2_bsp//libucosii_bsp.a(alt_sys_init.o)
+ .debug_loc     0x00001182       0xac ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_fd.o)
+ .debug_loc     0x0000122e       0xac ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_loc     0x000012da       0x2b ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_ioctl.o)
+ .debug_loc     0x00001305       0x2c ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_loc     0x00001331       0x2c ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x0000135d       0x56 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_timer_sc.o)
+ .debug_loc     0x000013b3      0x22f ../buttonTest2_bsp//libucosii_bsp.a(altera_up_avalon_character_lcd.o)
+ .debug_loc     0x000015e2       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_alarm_start.o)
+ .debug_loc     0x0000160d       0x56 ../buttonTest2_bsp//libucosii_bsp.a(alt_close.o)
+ .debug_loc     0x00001663       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_dcache_flush_all.o)
+ .debug_loc     0x0000168e       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_dev.o)
+ .debug_loc     0x000016b9       0x56 ../buttonTest2_bsp//libucosii_bsp.a(alt_dev_llist_insert.o)
+ .debug_loc     0x0000170f       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_do_ctors.o)
+ .debug_loc     0x0000173a       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_do_dtors.o)
+ .debug_loc     0x00001765       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_find_dev.o)
+ .debug_loc     0x00001790       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush_all.o)
+ .debug_loc     0x000017bb       0x56 ../buttonTest2_bsp//libucosii_bsp.a(alt_io_redirect.o)
+ .debug_loc     0x00001811       0x2c ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_register.o)
+ .debug_loc     0x0000183d       0x81 ../buttonTest2_bsp//libucosii_bsp.a(alt_open.o)
+ .debug_loc     0x000018be       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_release_fd.o)
+ .debug_loc     0x000018e9       0x56 ../buttonTest2_bsp//libucosii_bsp.a(alt_tick.o)
+ .debug_loc     0x0000193f       0x2b ../buttonTest2_bsp//libucosii_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_loc     0x0000196a      0x1ae ../buttonTest2_bsp//libucosii_bsp.a(os_cpu_c.o)
+ .debug_loc     0x00001b18       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_find_file.o)
+ .debug_loc     0x00001b43       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_get_fd.o)
+ .debug_loc     0x00001b6e       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_icache_flush.o)
+ .debug_loc     0x00001b99       0x2b ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_handler.o)
+ .debug_loc     0x00001bc4       0x1e /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-atexit.o)
+ .debug_loc     0x00001be2       0x3d /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-exit.o)
+ .debug_loc     0x00001c1f      0x114 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_loc     0x00001d33       0xca /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_loc     0x00001dfd       0xa1 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-memset.o)
+ .debug_loc     0x00001e9e       0x3c /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_loc     0x00001eda      0x120 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__atexit.o)
+ .debug_loc     0x00001ffa      0x1cb /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .debug_loc     0x000021c5      0x1d2 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a(lib2-divmod.o)
+ .debug_loc     0x00002397       0x56 ../buttonTest2_bsp//libucosii_bsp.a(alt_exit.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x00000000       0x30
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x00000000       0x30 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+                0x01000000                __alt_data_end = 0x1000000
+                0x01000000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                0x008141d0                PROVIDE (__alt_stack_limit, __alt_stack_base)
+                0x008141d0                PROVIDE (__alt_heap_start, end)
+                0x01000000                PROVIDE (__alt_heap_limit, 0x1000000)
+OUTPUT(buttonTest2.elf elf32-littlenios2)
+
+.debug_ranges   0x00000000       0xa8
+ .debug_ranges  0x00000000       0x20 ../buttonTest2_bsp//obj/HAL/src/crt0.o
+ .debug_ranges  0x00000020       0x18 ../buttonTest2_bsp//libucosii_bsp.a(altera_avalon_jtag_uart_init.o)
+ .debug_ranges  0x00000038       0x28 ../buttonTest2_bsp//libucosii_bsp.a(alt_irq_entry.o)
+ .debug_ranges  0x00000060       0x30 ../buttonTest2_bsp//libucosii_bsp.a(alt_exception_entry.o)
+ .debug_ranges  0x00000090       0x18 /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/lib/libc.a(lib_a-__call_atexit.o)

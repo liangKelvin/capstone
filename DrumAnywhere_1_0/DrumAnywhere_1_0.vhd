@@ -18,8 +18,7 @@ library ieee;
 	port
 	(
 		-- Input ports and 50 MHz Clock
-		KEY		: in  std_logic_vector (0 downto 0);
-		SW			: in 	std_logic_vector (0 downto 0);
+		KEY		: in  std_logic_vector (3 downto 0);
 		CLOCK_50	: in  std_logic;
 		
 		-- Green leds on board
@@ -105,7 +104,6 @@ architecture structure of DrumAnywhere_1_0 is
             sdram_0_wire_we_n                       : out   std_logic;                                        -- we_n
             altpll_0_c0_clk                         : out   std_logic;                                        -- clk
             green_leds_external_connection_export   : out   DE2_LED_GREEN;                     -- export
-            switch_external_connection_export       : in    std_logic                     := 'X';             -- export
             sram_0_external_interface_DQ            : inout DE2_SRAM_DATA_BUS := (others => 'X'); -- DQ
             sram_0_external_interface_ADDR          : out   DE2_SRAM_ADDR_BUS;                    -- ADDR
             sram_0_external_interface_LB_N          : out   std_logic;                                        -- LB_N
@@ -131,7 +129,8 @@ architecture structure of DrumAnywhere_1_0 is
 				spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
             spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
             spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
-            spi_0_external_SS_n                              : out   std_logic                                         -- SS_n
+            spi_0_external_SS_n                              : out   std_logic;                                        -- SS_n
+				buttons_external_connection_export               : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- export
         );
     end component niosII_system;
 
@@ -140,6 +139,7 @@ architecture structure of DrumAnywhere_1_0 is
 	 signal BA	: std_logic_vector (1 downto 0);
 	 signal DQM	:	std_logic_vector (1 downto 0);
 	 signal sys_clk : std_logic;
+	 signal rst: std_LOGIC;
 	 
 
 begin
@@ -150,12 +150,14 @@ begin
 	DRAM_UDQM <= DQM(1);
 	DRAM_LDQM <= DQM(0);
 	
+	rst <= '1';
+	
 	-- Component Instantiation Statement (optional)
 	
 	  u0 : component niosII_system
         port map (
             clk_clk                                 => CLOCK_50,                                
-            reset_reset_n                           => KEY(0),                          
+            reset_reset_n                           => rst,                          
             sdram_0_wire_addr                       => DRAM_ADDR,                      
             sdram_0_wire_ba                         => BA,                        
             sdram_0_wire_cas_n                      => DRAM_CAS_N,                      
@@ -166,8 +168,7 @@ begin
             sdram_0_wire_ras_n                      => DRAM_RAS_N,                     
             sdram_0_wire_we_n                       => DRAM_WE_N,                       
             altpll_0_c0_clk                         => DRAM_CLK,                        
-            green_leds_external_connection_export   => LEDG,  
-            switch_external_connection_export       => SW(0),       
+            green_leds_external_connection_export   => LEDG,       
             sram_0_external_interface_DQ            => SRAM_DQ,           
             sram_0_external_interface_ADDR          => SRAM_ADDR,          
             sram_0_external_interface_LB_N          => SRAM_LB_N,         
@@ -193,7 +194,9 @@ begin
 				spi_0_external_MISO                              => SD_DAT,                              --                              spi_0_external.MISO
             spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
             spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
-            spi_0_external_SS_n                              => SD_DAT3                              --    
+            spi_0_external_SS_n                              => SD_DAT3, 
+				buttons_external_connection_export               => KEY(3 downto 0)              --                 buttons_external_connection.export			--    
+				
 		 );
 
 end structure;
