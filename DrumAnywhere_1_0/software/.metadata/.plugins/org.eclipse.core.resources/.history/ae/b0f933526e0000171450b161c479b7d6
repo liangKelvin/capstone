@@ -109,72 +109,61 @@ void initMPU9250(){
 // initialization. It calculates the average of the at-rest readings and then
 // loads the resulting offsets into accelerometer and gyro bias registers.
 void calibrateMPU9250(float * gyroBias, float * accelBias) {
-
-  alt_u8 deviceAddress = 0xD0;
   alt_u8 data[12]; // data array to hold accelerometer and gyro x, y, z, data
   alt_u16 ii, packet_count, fifo_count;
   alt_32 gyro_bias[3]  = {0, 0, 0}, accel_bias[3] = {0, 0, 0};
 
   // reset device
   // Write a one to bit 7 reset bit; toggle reset device
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, PWR_MGMT_1, READ_FLAG, 1);
-  OSTimeDlyHMSM(0, 0, 0, 100);
+  writeByte(MPU9250_ADDRESS, PWR_MGMT_1, READ_FLAG);
+  delay(100);
+
   // get stable time source; Auto select clock source to be PLL gyroscope
   // reference if ready else use the internal oscillator, bits 2:0 = 001
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, PWR_MGMT_1, 0x01, 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, PWR_MGMT_2, 0x00, 1);
-
-  OSTimeDlyHMSM(0, 0, 0, 200);
+  writeByte(MPU9250_ADDRESS, PWR_MGMT_1, 0x01);
+  writeByte(MPU9250_ADDRESS, PWR_MGMT_2, 0x00);
+  delay(200);
 
   // Configure device for bias calculation
   // Disable all interrupts
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, INT_ENABLE, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, INT_ENABLE, 0x00);
   // Disable FIFO
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, FIFO_EN, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, FIFO_EN, 0x00);
   // Turn on internal clock source
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, PWR_MGMT_1, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, PWR_MGMT_1, 0x00);
   // Disable I2C master
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, I2C_MST_CTRL, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, I2C_MST_CTRL, 0x00);
   // Disable FIFO and I2C master modes
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  USER_CTRL, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, USER_CTRL, 0x00);
   // Reset FIFO and DMP
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  USER_CTRL, 0x0C, 1);
-  OSTimeDlyHMSM(0, 0, 0, 15);
+  writeByte(MPU9250_ADDRESS, USER_CTRL, 0x0C);
+  delay(15);
 
   // Configure MPU6050 gyro and accelerometer for bias calculation
   // Set low-pass filter to 188 Hz
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, CONFIG, 0x01, 1);
+  writeByte(MPU9250_ADDRESS, CONFIG, 0x01);
   // Set sample rate to 1 kHz
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  SMPLRT_DIV, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, SMPLRT_DIV, 0x00);
   // Set gyro full-scale to 250 degrees per second, maximum sensitivity
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, GYRO_CONFIG, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, GYRO_CONFIG, 0x00);
   // Set accelerometer full-scale to 2 g, maximum sensitivity
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  ACCEL_CONFIG, 0x00, 1);
+  writeByte(MPU9250_ADDRESS, ACCEL_CONFIG, 0x00);
 
   alt_u16  gyrosensitivity  = 131;   // = 131 LSB/degrees/sec
   alt_u16  accelsensitivity = 16384; // = 16384 LSB/g
 
   // Configure FIFO to capture accelerometer and gyro data for bias calculation
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  USER_CTRL, 0x40, 1);  // Enable FIFO
+  writeByte(MPU9250_ADDRESS, USER_CTRL, 0x40);  // Enable FIFO
   // Enable gyro and accelerometer sensors for FIFO  (max size 512 bytes in
   // MPU-9150)
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  FIFO_EN, 0x78, 1);
-
-  OSTimeDlyHMSM(0, 0, 0, 40);  // accumulate 40 samples in 40 milliseconds = 480 bytes
+  writeByte(MPU9250_ADDRESS, FIFO_EN, 0x78);
+  delay(40);  // accumulate 40 samples in 40 milliseconds = 480 bytes
 
   // At end of sample accumulation, turn off FIFO sensor read
   // Disable gyro and accelerometer sensors for FIFO
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  FIFO_EN, 0x00, 1);
-
-
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
-
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
+  writeByte(MPU9250_ADDRESS, FIFO_EN, 0x00);
   // Read FIFO sample count
-  I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, FIFO_COUNTH, &data[0], 2, true);
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
-
+  readBytes(MPU9250_ADDRESS, FIFO_COUNTH, 2, &data[0]);
   fifo_count = ((alt_u16)data[0] << 8) | data[1];
   // How many sets of full gyro and accelerometer data for averaging
   packet_count = fifo_count/12;
@@ -183,10 +172,7 @@ void calibrateMPU9250(float * gyroBias, float * accelBias) {
   {
     alt_16 accel_temp[3] = {0, 0, 0}, gyro_temp[3] = {0, 0, 0};
     // Read data for averaging
-    I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-	// Read FIFO sample count
-	I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, FIFO_R_W, &data[0], 12, true);
-	I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+    readBytes(MPU9250_ADDRESS, FIFO_R_W, 12, &data[0]);
     // Form signed 16-bit integer for each sample in FIFO
     accel_temp[0] = (alt_16) (((alt_16)data[0] << 8) | data[1]  );
     accel_temp[1] = (alt_16) (((alt_16)data[2] << 8) | data[3]  );
@@ -235,16 +221,12 @@ void calibrateMPU9250(float * gyroBias, float * accelBias) {
   data[5] = (-gyro_bias[2]/4)       & 0xFF;
 
   // Push gyro biases to hardware registers
-
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  XG_OFFSET_H, data[0], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  XG_OFFSET_L, data[1], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, YG_OFFSET_H, data[2], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, YG_OFFSET_L, data[3], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ZG_OFFSET_H, data[4], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ZG_OFFSET_L, data[5], 1);
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
-
+  writeByte(MPU9250_ADDRESS, XG_OFFSET_H, data[0]);
+  writeByte(MPU9250_ADDRESS, XG_OFFSET_L, data[1]);
+  writeByte(MPU9250_ADDRESS, YG_OFFSET_H, data[2]);
+  writeByte(MPU9250_ADDRESS, YG_OFFSET_L, data[3]);
+  writeByte(MPU9250_ADDRESS, ZG_OFFSET_H, data[4]);
+  writeByte(MPU9250_ADDRESS, ZG_OFFSET_L, data[5]);
 
   // Output scaled gyro biases for display in the main program
   gyroBias[0] = (float) gyro_bias[0]/(float) gyrosensitivity;
@@ -262,17 +244,11 @@ void calibrateMPU9250(float * gyroBias, float * accelBias) {
   // A place to hold the factory accelerometer trim biases
   alt_32 accel_bias_reg[3] = {0, 0, 0};
   // Read factory accelerometer trim values
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-  I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, XA_OFFSET_H, &data[0], 2, true);
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+  readBytes(MPU9250_ADDRESS, XA_OFFSET_H, 2, &data[0]);
   accel_bias_reg[0] = (alt_32) (((alt_16)data[0] << 8) | data[1]);
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-  I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, YA_OFFSET_H, &data[0], 2, true);
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+  readBytes(MPU9250_ADDRESS, YA_OFFSET_H, 2, &data[0]);
   accel_bias_reg[1] = (alt_32) (((alt_16)data[0] << 8) | data[1]);
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-  I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ZA_OFFSET_H, &data[0], 2, true);
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+  readBytes(MPU9250_ADDRESS, ZA_OFFSET_H, 2, &data[0]);
   accel_bias_reg[2] = (alt_32) (((alt_16)data[0] << 8) | data[1]);
 
   // Define mask for temperature compensation bit 0 of lower byte of
@@ -317,15 +293,12 @@ void calibrateMPU9250(float * gyroBias, float * accelBias) {
   // Apparently this is not working for the acceleration biases in the MPU-9250
   // Are we handling the temperature correction bit properly?
   // Push accelerometer biases to hardware registers
-  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  XA_OFFSET_H, data[0], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress,  XA_OFFSET_L, data[1], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, YA_OFFSET_H, data[2], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, YA_OFFSET_L, data[3], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ZA_OFFSET_H, data[4], 1);
-  I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ZA_OFFSET_L, data[5], 1);
-  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
-
+  writeByte(MPU9250_ADDRESS, XA_OFFSET_H, data[0]);
+  writeByte(MPU9250_ADDRESS, XA_OFFSET_L, data[1]);
+  writeByte(MPU9250_ADDRESS, YA_OFFSET_H, data[2]);
+  writeByte(MPU9250_ADDRESS, YA_OFFSET_L, data[3]);
+  writeByte(MPU9250_ADDRESS, ZA_OFFSET_H, data[4]);
+  writeByte(MPU9250_ADDRESS, ZA_OFFSET_L, data[5]);
 
   // Output scaled accelerometer biases for display in the main program
   accelBias[0] = (float)accel_bias[0]/(float)accelsensitivity;

@@ -3290,3 +3290,9 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-03-03 16:41:07.839
 !MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090d8 --id=0x0 --timestamp=1487970298 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-03 17:32:32.199
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090d8 --id=0x0 --timestamp=1487970298]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-03 17:32:33.887
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090d8 --id=0x0 --timestamp=1487970298 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
