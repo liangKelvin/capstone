@@ -40,53 +40,39 @@
 #include "altera_up_avalon_character_lcd.h"
 #include <efs.h>
 #include <ls.h>
-
-/* Definition of Task Stacks */
-#define   TASK_STACKSIZE       2048
-OS_STK    task1_stk[TASK_STACKSIZE];
-OS_STK    task2_stk[TASK_STACKSIZE];
-OS_STK	  task3_stk[TASK_STACKSIZE];
-
-/* Definition of Task Priorities */
-
-#define TASK1_PRIORITY      3
-#define TASK2_PRIORITY      2
-#define TASK3_PRIORITY		1
+#include <errno.h>
 
 #define PI 3.14159265
 #define     BUFFER_SIZE    128
 
 OS_EVENT *lcd_sem;
 
-// WAVE file header format
-typedef struct {
-	unsigned char riff[4];						// RIFF string
-	unsigned int overall_size	;				// overall size of file in bytes
-	unsigned char wave[4];						// WAVE string
-	unsigned char fmt_chunk_marker[4];			// fmt string with trailing null char
-	unsigned int length_of_fmt;					// length of the format data
-	unsigned int format_type;					// format type. 1-PCM, 3- IEEE float, 6 - 8bit A law, 7 - 8bit mu law
-	unsigned int channels;						// no.of channels
-	unsigned int sample_rate;					// sampling rate (blocks per second)
-	unsigned int byterate;						// SampleRate * NumChannels * BitsPerSample/8
-	unsigned int block_align;					// NumChannels * BitsPerSample/8
-	unsigned int bits_per_sample;				// bits per sample, 8- 8bits, 16- 16 bits etc
-	unsigned char data_chunk_header [4];		// DATA string or FLLR string
-	unsigned int data_size;						// NumSamples * NumChannels * BitsPerSample/8 - size of the next chunk that will be read
-}HEADER;
+//// WAVE file header format
+//typedef struct {
+//	unsigned char riff[4];						// RIFF string
+//	unsigned int overall_size	;				// overall size of file in bytes
+//	unsigned char wave[4];						// WAVE string
+//	unsigned char fmt_chunk_marker[4];			// fmt string with trailing null char
+//	unsigned int length_of_fmt;					// length of the format data
+//	unsigned int format_type;					// format type. 1-PCM, 3- IEEE float, 6 - 8bit A law, 7 - 8bit mu law
+//	unsigned int channels;						// no.of channels
+//	unsigned int sample_rate;					// sampling rate (blocks per second)
+//	unsigned int byterate;						// SampleRate * NumChannels * BitsPerSample/8
+//	unsigned int block_align;					// NumChannels * BitsPerSample/8
+//	unsigned int bits_per_sample;				// bits per sample, 8- 8bits, 16- 16 bits etc
+//	unsigned char data_chunk_header [4];		// DATA string or FLLR string
+//	unsigned int data_size;						// NumSamples * NumChannels * BitsPerSample/8 - size of the next chunk that will be read
+//}HEADER;
 
-typedef struct {
-	euint8 *fileBuffer;
-	unsigned int *fileBufL;
-	unsigned int *fileBufR;
-	HEADER wavHeader;
-	int buffersize;
-	int numberSamples;
-}sdCardInfo;
+//typedef struct {
+//	euint8* snare;
+//	euint8* crash;
+//	euint8* hihat;
+//}sdCardInfo;
 
-sdCardInfo* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, sdCardInfo* sdCard);
-sdCardInfo parseHeader(sdCardInfo* sdCard);
-void printInfo();
+euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, euint8* wavBuffer);
+void audioInit(alt_up_av_config_dev * audio_config_dev);
+unsigned int* parseHeader(euint8* fileBuffer, unsigned int numberSamples);
 void sdInit(EmbeddedFileSystem *efsl, File *readFile);
 
 
@@ -96,16 +82,87 @@ alt_up_audio_dev * audio_dev;
 /* The main function creates two task and starts multi-tasking */
 int main(void) {
 
+	// variable declarations
+
+	// Create EFSL containers
+	EmbeddedFileSystem efsl;
+	File readFile;
 
 	alt_up_av_config_dev * audio_config_dev;
 	audio_config_dev = alt_up_av_config_open_dev("/dev/audio_and_video_config_0");
-	// Create EFSL containers
-	EmbeddedFileSystem efsl;
+
+	char *fileNames[3];
+	fileNames[0] = "snare2.wav";
+	fileNames[1] = "crash.wav";
+	fileNames[2] = "hihat.wav";
+
+//	int i;
+//	for(i = 0; i < 3; i++) {
+//		sd_array[i] = malloc(sizeof(sdCardInfo));
+//		if(!(sd_array[i])) {
+//			perror("malloc failled\n");
+//		}
+//	}
+
+	unsigned int* snare;
+	unsigned int* crash;
+	unsigned int* hihat;
+
+	audioInit(audio_config_dev);
+	sdInit(&efsl, &readFile);
+
+	unsigned int snareNumberSamples = 7235;
+	unsigned int crashNumberSamples = 63342;
+	unsigned int hihatNumberSamples = 98218;
+	euint8* snareTemp = malloc(29102 * sizeof(eint8));
+	euint8* crashTemp = malloc(253412 * sizeof(eint8));
+	euint8* hihatTemp = malloc(392916 * sizeof(eint8));
+
+	snareTemp = sdRead(fileNames[0], &efsl, &readFile, snareTemp);
+	crashTemp = sdRead(fileNames[1], &efsl, &readFile, crashTemp);
+	hihatTemp = sdRead(fileNames[2], &efsl, &readFile, hihatTemp);
+
+	snare = parseHeader(snareTemp, snareNumberSamples);
+	crash = parseHeader(crashTemp, crashNumberSamples);
+	hihat = parseHeader(hihatTemp, hihatNumberSamples);
+
+	int count = 0;
+	printf("playing sample");
+
+		while(1) {
+
+			int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+			if(fifospace >= 128) {
+				if(count >= hihatNumberSamples) {
+					count = 0;
+				}
+					alt_up_audio_write_fifo(audio_dev, hihat + count, 128, ALT_UP_AUDIO_RIGHT);
+					alt_up_audio_write_fifo(audio_dev, hihat + count, 128, ALT_UP_AUDIO_LEFT);
+					count += 128;
+
+			}
+		}
+}
 
 
-	File readFile;
-	File readFile2;
-	File readFile3;
+
+void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
+
+	// Initialises the filesystem on the SD card, if the filesystem does not
+	// init properly then it displays an error message.
+	printf("Attempting to init filesystem");
+	int ret = efs_init(efsl, SD_CARD_SPI_MASTER_NAME);
+
+	// Initialize efsl
+	if(ret != 0)
+	{
+	printf("...could not initialize filesystem.\n");
+	}
+	else
+	printf("...success!\n");
+}
+
+void audioInit(alt_up_av_config_dev * audio_config_dev) {
 
 	if ( audio_config_dev == NULL)
 		printf("Error: could not open audio config device \n");
@@ -131,210 +188,119 @@ int main(void) {
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
 //	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x7, 0x10);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
-
-	char *fileNames[3];
-	fileNames[0] = "snare2.wav";
-	fileNames[1] = "crash.wav";
-	fileNames[2] = "hihat.wav";
-	sdCardInfo* sd_array[3];
-	int i;
-	for(i = 0; i < 3; i++) {
-		sd_array[i] = malloc(sizeof(sdCardInfo));
-	}
-
-	sdCardInfo *(*sd_pointer)[] = &sd_array;
-
-	sdInit(&efsl, &readFile);
-
-	sd_array[0] = sdRead(fileNames[0], &efsl, &readFile, sd_array[0]);
-	sd_array[1] = sdRead(fileNames[1], &efsl, &readFile2, sd_array[1]);
-	sd_array[2] = sdRead(fileNames[2], &efsl, &readFile3, sd_array[2]);
-
-//	for(i = 0; i < 3; i++) {
-
-//	}
-
-//	for(i = 0; i < BUFFER_SIZE; i++){
-//	  // Do we need to shift the values by 0x7fff like above for l_buff?
-//		//
-//	  l_buf[i] = (sin(2000 * (2 * PI) * i / 32000))*0x6fff;
-//	  //printf(" sin: %d\n", l_buf[i]);
-//	}
-
-	int k = 0;
-	int count = 0;
-	while(1) {
-
-		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
-		if(fifospace >= 128) {
-			if(count >= sd_array[0]->numberSamples) {
-				count = 0;
-			}
-				alt_up_audio_write_fifo(audio_dev, sd_array[0]->fileBufL + count, 128, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo(audio_dev, sd_array[0]->fileBufL + count, 128, ALT_UP_AUDIO_LEFT);
-				count += 128;
-
-		}
-	}
 }
 
 
-// sdRead will parse sdCard of all drumSounds
-sdCardInfo* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, sdCardInfo* sdCard) {
+// sdRead will read wav file given its filename and the efsl needed variables
+euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, euint8* wavBuffer) {
 
-		// read all files from sdCard
+	// read all files from sdCard
 
-		// You could do some scanning of the file system here using the UNIX-like
-		// API functions such as "ls_openDir(...)" and "ls_getNext(...). Reference
-		// the included PDF for the documentation to do such a thing. This example
-		// simply shows reading a file with a known filename.
+	// You could do some scanning of the file system here using the UNIX-like
+	// API functions such as "ls_openDir(...)" and "ls_getNext(...). Reference
+	// the included PDF for the documentation to do such a thing. This example
+	// simply shows reading a file with a known filename.
 
-		// Open the test file
-		printf("\nAttempting to open file: \"%s\"\n", fileName);
+	// Open the test file
+	printf("\nAttempting to open file: \"%s\"\n", fileName);
 
-		int ret1 = file_fopen(readFile, &efsl->myFs, fileName, 'r');
-		printf("ret1: %d\n", ret1);
-		if (file_fopen(readFile, &efsl->myFs, fileName, 'r') != 0)
-		{
-			printf("Error:\tCould not open file\n");
-		}
-		else
-		{
-			printf("Reading file...\n");
-		}
+	int ret1 = file_fopen(readFile, &efsl->myFs, fileName, 'r');
+	printf("ret1: %d\n", ret1);
+	if (ret1 != 0)
+	{
+		printf("Error:\tCould not open file\n");
+	}
+	else
+	{
+		printf("Reading file..., %x\n", readFile);
+	}
 
-		// Create a memory buffer to read the file into
-		sdCard.fileBuffer = malloc(readFile->FileSize * sizeof(eint8));
-		sdCard.buffersize = (int)readFile->FileSize * sizeof(eint8);
-		//printf("buffersize: %d \n", sdCard.buffersize);
+	euint8* fileBuffer = malloc(readFile->FileSize * sizeof(eint8));
+	if (!(fileBuffer)) {
+		perror("malloc failed!\n");
+	}
 
-		if (!(sdCard.fileBuffer))
-		{
-			printf("malloc failed!\n");
-		}
+	// Read all the file's contents into the buffer. See the file_fread(...) function
+	// for the ability to read chunks of the file at a time, which is desirable for
+	// larger files.
+	unsigned int bytesRead = file_read(readFile, readFile->FileSize, fileBuffer);
+	printf("%u bytes read from the file\n", bytesRead);
 
-		// Read all the file's contents into the buffer. See the file_fread(...) function
-		// for the ability to read chunks of the file at a time, which is desirable for
-		// larger files.
-		unsigned int bytesRead = file_read(readFile, readFile->FileSize, sdCard.fileBuffer);
+	// Close the file
+	if (file_fclose(readFile) != 0) {
+		printf("Error:\tCould not close file properly\n");
+	}
 
-		printf("%u bytes read from the file\n", bytesRead);
+	return fileBuffer;
+	// Unmount the file system
+	fs_umount(&efsl->myFs);
+}
 
-		// Close the file
-		if (file_fclose(readFile) != 0) {
-			printf("Error:\tCould not close file properly\n");
-		}
 
-		sdCard = parseHeader(sdCard);
-		printInfo(sdCard);
+unsigned int* parseHeader(euint8* fileBuffer, unsigned int numberSamples) {
 
-		sdCard.numberSamples = (8*sdCard.wavHeader.data_size)/(sdCard.wavHeader.channels*sdCard.wavHeader.bits_per_sample);
-		printf("Samples: %d\n", sdCard.numberSamples);
-		sdCard.fileBufL = malloc(sdCard.numberSamples * sizeof(eint16));
-		sdCard.fileBufR = malloc(sdCard.numberSamples * sizeof(eint16));
+//	int channels = fileBuffer[22] | fileBuffer[23] << 8;
+//	int bits_per_sample = fileBuffer[34] | fileBuffer[35] << 8;
+//	unsigned int data_size = fileBuffer[40] | (fileBuffer[41] << 8) | (fileBuffer[42] << 16) | (fileBuffer[43] << 24);
+//	unsigned int samples = (8*data_size)/(channels*bits_per_sample);
+	//memcpy(sdCard->numberSamples, samples, sizeof(unsigned int));
+	unsigned int fileBufL[numberSamples];
 
-		int i;
-		for(i = 0; i < sdCard.numberSamples; i++) {
-			sdCard.fileBufL[i] = sdCard.fileBuffer[i*4+44] | (sdCard.fileBuffer[i*4+45] << 8);
-			sdCard.fileBufR[i] = sdCard.fileBuffer[i*4+44] | (sdCard.fileBuffer[i*4+45] << 8);
+	int i;
+	unsigned int temp;
+	for(i = 0; i < numberSamples; i++) {
+		temp = fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8);
+		fileBufL[i] = temp;
+//		memcpy(sdCard->fileBufL[i], temp, sizeof(unsigned int));
 
 //			printf("LEFT: %d\n", sdCard.fileBufL[i]);
 //			printf("RIGHT: %d\n", sdCard.fileBufR[i]);
-		}
-
-
-//		// Print out the contents
-//		printf("\nFile contents (in hex):\n");
-//		int j;
-//		for (j = 0; j < bytesRead; ++j)
-//		{
-//			printf("%c", sdCard.fileBuffer[j]);
-//		}
-
-		// Unmount the file system
-		fs_umount(&efsl->myFs);
-		return sdCard;
 	}
-
-void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
-
-	// Initialises the filesystem on the SD card, if the filesystem does not
-	// init properly then it displays an error message.
-	printf("Attempting to init filesystem");
-	int ret = efs_init(efsl, SD_CARD_SPI_MASTER_NAME);
-
-	// Initialize efsl
-	if(ret != 0)
-	{
-	printf("...could not initialize filesystem.\n");
-	}
-	else
-	printf("...success!\n");
-}
-
-sdCardInfo parseHeader(sdCardInfo sdCard) {
+	return fileBufL;
 		//Header Info
-		sdCard.wavHeader.riff[0] = sdCard.fileBuffer[0];
-		sdCard.wavHeader.riff[1] = sdCard.fileBuffer[1];
-		sdCard.wavHeader.riff[2] = sdCard.fileBuffer[2];
-		sdCard.wavHeader.riff[3] = sdCard.fileBuffer[3];
+//	memcpy(&sdCard->wavHeader.riff, sdCard->fileBuffer, 4*sizeof(char));
+//
+//	int temp = sdCard->fileBuffer[4] | (sdCard->fileBuffer[5] << 8) | (sdCard->fileBuffer[6] << 16) | (sdCard->fileBuffer[7] << 24);
 
-		sdCard.wavHeader.overall_size = sdCard.fileBuffer[4] | (sdCard.fileBuffer[5] << 8) | (sdCard.fileBuffer[6] << 16) | (sdCard.fileBuffer[7] << 24);
+//	memcpy(&sdCard->wavHeader.overall_size, &temp, sizeof(unsigned int));
+//	memcpy(&sdCard->wavHeader.wave, sdCard->fileBuffer+8, sizeof(char)*4);
+//	memcpy(&sdCard->wavHeader.fmt_chunk_marker, sdCard->fileBuffer+12, sizeof(char)*4);
+//	temp = sdCard->fileBuffer[16] | (sdCard->fileBuffer[17] << 8) | (sdCard->fileBuffer[18] << 16) | (sdCard->fileBuffer[19] << 24);
+//	memcpy(&sdCard->wavHeader.length_of_fmt, &temp, sizeof(unsigned int));
+//	temp = sdCard->fileBuffer[20] | sdCard->fileBuffer[21];
+//	memcpy(&sdCard->wavHeader.format_type, &temp, sizeof(unsigned int));
+//	unsigned int temp = sdCard->fileBuffer[22] | sdCard->fileBuffer[23] << 8;
+//	memcpy(&sdCard->channels, &temp, sizeof(unsigned int));
+//	temp = sdCard->fileBuffer[24] | (sdCard->fileBuffer[25] << 8) | (sdCard->fileBuffer[26] << 16) | (sdCard->fileBuffer[27] << 24);
+//	memcpy(&sdCard->wavHeader.sample_rate, &temp, sizeof(unsigned int));
+//	temp = sdCard->fileBuffer[28] | (sdCard->fileBuffer[29] << 8) | (sdCard->fileBuffer[30] << 16) | (sdCard->fileBuffer[31] << 24);
+//	memcpy(&sdCard->wavHeader.byterate, &temp, sizeof(unsigned int));
+//	temp = sdCard->fileBuffer[32] | sdCard->fileBuffer[33] << 8;
+//	memcpy(&sdCard->wavHeader.block_align, &temp, sizeof(unsigned int));
+//	temp = sdCard->fileBuffer[34] | sdCard->fileBuffer[35] << 8;
+//	memcpy(&sdCard->bits_per_sample, &temp, sizeof(unsigned int));
+//	memcpy(&sdCard->wavHeader.data_chunk_header, sdCard->fileBuffer+36, sizeof(char)*4);
+//	temp = sdCard->fileBuffer[40] | (sdCard->fileBuffer[41] << 8) | (sdCard->fileBuffer[42] << 16) | (sdCard->fileBuffer[43] << 24);
+//	memcpy(&sdCard->data_size, &temp, sizeof(unsigned int));
+//	sdCard->numberSamples = (8*sdCard->data_size)/(sdCard->channels*sdCard->bits_per_sample);
 
-		sdCard.wavHeader.wave[0] = sdCard.fileBuffer[8];
-		sdCard.wavHeader.wave[1] = sdCard.fileBuffer[9];
-		sdCard.wavHeader.wave[2] = sdCard.fileBuffer[10];
-		sdCard.wavHeader.wave[3] = sdCard.fileBuffer[11];
-
-		sdCard.wavHeader.fmt_chunk_marker[0] = sdCard.fileBuffer[12];
-		sdCard.wavHeader.fmt_chunk_marker[1] = sdCard.fileBuffer[13];
-		sdCard.wavHeader.fmt_chunk_marker[2] = sdCard.fileBuffer[14];
-		sdCard.wavHeader.fmt_chunk_marker[3] = sdCard.fileBuffer[15];
-
-		sdCard.wavHeader.length_of_fmt = sdCard.fileBuffer[16] | (sdCard.fileBuffer[17] << 8) | (sdCard.fileBuffer[18] << 16) | (sdCard.fileBuffer[19] << 24);
-
-		sdCard.wavHeader.format_type = sdCard.fileBuffer[20] | sdCard.fileBuffer[21] << 8;
-
-		sdCard.wavHeader.channels = sdCard.fileBuffer[22] | sdCard.fileBuffer[23] << 8;
-
-		sdCard.wavHeader.sample_rate = sdCard.fileBuffer[24] | (sdCard.fileBuffer[25] << 8) | (sdCard.fileBuffer[26] << 16) | (sdCard.fileBuffer[27] << 24);
-
-		sdCard.wavHeader.byterate = sdCard.fileBuffer[28] | (sdCard.fileBuffer[29] << 8) | (sdCard.fileBuffer[30] << 16) | (sdCard.fileBuffer[31] << 24);
-
-		sdCard.wavHeader.block_align = sdCard.fileBuffer[32] | sdCard.fileBuffer[33] << 8;
-
-		sdCard.wavHeader.bits_per_sample = sdCard.fileBuffer[34] | sdCard.fileBuffer[35] << 8;
-
-		sdCard.wavHeader.data_chunk_header[0] = sdCard.fileBuffer[36];
-		sdCard.wavHeader.data_chunk_header[1] = sdCard.fileBuffer[37];
-		sdCard.wavHeader.data_chunk_header[2] = sdCard.fileBuffer[38];
-		sdCard.wavHeader.data_chunk_header[3] = sdCard.fileBuffer[39];
-
-		sdCard.wavHeader.data_size = sdCard.fileBuffer[40] | (sdCard.fileBuffer[41] << 8) | (sdCard.fileBuffer[42] << 16) | (sdCard.fileBuffer[43] << 24);
-
-		return sdCard;
 	}
 
-void printInfo(sdCardInfo sdCard) {
-		printf("riff: %s\n", sdCard.wavHeader.riff);
-		printf("overall_size: %d\n", sdCard.wavHeader.overall_size);
-		printf("wave: %s\n", sdCard.wavHeader.wave);
-		printf("fmt: %s\n", sdCard.wavHeader.fmt_chunk_marker);
-		printf("fmt size: %d\n", sdCard.wavHeader.length_of_fmt);
-		printf("format type: %d\n", sdCard.wavHeader.format_type);
-		printf("channels: %d\n", sdCard.wavHeader.channels);
-		printf("sample rate: %d\n", sdCard.wavHeader.sample_rate);
-		printf("byte rate: %d\n", sdCard.wavHeader.byterate);
-		printf("block align: %d\n", sdCard.wavHeader.block_align);
-		printf("bits per sample: %d\n", sdCard.wavHeader.bits_per_sample);
-		printf("data chunk header: %s\n", sdCard.wavHeader.data_chunk_header);
-		printf("data size: %d\n", sdCard.wavHeader.data_size);
-	}
-
-
-//void loadToRam () {
-//	sdCardInfo sd = sdRead();
-//}
+//void printInfo(sdCardInfo* sdCard) {
+//		printf("riff: %s\n", sdCard->wavHeader.riff);
+//		printf("overall_size: %d\n", sdCard->wavHeader.overall_size);
+//		printf("wave: %s\n", sdCard->wavHeader.wave);
+//		printf("fmt: %s\n", sdCard->wavHeader.fmt_chunk_marker);
+//		printf("fmt size: %d\n", sdCard->wavHeader.length_of_fmt);
+//		printf("format type: %d\n", sdCard->wavHeader.format_type);
+//		printf("channels: %d\n", sdCard->wavHeader.channels);
+//		printf("sample rate: %d\n", sdCard->wavHeader.sample_rate);
+//		printf("byte rate: %d\n", sdCard->wavHeader.byterate);
+//		printf("block align: %d\n", sdCard->wavHeader.block_align);
+//		printf("bits per sample: %d\n", sdCard->wavHeader.bits_per_sample);
+//		printf("data chunk header: %s\n", sdCard->wavHeader.data_chunk_header);
+//		printf("data size: %d\n", sdCard->wavHeader.data_size);
+//	}
 
 /******************************************************************************
 *                                                                             *
