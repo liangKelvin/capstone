@@ -29,60 +29,33 @@
 
 
 #include <stdio.h>
+#include "system.h"
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
 #include "includes.h"
 #include "altera_up_avalon_audio.h"
 #include "altera_up_avalon_audio_and_video_config.h"
-#include "system.h"
 #include "altera_avalon_pio_regs.h"
 #include "altera_up_avalon_character_lcd.h"
 #include <efs.h>
 #include <ls.h>
 #include <errno.h>
+#include "altera_avalon_pio_regs.h"
+
+euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile);
+void audioInit(alt_up_av_config_dev * audio_config_dev);
+void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int* fileBufL);
+void sdInit(EmbeddedFileSystem *efsl, File *readFile);
+void playSound(unsigned long NumberSamples, unsigned int* wav);
 
 #define PI 3.14159265
 #define     BUFFER_SIZE    128
-
-OS_EVENT *lcd_sem;
-
-//// WAVE file header format
-//typedef struct {
-//	unsigned char riff[4];						// RIFF string
-//	unsigned int overall_size	;				// overall size of file in bytes
-//	unsigned char wave[4];						// WAVE string
-//	unsigned char fmt_chunk_marker[4];			// fmt string with trailing null char
-//	unsigned int length_of_fmt;					// length of the format data
-//	unsigned int format_type;					// format type. 1-PCM, 3- IEEE float, 6 - 8bit A law, 7 - 8bit mu law
-//	unsigned int channels;						// no.of channels
-//	unsigned int sample_rate;					// sampling rate (blocks per second)
-//	unsigned int byterate;						// SampleRate * NumChannels * BitsPerSample/8
-//	unsigned int block_align;					// NumChannels * BitsPerSample/8
-//	unsigned int bits_per_sample;				// bits per sample, 8- 8bits, 16- 16 bits etc
-//	unsigned char data_chunk_header [4];		// DATA string or FLLR string
-//	unsigned int data_size;						// NumSamples * NumChannels * BitsPerSample/8 - size of the next chunk that will be read
-//}HEADER;
-
-//typedef struct {
-//	euint8* snare;
-//	euint8* crash;
-//	euint8* hihat;
-//}sdCardInfo;
-
-euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, euint8* wavBuffer);
-void audioInit(alt_up_av_config_dev * audio_config_dev);
-unsigned int* parseHeader(euint8* fileBuffer, unsigned int numberSamples);
-void sdInit(EmbeddedFileSystem *efsl, File *readFile);
-
-
-//unsigned int l_buf[BUFFER_SIZE];
+alt_up_character_lcd_dev* myLCD;
+int button;
 alt_up_audio_dev * audio_dev;
 
-/* The main function creates two task and starts multi-tasking */
 int main(void) {
-
-	// variable declarations
 
 	// Create EFSL containers
 	EmbeddedFileSystem efsl;
@@ -90,61 +63,121 @@ int main(void) {
 
 	alt_up_av_config_dev * audio_config_dev;
 	audio_config_dev = alt_up_av_config_open_dev("/dev/audio_and_video_config_0");
+	myLCD = alt_up_character_lcd_open_dev(CHARACTER_LCD_0_NAME);
+	alt_up_character_lcd_init(myLCD);
 
-	char *fileNames[3];
+	char *fileNames[7];
 	fileNames[0] = "snare2.wav";
 	fileNames[1] = "crash.wav";
 	fileNames[2] = "hihat.wav";
+	fileNames[3] = "hithat2.wav";
+	fileNames[4] = "kick.wav";
+	fileNames[5] = "tom.wav";
+	fileNames[6] = "tom2.wav";
 
-//	int i;
-//	for(i = 0; i < 3; i++) {
-//		sd_array[i] = malloc(sizeof(sdCardInfo));
-//		if(!(sd_array[i])) {
-//			perror("malloc failled\n");
-//		}
-//	}
+	unsigned long snareNumberSamples = 7235;
+	unsigned long crashNumberSamples = 63342;
+	unsigned long hihatNumberSamples = 98218;
+	unsigned long hihat2NumberSamples = 6313;
+	unsigned long kickNumberSamples = 25448;
+	unsigned long tomNumberSamples = 34977;
+	unsigned long tom2NumberSamples = 16926;
 
-	unsigned int* snare;
-	unsigned int* crash;
-	unsigned int* hihat;
+	unsigned int snare[snareNumberSamples];
+	unsigned int crash[crashNumberSamples];
+	unsigned int hihat[hihatNumberSamples];
+	unsigned int hihat2[hihat2NumberSamples];
+	unsigned int kick[kickNumberSamples];
+	unsigned int tom[tomNumberSamples];
+	unsigned int tom2[tom2NumberSamples];
 
-	audioInit(audio_config_dev);
-	sdInit(&efsl, &readFile);
-
-	unsigned int snareNumberSamples = 7235;
-	unsigned int crashNumberSamples = 63342;
-	unsigned int hihatNumberSamples = 98218;
 	euint8* snareTemp = malloc(29102 * sizeof(eint8));
 	euint8* crashTemp = malloc(253412 * sizeof(eint8));
 	euint8* hihatTemp = malloc(392916 * sizeof(eint8));
+	euint8* hihat2Temp  = malloc(25296 * sizeof(eint8));
+	euint8* kickTemp = malloc(104548 * sizeof(eint8));
+	euint8* tomTemp = malloc(139952 * sizeof(eint8));
+	euint8* tom2Temp = malloc(67748 * sizeof(eint8));
 
-	snareTemp = sdRead(fileNames[0], &efsl, &readFile, snareTemp);
-	crashTemp = sdRead(fileNames[1], &efsl, &readFile, crashTemp);
-	hihatTemp = sdRead(fileNames[2], &efsl, &readFile, hihatTemp);
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, "Loading Sounds");
 
-	snare = parseHeader(snareTemp, snareNumberSamples);
-	crash = parseHeader(crashTemp, crashNumberSamples);
-	hihat = parseHeader(hihatTemp, hihatNumberSamples);
+	sdInit(&efsl, &readFile);
+	snareTemp = sdRead(fileNames[0], &efsl, &readFile);
+	crashTemp = sdRead(fileNames[1], &efsl, &readFile);
+	hihatTemp = sdRead(fileNames[2], &efsl, &readFile);
+	hihat2Temp = sdRead(fileNames[3], &efsl, &readFile);
+	kickTemp = sdRead(fileNames[4], &efsl, &readFile);
+	tomTemp = sdRead(fileNames[5], &efsl, &readFile);
+	tom2Temp = sdRead(fileNames[6], &efsl, &readFile);
 
-	int count = 0;
-	printf("playing sample");
 
-		while(1) {
+	parseWav(snareTemp, snareNumberSamples, snare);
+	parseWav(crashTemp, crashNumberSamples, crash);
+	parseWav(hihatTemp, hihatNumberSamples, hihat);
+	parseWav(hihat2Temp, hihat2NumberSamples, hihat2);
+	parseWav(kickTemp, kickNumberSamples, kick);
+	parseWav(tomTemp, tomNumberSamples, tom);
+	parseWav(tom2Temp, tom2NumberSamples, tom2);
 
-			int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
-			if(fifospace >= 128) {
-				if(count >= hihatNumberSamples) {
-					count = 0;
-				}
-					alt_up_audio_write_fifo(audio_dev, hihat + count, 128, ALT_UP_AUDIO_RIGHT);
-					alt_up_audio_write_fifo(audio_dev, hihat + count, 128, ALT_UP_AUDIO_LEFT);
-					count += 128;
+	audioInit(audio_config_dev);
+	printf("Ready To Play");
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
-			}
+	while(1) {
+
+		button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+
+
+		switch (button) {
+
+			case 7 :
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Bass");
+				playSound(tom2NumberSamples, tom2);
+				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+				break;
+			case 11:
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Snare");
+				playSound(snareNumberSamples, snare);
+				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+				break;
+			case 13:
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Crash");
+				playSound(crashNumberSamples, crash);
+				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+				break;
+			case 14:
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Hi-Hat");
+				playSound(hihatNumberSamples, hihat);
+				while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+				break;
+
 		}
+	}
 }
 
-
+void playSound(unsigned long NumberSamples, unsigned int* wav) {
+	int count = 0;
+	while(count <= NumberSamples - 128) {
+		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+		if(fifospace >= 128) {
+				alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_RIGHT);
+				alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_LEFT);
+				count += 128;
+		}
+	}
+}
 
 void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
 
@@ -161,6 +194,7 @@ void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
 	else
 	printf("...success!\n");
 }
+
 
 void audioInit(alt_up_av_config_dev * audio_config_dev) {
 
@@ -186,13 +220,12 @@ void audioInit(alt_up_av_config_dev * audio_config_dev) {
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x4, 0x15);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
-//	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x7, 0x10);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
 }
 
 
 // sdRead will read wav file given its filename and the efsl needed variables
-euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, euint8* wavBuffer) {
+euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile) {
 
 	// read all files from sdCard
 
@@ -212,7 +245,7 @@ euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, euint8*
 	}
 	else
 	{
-		printf("Reading file..., %x\n", readFile);
+		printf("Reading file...\n");
 	}
 
 	euint8* fileBuffer = malloc(readFile->FileSize * sizeof(eint8));
@@ -231,32 +264,27 @@ euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile, euint8*
 		printf("Error:\tCould not close file properly\n");
 	}
 
-	return fileBuffer;
 	// Unmount the file system
 	fs_umount(&efsl->myFs);
+	return fileBuffer;
 }
 
 
-unsigned int* parseHeader(euint8* fileBuffer, unsigned int numberSamples) {
+void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fileBufL) {
 
 //	int channels = fileBuffer[22] | fileBuffer[23] << 8;
 //	int bits_per_sample = fileBuffer[34] | fileBuffer[35] << 8;
 //	unsigned int data_size = fileBuffer[40] | (fileBuffer[41] << 8) | (fileBuffer[42] << 16) | (fileBuffer[43] << 24);
 //	unsigned int samples = (8*data_size)/(channels*bits_per_sample);
 	//memcpy(sdCard->numberSamples, samples, sizeof(unsigned int));
-	unsigned int fileBufL[numberSamples];
 
 	int i;
 	unsigned int temp;
 	for(i = 0; i < numberSamples; i++) {
-		temp = fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8);
+		temp = (unsigned int) (fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8));
 		fileBufL[i] = temp;
-//		memcpy(sdCard->fileBufL[i], temp, sizeof(unsigned int));
-
-//			printf("LEFT: %d\n", sdCard.fileBufL[i]);
-//			printf("RIGHT: %d\n", sdCard.fileBufR[i]);
 	}
-	return fileBufL;
+}
 		//Header Info
 //	memcpy(&sdCard->wavHeader.riff, sdCard->fileBuffer, 4*sizeof(char));
 //
@@ -283,24 +311,6 @@ unsigned int* parseHeader(euint8* fileBuffer, unsigned int numberSamples) {
 //	temp = sdCard->fileBuffer[40] | (sdCard->fileBuffer[41] << 8) | (sdCard->fileBuffer[42] << 16) | (sdCard->fileBuffer[43] << 24);
 //	memcpy(&sdCard->data_size, &temp, sizeof(unsigned int));
 //	sdCard->numberSamples = (8*sdCard->data_size)/(sdCard->channels*sdCard->bits_per_sample);
-
-	}
-
-//void printInfo(sdCardInfo* sdCard) {
-//		printf("riff: %s\n", sdCard->wavHeader.riff);
-//		printf("overall_size: %d\n", sdCard->wavHeader.overall_size);
-//		printf("wave: %s\n", sdCard->wavHeader.wave);
-//		printf("fmt: %s\n", sdCard->wavHeader.fmt_chunk_marker);
-//		printf("fmt size: %d\n", sdCard->wavHeader.length_of_fmt);
-//		printf("format type: %d\n", sdCard->wavHeader.format_type);
-//		printf("channels: %d\n", sdCard->wavHeader.channels);
-//		printf("sample rate: %d\n", sdCard->wavHeader.sample_rate);
-//		printf("byte rate: %d\n", sdCard->wavHeader.byterate);
-//		printf("block align: %d\n", sdCard->wavHeader.block_align);
-//		printf("bits per sample: %d\n", sdCard->wavHeader.bits_per_sample);
-//		printf("data chunk header: %s\n", sdCard->wavHeader.data_chunk_header);
-//		printf("data size: %d\n", sdCard->wavHeader.data_size);
-//	}
 
 /******************************************************************************
 *                                                                             *
