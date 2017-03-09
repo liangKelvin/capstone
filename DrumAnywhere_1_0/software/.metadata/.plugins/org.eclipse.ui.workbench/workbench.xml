@@ -36,17 +36,17 @@
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="testFunctions.c" partName="testFunctions.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/testFunction/testFunctions.c" title="testFunctions.c" tooltip="testFunction/testFunctions.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testFunction/testFunctions.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4663" selectionTopPixel="1635"/>
+</editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" partName="audio.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/audio.c" title="audio.c" tooltip="capstone/audio.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone/audio.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5509" selectionTopPixel="1913"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2819" selectionTopPixel="395"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" partName="hello_ucosii.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/buttonTest2/hello_ucosii.c" title="hello_ucosii.c" tooltip="buttonTest2/hello_ucosii.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/buttonTest2/hello_ucosii.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="43" selectionOffset="2268" selectionTopPixel="224"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" partName="system.h" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/system.h" title="system.h" tooltip="capstone_bsp/system.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_bsp/system.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2185" selectionTopPixel="229"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="file.c" partName="file.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/testFunction/efsl/file.c" title="file.c" tooltip="testFunction/efsl/file.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testFunction/efsl/file.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="10" selectionOffset="8656" selectionTopPixel="3255"/>
 </editor>
 </editors>
 <views>
@@ -277,7 +277,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.24950495" ratioLeft="252" ratioRight="758" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.72140765" ratioLeft="492" ratioRight="190" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.6].1.0" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -398,159 +398,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone/audio.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/buttonTest2/hello_ucosii.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_bsp/system.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/buttonTest2/hello_ucosii.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone/audio.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_bsp/drivers/inc/altera_up_avalon_character_lcd.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/attempt1/hello_ucosii.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/attempt2/hello_ucosii.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testFunction/testFunctions.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone/audio.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testFunction/efsl/file.c"/>
 </editors>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5269" y="0"/>
+<item historyLabel="altera_up_avalon_character_lcd.h" index="3">
+<position info="not_deleted" x="900" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
+<item historyLabel="audio.c" index="2">
 <position/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position/>
+<item historyLabel="system.h" index="0">
+<position info="not_deleted" x="2478" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5177" y="0"/>
+<item historyLabel="audio.c" index="2">
+<position info="not_deleted" x="5521" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5247" y="0"/>
+<item historyLabel="system.h" index="0">
+<position info="not_deleted" x="2478" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9387" y="0"/>
+<item historyLabel="hello_ucosii.c" index="1">
+<position info="not_deleted" x="4064" y="137"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="4179" y="0"/>
+<item historyLabel="system.h" index="0">
+<position info="not_deleted" x="2478" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9159" y="0"/>
+<item historyLabel="hello_ucosii.c" index="1">
+<position info="not_deleted" x="4128" y="11"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5194" y="0"/>
+<item historyLabel="audio.c" index="2">
+<position info="not_deleted" x="5769" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5265" y="0"/>
+<item historyLabel="hello_ucosii.c" index="1">
+<position info="not_deleted" x="3590" y="275"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5267" y="0"/>
+<item historyLabel="audio.c" index="2">
+<position info="not_deleted" x="2947" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="4179" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9159" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9254" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9292" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9349" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9254" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9292" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9349" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9254" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9384" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="9387" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
+<item historyLabel="hello_ucosii.c" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position/>
+<item historyLabel="audio.c" index="2">
+<position info="not_deleted" x="2947" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position/>
+<item historyLabel="hello_ucosii.c" index="5">
+<position info="not_deleted" x="3432" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10095" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="6569" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3405" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4751" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5318" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4726" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5336" y="0"/>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="7393" y="402"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5778" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4726" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5703" y="0"/>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="3240" y="67"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5253" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4726" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5613" y="0"/>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="4842" y="25"/>
 </item>
-<item historyLabel="hello_ucosii.c" index="1">
-<position info="not_deleted" x="3951" y="108"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4726" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5411" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3535" y="0"/>
 </item>
-<item historyLabel="hello_ucosii.c" index="1">
-<position info="not_deleted" x="2384" y="32"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3568" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="6354" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3584" y="0"/>
 </item>
-<item historyLabel="hello_ucosii.c" index="1">
-<position info="not_deleted" x="2689" y="887"/>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="9415" y="901"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5504" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3584" y="0"/>
 </item>
-<item historyLabel="system.h" index="2">
-<position info="not_deleted" x="2165" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3668" y="0"/>
 </item>
-<item historyLabel="hello_ucosii.c" index="1">
-<position info="not_deleted" x="3361" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4315" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5513" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="4351" y="0"/>
 </item>
-<item historyLabel="system.h" index="2">
-<position info="not_deleted" x="2165" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3386" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="2311" y="0"/>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="3221" y="16"/>
 </item>
-<item historyLabel="hello_ucosii.c" index="1">
-<position info="not_deleted" x="2205" y="35"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3386" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="2480" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="5294" y="0"/>
 </item>
-<item historyLabel="hello_ucosii.c" index="1">
-<position info="not_deleted" x="2268" y="43"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="5309" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5509" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="5331" y="0"/>
 </item>
-<item active="true" historyLabel="system.h" index="2">
-<position info="not_deleted" x="2165" y="0"/>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="5328" y="0"/>
+</item>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="2836" y="0"/>
+</item>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="2819" y="0"/>
+</item>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="2836" y="0"/>
+</item>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3487" y="0"/>
+</item>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="2819" y="0"/>
+</item>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3697" y="0"/>
+</item>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="2819" y="0"/>
+</item>
+<item historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3687" y="0"/>
+</item>
+<item historyLabel="file.c" index="8">
+<position info="not_deleted" x="8656" y="10"/>
+</item>
+<item historyLabel="audio.c" index="7">
+<position info="not_deleted" x="2819" y="0"/>
+</item>
+<item active="true" historyLabel="testFunctions.c" index="6">
+<position info="not_deleted" x="3687" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -570,14 +576,29 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="file.c" tooltip="testFunction/efsl/file.c">
+<persistable path="/testFunction/efsl/file.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" tooltip="capstone/audio.c">
+<persistable path="/capstone/audio.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="testFunctions.c" tooltip="testFunction/testFunctions.c">
+<persistable path="/testFunction/testFunctions.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="attempt2/hello_ucosii.c">
+<persistable path="/attempt2/hello_ucosii.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_up_avalon_character_lcd.h" tooltip="capstone_bsp/drivers/inc/altera_up_avalon_character_lcd.h">
+<persistable path="/capstone_bsp/drivers/inc/altera_up_avalon_character_lcd.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_up_avalon_audio.h" tooltip="capstone_bsp/drivers/inc/altera_up_avalon_audio.h">
+<persistable path="/capstone_bsp/drivers/inc/altera_up_avalon_audio.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="capstone_bsp/system.h">
 <persistable path="/capstone_bsp/system.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="buttonTest2/hello_ucosii.c">
 <persistable path="/buttonTest2/hello_ucosii.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" tooltip="capstone/audio.c">
-<persistable path="/capstone/audio.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="alt_exception_entry.S" tooltip="capstone_bsp/HAL/src/alt_exception_entry.S">
 <persistable path="/capstone_bsp/HAL/src/alt_exception_entry.S"/>
@@ -599,21 +620,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.binaryEditor" name="buttonTest2.elf" tooltip="buttonTest2/buttonTest2.elf">
 <persistable path="/buttonTest2/buttonTest2.elf"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="buttonTest2_bsp/system.h">
-<persistable path="/buttonTest2_bsp/system.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="alt_legacy_irq.h" tooltip="buttonTest2_bsp/HAL/inc/priv/alt_legacy_irq.h">
-<persistable path="/buttonTest2_bsp/HAL/inc/priv/alt_legacy_irq.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="ButtonsTest/hello_ucosii.c">
-<persistable path="/ButtonsTest/hello_ucosii.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="ButtonsTest_bsp/system.h">
-<persistable path="/ButtonsTest_bsp/system.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="interrupt_test/hello_ucosii.c">
-<persistable path="/interrupt_test/hello_ucosii.c"/>
 </file>
 </mruList>
 </workbench>

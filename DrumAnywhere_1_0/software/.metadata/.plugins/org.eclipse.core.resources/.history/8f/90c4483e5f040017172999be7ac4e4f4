@@ -1,0 +1,285 @@
+/*************************************************************************
+* Copyright (c) 2004 Altera Corporation, San Jose, California, USA.      *
+* All rights reserved. All use of this software and documentation is     *
+* subject to the License Agreement located at the end of this file below.*
+**************************************************************************
+* Description:                                                           *
+* The following is a simple hello world program running MicroC/OS-II.The * 
+* purpose of the design is to be a very simple application that just     *
+* demonstrates MicroC/OS-II running on NIOS II.The design doesn't account*
+* for issues such as checking system call return codes. etc.             *
+*                                                                        *
+* Requirements:                                                          *
+*   -Supported Example Hardware Platforms                                *
+*     Standard                                                           *
+*     Full Featured                                                      *
+*     Low Cost                                                           *
+*   -Supported Development Boards                                        *
+*     Nios II Development Board, Stratix II Edition                      *
+*     Nios Development Board, Stratix Professional Edition               *
+*     Nios Development Board, Stratix Edition                            *
+*     Nios Development Board, Cyclone Edition                            *
+*   -System Library Settings                                             *
+*     RTOS Type - MicroC/OS-II                                           *
+*     Periodic System Timer                                              *
+*   -Know Issues                                                         *
+*     If this design is run on the ISS, terminal output will take several*
+*     minutes per iteration.                                             *
+**************************************************************************/
+
+/* Created By Kelvin Liang
+ * This file contains code used for testing of:
+ * - Audio Codec
+ * - sdCard Reading
+ * - IMU
+ *
+ * Code here is meant to be copied into the actual project to be used for testing.
+ * This is due to the need of various things to be initialized for these methods to work
+ */
+
+
+
+#include <stdio.h>
+#include "system.h"
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+#include "includes.h"
+#include "altera_up_avalon_audio.h"
+#include "altera_up_avalon_audio_and_video_config.h"
+#include "altera_avalon_pio_regs.h"
+#include "altera_up_avalon_character_lcd.h"
+#include <efs.h>
+#include <ls.h>
+#include <errno.h>
+#include "altera_avalon_pio_regs.h"
+
+#define PI 3.14159265
+#define BUFFER_SIZE    128
+alt_up_audio_dev * audio_dev;
+
+int sdInit(EmbeddedFileSystem *efsl, File *readFile);
+int audioInit(alt_up_av_config_dev * audio_config_dev);
+
+
+/* this function tests the sdReading
+ * it will first initialize the sd card interface along with the EFSL library
+ * it will attempt to read a file called "test.txt" which will simply contain
+ * some testing text to be printed.
+ * it will print the contents of the file to the console for verification
+ *
+ * 1 is returned if all tests pass
+ * -1 is returned if spi initializing fails
+ * -2 is returned if file fails to open
+ * -3 is returned if malloc fails
+ * -4 is returned if file is not read
+ * -5 is returned if file is not closed;
+ * -6
+ */
+int testSDreading() {
+	// Create EFSL containers
+	EmbeddedFileSystem efsl;
+	File readFile;
+	int err;
+
+	err = sdInit(&efsl, &readFile);
+	if(err == -1) {
+		printf("error with sdInit\n");
+		return -1;
+	}
+
+	// Open the test file
+	printf("\nAttempting to open file: \"%s\"\n", "test.txt");
+	err = file_fopen(&readFile, &efsl.myFs, "test.txt", 'r');
+	if (err != 0) {
+		printf("Error:\tCould not open file\n");
+		return -2;
+	} else {
+		printf("Reading file...\n");
+	}
+
+	euint8* fileBuffer = malloc(readFile.FileSize * sizeof(eint8));
+	if (!(fileBuffer)) {
+		perror("malloc failed!\n");
+		return -3;
+	}
+
+	// Read all the file's contents into the buffer. See the file_fread(...) function
+	// for the ability to read chunks of the file at a time, which is desirable for
+	// larger files.
+	unsigned int bytesRead = file_read(&readFile, readFile.FileSize, fileBuffer);
+	printf("%u bytes read from the file\n", bytesRead);
+	if(bytesRead == 0) {
+		printf("failed to read file\n");
+		return -4;
+	}
+
+	// Close the file
+	if (file_fclose(&readFile) != 0) {
+		printf("Error:\tCould not close file properly\n");
+		return -5;
+	}
+
+	 // Print out the contents
+	printf("\nFile contents:\n");
+	printf("%s\n", fileBuffer);
+	printf("\n");
+
+	free(fileBuffer);
+
+	// Unmount the file system
+	fs_umount(&efsl.myFs);
+	return 1;
+}
+
+
+/* this function tests the functionality of the audio codec
+ * function will first intialize the codec on the board, setting
+ * registers.
+ *
+ * sin function is then played via output mic
+ *
+ * acceptance is largely tested by physical senses.
+ *
+ * -1 is returned if init fails
+ * -2 is returned if audio_write fails at any point
+ * 1 is returned otherwise
+ * sine wave should be played via audio line
+ */
+int testAudioCodec() {
+
+	alt_up_av_config_dev * audio_config_dev;
+	audio_config_dev = alt_up_av_config_open_dev("/dev/audio_and_video_config_0");
+	int err;
+	err = audioInit(audio_config_dev);
+	if(err < 0) {
+		printf("error initializing audio codec\n");
+		return -1;
+	}
+
+	unsigned int buf[BUFFER_SIZE];
+	int i;
+	// define sine wave
+	for(i = 0; i < BUFFER_SIZE; i++) {
+		buf[i] = (sin(2000 * (2*PI) * i / 44100))*0x6fff;
+	}
+
+	int timer = 0;
+	while(timer < 10000) {
+		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+		if(fifospace >= 128) {
+			alt_up_audio_write_fifo(audio_dev, buf, 128, ALT_UP_AUDIO_RIGHT);
+			alt_up_audio_write_fifo(audio_dev, buf, 128, ALT_UP_AUDIO_LEFT);
+			timer++;
+		}
+	}
+	return 1;
+}
+//
+//int testIMU() {
+//
+//}
+
+// initialize sd interface
+int sdInit(EmbeddedFileSystem *efsl, File *readFile) {
+
+	// Initialises the filesystem on the SD card, if the filesystem does not
+	// init properly then it displays an error message.
+	printf("Attempting to init filesystem");
+	int ret = efs_init(efsl, SD_CARD_SPI_MASTER_NAME);
+
+	// Initialize efsl
+	if(ret != 0) {
+		printf("...could not initialize filesystem.\n");
+		return -1;
+	}
+	else
+	printf("...success!\n");
+	return 1;
+}
+
+// initalize audio codec
+int audioInit(alt_up_av_config_dev * audio_config_dev) {
+	if ( audio_config_dev == NULL) {
+		printf("Error: could not open audio config device \n");
+		return -1;
+	}
+	else
+		printf("Opened audio config device \n");
+
+	audio_dev = alt_up_audio_open_dev ("/dev/audio_0");
+	if ( audio_dev == NULL){
+		printf("Error: could not open audio device \n");
+		return -1;
+	}
+	else
+		printf("Opened audio device \n");
+
+	alt_up_av_config_reset(audio_config_dev);
+	alt_up_audio_reset_audio_core(audio_dev);
+
+	/* Write to configuration registers in the audio codec; see datasheet for what these values mean */
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x0, 0x17);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x1, 0x17);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x2, 0x68);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x3, 0x68);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x4, 0x15);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
+	return 1;
+}
+
+int main(void) {
+
+	int err;
+	err = testSDreading();
+	if(err != 1) {
+		printf("error\n");
+	} else {
+		printf("SD card reading works\n");
+	}
+
+	err = testAudioCodec();
+	if(err != 1) {
+		printf("error\n");
+	} else {
+		printf("Audio Works\n");
+	}
+	return 1;
+}
+
+
+
+
+
+/******************************************************************************
+*                                                                             *
+* License Agreement                                                           *
+*                                                                             *
+* Copyright (c) 2004 Altera Corporation, San Jose, California, USA.           *
+* All rights reserved.                                                        *
+*                                                                             *
+* Permission is hereby granted, free of charge, to any person obtaining a     *
+* copy of this software and associated documentation files (the "Software"),  *
+* to deal in the Software without restriction, including without limitation   *
+* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+* and/or sell copies of the Software, and to permit persons to whom the       *
+* Software is furnished to do so, subject to the following conditions:        *
+*                                                                             *
+* The above copyright notice and this permission notice shall be included in  *
+* all copies or substantial portions of the Software.                         *
+*                                                                             *
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+* DEALINGS IN THE SOFTWARE.                                                   *
+*                                                                             *
+* This agreement shall be governed in all respects by the laws of the State   *
+* of California and by the laws of the United States of America.              *
+* Altera does not recommend, suggest or require that this reference design    *
+* file be used in conjunction or combination with any other product.          *
+******************************************************************************/

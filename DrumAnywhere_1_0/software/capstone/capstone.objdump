@@ -37,49 +37,49 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_pubnames 00003563  00000000  00000000  000271a0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   00040559  00000000  00000000  0002a703  2**0
+  9 .debug_info   0004055a  00000000  00000000  0002a703  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 0000b339  00000000  00000000  0006ac5c  2**0
+ 10 .debug_abbrev 0000b348  00000000  00000000  0006ac5d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00023335  00000000  00000000  00075f95  2**0
+ 11 .debug_line   00023335  00000000  00000000  00075fa5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  00003de0  00000000  00000000  000992cc  2**2
+ 12 .debug_frame  00003de0  00000000  00000000  000992dc  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00002e7a  00000000  00000000  0009d0ac  2**0
+ 13 .debug_str    00002e7a  00000000  00000000  0009d0bc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    0000fbc6  00000000  00000000  0009ff26  2**0
+ 14 .debug_loc    0000fbc6  00000000  00000000  0009ff36  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000030  00000000  00000000  000afaec  2**2
+ 15 .debug_alt_sim_info 00000030  00000000  00000000  000afafc  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 000009a8  00000000  00000000  000afb20  2**3
+ 16 .debug_ranges 000009a8  00000000  00000000  000afb30  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000006  00000000  00000000  000b6d53  2**0
+ 17 .thread_model 00000006  00000000  00000000  000b6d63  2**0
                   CONTENTS, READONLY
- 18 .cpu          0000000c  00000000  00000000  000b6d59  2**0
+ 18 .cpu          0000000c  00000000  00000000  000b6d69  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  000b6d65  2**0
+ 19 .qsys         00000001  00000000  00000000  000b6d75  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  000b6d66  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  000b6d76  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  000b6d67  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  000b6d77  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  000b6d6b  2**0
+ 22 .sysid_base   00000004  00000000  00000000  000b6d7b  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  000b6d6f  2**0
+ 23 .sysid_time   00000004  00000000  00000000  000b6d7f  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   0000000b  00000000  00000000  000b6d73  2**0
+ 24 .stderr_dev   0000000b  00000000  00000000  000b6d83  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    0000000b  00000000  00000000  000b6d7e  2**0
+ 25 .stdin_dev    0000000b  00000000  00000000  000b6d8e  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   0000000b  00000000  00000000  000b6d89  2**0
+ 26 .stdout_dev   0000000b  00000000  00000000  000b6d99  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 0000000d  00000000  00000000  000b6d94  2**0
+ 27 .sopc_system_name 0000000d  00000000  00000000  000b6da4  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 00000043  00000000  00000000  000b6da1  2**0
+ 28 .quartus_project_dir 00000043  00000000  00000000  000b6db1  2**0
                   CONTENTS, READONLY
- 29 .jdi          000051db  00000000  00000000  000b6de4  2**0
+ 29 .jdi          000051db  00000000  00000000  000b6df4  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     0007318b  00000000  00000000  000bbfbf  2**0
+ 30 .sopcinfo     0007318b  00000000  00000000  000bbfcf  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 01104000 l    d  .entry	00000000 .entry
@@ -1344,10 +1344,10 @@ alt_after_alt_main:
   8001e8:	003fff06 	br	8001e8 <alt_after_alt_main>
 
 008001ec <main>:
-#define     BUFFER_SIZE    128
-alt_up_character_lcd_dev* myLCD;
-int button;
-alt_up_audio_dev * audio_dev;
+//	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+//	alt_up_character_lcd_string(myLCD, "button: ");
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(0x1109060, 0x08);
+//}
 
 int main(void) {
   8001ec:	defd7c04 	addi	sp,sp,-2576
@@ -1714,6 +1714,7 @@ int main(void) {
   80067c:	081ef840 	call	81ef84 <alt_up_character_lcd_string>
   800680:	00000006 	br	800684 <main+0x498>
 
+
 	while(1) {
 
 		button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
@@ -1758,6 +1759,7 @@ int main(void) {
   8006fc:	014020b4 	movhi	r5,130
   800700:	2942c904 	addi	r5,r5,2852
   800704:	081ef840 	call	81ef84 <alt_up_character_lcd_string>
+
 				playSound(tom2NumberSamples, tom2);
   800708:	e17d8d17 	ldw	r5,-2508(fp)
   80070c:	e13d8517 	ldw	r4,-2540(fp)
@@ -1773,6 +1775,7 @@ int main(void) {
   800730:	103ff91e 	bne	r2,zero,800718 <main+0x52c>
 				break;
   800734:	003fd306 	br	800684 <main+0x498>
+
 			case 11:
 				alt_up_character_lcd_init(myLCD);
   800738:	d1271017 	ldw	r4,-25536(gp)
@@ -1787,6 +1790,7 @@ int main(void) {
   800754:	014020b4 	movhi	r5,130
   800758:	2942cb04 	addi	r5,r5,2860
   80075c:	081ef840 	call	81ef84 <alt_up_character_lcd_string>
+
 				playSound(snareNumberSamples, snare);
   800760:	e17d9317 	ldw	r5,-2484(fp)
   800764:	e13d8b17 	ldw	r4,-2516(fp)
@@ -1802,6 +1806,7 @@ int main(void) {
   800788:	103ff91e 	bne	r2,zero,800770 <main+0x584>
 				break;
   80078c:	003fbd06 	br	800684 <main+0x498>
+
 			case 13:
 				alt_up_character_lcd_init(myLCD);
   800790:	d1271017 	ldw	r4,-25536(gp)
@@ -1816,6 +1821,7 @@ int main(void) {
   8007ac:	014020b4 	movhi	r5,130
   8007b0:	2942cd04 	addi	r5,r5,2868
   8007b4:	081ef840 	call	81ef84 <alt_up_character_lcd_string>
+
 				playSound(crashNumberSamples, crash);
   8007b8:	e17d9217 	ldw	r5,-2488(fp)
   8007bc:	e13d8a17 	ldw	r4,-2520(fp)
@@ -1831,6 +1837,7 @@ int main(void) {
   8007e0:	103ff91e 	bne	r2,zero,8007c8 <main+0x5dc>
 				break;
   8007e4:	003fa706 	br	800684 <main+0x498>
+
 			case 14:
 				alt_up_character_lcd_init(myLCD);
   8007e8:	d1271017 	ldw	r4,-25536(gp)
@@ -1845,6 +1852,7 @@ int main(void) {
   800804:	014020b4 	movhi	r5,130
   800808:	2942cf04 	addi	r5,r5,2876
   80080c:	081ef840 	call	81ef84 <alt_up_character_lcd_string>
+
 				playSound(hihatNumberSamples, hihat);
   800810:	e17d9117 	ldw	r5,-2492(fp)
   800814:	e13d8917 	ldw	r4,-2524(fp)

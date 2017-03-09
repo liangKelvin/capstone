@@ -49,11 +49,17 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int* fil
 void sdInit(EmbeddedFileSystem *efsl, File *readFile);
 void playSound(unsigned long NumberSamples, unsigned int* wav);
 
-#define PI 3.14159265
-#define     BUFFER_SIZE    128
 alt_up_character_lcd_dev* myLCD;
 int button;
 alt_up_audio_dev * audio_dev;
+
+
+//static void interrupt_isr_buttonPress(void *context) {
+//	button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+//	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+//	alt_up_character_lcd_string(myLCD, "button: ");
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(0x1109060, 0x08);
+//}
 
 int main(void) {
 
@@ -127,6 +133,7 @@ int main(void) {
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
+
 	while(1) {
 
 		button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
@@ -138,27 +145,34 @@ int main(void) {
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 				alt_up_character_lcd_string(myLCD, "Bass");
+
 				playSound(tom2NumberSamples, tom2);
 				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
+
 			case 11:
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 				alt_up_character_lcd_string(myLCD, "Snare");
+
 				playSound(snareNumberSamples, snare);
 				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
+
 			case 13:
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 				alt_up_character_lcd_string(myLCD, "Crash");
+
 				playSound(crashNumberSamples, crash);
 				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
+
 			case 14:
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 				alt_up_character_lcd_string(myLCD, "Hi-Hat");
+
 				playSound(hihatNumberSamples, hihat);
 				while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
@@ -285,32 +299,6 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
 		fileBufL[i] = temp;
 	}
 }
-		//Header Info
-//	memcpy(&sdCard->wavHeader.riff, sdCard->fileBuffer, 4*sizeof(char));
-//
-//	int temp = sdCard->fileBuffer[4] | (sdCard->fileBuffer[5] << 8) | (sdCard->fileBuffer[6] << 16) | (sdCard->fileBuffer[7] << 24);
-
-//	memcpy(&sdCard->wavHeader.overall_size, &temp, sizeof(unsigned int));
-//	memcpy(&sdCard->wavHeader.wave, sdCard->fileBuffer+8, sizeof(char)*4);
-//	memcpy(&sdCard->wavHeader.fmt_chunk_marker, sdCard->fileBuffer+12, sizeof(char)*4);
-//	temp = sdCard->fileBuffer[16] | (sdCard->fileBuffer[17] << 8) | (sdCard->fileBuffer[18] << 16) | (sdCard->fileBuffer[19] << 24);
-//	memcpy(&sdCard->wavHeader.length_of_fmt, &temp, sizeof(unsigned int));
-//	temp = sdCard->fileBuffer[20] | sdCard->fileBuffer[21];
-//	memcpy(&sdCard->wavHeader.format_type, &temp, sizeof(unsigned int));
-//	unsigned int temp = sdCard->fileBuffer[22] | sdCard->fileBuffer[23] << 8;
-//	memcpy(&sdCard->channels, &temp, sizeof(unsigned int));
-//	temp = sdCard->fileBuffer[24] | (sdCard->fileBuffer[25] << 8) | (sdCard->fileBuffer[26] << 16) | (sdCard->fileBuffer[27] << 24);
-//	memcpy(&sdCard->wavHeader.sample_rate, &temp, sizeof(unsigned int));
-//	temp = sdCard->fileBuffer[28] | (sdCard->fileBuffer[29] << 8) | (sdCard->fileBuffer[30] << 16) | (sdCard->fileBuffer[31] << 24);
-//	memcpy(&sdCard->wavHeader.byterate, &temp, sizeof(unsigned int));
-//	temp = sdCard->fileBuffer[32] | sdCard->fileBuffer[33] << 8;
-//	memcpy(&sdCard->wavHeader.block_align, &temp, sizeof(unsigned int));
-//	temp = sdCard->fileBuffer[34] | sdCard->fileBuffer[35] << 8;
-//	memcpy(&sdCard->bits_per_sample, &temp, sizeof(unsigned int));
-//	memcpy(&sdCard->wavHeader.data_chunk_header, sdCard->fileBuffer+36, sizeof(char)*4);
-//	temp = sdCard->fileBuffer[40] | (sdCard->fileBuffer[41] << 8) | (sdCard->fileBuffer[42] << 16) | (sdCard->fileBuffer[43] << 24);
-//	memcpy(&sdCard->data_size, &temp, sizeof(unsigned int));
-//	sdCard->numberSamples = (8*sdCard->data_size)/(sdCard->channels*sdCard->bits_per_sample);
 
 /******************************************************************************
 *                                                                             *
