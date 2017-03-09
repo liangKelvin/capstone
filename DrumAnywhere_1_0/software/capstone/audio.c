@@ -28,6 +28,17 @@
 **************************************************************************/
 
 
+/* Created By Kelvin Liang and Justin Ferris 
+   Drum Anywhere G4
+   Date: Feb 22, 2017
+   Description: audio.c is the integration of our spi interface and our audio codec.
+   				code has been written in a way for us to demo our audio output and sd card input
+   				4 buttons have been mapped on the Altera DE2, each button corresponds to a drum sound
+   				Snare, Bass, HiHat and a Crash are used for this code. For the actual implementation we
+   				will have 7 drum sounds and instead of buttons sounds will be played according to drum hits
+*/
+
+
 #include <stdio.h>
 #include "system.h"
 #include <math.h>
@@ -43,17 +54,28 @@
 #include <errno.h>
 #include "altera_avalon_pio_regs.h"
 
+// method declarations
 euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile);
 void audioInit(alt_up_av_config_dev * audio_config_dev);
 void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int* fileBufL);
 void sdInit(EmbeddedFileSystem *efsl, File *readFile);
 void playSound(unsigned long NumberSamples, unsigned int* wav);
 
+// globals 
 alt_up_character_lcd_dev* myLCD;
 int button;
 alt_up_audio_dev * audio_dev;
 
+// sample sizes for sounds
+#define  snareNumberSamples = 7235;
+#define crashNumberSamples = 63342;
+#define hihatNumberSamples = 98218;
+#define hihat2NumberSamples = 6313;
+#define kickNumberSamples = 25448;
+#define tomNumberSamples = 34977;
+#define tom2NumberSamples = 16926;
 
+// for use later
 //static void interrupt_isr_buttonPress(void *context) {
 //	button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 //	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
@@ -67,11 +89,13 @@ int main(void) {
 	EmbeddedFileSystem efsl;
 	File readFile;
 
+	// needed objects for software init
 	alt_up_av_config_dev * audio_config_dev;
 	audio_config_dev = alt_up_av_config_open_dev("/dev/audio_and_video_config_0");
 	myLCD = alt_up_character_lcd_open_dev(CHARACTER_LCD_0_NAME);
 	alt_up_character_lcd_init(myLCD);
 
+	// Drum Sounds filenames
 	char *fileNames[7];
 	fileNames[0] = "snare2.wav";
 	fileNames[1] = "crash.wav";
@@ -80,15 +104,7 @@ int main(void) {
 	fileNames[4] = "kick.wav";
 	fileNames[5] = "tom.wav";
 	fileNames[6] = "tom2.wav";
-
-	unsigned long snareNumberSamples = 7235;
-	unsigned long crashNumberSamples = 63342;
-	unsigned long hihatNumberSamples = 98218;
-	unsigned long hihat2NumberSamples = 6313;
-	unsigned long kickNumberSamples = 25448;
-	unsigned long tomNumberSamples = 34977;
-	unsigned long tom2NumberSamples = 16926;
-
+	// arrays to hold waveforms
 	unsigned int snare[snareNumberSamples];
 	unsigned int crash[crashNumberSamples];
 	unsigned int hihat[hihatNumberSamples];
@@ -96,7 +112,7 @@ int main(void) {
 	unsigned int kick[kickNumberSamples];
 	unsigned int tom[tomNumberSamples];
 	unsigned int tom2[tom2NumberSamples];
-
+	// arrays for reading all data from sd card
 	euint8* snareTemp = malloc(29102 * sizeof(eint8));
 	euint8* crashTemp = malloc(253412 * sizeof(eint8));
 	euint8* hihatTemp = malloc(392916 * sizeof(eint8));
@@ -104,12 +120,13 @@ int main(void) {
 	euint8* kickTemp = malloc(104548 * sizeof(eint8));
 	euint8* tomTemp = malloc(139952 * sizeof(eint8));
 	euint8* tom2Temp = malloc(67748 * sizeof(eint8));
-
+	// init lcd
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Loading Sounds");
-
+	// init spi interface
 	sdInit(&efsl, &readFile);
+	// read files from sd card
 	snareTemp = sdRead(fileNames[0], &efsl, &readFile);
 	crashTemp = sdRead(fileNames[1], &efsl, &readFile);
 	hihatTemp = sdRead(fileNames[2], &efsl, &readFile);
@@ -118,7 +135,7 @@ int main(void) {
 	tomTemp = sdRead(fileNames[5], &efsl, &readFile);
 	tom2Temp = sdRead(fileNames[6], &efsl, &readFile);
 
-
+	// parse the actual data from the .wav files
 	parseWav(snareTemp, snareNumberSamples, snare);
 	parseWav(crashTemp, crashNumberSamples, crash);
 	parseWav(hihatTemp, hihatNumberSamples, hihat);
@@ -127,15 +144,19 @@ int main(void) {
 	parseWav(tomTemp, tomNumberSamples, tom);
 	parseWav(tom2Temp, tom2NumberSamples, tom2);
 
+	// audio init
 	audioInit(audio_config_dev);
 	printf("Ready To Play");
+
+	// system is now ready to play
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
-
+	// currently we use this while loop for demonstration purposes
+	// for actual implementation we will use an interrupt routine to handle drum soound playing
 	while(1) {
-
+		// currently using magic number due to problems with system.h header
 		button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 
 
@@ -180,7 +201,8 @@ int main(void) {
 		}
 	}
 }
-
+// takes in wav file and number of samples
+// plays given sound once
 void playSound(unsigned long NumberSamples, unsigned int* wav) {
 	int count = 0;
 	while(count <= NumberSamples - 128) {
@@ -192,7 +214,7 @@ void playSound(unsigned long NumberSamples, unsigned int* wav) {
 		}
 	}
 }
-
+// initializes spi interface for sd card reading
 void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
 
 	// Initialises the filesystem on the SD card, if the filesystem does not
@@ -209,7 +231,8 @@ void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
 	printf("...success!\n");
 }
 
-
+// sets our codec up, sets the appropriate registers
+// set up fro sampling rate of 44100
 void audioInit(alt_up_av_config_dev * audio_config_dev) {
 
 	if ( audio_config_dev == NULL)
@@ -239,6 +262,7 @@ void audioInit(alt_up_av_config_dev * audio_config_dev) {
 
 
 // sdRead will read wav file given its filename and the efsl needed variables
+// returns the raw .wav data 
 euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile) {
 
 	// read all files from sdCard
@@ -283,14 +307,8 @@ euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile) {
 	return fileBuffer;
 }
 
-
+// takes in raw .wav data, parses needed data to play on codec
 void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fileBufL) {
-
-//	int channels = fileBuffer[22] | fileBuffer[23] << 8;
-//	int bits_per_sample = fileBuffer[34] | fileBuffer[35] << 8;
-//	unsigned int data_size = fileBuffer[40] | (fileBuffer[41] << 8) | (fileBuffer[42] << 16) | (fileBuffer[43] << 24);
-//	unsigned int samples = (8*data_size)/(channels*bits_per_sample);
-	//memcpy(sdCard->numberSamples, samples, sizeof(unsigned int));
 
 	int i;
 	unsigned int temp;

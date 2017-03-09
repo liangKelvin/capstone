@@ -28,13 +28,19 @@
 **************************************************************************/
 
 /* Created By Kelvin Liang
+ * TEST SUITE
+ * DrumAnywhere G4
+ * Date: March 8th
+ * Descrption:
  * This file contains code used for testing of:
  * - Audio Codec
  * - sdCard Reading
- * - IMU
  *
- * Code here is meant to be copied into the actual project to be used for testing.
- * This is due to the need of various things to be initialized for these methods to work
+ * This code is run to test the functinality of our hardware more tests will be added later,
+ * currently IMU testing is seperate due to time constraints and complexity
+ * WHen run this test suite will run seperate tests for the audio codec and spi interface
+ *
+ *
  */
 
 
