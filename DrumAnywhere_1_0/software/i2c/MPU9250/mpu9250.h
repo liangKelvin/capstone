@@ -188,6 +188,13 @@
 //alt_u8 Gscale = GFS_250DPS;
 //alt_u8 Ascale = AFS_2G;
 
+void getAres(float* aRes);
+void getGres(float* gRes);
+void readAccelData(alt_16 * destination);
+void readGyroData(alt_16 * destination);
+void initMPU9250();
+void calibrateMPU9250(float * gyroBias, float * accelBias);
 void MPU9250SelfTest(float * destination);
+
 
 #endif // _MPU9250_H_

@@ -5,71 +5,26 @@ make all
 Info: Building ../i2c_bsp/
 make --no-print-directory -C ../i2c_bsp/
 [BSP build complete]
-Info: Compiling MPU9250/mpu9250.c to obj/default/MPU9250/mpu9250.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/MPU9250/mpu9250.o MPU9250/mpu9250.c
-MPU9250/mpu9250.c: In function 'initMPU9250':
-MPU9250/mpu9250.c:21: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:33: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:38: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-Info: Compiling hello_ucosii.c to obj/default/hello_ucosii.o
-MPU9250/mpu9250.c:46: warning: passing argument 5 of 'I2C_ReadFromDeviceRegister' makes pointer from integer without a cast
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/hello_ucosii.o hello_ucosii.c
-MPU9250/mpu9250.c:57: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-Info: Compiling i2c/I2C.c to obj/default/i2c/I2C.o
-MPU9250/mpu9250.c:63: warning: passing argument 5 of 'I2C_ReadFromDeviceRegister' makes pointer from integer without a cast
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/i2c/I2C.o i2c/I2C.c
-MPU9250/mpu9250.c:70: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-Info: Linking i2c.elf
-MPU9250/mpu9250.c:79: warning: passing argument 5 of 'I2C_ReadFromDeviceRegister' makes pointer from integer without a cast
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/hello_ucosii.o obj/default/i2c/I2C.o -lm 
-MPU9250/mpu9250.c:86: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:98: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:101: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c: In function 'calibrateMPU9250':
-MPU9250/mpu9250.c:121: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:125: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:142: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:147: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:159: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:162: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:240: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:241: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:242: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:243: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:244: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:245: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:321: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:322: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:323: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:324: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:325: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:326: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c: In function 'MPU9250SelfTest':
-MPU9250/mpu9250.c:359: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:361: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:363: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:365: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:408: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-MPU9250/mpu9250.c:410: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
-hello_ucosii.c: In function 'task1':
-hello_ucosii.c:94: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
-hello_ucosii.c:94: warning: format '%d' expects type 'int', but argument 2 has type 'long int'
-i2c/I2C.c: In function 'I2C_WriteToDevice':
-i2c/I2C.c:88: warning: implicit declaration of function 'printf'
-i2c/I2C.c:88: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'I2C_WriteToDeviceRegister':
-i2c/I2C.c:116: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'I2C_WriteMore':
-i2c/I2C.c:137: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'i2c_selectAddress':
-i2c/I2C.c:231: warning: incompatible implicit declaration of built-in function 'printf'
-i2c/I2C.c: In function 'i2c_start':
-i2c/I2C.c:247: warning: implicit declaration of function 'usleep'
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090d8 --timestamp 1487970298 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 148 KBytes program size (code + initialized data).
-Info:           8036 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
 [i2c build complete]
 
 **** Build Finished ****

@@ -6,6 +6,51 @@
 #include "altera_avalon_pio_regs.h"
 #include <math.h>
 
+void getAres(float* aRes){
+
+	*aRes =  (float)2.0 / (float)32768.0;
+}
+
+void getGres(float* gRes){
+
+	*gRes =  (float)250.0 / (float)32768.0;
+}
+
+void readAccelData(alt_16 * destination)
+{
+  alt_u8 deviceAddress = 0xD0;
+  alt_u8 rawData[6];  // x/y/z accel register data stored here
+  // Read the six raw data registers into data array
+  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
+  I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ACCEL_XOUT_H, &rawData[0], 6, true);
+  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+
+  // Turn the MSB and LSB into a signed 16-bit value
+  destination[0] = (alt_16)(((alt_16)rawData[0] << 8) | rawData[1]) ;
+  destination[1] = (alt_16)(((alt_16)rawData[2] << 8) | rawData[3]) ;
+  destination[2] = (alt_16)(((alt_16)rawData[4] << 8) | rawData[5]) ;
+  //printf("destination[0] %d\n", destination[0]);
+  //printf("destination[1] %d\n", destination[1]);
+  //printf("destination[2] %d\n", destination[2]);
+}
+
+
+void readGyroData(alt_16 * destination)
+{
+  alt_u8 deviceAddress = 0xD0;
+  alt_u8 rawData[6];  // x/y/z gyro register data stored here
+  // Read the six raw data registers sequentially into data array
+  I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
+  I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, GYRO_XOUT_H, &rawData[0], 6, true);
+  I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+
+  // Turn the MSB and LSB into a signed 16-bit value
+  destination[0] = ((alt_16)rawData[0] << 8) | rawData[1] ;
+  destination[1] = ((alt_16)rawData[2] << 8) | rawData[3] ;
+  destination[2] = ((alt_16)rawData[4] << 8) | rawData[5] ;
+}
+
+
 void initMPU9250(){
   alt_u8 deviceAddress = 0xD0;
   alt_u8 c;
@@ -346,6 +391,7 @@ void MPU9250SelfTest(float * destination)
   float factoryTrim[6];
   alt_u8 FS = 0;
   alt_u8 ReadBuf[1];
+
   I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
   // Set gyro sample rate to 1 kHz
   if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, deviceAddress, 0x75, (alt_u8*)&ReadBuf, 1, true)){
@@ -353,6 +399,8 @@ void MPU9250SelfTest(float * destination)
   }
   I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
   printf("WHO AM I: %0x\n", ReadBuf[0]);
+
+
   I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
   I2C_WriteToDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, SMPLRT_DIV, 0x00, 1);
   // Set gyro sample rate to 1 kHz and DLPF to 92 Hz
@@ -370,7 +418,7 @@ void MPU9250SelfTest(float * destination)
   // Get average current values of gyro and acclerometer
   for ( ii = 0; ii < 200; ii= ii+1) {
 
-  	printf("BHW::ii = %d \n", ii );
+  	//printf("BHW::ii = %d \n", ii );
   	I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
     // Read the six raw data registers into data array
 	I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, 0xD0, ACCEL_XOUT_H, &rawData[0],6, true);
@@ -502,15 +550,15 @@ void MPU9250SelfTest(float * destination)
   // To get percent, must multiply by 100
   for ( ii =0; ii < 3; ii = ii+1)
   {
-	printf("aSTAvg = %f\n",(float)aSTAvg[ii]);
-	printf("aAvg = %f\n",(float)aAvg[ii]);
-	printf("factoryTrim = %f\n",(float)factoryTrim[ii]);
+	//printf("aSTAvg = %f\n",(float)aSTAvg[ii]);
+	//printf("aAvg = %f\n",(float)aAvg[ii]);
+	//printf("factoryTrim = %f\n",(float)factoryTrim[ii]);
     // Report percent differences
     destination[ii] = 100.0 * (((float)(aSTAvg[ii] - aAvg[ii])) / factoryTrim[ii]);
     // Report percent differences
     destination[ii+3] = 100.0*(((float)(gSTAvg[ii] - gAvg[ii]))/factoryTrim[ii+3]);
     //printf("destination[%d] = %f\n",ii, destination[ii]);
-   // printf("destination[%d] = %f\n",ii+3, destination[ii+3]);
+    // printf("destination[%d] = %f\n",ii+3, destination[ii+3]);
     //printf("test1 difference: %f\n",aSTAvg[ii] - aAvg[ii]);
     //printf("test q: %f\n",416 / 6479.571777);
 

@@ -48,19 +48,29 @@ OS_STK    task2_stk[TASK_STACKSIZE];
 /* Prints "Hello World" and sleeps for three seconds */
 void task1(void* pdata){
 
-  alt_u8 ReadBuf[6];
-  //alt_u8 deviceAddress1 = 0x68;
-  alt_u8 deviceAddress2 = 0xD0;
-  alt_u8 registerAddress = 0x75;
-  alt_u16 buflen = 1;
-  float selfTest[6];
+	//Temporary buffer to read into
+	alt_u8 ReadBuf[6];
+	//Device address
+	alt_u8 deviceAddress = 0xD0;
+	//WHO AM I Register
+	alt_u8 whoamireg = 0x75;
+	alt_u16 buflen = 1;
+	// Self tests, biases and resolution for DPS conversions
+	float selfTest[6];
+	float gyroBias[3]  = {0, 0, 0},	accelBias[3] = {0, 0, 0};
+	float aRes, gRes;
 
-    I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
-    if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, deviceAddress2, registerAddress, (alt_u8*)&ReadBuf, buflen, true)){
+
+    // WHO AM I testing
+  	I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
+    if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, deviceAddress, whoamireg, (alt_u8*)&ReadBuf, buflen, true)){
 
 	  }
     I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
     printf("WHO AM I: %0x\n", ReadBuf[0]);
+
+    printf("Starting Self Tests\n");
+    //Self Testing
     MPU9250SelfTest(selfTest);
     printf("x-axis self test: acceleration trim within : ");
    	printf("%.1f", selfTest[0]); printf("%% of factory value\n");
@@ -75,33 +85,64 @@ void task1(void* pdata){
   	printf("z-axis self test: gyration trim within : ");
   	printf("%.1f", selfTest[5]); printf("%% of factory value\n");
 
+  	/*//Calibrate MPU9250 and load Bias into registers
+  	calibrateMPU9250(gyroBias, accelBias);
 
-  	alt_u8 Data[2];
-    alt_32 xaxis[3] = {0};
-    I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
-    // Read the six raw data registers into data array
-    I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, 0xD0, ACCEL_ZOUT_H, &Data[0],2, true);
-    // Turn the MSB and LSB into a signed 16-bit value
-    xaxis[0] = (alt_16)(((alt_16)Data[0] << 8) | Data[1]) ;
-  while (1)
-  { 
 
-	// Read the six raw data registers into data array
-	I2C_ReadMore(I2C_SCL_BASE, I2C_SDA_BASE, &Data[0],2, true);
-	// Turn the MSB and LSB into a signed 16-bit value
-	xaxis[0] = (alt_16)(((alt_16)Data[0] << 8) | Data[1]) ;
-	//printf("Hello from task2\n");
-	printf("xaxis = %d\n", xaxis[0]);
-
-	/* printf("Hello from task1\n");
-    I2C_Start(I2C_SCL_BASE,I2C_SDA_BASE);
-	if(!I2C_ReadFromDeviceRegister(I2C_SCL_BASE,I2C_SDA_BASE, 0xD0, registerAddress, (alt_u8*)&ReadBuf[0], 6, true)){
-
-	  }
-	printf("WHO AM I: %0x\n", ReadBuf[0]);
-	I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+  	printf("MPU9250 Bias Values\n");
+  	printf("Ax: %i \n", 1000*accelBias[0]);
+  	printf("Ay: %i \n", 1000*accelBias[1]);
+  	printf("Az: %i \n", 1000*accelBias[2]);
+  	printf("Gx: %f \n", gyroBias[0]);
+  	printf("Gy: %f \n", gyroBias[1]);
+  	printf("Gz: %f \n", gyroBias[2]);
 	*/
-    OSTimeDlyHMSM(0, 0, 0, 1);
+
+  	// Initialize device for active mode read of acclerometer, gyroscope, and temperature
+  	initMPU9250();
+  	printf("MPU9250 initialized for active data mode....\n");
+
+  	// Get sensor resolutions
+  	getAres(&aRes);
+  	getGres(&gRes);
+  	printf("ares %f\n", aRes);
+  	printf("gres %f\n", gRes);
+
+
+  while (1)
+  {
+	// Variables to hold latest sensor data values
+	float ax, ay, az, gx, gy, gz;
+	// Stores the 16-bit signed accelerometer and gyroscope sensor output
+	alt_16 accelCount[3];
+	alt_16 gyroCount[3];
+
+    printf("Reading Values\n");
+	readAccelData(accelCount); // Read the x/y/z accelerometer values
+	// Calculating the acceleration values into actual g's
+	// Depends on scale being set
+	ax = (float)accelCount[0]*aRes;
+	ay = (float)accelCount[1]*aRes;
+	az = (float)accelCount[2]*aRes;
+
+
+	readGyroData(gyroCount); // Read the x/y/z gyroscope values
+	// Calculating the gyro values into actual degrees per second
+	// Depends on scale being set
+	gx = (float)gyroCount[0]*gRes;
+	gy = (float)gyroCount[1]*gRes;
+	gz = (float)gyroCount[2]*gRes;
+
+  	printf("Ax: %f, ",1000*ax);
+  	printf("Ay: %f, ", 1000*ay);
+  	printf("Az: %f ",1000*az);
+  	printf("mg \n");
+  	printf("Gx: %f, ",gx);
+  	printf("Gy: %f, ", gy);
+  	printf("Gz: %f ", gz);
+  	printf("deg/sec \n");
+	OSTimeDlyHMSM(0, 0, 1, 0);
+
 
   }
 }
