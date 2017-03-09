@@ -27,6 +27,19 @@
 *     minutes per iteration.                                             *
 **************************************************************************/
 
+/*************************************************************************
+
+Drum Anywhere - G4
+Created By - Shivansh Singla and Jake Davidson
+Date Created - 20th Feb, 2016
+Description - This program uses the MPU9250 library along with the I2C
+communication library to establish a connection to the MPUs and start 
+reading raw data from the registers anfter proper self tests, initialization 
+and calibration. Once the raw data is read, it is converted to meaningful 
+acceleration and gyration values using appropriate resolution functions.
+
+
+**************************************************************************/
 
 #include <stdio.h>
 #include "includes.h"
@@ -45,7 +58,7 @@ OS_STK    task2_stk[TASK_STACKSIZE];
 
 
 
-/* Prints "Hello World" and sleeps for three seconds */
+/* This task initializes the IMUs using I2C communication and reads data from the registers */
 void task1(void* pdata){
 
 	//Temporary buffer to read into
@@ -146,7 +159,7 @@ void task1(void* pdata){
 
   }
 }
-/* Prints "Hello World" and sleeps for three seconds */
+/* Sleeps for 1 second */
 void task2(void* pdata)
 {
 

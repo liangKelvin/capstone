@@ -1,7 +1,15 @@
-Readme - Hello MicroC/OS-II Hello Software Example
+ReadMe - imu_i2c 
 
-Hello_uosii is a simple hello world program running MicroC/OS-II.  The
-purpose of the design is to be a very simple application that just
-demonstrates MicroC/OS-II running on NIOS II.  The design doesn't account
-for issues such as checking system call return codes. etc.
+/*************************************************************************
 
+Drum Anywhere - G4
+Created By - Shivansh Singla and Jake Davidson
+Date Created - 20th Feb, 2016
+Description - This program uses the MPU9250 library along with the I2C
+communication library to establish a connection to the MPUs and start 
+reading raw data from the registers anfter proper self tests, initialization 
+and calibration. Once the raw data is read, it is converted to meaningful 
+acceleration and gyration values using appropriate resolution functions.
+
+
+**************************************************************************/

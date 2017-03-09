@@ -6,6 +6,20 @@
 #include "altera_avalon_pio_regs.h"
 #include <math.h>
 
+
+
+/*************************************************************************
+
+Drum Anywhere - G4
+Created By - Shivansh Singla and Jake Davidson
+Date Created - 1st March, 2016
+Description - This is the library used to communicate with MPU9250 using 
+I2C protocol library. This is used for reading raw data from the registers,
+performing self tests, initialization and calibration. Once the raw data 
+is read, it is converted to meaningful acceleration and gyration values 
+using appropriate resolution functions.
+
+**************************************************************************/
 void getAres(float* aRes){
 
 	*aRes =  (float)2.0 / (float)32768.0;
