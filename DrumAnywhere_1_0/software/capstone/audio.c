@@ -67,13 +67,13 @@ int button;
 alt_up_audio_dev * audio_dev;
 
 // sample sizes for sounds
-#define  snareNumberSamples = 7235;
-#define crashNumberSamples = 63342;
-#define hihatNumberSamples = 98218;
-#define hihat2NumberSamples = 6313;
-#define kickNumberSamples = 25448;
-#define tomNumberSamples = 34977;
-#define tom2NumberSamples = 16926;
+const unsigned int snareNumberSamples = 7235;
+const unsigned int crashNumberSamples = 63342;
+const unsigned int hihatNumberSamples = 98218;
+const unsigned int hihat2NumberSamples = 6313;
+const unsigned int kickNumberSamples = 25448;
+const unsigned int tomNumberSamples = 34977;
+const unsigned int tom2NumberSamples = 16926;
 
 // for use later
 //static void interrupt_isr_buttonPress(void *context) {
