@@ -70,7 +70,7 @@ void task1(void* pdata){
 	alt_u16 buflen = 1;
 	// Self tests, biases and resolution for DPS conversions
 	float selfTest[6];
-	float gyroBias[3]  = {0, 0, 0},	accelBias[3] = {0, 0, 0};
+	//float gyroBias[3]  = {0, 0, 0},	accelBias[3] = {0, 0, 0};
 	float aRes, gRes;
 
 
@@ -98,7 +98,7 @@ void task1(void* pdata){
   	printf("z-axis self test: gyration trim within : ");
   	printf("%.1f", selfTest[5]); printf("%% of factory value\n");
 
-  	/*//Calibrate MPU9250 and load Bias into registers
+    /*//Calibrate MPU9250 and load Bias into registers
   	calibrateMPU9250(gyroBias, accelBias);
 
 
@@ -109,10 +109,10 @@ void task1(void* pdata){
   	printf("Gx: %f \n", gyroBias[0]);
   	printf("Gy: %f \n", gyroBias[1]);
   	printf("Gz: %f \n", gyroBias[2]);
-	*/
+    */
 
   	// Initialize device for active mode read of acclerometer, gyroscope, and temperature
-  	initMPU9250();
+  	//initMPU9250();
   	printf("MPU9250 initialized for active data mode....\n");
 
   	// Get sensor resolutions
@@ -154,6 +154,20 @@ void task1(void* pdata){
   	printf("Gy: %f, ", gy);
   	printf("Gz: %f ", gz);
   	printf("deg/sec \n");
+/*
+  	//Temporary buffer to read into
+  	alt_u8 ReadBuf2[2];
+    I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
+    I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ACCEL_YOUT_H, (alt_u8*)&ReadBuf2[0], 1, true);
+    I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+    I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
+	I2C_ReadFromDeviceRegister(I2C_SCL_BASE, I2C_SDA_BASE, deviceAddress, ACCEL_YOUT_L, (alt_u8*)&ReadBuf2[1], 1, true);
+	I2C_Stop(I2C_SCL_BASE, I2C_SDA_BASE);
+
+    alt_16 accel_y = (ReadBuf2[0] << 8) + ReadBuf2[1];
+    printf("accel_y_H = %d\n",ReadBuf2[0]);
+    printf("accel_y_L = %d\n",ReadBuf2[1]);
+    printf("accel_y = %f\n", (float)accel_y*aRes*1000);*/
 	OSTimeDlyHMSM(0, 0, 1, 0);
 
 
