@@ -6,3 +6,5 @@
 1489019585149	Delete resource 'audioTest_bsp'
 1489019608371	Delete resource 'interrupt_test'
 1489019615641	Delete resource 'interrupt_test_bsp'
+1489187487771	Delete resource 'interrupts'
+1489187496441	Delete resource 'interrupts_bsp'

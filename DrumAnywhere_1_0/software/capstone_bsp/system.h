@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Fri Mar 03 16:07:01 MST 2017
+ * Generated: Fri Mar 10 15:13:12 MST 2017
  */
 
 /*
@@ -114,7 +114,7 @@
 #define ALT_CPU_INST_ADDR_WIDTH 0x19
 #define ALT_CPU_NAME "nios2_qsys_0"
 #define ALT_CPU_NUM_OF_SHADOW_REG_SETS 0
-#define ALT_CPU_RESET_ADDR 0x1104000
+#define ALT_CPU_RESET_ADDR 0x0
 
 
 /*
@@ -146,7 +146,7 @@
 #define NIOS2_INITDA_SUPPORTED
 #define NIOS2_INST_ADDR_WIDTH 0x19
 #define NIOS2_NUM_OF_SHADOW_REG_SETS 0
-#define NIOS2_RESET_ADDR 0x1104000
+#define NIOS2_RESET_ADDR 0x0
 
 
 /*
@@ -161,6 +161,7 @@
 #define __ALTERA_AVALON_SPI
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
+#define __ALTERA_GENERIC_TRISTATE_CONTROLLER
 #define __ALTERA_NIOS2_QSYS
 #define __ALTERA_UP_AVALON_AUDIO
 #define __ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG
@@ -259,6 +260,20 @@
 #define CHARACTER_LCD_0_NAME "/dev/character_lcd_0"
 #define CHARACTER_LCD_0_SPAN 2
 #define CHARACTER_LCD_0_TYPE "altera_up_avalon_character_lcd"
+
+
+/*
+ * generic_tristate_controller_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_generic_tristate_controller_0 altera_generic_tristate_controller
+#define GENERIC_TRISTATE_CONTROLLER_0_BASE 0x0
+#define GENERIC_TRISTATE_CONTROLLER_0_IRQ -1
+#define GENERIC_TRISTATE_CONTROLLER_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define GENERIC_TRISTATE_CONTROLLER_0_NAME "/dev/generic_tristate_controller_0"
+#define GENERIC_TRISTATE_CONTROLLER_0_SPAN 4194304
+#define GENERIC_TRISTATE_CONTROLLER_0_TYPE "altera_generic_tristate_controller"
 
 
 /*
@@ -441,7 +456,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1488579771
+#define SYSID_QSYS_0_TIMESTAMP 1489183579
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

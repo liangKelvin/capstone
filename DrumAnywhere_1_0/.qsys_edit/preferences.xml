@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="239" />
+   <connections preferredWidth="271" />
    <irq preferredWidth="34" />
    <inputclock preferredWidth="149" />
    <name preferredWidth="263" />
@@ -17,7 +17,7 @@
   </columns>
  </clocktable>
  <library
-   expandedCategories="Library/Peripherals/Microcontroller Peripherals,Project,Library,Library/Peripherals" />
+   expandedCategories="Library/Qsys Interconnect/Tri-State Components,Project,Library/Qsys Interconnect,Library" />
  <window width="1440" height="855" x="-9" y="20" />
  <hdlexample language="VHDL" />
 </preferences>

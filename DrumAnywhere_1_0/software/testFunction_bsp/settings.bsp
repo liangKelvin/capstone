@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 8, 2017 4:22:09 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1489015329498</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 10, 2017 1:56:34 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1489179394519</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/testFunction_bsp</BspGeneratedLocation>
-        <BspSettingsFile>./settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../niosII_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_qsys_0</Cpu>

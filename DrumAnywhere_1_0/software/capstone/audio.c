@@ -40,7 +40,7 @@
 
 
 #include <stdio.h>
-#include "system.h"
+#include <system.h>
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
@@ -75,13 +75,12 @@ const unsigned int kickNumberSamples = 25448;
 const unsigned int tomNumberSamples = 34977;
 const unsigned int tom2NumberSamples = 16926;
 
-// for use later
-//static void interrupt_isr_buttonPress(void *context) {
-//	button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
-//	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-//	alt_up_character_lcd_string(myLCD, "button: ");
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(0x1109060, 0x08);
-//}
+static void interrupt_isr_buttonPress(void *context) {
+	button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, "button: ");
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(0x1109060, 0x08);
+}
 
 int main(void) {
 
@@ -152,6 +151,12 @@ int main(void) {
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
+
+	alt_ic_isr_register(0,
+						5,
+						interrupt_isr_buttonPress,
+						NULL,
+						NULL);
 
 	// currently we use this while loop for demonstration purposes
 	// for actual implementation we will use an interrupt routine to handle drum soound playing
@@ -313,7 +318,7 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
 	int i;
 	unsigned int temp;
 	for(i = 0; i < numberSamples; i++) {
-		temp = (unsigned int) (fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8));
+		temp = (unsigned int) 2*((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
 		fileBufL[i] = temp;
 	}
 }

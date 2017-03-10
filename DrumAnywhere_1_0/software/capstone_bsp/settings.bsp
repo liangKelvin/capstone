@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 8, 2017 1:35:17 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1489005317396</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 10, 2017 3:19:59 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1489184399574</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../niosII_system.sopcinfo</SopcDesignFile>
@@ -146,7 +146,7 @@
                 <SettingName>hal.linker.exception_stack_memory_region_name</SettingName>
                 <Identifier>NONE</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>sdram_0</Value>
+                <Value>generic_tristate_controller_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'exception_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'exception_stack' memory region.</Description>
@@ -182,7 +182,7 @@
                 <SettingName>hal.linker.interrupt_stack_memory_region_name</SettingName>
                 <Identifier>NONE</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>sdram_0</Value>
+                <Value>onchip_memory2_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'interrupt_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'interrupt_stack' memory region.</Description>
@@ -1690,6 +1690,12 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <MemoryMap>
+                <slaveDescriptor>generic_tristate_controller_0</slaveDescriptor>
+                <addressRange>0x00000000 - 0x003FFFFF</addressRange>
+                <addressSpan>4194304</addressSpan>
+                <attributes>flash, memory</attributes>
+        </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram_0</slaveDescriptor>
                 <addressRange>0x00800000 - 0x00FFFFFF</addressRange>

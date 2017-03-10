@@ -78,7 +78,16 @@ library ieee;
 		SD_DAT         : in       std_logic;
 		SD_DAT3			: out			std_logic;
 		SD_CLK			: out			std_logic;
-		SD_CMD			: out			std_logic
+		SD_CMD			: out			std_logic;
+		
+		-- Flash
+		
+		FL_ADDR        : out       std_logic_vector(21 downto 0);
+		FL_CE_N        : out       std_logic_vector(0 downto 0);
+		FL_OE_N        : out       std_logic_vector(0 downto 0);
+		FL_DQ          : inout     std_logic_vector(7 downto 0);
+		FL_RST_N       : out       std_logic_vector(0 downto 0);
+		FL_WE_N        : out       std_logic_vector(0 downto 0)
 
 		
 	);
@@ -130,7 +139,12 @@ architecture structure of DrumAnywhere_1_0 is
             spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
             spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
             spi_0_external_SS_n                              : out   std_logic;                                        -- SS_n
-				buttons_external_connection_export               : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- export
+				buttons_external_connection_export               : in    std_logic_vector(3 downto 0)  := (others => 'X');  -- export
+				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_read_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_write_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      : out   std_logic_vector(21 downto 0)                     -- generic_tristate_controller_0_tcm_address_out
         );
     end component niosII_system;
 
@@ -150,6 +164,7 @@ begin
 	DRAM_UDQM <= DQM(1);
 	DRAM_LDQM <= DQM(0);
 	
+	FL_RST_N(0) <= '1';
 	rst <= '1';
 	
 	-- Component Instantiation Statement (optional)
@@ -195,9 +210,13 @@ begin
             spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
             spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
             spi_0_external_SS_n                              => SD_DAT3, 
-				buttons_external_connection_export               => KEY(3 downto 0)              --                 buttons_external_connection.export			--    
-				
-		 );
+				buttons_external_connection_export               => KEY(3 downto 0),             --                 buttons_external_connection.export			--    
+				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       => FL_OE_N,    --               tristate_conduit_bridge_0_out.generic_tristate_controller_0_tcm_read_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         => FL_DQ,        --                                            .generic_tristate_controller_0_tcm_data_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out => FL_CE_N, --                                            .generic_tristate_controller_0_tcm_chipselect_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      => FL_WE_N,     --                                            .generic_tristate_controller_0_tcm_write_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      => FL_ADDR
+		);
 
 end structure;
 
