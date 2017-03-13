@@ -8612,3 +8612,6 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY com.altera.sbtgui.launch 4 0 2017-03-12 18:46:33.601
 !MESSAGE Downloading ELF Process failed
+
+!ENTRY org.eclipse.core.jobs 2 2 2017-03-12 19:07:17.302
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: com.altera.sbtgui.core.commandline.ExecutableJob

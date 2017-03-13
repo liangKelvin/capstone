@@ -105,6 +105,7 @@ int main(void) {
 	fileNames[4] = "kick.wav";
 	fileNames[5] = "tom.wav";
 	fileNames[6] = "tom2.wav";
+
 	// arrays to hold waveforms
 	unsigned int snare[snareNumberSamples];
 	unsigned int crash[crashNumberSamples];
@@ -113,6 +114,7 @@ int main(void) {
 	unsigned int kick[kickNumberSamples];
 	unsigned int tom[tomNumberSamples];
 	unsigned int tom2[tom2NumberSamples];
+
 	// arrays for reading all data from sd card
 	euint8* snareTemp = malloc(29102 * sizeof(eint8));
 	euint8* crashTemp = malloc(253412 * sizeof(eint8));
@@ -121,12 +123,15 @@ int main(void) {
 	euint8* kickTemp = malloc(104548 * sizeof(eint8));
 	euint8* tomTemp = malloc(228186 * sizeof(eint8));
 	euint8* tom2Temp = malloc(67748 * sizeof(eint8));
+
 	// init lcd
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Loading Sounds");
+
 	// init spi interface
 	sdInit(&efsl, &readFile);
+
 	// read files from sd card
 	snareTemp = sdRead(fileNames[0], &efsl, &readFile);
 	crashTemp = sdRead(fileNames[1], &efsl, &readFile);
@@ -154,86 +159,86 @@ int main(void) {
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
-//	alt_ic_isr_register(0,
-//						5,
-//						interrupt_isr_buttonPress,
-//						NULL,
-//						NULL);
+	alt_ic_isr_register(0,
+						5,
+						interrupt_isr_buttonPress,
+						NULL,
+						NULL);
 
 	// currently we use this while loop for demonstration purposes
 	// for actual implementation we will use an interrupt routine to handle drum soound playing
-	while(1) {
-		// currently using magic number due to problems with system.h header
-		button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
-
-
-		switch (button) {
-
-			case 7 :
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "tom/Crash");
-
-				int k = 40000;
-				int kcrash = 0;
-				unsigned int tempArr[128];
-				while(kcrash <= crashNumberSamples - 128) {
-					addWav(tom + k, crash + kcrash, tempArr);
-					k += 128;
-					kcrash += 128;
-					if(k >= tomNumberSamples - 128) {
-						k = 0;
-					}
-					playSound(128, tempArr);
-				}
-				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
-				break;
-
-			case 11:
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "hihat Decay");
-
-				int kk = 0;
-				while(kk <= 60000) {
-					kk += 128;
-					playSound(128, hihat+kk);
-				}
-				int j;
-				for (j = 0; j < 3; j++) {
-					kk = 60000;
-					while(kk <= 70000) {
-						kk += 128;
-						playSound(128, hihat+kk);
-					}
-				}
-				while(k <= hihatNumberSamples - 128) {
-					k += 128;
-					playSound(128, hihat+k);
-				}
-				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
-				break;
-
-			case 13:
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "HiHat Amp");
-
-				int scale = 3;
-				playSoundAmp(hihatNumberSamples, hihat, scale);
-				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
-				break;
-
-			case 14:
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Hi-Hat");
-
-				playSound(hihatNumberSamples, hihat);
-				while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
-				break;
-		}
-	}
+//	while(1) {
+//		// currently using magic number due to problems with system.h header
+//		button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+//
+//
+//		switch (button) {
+//
+//			case 7 :
+//				alt_up_character_lcd_init(myLCD);
+//				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+//				alt_up_character_lcd_string(myLCD, "tom/Crash");
+//
+//				int k = 40000;
+//				int kcrash = 0;
+//				unsigned int tempArr[128];
+//				while(kcrash <= crashNumberSamples - 128) {
+//					addWav(tom + k, crash + kcrash, tempArr);
+//					k += 128;
+//					kcrash += 128;
+//					if(k >= tomNumberSamples - 128) {
+//						k = 0;
+//					}
+//					playSound(128, tempArr);
+//				}
+//				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+//				break;
+//
+//			case 11:
+//				alt_up_character_lcd_init(myLCD);
+//				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+//				alt_up_character_lcd_string(myLCD, "hihat Decay");
+//
+//				int kk = 0;
+//				while(kk <= 60000) {
+//					kk += 128;
+//					playSound(128, hihat+kk);
+//				}
+//				int j;
+//				for (j = 0; j < 3; j++) {
+//					kk = 60000;
+//					while(kk <= 70000) {
+//						kk += 128;
+//						playSound(128, hihat+kk);
+//					}
+//				}
+//				while(k <= hihatNumberSamples - 128) {
+//					k += 128;
+//					playSound(128, hihat+k);
+//				}
+//				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+//				break;
+//
+//			case 13:
+//				alt_up_character_lcd_init(myLCD);
+//				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+//				alt_up_character_lcd_string(myLCD, "HiHat Amp");
+//
+//				int scale = 3;
+//				playSoundAmp(hihatNumberSamples, hihat, scale);
+//				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+//				break;
+//
+//			case 14:
+//				alt_up_character_lcd_init(myLCD);
+//				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+//				alt_up_character_lcd_string(myLCD, "Hi-Hat");
+//
+//				playSound(hihatNumberSamples, hihat);
+//				while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
+//				break;
+//		}
+//	}
 }
 // takes in wav file and number of samples
 // plays given sound once

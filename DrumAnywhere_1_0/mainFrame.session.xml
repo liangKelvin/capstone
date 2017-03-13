@@ -18,10 +18,10 @@
     <void property="columnWidths"> 
      <array class="int" length="3"> 
       <void index="0"> 
-       <int>474</int> 
+       <int>473</int> 
       </void> 
       <void index="1"> 
-       <int>149</int> 
+       <int>148</int> 
       </void> 
       <void index="2"> 
        <int>148</int> 
@@ -35,9 +35,9 @@
    <object class="org.jdesktop.application.SessionStorage$WindowState"> 
     <void property="bounds"> 
      <object class="java.awt.Rectangle"> 
-      <int>246</int> 
-      <int>67</int> 
-      <int>925</int> 
+      <int>201</int> 
+      <int>27</int> 
+      <int>923</int> 
       <int>762</int> 
      </object> 
     </void> 
