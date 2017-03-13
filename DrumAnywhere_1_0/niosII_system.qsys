@@ -193,19 +193,19 @@
          type = "String";
       }
    }
-   element switch.s1
-   {
-      datum baseAddress
-      {
-         value = "17862816";
-         type = "String";
-      }
-   }
    element I2C_SCL.s1
    {
       datum baseAddress
       {
          value = "17862768";
+         type = "String";
+      }
+   }
+   element switch.s1
+   {
+      datum baseAddress
+      {
+         value = "17862816";
          type = "String";
       }
    }
@@ -217,11 +217,11 @@
          type = "String";
       }
    }
-   element green_leds.s1
+   element onchip_memory2_0.s1
    {
       datum baseAddress
       {
-         value = "17862832";
+         value = "17842176";
          type = "String";
       }
    }
@@ -233,11 +233,11 @@
          type = "String";
       }
    }
-   element onchip_memory2_0.s1
+   element green_leds.s1
    {
       datum baseAddress
       {
-         value = "17842176";
+         value = "17862832";
          type = "String";
       }
    }
@@ -333,7 +333,7 @@
  <parameter name="projectName">DrumAnywhere_1_0.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1487725651644" />
+ <parameter name="timeStamp" value="1489442395632" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript><![CDATA[# request a specific version of the scripting API
 package require -exact qsys 12.1
@@ -481,7 +481,7 @@ proc compose {} {
   <parameter name="mmu_tlbPtrSz" value="7" />
   <parameter name="mmu_tlbNumWays" value="16" />
   <parameter name="mmu_processIDNumBits" value="8" />
-  <parameter name="impl" value="Tiny" />
+  <parameter name="impl" value="Fast" />
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_numTCIM" value="0" />

@@ -44,7 +44,7 @@ void readAccelData(alt_16 * destination)
   destination[1] = ((alt_16)rawData[2] << 8) | rawData[3] ;
   destination[2] = ((alt_16)rawData[4] << 8) | rawData[5] ;
   //printf("destination[0] %d\n", destination[0]);
-  printf("destination[1] %d\n", destination[1]);
+  //printf("destination[1] %d\n", destination[1]);
   //printf("destination[2] %d\n", destination[2]);
 }
 
@@ -430,7 +430,7 @@ void MPU9250SelfTest(float * destination)
 
   int ii;
   // Get average current values of gyro and acclerometer
-  for ( ii = 0; ii < 200; ii= ii+1) {
+  for ( ii = 0; ii < 100; ii= ii+1) {
 
   	//printf("BHW::ii = %d \n", ii );
   	I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
@@ -459,8 +459,8 @@ void MPU9250SelfTest(float * destination)
   // Get average of 200 values and store as average current readings
   for ( ii =0; ii < 3; ii = ii+1)
   {
-    aAvg[ii] /= 200;
-    gAvg[ii] /= 200;
+    aAvg[ii] /= 100;
+    gAvg[ii] /= 100;
   }
   I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
 
@@ -476,7 +476,7 @@ void MPU9250SelfTest(float * destination)
 
 
   // Get average self-test values of gyro and acclerometer
-  for ( ii =0; ii < 200; ii = ii+1)
+  for ( ii =0; ii < 100; ii = ii+1)
   {
 	I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);
     // Read the six raw data registers into data array
@@ -502,8 +502,8 @@ void MPU9250SelfTest(float * destination)
   // Get average of 200 values and store as average self-test readings
   for ( ii =0; ii < 3; ii = ii+1)
   {
-    aSTAvg[ii] /= 200;
-    gSTAvg[ii] /= 200;
+    aSTAvg[ii] /= 100;
+    gSTAvg[ii] /= 100;
   }
 
   I2C_Start(I2C_SCL_BASE, I2C_SDA_BASE);

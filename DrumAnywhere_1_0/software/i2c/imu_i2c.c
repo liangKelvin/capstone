@@ -120,17 +120,18 @@ void task1(void* pdata){
   	getGres(&gRes);
   	printf("ares %f\n", aRes);
   	printf("gres %f\n", gRes);
+	int hit_flag = 0;
 
 
   while (1)
   {
 	// Variables to hold latest sensor data values
-	float ax, ay, az, gx, gy, gz;
+	float ax, ay, az, gx, gy, gz, az_old;
 	// Stores the 16-bit signed accelerometer and gyroscope sensor output
 	alt_16 accelCount[3];
 	alt_16 gyroCount[3];
-
-    printf("Reading Values\n");
+	az_old = 0;
+    //printf("Reading Values\n");
 	readAccelData(accelCount); // Read the x/y/z accelerometer values
 	// Calculating the acceleration values into actual g's
 	// Depends on scale being set
@@ -145,15 +146,47 @@ void task1(void* pdata){
 	gx = (float)gyroCount[0]*gRes;
 	gy = (float)gyroCount[1]*gRes;
 	gz = (float)gyroCount[2]*gRes;
+	//printf("%d \n", hit_flag);
+	//printf("%f\n ",1000*(az));
+	if((((az - az_old)*1000) < -1000)){
+		if(!hit_flag){
+			//printf("%f   ",1000*(az-az_old));
+			printf("BOOOOOOOOOOOOOOOOOOOOOOM\n");
+			hit_flag = 1;
 
-  	printf("Ax: %f, ",1000*ax);
-  	printf("Ay: %f, ", 1000*ay);
-  	printf("Az: %f ",1000*az);
-  	printf("mg \n");
-  	printf("Gx: %f, ",gx);
-  	printf("Gy: %f, ", gy);
-  	printf("Gz: %f ", gz);
-  	printf("deg/sec \n");
+		}
+	}
+	else if ((((az - az_old)*1000) > 1000)){
+		hit_flag = 0;
+	}
+	az_old =az;
+
+	/*if(((az - az_old)*1000) > 1500){
+		hit_flag = 0;
+		az_old =az;
+	}*/
+	//printf("Az - Az_old: %f\n ",1000*(az-az_old));
+
+	/*if ((ay*1000)>80){
+		printf("Front Hit recorded\n\n");
+	}
+	else if((ax*1000)>50){
+		printf("Left Hit recorded\n\n");
+	}
+	else if((ax*1000)<10){
+		printf("Right Hit recorded\n\n");
+	}
+	else{
+		printf("NO HIT recorded\n");
+		printf("Ax: %f, ",1000*ax);
+		printf("Ay: %f, ", 1000*ay);
+		printf("Az: %f ",1000*az);
+		printf("mg \n");
+		printf("Gx: %f, ",gx);
+		printf("Gy: %f, ", gy);
+		printf("Gz: %f ", gz);
+		printf("deg/sec \n\n");
+	}*/
 /*
   	//Temporary buffer to read into
   	alt_u8 ReadBuf2[2];
@@ -168,7 +201,7 @@ void task1(void* pdata){
     printf("accel_y_H = %d\n",ReadBuf2[0]);
     printf("accel_y_L = %d\n",ReadBuf2[1]);
     printf("accel_y = %f\n", (float)accel_y*aRes*1000);*/
-	OSTimeDlyHMSM(0, 0, 1, 0);
+	OSTimeDlyHMSM(0, 0, 0, 1);
 
 
   }

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DrumAnywhere_1_0
-Fri Feb 24 14:07:03 2017
+Mon Mar 13 16:06:39 2017
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
 
 
@@ -149,7 +149,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_27   ; AUD_XCK     ; 2.917 ;    ;    ; 2.917 ;
+; CLOCK_27   ; AUD_XCK     ; 2.918 ;    ;    ; 2.918 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.868 ;    ;    ; 0.868 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -159,7 +159,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_27   ; AUD_XCK     ; 2.917 ;    ;    ; 2.917 ;
+; CLOCK_27   ; AUD_XCK     ; 2.918 ;    ;    ; 2.918 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.868 ;    ;    ; 0.868 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -211,7 +211,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_27   ; AUD_XCK     ; 1.463 ;    ;    ; 1.463 ;
+; CLOCK_27   ; AUD_XCK     ; 1.464 ;    ;    ; 1.464 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.154 ;    ;    ; 0.154 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -221,7 +221,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_27   ; AUD_XCK     ; 1.463 ;    ;    ; 1.463 ;
+; CLOCK_27   ; AUD_XCK     ; 1.464 ;    ;    ; 1.464 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.154 ;    ;    ; 0.154 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -243,7 +243,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_27   ; AUD_XCK     ; 2.917 ;    ;    ; 2.917 ;
+; CLOCK_27   ; AUD_XCK     ; 2.918 ;    ;    ; 2.918 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.868 ;    ;    ; 0.868 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -253,7 +253,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_27   ; AUD_XCK     ; 1.463 ;    ;    ; 1.463 ;
+; CLOCK_27   ; AUD_XCK     ; 1.464 ;    ;    ; 1.464 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.154 ;    ;    ; 0.154 ;
 +------------+-------------+-------+----+----+-------+
 
@@ -296,7 +296,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Feb 24 14:07:00 2017
+    Info: Processing started: Mon Mar 13 16:06:35 2017
 Info: Command: quartus_sta DrumAnywhere_1_0 -c DrumAnywhere_1_0
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -492,9 +492,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 355 megabytes
-    Info: Processing ended: Fri Feb 24 14:07:03 2017
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 382 megabytes
+    Info: Processing ended: Mon Mar 13 16:06:39 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
