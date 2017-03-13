@@ -60,6 +60,8 @@ void audioInit(alt_up_av_config_dev * audio_config_dev);
 void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int* fileBufL);
 void sdInit(EmbeddedFileSystem *efsl, File *readFile);
 void playSound(unsigned long NumberSamples, unsigned int* wav);
+void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale);
+void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr);
 
 // globals 
 alt_up_character_lcd_dev* myLCD;
@@ -72,7 +74,7 @@ const unsigned int crashNumberSamples = 63342;
 const unsigned int hihatNumberSamples = 98218;
 const unsigned int hihat2NumberSamples = 6313;
 const unsigned int kickNumberSamples = 25448;
-const unsigned int tomNumberSamples = 34977;
+const unsigned int tomNumberSamples = 57006;
 const unsigned int tom2NumberSamples = 16926;
 
 static void interrupt_isr_buttonPress(void *context) {
@@ -117,7 +119,7 @@ int main(void) {
 	euint8* hihatTemp = malloc(392916 * sizeof(eint8));
 	euint8* hihat2Temp  = malloc(25296 * sizeof(eint8));
 	euint8* kickTemp = malloc(104548 * sizeof(eint8));
-	euint8* tomTemp = malloc(139952 * sizeof(eint8));
+	euint8* tomTemp = malloc(228186 * sizeof(eint8));
 	euint8* tom2Temp = malloc(67748 * sizeof(eint8));
 	// init lcd
 	alt_up_character_lcd_init(myLCD);
@@ -152,11 +154,11 @@ int main(void) {
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
-	alt_ic_isr_register(0,
-						5,
-						interrupt_isr_buttonPress,
-						NULL,
-						NULL);
+//	alt_ic_isr_register(0,
+//						5,
+//						interrupt_isr_buttonPress,
+//						NULL,
+//						NULL);
 
 	// currently we use this while loop for demonstration purposes
 	// for actual implementation we will use an interrupt routine to handle drum soound playing
@@ -170,27 +172,55 @@ int main(void) {
 			case 7 :
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Bass");
+				alt_up_character_lcd_string(myLCD, "tom/Crash");
 
-				playSound(tom2NumberSamples, tom2);
+				int k = 40000;
+				int kcrash = 0;
+				unsigned int tempArr[128];
+				while(kcrash <= crashNumberSamples - 128) {
+					addWav(tom + k, crash + kcrash, tempArr);
+					k += 128;
+					kcrash += 128;
+					if(k >= tomNumberSamples - 128) {
+						k = 0;
+					}
+					playSound(128, tempArr);
+				}
 				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
 
 			case 11:
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Snare");
+				alt_up_character_lcd_string(myLCD, "hihat Decay");
 
-				playSound(snareNumberSamples, snare);
+				int kk = 0;
+				while(kk <= 60000) {
+					kk += 128;
+					playSound(128, hihat+kk);
+				}
+				int j;
+				for (j = 0; j < 3; j++) {
+					kk = 60000;
+					while(kk <= 70000) {
+						kk += 128;
+						playSound(128, hihat+kk);
+					}
+				}
+				while(k <= hihatNumberSamples - 128) {
+					k += 128;
+					playSound(128, hihat+k);
+				}
 				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
 
 			case 13:
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Crash");
+				alt_up_character_lcd_string(myLCD, "HiHat Amp");
 
-				playSound(crashNumberSamples, crash);
+				int scale = 3;
+				playSoundAmp(hihatNumberSamples, hihat, scale);
 				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
 
@@ -202,7 +232,6 @@ int main(void) {
 				playSound(hihatNumberSamples, hihat);
 				while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(0x1109060);
 				break;
-
 		}
 	}
 }
@@ -210,12 +239,34 @@ int main(void) {
 // plays given sound once
 void playSound(unsigned long NumberSamples, unsigned int* wav) {
 	int count = 0;
+	int bool = 0;
 	while(count <= NumberSamples - 128) {
 		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
 		if(fifospace >= 128) {
 				alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_RIGHT);
 				alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_LEFT);
 				count += 128;
+				bool = 1;
+		}
+	}
+}
+
+
+void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale) {
+	int count = 0;
+	int bool = 0;
+	unsigned int temp[128];
+	while(count <= NumberSamples - 128) {
+		int k;
+		for(k = 0; k < 128; k++) {
+			temp[k] = scale*wav[k+count];
+		}
+		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+		if(fifospace >= 128) {
+				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_RIGHT);
+				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_LEFT);
+				count += 128;
+				bool = 1;
 		}
 	}
 }
@@ -320,6 +371,13 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
 	for(i = 0; i < numberSamples; i++) {
 		temp = (unsigned int) 2*((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
 		fileBufL[i] = temp;
+	}
+}
+
+void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr) {
+	int k;
+	for(k = 0; k < 128; k++) {
+		arr[k] = wav1[k] + wav2[k];
 	}
 }
 
