@@ -202,7 +202,7 @@ APP_INCLUDE_DIRS += efsl
 APP_INCLUDE_DIRS += ../capstone_bsp
 APP_LIBRARY_DIRS += efsl
 APP_LIBRARY_DIRS += ../capstone_bsp
-APP_LIBRARY_NAMES := ucosii_bsp.a
+APP_LIBRARY_NAMES :=
 
 # Pre- and post- processor settings.
 BUILD_PRE_PROCESS :=

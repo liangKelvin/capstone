@@ -152,11 +152,11 @@ int main(void) {
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
-//	alt_ic_isr_register(0,
-//						5,
-//						interrupt_isr_buttonPress,
-//						NULL,
-//						NULL);
+	alt_ic_isr_register(0,
+						5,
+						interrupt_isr_buttonPress,
+						NULL,
+						NULL);
 
 	// currently we use this while loop for demonstration purposes
 	// for actual implementation we will use an interrupt routine to handle drum soound playing
