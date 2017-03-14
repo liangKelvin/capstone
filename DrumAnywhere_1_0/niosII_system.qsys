@@ -185,11 +185,19 @@
          type = "String";
       }
    }
-   element green_leds.s1
+   element Buttons.s1
    {
       datum baseAddress
       {
-         value = "17862800";
+         value = "17862752";
+         type = "String";
+      }
+   }
+   element onchip_memory2_0.s1
+   {
+      datum baseAddress
+      {
+         value = "17842176";
          type = "String";
       }
    }
@@ -209,19 +217,11 @@
          type = "String";
       }
    }
-   element Buttons.s1
+   element green_leds.s1
    {
       datum baseAddress
       {
-         value = "17862752";
-         type = "String";
-      }
-   }
-   element onchip_memory2_0.s1
-   {
-      datum baseAddress
-      {
-         value = "17842176";
+         value = "17862800";
          type = "String";
       }
    }
@@ -317,7 +317,7 @@
  <parameter name="projectName">DrumAnywhere_1_0.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1489181119468" />
+ <parameter name="timeStamp" value="1489438623715" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript><![CDATA[# request a specific version of the scripting API
 package require -exact qsys 12.1
@@ -863,12 +863,12 @@ proc compose {} {
  <module kind="altera_avalon_pio" version="12.1" enabled="1" name="Buttons">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
+  <parameter name="captureEdge" value="true" />
   <parameter name="clockRate" value="50000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="true" />
-  <parameter name="irqType" value="LEVEL" />
+  <parameter name="irqType" value="EDGE" />
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />

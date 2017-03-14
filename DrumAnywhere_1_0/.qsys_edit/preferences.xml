@@ -11,13 +11,12 @@
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="384" />
-   <clocksource preferredWidth="384" />
-   <frequency preferredWidth="366" />
+   <clockname preferredWidth="377" />
+   <clocksource preferredWidth="377" />
+   <frequency preferredWidth="360" />
   </columns>
  </clocktable>
- <library
-   expandedCategories="Library/Qsys Interconnect/Tri-State Components,Project,Library/Qsys Interconnect,Library" />
+ <library expandedCategories="Library,Project" />
  <window width="1440" height="855" x="-9" y="20" />
  <hdlexample language="VHDL" />
 </preferences>

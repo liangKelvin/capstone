@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Fri Mar 10 13:56:35 MST 2017
+ * Generated: Tue Mar 14 14:15:12 MDT 2017
  */
 
 /*
@@ -64,18 +64,18 @@
 #define BUTTONS_BASE 0x1109060
 #define BUTTONS_BIT_CLEARING_EDGE_REGISTER 0
 #define BUTTONS_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define BUTTONS_CAPTURE 0
+#define BUTTONS_CAPTURE 1
 #define BUTTONS_DATA_WIDTH 4
 #define BUTTONS_DO_TEST_BENCH_WIRING 0
 #define BUTTONS_DRIVEN_SIM_VALUE 0x0
-#define BUTTONS_EDGE_TYPE "NONE"
+#define BUTTONS_EDGE_TYPE "RISING"
 #define BUTTONS_FREQ 50000000u
 #define BUTTONS_HAS_IN 1
 #define BUTTONS_HAS_OUT 0
 #define BUTTONS_HAS_TRI 0
 #define BUTTONS_IRQ 5
 #define BUTTONS_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define BUTTONS_IRQ_TYPE "LEVEL"
+#define BUTTONS_IRQ_TYPE "EDGE"
 #define BUTTONS_NAME "/dev/Buttons"
 #define BUTTONS_RESET_VALUE 0x0
 #define BUTTONS_SPAN 16
@@ -114,7 +114,7 @@
 #define ALT_CPU_INST_ADDR_WIDTH 0x19
 #define ALT_CPU_NAME "nios2_qsys_0"
 #define ALT_CPU_NUM_OF_SHADOW_REG_SETS 0
-#define ALT_CPU_RESET_ADDR 0x1104000
+#define ALT_CPU_RESET_ADDR 0x0
 
 
 /*
@@ -146,7 +146,7 @@
 #define NIOS2_INITDA_SUPPORTED
 #define NIOS2_INST_ADDR_WIDTH 0x19
 #define NIOS2_NUM_OF_SHADOW_REG_SETS 0
-#define NIOS2_RESET_ADDR 0x1104000
+#define NIOS2_RESET_ADDR 0x0
 
 
 /*
@@ -161,6 +161,7 @@
 #define __ALTERA_AVALON_SPI
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
+#define __ALTERA_GENERIC_TRISTATE_CONTROLLER
 #define __ALTERA_NIOS2_QSYS
 #define __ALTERA_UP_AVALON_AUDIO
 #define __ALTERA_UP_AVALON_AUDIO_AND_VIDEO_CONFIG
@@ -259,6 +260,20 @@
 #define CHARACTER_LCD_0_NAME "/dev/character_lcd_0"
 #define CHARACTER_LCD_0_SPAN 2
 #define CHARACTER_LCD_0_TYPE "altera_up_avalon_character_lcd"
+
+
+/*
+ * generic_tristate_controller_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_generic_tristate_controller_0 altera_generic_tristate_controller
+#define GENERIC_TRISTATE_CONTROLLER_0_BASE 0x0
+#define GENERIC_TRISTATE_CONTROLLER_0_IRQ -1
+#define GENERIC_TRISTATE_CONTROLLER_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define GENERIC_TRISTATE_CONTROLLER_0_NAME "/dev/generic_tristate_controller_0"
+#define GENERIC_TRISTATE_CONTROLLER_0_SPAN 4194304
+#define GENERIC_TRISTATE_CONTROLLER_0_TYPE "altera_generic_tristate_controller"
 
 
 /*
@@ -441,7 +456,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1489179205
+#define SYSID_QSYS_0_TIMESTAMP 1489441364
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

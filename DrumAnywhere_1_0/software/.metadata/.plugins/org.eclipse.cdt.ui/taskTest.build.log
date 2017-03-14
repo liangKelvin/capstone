@@ -1,0 +1,7 @@
+
+**** Clean-only build of configuration Nios II for project taskTest ****
+
+make clean 
+[taskTest clean complete]
+
+**** Build Finished ****

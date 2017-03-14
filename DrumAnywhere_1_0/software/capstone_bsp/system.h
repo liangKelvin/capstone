@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Fri Mar 10 15:13:12 MST 2017
+ * Generated: Mon Mar 13 15:47:50 MDT 2017
  */
 
 /*
@@ -64,18 +64,18 @@
 #define BUTTONS_BASE 0x1109060
 #define BUTTONS_BIT_CLEARING_EDGE_REGISTER 0
 #define BUTTONS_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define BUTTONS_CAPTURE 0
+#define BUTTONS_CAPTURE 1
 #define BUTTONS_DATA_WIDTH 4
 #define BUTTONS_DO_TEST_BENCH_WIRING 0
 #define BUTTONS_DRIVEN_SIM_VALUE 0x0
-#define BUTTONS_EDGE_TYPE "NONE"
+#define BUTTONS_EDGE_TYPE "RISING"
 #define BUTTONS_FREQ 50000000u
 #define BUTTONS_HAS_IN 1
 #define BUTTONS_HAS_OUT 0
 #define BUTTONS_HAS_TRI 0
 #define BUTTONS_IRQ 5
 #define BUTTONS_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define BUTTONS_IRQ_TYPE "LEVEL"
+#define BUTTONS_IRQ_TYPE "EDGE"
 #define BUTTONS_NAME "/dev/Buttons"
 #define BUTTONS_RESET_VALUE 0x0
 #define BUTTONS_SPAN 16
@@ -456,7 +456,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1489183579
+#define SYSID_QSYS_0_TIMESTAMP 1489441364
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

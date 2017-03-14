@@ -315,9 +315,11 @@ OSIdleCtrRun        0x4               ../testFunction_bsp//libucosii_bsp.a(os_co
 Memory Configuration
 
 Name             Origin             Length             Attributes
+reset            0x00000000         0x00000020
+generic_tristate_controller_0 0x00000020         0x003fffe0
 sdram_0          0x00800000         0x00800000
 sram_0           0x01080000         0x00080000
-reset            0x01104000         0x00000020
+onchip_memory2_0_BEFORE_EXCEPTION 0x01104000         0x00000020
 onchip_memory2_0 0x01104020         0x00003fe0
 *default*        0x00000000         0xffffffff
 
@@ -352,14 +354,15 @@ LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-
 LOAD ../testFunction_bsp//libucosii_bsp.a
 END GROUP
 LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a
+                0x00000000                __alt_mem_generic_tristate_controller_0 = 0x0
                 0x00800000                __alt_mem_sdram_0 = 0x800000
                 0x01080000                __alt_mem_sram_0 = 0x1080000
                 0x01104000                __alt_mem_onchip_memory2_0 = 0x1104000
 
-.entry          0x01104000       0x20
+.entry          0x00000000       0x20
  *(.entry)
- .entry         0x01104000       0x20 ../testFunction_bsp//obj/HAL/src/crt0.o
-                0x01104000                __reset
+ .entry         0x00000000       0x20 ../testFunction_bsp//obj/HAL/src/crt0.o
+                0x00000000                __reset
 
 .exceptions     0x01104020      0x1a0 load address 0x00800000
                 0x01104020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
@@ -1669,6 +1672,14 @@ LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-
                 0x0082ab00                _atexit0
                 0x0082ac90                . = ALIGN (0x4)
                 0x0082ac90                __bss_end = ABSOLUTE (.)
+
+.generic_tristate_controller_0
+                0x00000020        0x0 load address 0x0082ac90
+                0x00000020                PROVIDE (_alt_partition_generic_tristate_controller_0_start, ABSOLUTE (.))
+ *(.generic_tristate_controller_0. generic_tristate_controller_0.*)
+                0x00000020                . = ALIGN (0x4)
+                0x00000020                PROVIDE (_alt_partition_generic_tristate_controller_0_end, ABSOLUTE (.))
+                0x0082ac90                PROVIDE (_alt_partition_generic_tristate_controller_0_load_addr, LOADADDR (.generic_tristate_controller_0))
 
 .sdram_0        0x0082ac90        0x0
                 0x0082ac90                PROVIDE (_alt_partition_sdram_0_start, ABSOLUTE (.))

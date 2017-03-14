@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+[capstone_Volatile build complete]
+
+**** Build Finished ****

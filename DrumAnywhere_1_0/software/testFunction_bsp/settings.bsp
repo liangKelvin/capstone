@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 10, 2017 1:56:34 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1489179394519</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 14, 2017 2:15:10 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1489522510721</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/testFunction_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../niosII_system.sopcinfo</SopcDesignFile>
@@ -1690,6 +1690,12 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <MemoryMap>
+                <slaveDescriptor>generic_tristate_controller_0</slaveDescriptor>
+                <addressRange>0x00000000 - 0x003FFFFF</addressRange>
+                <addressSpan>4194304</addressSpan>
+                <attributes>flash, memory</attributes>
+        </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sdram_0</slaveDescriptor>
                 <addressRange>0x00800000 - 0x00FFFFFF</addressRange>

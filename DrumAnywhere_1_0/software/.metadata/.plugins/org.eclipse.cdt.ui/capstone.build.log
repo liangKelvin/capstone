@@ -2,80 +2,9 @@
 **** Build of configuration Nios II for project capstone ****
 
 make all 
-Info: Building ../capstone_bsp/
-make --no-print-directory -C ../capstone_bsp/
+Info: Building ../capstone_bsp
+make --no-print-directory -C ../capstone_bsp
 [BSP build complete]
-Info: Compiling audio.c to obj/default/audio.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
-audio.c: In function 'main':
-audio.c:162: warning: implicit declaration of function 'alt_ic_isr_register'
-audio.c:242: warning: control reaches end of non-void function
-Info: Compiling efsl/debug.c to obj/default/efsl/debug.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/debug.o efsl/debug.c
-Info: Compiling efsl/dir.c to obj/default/efsl/dir.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/dir.o efsl/dir.c
-Info: Compiling efsl/disc.c to obj/default/efsl/disc.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/disc.o efsl/disc.c
-Info: Compiling efsl/efs.c to obj/default/efsl/efs.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/efs.o efsl/efs.c
-Info: Compiling efsl/extract.c to obj/default/efsl/extract.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/extract.o efsl/extract.c
-Info: Compiling efsl/fat.c to obj/default/efsl/fat.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/fat.o efsl/fat.c
-Info: Compiling efsl/file.c to obj/default/efsl/file.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/file.o efsl/file.c
-Info: Compiling efsl/fs.c to obj/default/efsl/fs.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/fs.o efsl/fs.c
-Info: Compiling efsl/ioman.c to obj/default/efsl/ioman.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/ioman.o efsl/ioman.c
-Info: Compiling efsl/ls.c to obj/default/efsl/ls.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/ls.o efsl/ls.c
-Info: Compiling efsl/mkfs.c to obj/default/efsl/mkfs.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/mkfs.o efsl/mkfs.c
-Info: Compiling efsl/nios2.c to obj/default/efsl/nios2.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/nios2.o efsl/nios2.c
-efsl/nios2.c: In function 'if_initInterface':
-efsl/nios2.c:63: warning: format '%d' expects type 'int', but argument 2 has type 'euint32'
-efsl/nios2.c:63: warning: format '%d' expects type 'int', but argument 2 has type 'euint32'
-efsl/nios2.c: In function 'if_spiInit':
-efsl/nios2.c:89: warning: unused variable 'i'
-efsl/nios2.c: In function 'if_spiSend':
-efsl/nios2.c:97: warning: unused variable 'incoming'
-efsl/nios2.c: In function 'if_spi_sendbuf':
-efsl/nios2.c:136: warning: unused variable 'SD_Data'
-Info: Compiling efsl/nios2_ramdisk.c to obj/default/efsl/nios2_ramdisk.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/nios2_ramdisk.o efsl/nios2_ramdisk.c
-In file included from efsl/nios2_ramdisk.c:6:
-Info: Compiling efsl/partition.c to obj/default/efsl/partition.o
-efsl/nios2_ramdisk.h:11:44: warning: no newline at end of file
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/partition.o efsl/partition.c
-efsl/nios2_ramdisk.c: In function 'ramdisk_read':
-Info: Compiling efsl/plibc.c to obj/default/efsl/plibc.o
-efsl/nios2_ramdisk.c:39: warning: implicit declaration of function 'memcpy'
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/plibc.o efsl/plibc.c
-efsl/nios2_ramdisk.c:39: warning: incompatible implicit declaration of built-in function 'memcpy'
-Info: Compiling efsl/sd.c to obj/default/efsl/sd.o
-efsl/nios2_ramdisk.c: In function 'ramdisk_write':
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/sd.o efsl/sd.c
-efsl/nios2_ramdisk.c:53: warning: incompatible implicit declaration of built-in function 'memcpy'
-Info: Compiling efsl/time.c to obj/default/efsl/time.o
-efsl/nios2_ramdisk.c: At top level:
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/time.o efsl/time.c
-efsl/nios2_ramdisk.c:60: warning: initialization from incompatible pointer type
-Info: Compiling efsl/ui.c to obj/default/efsl/ui.o
-efsl/nios2_ramdisk.c:61: warning: initialization from incompatible pointer type
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_bsp//UCOSII/inc -I../capstone_bsp//HAL/inc -I../capstone_bsp/ -I../capstone_bsp//drivers/inc -Iefsl -I../capstone_bsp  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/efsl/ui.o efsl/ui.c
-efsl/nios2_ramdisk.c:63: warning: initialization from incompatible pointer type
-Info: Linking capstone.elf
-efsl/sd.c: In function 'sd_writeSector':
-nios2-elf-g++  -T'../capstone_bsp//linker.x' -msys-crt0='../capstone_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_bsp/ -Lefsl -L../capstone_bsp   -Wl,-Map=capstone.map   -O -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone.elf obj/default/audio.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o -lm 
-efsl/sd.c:222: warning: unused variable 'i'
-efsl/sd.c: In function 'sd_readSector':
-efsl/sd.c:271: warning: unused variable 'i'
-efsl/sd.c:269: warning: unused variable 'c'
-obj/default/audio.o: In function `main':
-/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/audio.c:162: undefined reference to `alt_ic_isr_register'
-collect2: ld returned 1 exit status
-make: *** [capstone.elf] Error 1
+[capstone build complete]
 
 **** Build Finished ****
