@@ -161,6 +161,7 @@ C_SRCS += efsl/plibc.c
 C_SRCS += efsl/sd.c
 C_SRCS += efsl/time.c
 C_SRCS += efsl/ui.c
+C_SRCS += save.c
 CXX_SRCS :=
 ASM_SRCS :=
 

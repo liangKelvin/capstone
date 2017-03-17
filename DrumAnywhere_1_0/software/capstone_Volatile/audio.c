@@ -63,26 +63,72 @@ void sdInit(EmbeddedFileSystem *efsl, File *readFile);
 void playSound(unsigned long NumberSamples, unsigned int* wav);
 void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale);
 void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr);
-//static void init_button_pio();
+
+
+typedef struct {
+	unsigned int* waveform;
+	int index;
+	int scale;
+	int numberOfSamples;
+}Drum;
+
+Drum* snareDrum;
+Drum* crashDrum;
+Drum* hihatDrum;
+Drum* hihat2Drum;
+Drum* tomDrum;
+Drum* tom2Drum;
+Drum* kickDrum;
+
+Drum* drums[7];
+
+
+#define   TASK_STACKSIZE       2048
+OS_STK    task1_stk[TASK_STACKSIZE];
+OS_STK    task2_stk[TASK_STACKSIZE];
+
+/* Definition of Task Priorities */
+
+#define TASK1_PRIORITY      1
+#define TASK2_PRIORITY      2
 
 // globals 
 alt_up_character_lcd_dev* myLCD;
 int button;
 alt_up_audio_dev * audio_dev;
-//volatile int edge_capture;
-//Queue stuff
-//OS_EVENT* myQueue;
-//#define QSIZE 25
-//void* myQueueArray[QSIZE];
 
 // sample sizes for sounds
-const unsigned int snareNumberSamples = 7235;
-const unsigned int crashNumberSamples = 63342;
-const unsigned int hihatNumberSamples = 98218;
-const unsigned int hihat2NumberSamples = 6313;
-const unsigned int kickNumberSamples = 25448;
-const unsigned int tomNumberSamples = 57006;
-const unsigned int tom2NumberSamples = 16926;
+#define snareNumberSamples 7235
+#define crashNumberSamples 63342
+#define hihatNumberSamples 98218
+#define hihat2NumberSamples 6313
+#define kickNumberSamples 25448
+#define tomNumberSamples 57006
+#define tom2NumberSamples 16926
+
+#define snareConst 0
+#define crashConst 1
+#define hihatConst 2
+#define hihat2Const 3
+#define kickConst 4
+#define tomConst 5
+#define tom2Const 6
+
+
+// arrays to hold waveforms
+unsigned int snare[snareNumberSamples];
+unsigned int crash[crashNumberSamples];
+unsigned int hihat[hihatNumberSamples];
+unsigned int hihat2[hihat2NumberSamples];
+unsigned int kick[kickNumberSamples];
+unsigned int tom[tomNumberSamples];
+unsigned int tom2[tom2NumberSamples];
+
+int isPlaying[7] = {0, 0, 0, 0, 0, 0, 0};
+unsigned int nextToPlay[128];
+int buttonCount = 0;
+
+
 
 //static void interrupt_isr_buttonPress(void *context, alt_u32 id) {
 //
@@ -91,10 +137,104 @@ const unsigned int tom2NumberSamples = 16926;
 //	alt_up_character_lcd_init(myLCD);
 //	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 //	alt_up_character_lcd_string(myLCD, "buttons:");
+//	buttonCount++;
 ////	button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 ////	OSQPost(myQueue, &button);
 //	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x01);
 //}
+
+
+/* Prints "Hello World" and sleeps for three seconds */
+void pollSound(void* pdata) {
+	while(1) {
+	// currently using magic number due to problems with system.h header
+
+		button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+		switch (button) {
+
+			case 7 :
+				buttonCount++;
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "snare");
+
+				if(isPlaying[snareConst] == 0) {
+					isPlaying[snareConst] = 1;
+				} else {
+					snareDrum->index = 0;
+				}
+				//while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 11:
+				buttonCount++;
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Crash");
+
+				if(isPlaying[crashConst] == 0) {
+					isPlaying[crashConst] = 1;
+				} else {
+					crashDrum->index = 0;
+				}
+				//while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 13:
+				buttonCount++;
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Tom");
+
+				if(isPlaying[tomConst] == 0) {
+					isPlaying[tomConst] = 1;
+				} else {
+					tomDrum->index = 0;
+				}
+				//while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 14:
+				buttonCount++;
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "hihat");
+
+				if(isPlaying[hihatConst] == 0) {
+					isPlaying[hihatConst] = 1;
+				} else {
+					hihatDrum->index = 0;
+				}
+				//while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+		}
+		OSTimeDlyHMSM(0,0,0,10);
+	}
+}
+
+/* Prints "Hello World" and sleeps for three seconds */
+void synthesize(void* pdata) {
+	int i;
+	int k;
+	int numOfSamplesToPlay = 0;
+	while(1) {
+		// check for new sounds
+		for(i = 0; i < 7; i++) {
+			if(isPlaying[i] == 1) {
+				numOfSamplesToPlay += drums[i]->numberOfSamples;
+				// append waveforms if needed
+				for(k = 0; k < 128; k++) {
+					nextToPlay[k] += drums[i]->waveform[drums[i]->index + k] * drums[i]->scale;
+				}
+				drums[i]->index += 128;
+				if(drums[i]->index == drums[i]->numberOfSamples) {
+					drums[i]->index = 0;
+					isPlaying[i] = 0;
+				}
+			}
+		}
+	}
+}
 
 int main(void) {
 
@@ -124,15 +264,6 @@ int main(void) {
 	fileNames[4] = "kick.wav";
 	fileNames[5] = "tom.wav";
 	fileNames[6] = "tom2.wav";
-
-	// arrays to hold waveforms
-	unsigned int snare[snareNumberSamples];
-	unsigned int crash[crashNumberSamples];
-	unsigned int hihat[hihatNumberSamples];
-	unsigned int hihat2[hihat2NumberSamples];
-	unsigned int kick[kickNumberSamples];
-	unsigned int tom[tomNumberSamples];
-	unsigned int tom2[tom2NumberSamples];
 
 	// arrays for reading all data from sd card
 	euint8* snareTemp = malloc(29102 * sizeof(eint8));
@@ -169,101 +300,79 @@ int main(void) {
 	parseWav(tomTemp, tomNumberSamples, tom);
 	parseWav(tom2Temp, tom2NumberSamples, tom2);
 
+
+	// init structs
+	snareDrum->waveform = snare;
+	snareDrum->numberOfSamples = snareNumberSamples;
+	snareDrum->index = 0;
+	snareDrum->scale = 1;
+	crashDrum->waveform = crash;
+	crashDrum->numberOfSamples = crashNumberSamples;
+	crashDrum->index = 0;
+	crashDrum->scale = 1;
+	hihatDrum->waveform = hihat;
+	hihatDrum->numberOfSamples = hihatNumberSamples;
+	hihatDrum->index = 0;
+	hihatDrum->scale = 1;
+	hihat2Drum->waveform = hihat2;
+	hihat2Drum->numberOfSamples = hihat2NumberSamples;
+	hihat2Drum->index = 0;
+	hihat2Drum->scale = 0;
+	tomDrum->waveform = tom;
+	tomDrum->numberOfSamples = tomNumberSamples;
+	tomDrum->index = 0;
+	tomDrum->scale = 1;
+	tom2Drum->waveform = tom2;
+	tom2Drum->numberOfSamples = tom2NumberSamples;
+	tom2Drum->index = 0;
+	tom2Drum->scale = 1;
+	kickDrum->waveform = kick;
+	kickDrum->numberOfSamples = kickNumberSamples;
+	kickDrum->index = 0;
+	kickDrum->scale = 1;
+
+	drums[0] = snareDrum;
+	drums[1] = crashDrum;
+	drums[2] = hihatDrum;
+	drums[3] = tomDrum;
+	drums[4] = hihat2Drum;
+	drums[5] = tom2Drum;
+	drums[6] = kickDrum;
+
+
 	// audio init
 	audioInit(audio_config_dev);
 	printf("Ready To Play\n");
 	// system is now ready to play
-//	init_button_pio();
+
+	//init_button_pio();
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
-//	INT8U err = 0;
-
-//	printf("irq register: %d\n", IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE));
-//	while(1) {
-////		int* myButton = OSQPend(myQueue, 0, &err);
-////		printf("button: %d\n", &myButton);
-//		//printf("hello\n");
-////		printf("irq register: %d\n", IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE));
-//		alt_up_character_lcd_init(myLCD);
-//		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-//		alt_up_character_lcd_string(myLCD, "Ready To Play");
-//	}
-
-	// currently we use this while loop for demonstration purposes
-	// for actual implementation we will use an interrupt routine to handle drum soound playing
-	while(1) {
-		// currently using magic number due to problems with system.h header
-		button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 
 
-		switch (button) {
+	 OSTaskCreateExt(pollSound,
+	                  NULL,
+	                  (void *)&task1_stk[TASK_STACKSIZE-1],
+	                  TASK1_PRIORITY,
+	                  TASK1_PRIORITY,
+	                  task1_stk,
+	                  TASK_STACKSIZE,
+	                  NULL,
+	                  0);
 
-			case 7 :
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "tom/Crash");
 
-				int k = 40000;
-				int kcrash = 0;
-				unsigned int tempArr[128];
-				while(kcrash <= crashNumberSamples - 128) {
-					addWav(tom + k, crash + kcrash, tempArr);
-					k += 128;
-					kcrash += 128;
-					if(k >= tomNumberSamples - 128) {
-						k = 0;
-					}
-					playSound(128, tempArr);
-				}
-				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-				break;
-
-			case 11:
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "hihat Decay");
-
-				int kk = 0;
-				while(kk <= 60000) {
-					kk += 128;
-					playSound(128, hihat+kk);
-				}
-				int j;
-				for (j = 0; j < 3; j++) {
-					kk = 60000;
-					while(kk <= 70000) {
-						kk += 128;
-						playSound(128, hihat+kk);
-					}
-				}
-				while(k <= hihatNumberSamples - 128) {
-					k += 128;
-					playSound(128, hihat+k);
-				}
-				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-				break;
-
-			case 13:
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "HiHat Amp");
-
-				int scale = 3;
-				playSoundAmp(hihatNumberSamples, hihat, scale);
-				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-				break;
-
-			case 14:
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Hi-Hat");
-
-				playSound(hihatNumberSamples, hihat);
-				while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-				break;
-		}
-	}
+	  OSTaskCreateExt(synthesize,
+	                  NULL,
+	                  (void *)&task2_stk[TASK_STACKSIZE-1],
+	                  TASK2_PRIORITY,
+	                  TASK2_PRIORITY,
+	                  task2_stk,
+	                  TASK_STACKSIZE,
+	                  NULL,
+	                  0);
+	  OSStart();
+	  return 0;
 }
 
 void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr) {
@@ -272,7 +381,6 @@ void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr) {
 		arr[k] = wav1[k] + wav2[k];
 	}
 }
-
 
 // takes in wav file and number of samples
 // plays given sound once
@@ -353,6 +461,8 @@ void audioInit(alt_up_av_config_dev * audio_config_dev) {
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
+
+	alt_up_audio_enable_write_interrupt(audio_dev);
 }
 
 //static void init_button_pio() {
