@@ -9,6 +9,7 @@
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/drivers/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/efsl"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp"/>
 <includePath path="/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../../nios2-elf/include/c++/4.1.2"/>
 <includePath path="/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../../nios2-elf/include/c++/4.1.2/nios2-elf/mno-hw-mul"/>
 <includePath path="/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../../nios2-elf/include/c++/4.1.2/nios2-elf"/>
@@ -312,6 +313,7 @@
 <definedSymbol symbol="__hal__=1"/>
 <definedSymbol symbol="ALT_NO_INSTRUCTION_EMULATION=1"/>
 <definedSymbol symbol="__ucosii__=1"/>
+<definedSymbol symbol="__OPTIMIZE__=1"/>
 </collector>
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1119781503;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1119781503.;cdt.managedbuild.tool.gnu.c.compiler.base.1752769147;cdt.managedbuild.tool.gnu.c.compiler.input.1804333959">
@@ -321,6 +323,7 @@
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp/drivers/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/efsl"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_bsp"/>
 <includePath path="/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/include"/>
 <includePath path="/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/include-fixed"/>
 <includePath path="/OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/../../../../nios2-elf/include"/>
@@ -609,6 +612,7 @@
 <definedSymbol symbol="__hal__=1"/>
 <definedSymbol symbol="ALT_NO_INSTRUCTION_EMULATION=1"/>
 <definedSymbol symbol="__ucosii__=1"/>
+<definedSymbol symbol="__OPTIMIZE__=1"/>
 </collector>
 </instance>
 </scannerInfo>
