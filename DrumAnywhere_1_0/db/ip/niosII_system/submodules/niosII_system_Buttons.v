@@ -145,7 +145,7 @@ module niosII_system_Buttons (
     end
 
 
-  assign edge_detect = d1_data_in & ~d2_data_in;
+  assign edge_detect = ~d1_data_in & d2_data_in;
 
 endmodule
 

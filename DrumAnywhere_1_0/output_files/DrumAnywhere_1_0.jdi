@@ -1,10 +1,10 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="c93c7e2f4530dac8604d"/>
+    <hash md5_digest_80b="fd2c6463ba0c9211d490"/>
   </project>
   <file_info>
-    <file checksum="0x0077AFB4" device="EP2C35F672C6" path="DrumAnywhere_1_0.sof" usercode="0xFFFFFFFF"/>
-    <file checksum="0x1BFCEA45" device="EPCS16" path="DrumAnywhere_1_0.pof" usercode="0x00000000"/>
+    <file checksum="0x0077B550" device="EP2C35F672C6" path="DrumAnywhere_1_0.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x1BFC0A98" device="EPCS16" path="DrumAnywhere_1_0.pof" usercode="0x00000000"/>
   </file_info>
   <hub_info ir_width="2" node_count="2"/>
   <node_info>

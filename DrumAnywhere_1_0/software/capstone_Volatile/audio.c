@@ -60,9 +60,11 @@ euint8* sdRead(char* fileName, EmbeddedFileSystem *efsl, File *readFile);
 void audioInit(alt_up_av_config_dev * audio_config_dev);
 void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int* fileBufL);
 void sdInit(EmbeddedFileSystem *efsl, File *readFile);
-void playSound(unsigned long NumberSamples, unsigned int* wav);
-void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale);
+//void playSound(unsigned long NumberSamples, unsigned int* wav);
+//void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale);
 void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr);
+void audio_isr(void* context, alt_u32 id);
+static void init_button_pio();
 
 
 typedef struct {
@@ -71,14 +73,6 @@ typedef struct {
 	int scale;
 	int numberOfSamples;
 }Drum;
-
-Drum* snareDrum;
-Drum* crashDrum;
-Drum* hihatDrum;
-Drum* hihat2Drum;
-Drum* tomDrum;
-Drum* tom2Drum;
-Drum* kickDrum;
 
 Drum* drums[7];
 
@@ -96,6 +90,8 @@ OS_STK    task2_stk[TASK_STACKSIZE];
 alt_up_character_lcd_dev* myLCD;
 int button;
 alt_up_audio_dev * audio_dev;
+
+#define SAMPLE_SIZE 16
 
 // sample sizes for sounds
 #define snareNumberSamples 7235
@@ -125,23 +121,80 @@ unsigned int tom[tomNumberSamples];
 unsigned int tom2[tom2NumberSamples];
 
 int isPlaying[7] = {0, 0, 0, 0, 0, 0, 0};
-unsigned int nextToPlay[128];
-int buttonCount = 0;
+unsigned int nextToPlay[SAMPLE_SIZE];
+
+OS_EVENT* semaphore;
+int count = 0;
+volatile int edge_capture;
 
 
+static void interrupt_isr_buttonPress(void *context, alt_u32 id) {
 
-//static void interrupt_isr_buttonPress(void *context, alt_u32 id) {
-//
-//	volatile int* edge_capture_ptr = (volatile int*) context;
-//	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE);
-//	alt_up_character_lcd_init(myLCD);
-//	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-//	alt_up_character_lcd_string(myLCD, "buttons:");
-//	buttonCount++;
-////	button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-////	OSQPost(myQueue, &button);
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x01);
-//}
+	volatile int* edge_capture_ptr = (volatile int*) context;
+	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE);
+
+	button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+	alt_up_audio_enable_write_interrupt(audio_dev);
+
+	switch (button) {
+
+		case 7 :
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "tom");
+
+			if(isPlaying[tomConst] == 0) {
+				isPlaying[tomConst] = 1;
+			} else {
+				drums[tomConst]->index = 0;
+			}
+			break;
+
+		case 11:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "Crash");
+			count = 0;
+
+			if(isPlaying[crashConst] == 0) {
+				isPlaying[crashConst] = 1;
+			} else {
+				drums[crashConst]->index = 0;
+			}
+			break;
+
+		case 13:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "Snare");
+
+			if(isPlaying[snareConst] == 0) {
+				isPlaying[snareConst] = 1;
+			} else {
+				drums[snareConst]->index = 0;
+			}
+			break;
+
+		case 14:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "hihat");
+
+			if(isPlaying[hihatConst] == 0) {
+				isPlaying[hihatConst] = 1;
+			} else {
+				drums[hihatConst]->index = 0;
+			}
+			break;
+	}
+
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x01);
+	IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE);
+}
 
 
 /* Prints "Hello World" and sleeps for three seconds */
@@ -150,52 +203,58 @@ void pollSound(void* pdata) {
 	// currently using magic number due to problems with system.h header
 
 		button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+		alt_up_audio_enable_write_interrupt(audio_dev);
+
 		switch (button) {
 
 			case 7 :
-				buttonCount++;
+
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "snare");
-
-				if(isPlaying[snareConst] == 0) {
-					isPlaying[snareConst] = 1;
-				} else {
-					snareDrum->index = 0;
-				}
-				//while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-				break;
-
-			case 11:
-				buttonCount++;
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Crash");
-
-				if(isPlaying[crashConst] == 0) {
-					isPlaying[crashConst] = 1;
-				} else {
-					crashDrum->index = 0;
-				}
-				//while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
-				break;
-
-			case 13:
-				buttonCount++;
-				alt_up_character_lcd_init(myLCD);
-				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-				alt_up_character_lcd_string(myLCD, "Tom");
+				alt_up_character_lcd_string(myLCD, "tom");
 
 				if(isPlaying[tomConst] == 0) {
 					isPlaying[tomConst] = 1;
 				} else {
-					tomDrum->index = 0;
+					drums[tomConst]->index = 0;
 				}
-				//while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				OSTimeDlyHMSM(0,0,0,2);
+//				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 11:
+
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Crash");
+				count = 0;
+
+				if(isPlaying[crashConst] == 0) {
+					isPlaying[crashConst] = 1;
+				} else {
+					drums[crashConst]->index = 0;
+				}
+				OSTimeDlyHMSM(0,0,0,2);
+//				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 13:
+
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Snare");
+
+				if(isPlaying[snareConst] == 0) {
+					isPlaying[snareConst] = 1;
+				} else {
+					drums[snareConst]->index = 0;
+				}
+				OSTimeDlyHMSM(0,0,0,2);
+//				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 				break;
 
 			case 14:
-				buttonCount++;
+
 				alt_up_character_lcd_init(myLCD);
 				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 				alt_up_character_lcd_string(myLCD, "hihat");
@@ -203,47 +262,41 @@ void pollSound(void* pdata) {
 				if(isPlaying[hihatConst] == 0) {
 					isPlaying[hihatConst] = 1;
 				} else {
-					hihatDrum->index = 0;
+					drums[hihatConst]->index = 0;
 				}
-				//while(button == 14)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 				break;
 		}
-		OSTimeDlyHMSM(0,0,0,10);
+		OSTimeDlyHMSM(0,0,0,5);
 	}
 }
 
-/* Prints "Hello World" and sleeps for three seconds */
 void synthesize(void* pdata) {
 	int i;
 	int k;
-	int numOfSamplesToPlay = 0;
 	while(1) {
 		// check for new sounds
 		for(i = 0; i < 7; i++) {
 			if(isPlaying[i] == 1) {
-				numOfSamplesToPlay += drums[i]->numberOfSamples;
 				// append waveforms if needed
-				for(k = 0; k < 128; k++) {
+				for(k = 0; k < SAMPLE_SIZE; k++) {
 					nextToPlay[k] += drums[i]->waveform[drums[i]->index + k] * drums[i]->scale;
 				}
-				drums[i]->index += 128;
-				if(drums[i]->index == drums[i]->numberOfSamples) {
+
+				drums[i]->index += SAMPLE_SIZE;
+				if(drums[i]->index >= drums[i]->numberOfSamples - SAMPLE_SIZE) {
 					drums[i]->index = 0;
 					isPlaying[i] = 0;
 				}
 			}
 		}
+		alt_up_audio_enable_write_interrupt(audio_dev);
+		//PEND SEM
+		INT8U err;
+		OSSemPend(semaphore, 0, &err);
 	}
 }
 
 int main(void) {
-
-//	OSInit();
-//	//init Queue
-//	myQueue = OSQCreate(myQueueArray, QSIZE);
-//	if(myQueue == NULL) {
-//		printf("failed to create que");
-//	}
 
 	// Create EFSL containers
 	EmbeddedFileSystem efsl;
@@ -302,46 +355,43 @@ int main(void) {
 
 
 	// init structs
-	snareDrum->waveform = snare;
-	snareDrum->numberOfSamples = snareNumberSamples;
-	snareDrum->index = 0;
-	snareDrum->scale = 1;
-	crashDrum->waveform = crash;
-	crashDrum->numberOfSamples = crashNumberSamples;
-	crashDrum->index = 0;
-	crashDrum->scale = 1;
-	hihatDrum->waveform = hihat;
-	hihatDrum->numberOfSamples = hihatNumberSamples;
-	hihatDrum->index = 0;
-	hihatDrum->scale = 1;
-	hihat2Drum->waveform = hihat2;
-	hihat2Drum->numberOfSamples = hihat2NumberSamples;
-	hihat2Drum->index = 0;
-	hihat2Drum->scale = 0;
-	tomDrum->waveform = tom;
-	tomDrum->numberOfSamples = tomNumberSamples;
-	tomDrum->index = 0;
-	tomDrum->scale = 1;
-	tom2Drum->waveform = tom2;
-	tom2Drum->numberOfSamples = tom2NumberSamples;
-	tom2Drum->index = 0;
-	tom2Drum->scale = 1;
-	kickDrum->waveform = kick;
-	kickDrum->numberOfSamples = kickNumberSamples;
-	kickDrum->index = 0;
-	kickDrum->scale = 1;
+	int i;
+	for(i = 0; i < 7; i++) {
+		drums[i] = malloc(sizeof(Drum));
+		drums[i]->waveform = malloc(hihatNumberSamples * sizeof(unsigned int));
+	}
+	drums[0]->waveform = snare;
+	drums[0]->numberOfSamples = snareNumberSamples;
+	drums[0]->index = 0;
+	drums[0]->scale = 1;
+	drums[1]->waveform = crash;
+	drums[1]->numberOfSamples = crashNumberSamples;
+	drums[1]->index = 0;
+	drums[1]->scale = 1;
+	drums[2]->waveform = hihat;
+	drums[2]->numberOfSamples = hihatNumberSamples;
+	drums[2]->index = 0;
+	drums[2]->scale = 1;
+	drums[3]->waveform = hihat2;
+	drums[3]->numberOfSamples = hihat2NumberSamples;
+	drums[3]->index = 0;
+	drums[3]->scale = 0;
+	drums[4]->waveform = tom;
+	drums[4]->numberOfSamples = tomNumberSamples;
+	drums[4]->index = 0;
+	drums[4]->scale = 2;
+	drums[5]->waveform = tom2;
+	drums[5]->numberOfSamples = tom2NumberSamples;
+	drums[5]->index = 0;
+	drums[5]->scale = 1;
+	drums[6]->waveform = kick;
+	drums[6]->numberOfSamples = kickNumberSamples;
+	drums[6]->index = 0;
+	drums[6]->scale = 1;
 
-	drums[0] = snareDrum;
-	drums[1] = crashDrum;
-	drums[2] = hihatDrum;
-	drums[3] = tomDrum;
-	drums[4] = hihat2Drum;
-	drums[5] = tom2Drum;
-	drums[6] = kickDrum;
-
-
-	// audio init
+	// audio init Button INit
 	audioInit(audio_config_dev);
+	init_button_pio();
 	printf("Ready To Play\n");
 	// system is now ready to play
 
@@ -350,19 +400,21 @@ int main(void) {
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, "Ready To Play");
 
+	//init semaphore
+	semaphore = OSSemCreate(0);
 
-	 OSTaskCreateExt(pollSound,
-	                  NULL,
-	                  (void *)&task1_stk[TASK_STACKSIZE-1],
-	                  TASK1_PRIORITY,
-	                  TASK1_PRIORITY,
-	                  task1_stk,
-	                  TASK_STACKSIZE,
-	                  NULL,
-	                  0);
+//	OSTaskCreateExt(pollSound,
+//	                  NULL,
+//	                  (void *)&task1_stk[TASK_STACKSIZE-1],
+//	                  TASK1_PRIORITY,
+//	                  TASK1_PRIORITY,
+//	                  task1_stk,
+//	                  TASK_STACKSIZE,
+//	                  NULL,
+//	                  0);
 
 
-	  OSTaskCreateExt(synthesize,
+	OSTaskCreateExt(synthesize,
 	                  NULL,
 	                  (void *)&task2_stk[TASK_STACKSIZE-1],
 	                  TASK2_PRIORITY,
@@ -384,39 +436,43 @@ void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr) {
 
 // takes in wav file and number of samples
 // plays given sound once
-void playSound(unsigned long NumberSamples, unsigned int* wav) {
-	int count = 0;
-	int bool = 0;
-	while(count <= NumberSamples - 128) {
-		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
-		if(fifospace >= 128) {
-				alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_LEFT);
-				count += 128;
-				bool = 1;
-		}
-	}
-}
+//void playSound(unsigned long NumberSamples, unsigned int* wav) {
+//	int count = 0;
+//	int bool = 0;
+//
+//	int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+//	if(fifospace >= 128) {
+//			alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_RIGHT);
+//			alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_LEFT);
+//			bool = 1;
+//	}
+//	// clear buffer
+//	int i;
+//	for(i = 0; i < 128; i++) {
+//		wav[i] = 0;
+//	}
+//
+//}
 
 
-void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale) {
-	int count = 0;
-	int bool = 0;
-	unsigned int temp[128];
-	while(count <= NumberSamples - 128) {
-		int k;
-		for(k = 0; k < 128; k++) {
-			temp[k] = scale*wav[k+count];
-		}
-		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
-		if(fifospace >= 128) {
-				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_RIGHT);
-				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_LEFT);
-				count += 128;
-				bool = 1;
-		}
-	}
-}
+//void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale) {
+//	int count = 0;
+//	int bool = 0;
+//	unsigned int temp[128];
+//	while(count <= NumberSamples - 128) {
+//		int k;
+//		for(k = 0; k < 128; k++) {
+//			temp[k] = scale*wav[k+count];
+//		}
+//		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+//		if(fifospace >= 128) {
+//				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_RIGHT);
+//				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_LEFT);
+//				count += 128;
+//				bool = 1;
+//		}
+//	}
+//}
 // initializes spi interface for sd card reading
 void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
 
@@ -432,6 +488,23 @@ void sdInit(EmbeddedFileSystem *efsl, File *readFile) {
 	}
 	else
 	printf("...success!\n");
+}
+
+void audio_isr(void* context, alt_u32 id) {
+	//FIFO 75% empty
+	int i;
+	int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+
+	if(fifospace >= SAMPLE_SIZE) {
+		alt_up_audio_write_fifo(audio_dev, nextToPlay, SAMPLE_SIZE, ALT_UP_AUDIO_RIGHT);
+		alt_up_audio_write_fifo(audio_dev, nextToPlay, SAMPLE_SIZE, ALT_UP_AUDIO_LEFT);
+		for(i = 0; i < SAMPLE_SIZE; i++) {
+			nextToPlay[i] = 0;
+		}
+		INT8U error;
+		error = OSSemPost(semaphore);
+	}
+	alt_up_audio_disable_write_interrupt(audio_dev);
 }
 
 // sets our codec up, sets the appropriate registers
@@ -462,18 +535,22 @@ void audioInit(alt_up_av_config_dev * audio_config_dev) {
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
 	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
 
-	alt_up_audio_enable_write_interrupt(audio_dev);
+	alt_up_audio_disable_read_interrupt(audio_dev);
+	alt_up_audio_disable_write_interrupt(audio_dev);
+
+	alt_irq_register(AUDIO_0_IRQ, 0x0, audio_isr);
+	alt_irq_enable(AUDIO_0_IRQ);
 }
 
-//static void init_button_pio() {
-//	void* edge_capture_ptr = (void*) &edge_capture;
-//	/* Enable all 4 button interrupts. */
-//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BUTTONS_BASE, 0xf);
-//	/* Reset the edge capture register. */
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x0);
-//	/* Register the ISR. */
-//	alt_irq_register(BUTTONS_IRQ, edge_capture_ptr, interrupt_isr_buttonPress);
-//}
+static void init_button_pio() {
+	void* edge_capture_ptr = (void*) &edge_capture;
+	/* Enable all 4 button interrupts. */
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BUTTONS_BASE, 0xf);
+	/* Reset the edge capture register. */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x0);
+	/* Register the ISR. */
+	alt_irq_register(BUTTONS_IRQ, edge_capture_ptr, interrupt_isr_buttonPress);
+}
 
 
 // sdRead will read wav file given its filename and the efsl needed variables
@@ -528,9 +605,12 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
 	int i;
 	unsigned int temp;
 	for(i = 0; i < numberSamples; i++) {
-		temp = (unsigned int) 2*((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
+		temp = (unsigned int) ((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
 		fileBufL[i] = temp;
 	}
+}
+
+void audioIsrInit() {
 }
 
 /******************************************************************************

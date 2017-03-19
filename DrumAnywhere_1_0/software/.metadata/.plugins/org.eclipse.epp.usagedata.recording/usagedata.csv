@@ -1,101 +1,68 @@
 what,kind,bundleId,bundleVersion,description,time
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786272895
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786285228
-error,log,,,"Could not write metadata for '/RemoteSystemsTempFiles'.",1489786312941
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786312950
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786314070
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489786314992
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786316038
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786316352
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489786342539
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786354606
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786381003
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786452786
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786487961
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489786492711
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786493612
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786493934
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489786502777
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786590057
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489786591639
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786592576
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786592892
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489786596458
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786603133
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489786604843
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786605667
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786607725
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786608266
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786609185
-error,log,,,"Could not write metadata for '/RemoteSystemsTempFiles'.",1489786616358
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786616367
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489786620585
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489786632165
-executed,command,org.eclipse.ui.workbench.texteditor,3.7.0.v20110928-1504,"org.eclipse.ui.edit.text.smartEnter",1489786746497
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489786759820
-error,log,,,"Could not write metadata for '/RemoteSystemsTempFiles'.",1489787059858
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489787059877
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489787756580
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489787757415
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489787757529
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489787925523
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489787981911
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489787982892
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489787983975
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489787986593
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489788001478
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788060962
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788092670
-error,log,,,"Could not write metadata for '/RemoteSystemsTempFiles'.",1489788225615
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788225619
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788229241
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489788437486
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489788438927
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788439856
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788440866
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489788442307
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788606484
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788625075
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489788693156
-error,log,,,"Could not write metadata for '/RemoteSystemsTempFiles'.",1489788737570
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788737600
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489788739776
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489788782894
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489788838116
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489788846594
-error,log,,,"Could not write metadata for '/RemoteSystemsTempFiles'.",1489789082979
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489789082994
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790661470
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489790715583
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489790808885
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489790810526
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790811376
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790811786
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489790817380
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489790837088
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489790839020
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790839883
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790841120
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790841427
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790842238
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790844335
-executed,command,,,"com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchShortcut.run",1489790844878
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790844882
-activated,view,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1489790845559
-activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1489790846085
-activated,view,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1489790849168
-activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489790891137
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790903932
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790911718
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489790920452
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1489790940236
-executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.file.save",1489790953522
-activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489790954886
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790955839
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790956766
-deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790959669
-executed,command,,,"com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchShortcut.run",1489790960213
-activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489790960218
-activated,view,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1489790960898
-activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1489790961384
-activated,view,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1489790964483
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1489967102974
+java.runtime.version,sysinfo,,,"1.6.0_23-b05",1489967102974
+java.specification.name,sysinfo,,,"Java Platform API Specification",1489967102974
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1489967102974
+java.specification.version,sysinfo,,,"1.6",1489967102974
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1489967102974
+java.version,sysinfo,,,"1.6.0_23",1489967102974
+java.vm.info,sysinfo,,,"mixed mode",1489967102974
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Server VM",1489967102974
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1489967102974
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1489967102974
+java.vm.specification.version,sysinfo,,,"1.0",1489967102974
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1489967102974
+java.vm.version,sysinfo,,,"19.0-b09",1489967102974
+started,bundle,org.eclipse.cdt.codan.ui,2.0.1.201202111925,"org.eclipse.cdt.codan.ui",1489967103538
+activated,view,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.views.ProblemView",1489967104976
+started,bundle,org.eclipse.cdt.codan.checkers.ui,1.0.0.201202111925,"org.eclipse.cdt.codan.checkers.ui",1489967104987
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489967106874
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1489967108715
+started,bundle,com.altera.sbtgui.core,12.1.1.243,"com.altera.sbtgui.core",1489967108821
+started,bundle,org.eclipse.compare,3.5.202.R37x_v20111109-0800,"org.eclipse.compare",1489967108859
+started,bundle,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui",1489967110301
+started,bundle,org.eclipse.cdt.debug.ui,7.1.2.201202111925,"org.eclipse.cdt.debug.ui",1489967110317
+opened,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1489967112912
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967112962
+started,bundle,org.eclipse.cdt.dsf,2.2.0.201202111925,"org.eclipse.cdt.dsf",1489967112995
+started,bundle,org.eclipse.cdt.dsf.gdb,4.0.2.201202111925,"org.eclipse.cdt.dsf.gdb",1489967112996
+started,bundle,org.eclipse.cdt.dsf.gdb.ui,2.2.1.201202111925,"org.eclipse.cdt.dsf.gdb.ui",1489967112997
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967113686
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967121088
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967125496
+started,bundle,org.eclipse.cdt.launch,7.0.0.201202111925,"org.eclipse.cdt.launch",1489967128939
+opened,view,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1489967130232
+started,bundle,org.eclipse.cdt.debug.mi.ui,6.1.1.201202111925,"org.eclipse.cdt.debug.mi.ui",1489967130375
+started,bundle,org.eclipse.cdt.debug.mi.core,7.1.1.201202111925,"org.eclipse.cdt.debug.mi.core",1489967130382
+activated,view,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch.hardware.ByteStreamConsoleView",1489967134047
+activated,editor,org.eclipse.cdt.ui,5.3.2.201202111925,"org.eclipse.cdt.ui.editor.CEditor",1489967214522
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967238202
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967244868
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967247581
+started,bundle,org.eclipse.cdt.mylyn.ui,3.6.0.v20110608-1400,"org.eclipse.cdt.mylyn.ui",1489967248950
+closed,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1489967249001
+error,log,,,"Problems saving workspace",1489967250162
+error,log,,,"Problems occurred while trying to save the state of the workbench.",1489967250174
+stopped,bundle,org.eclipse.cdt.build.crossgcc,1.0.2.201202111925,"org.eclipse.cdt.build.crossgcc",1489967250283
+stopped,bundle,org.eclipse.cdt.codan.checkers.ui,1.0.0.201202111925,"org.eclipse.cdt.codan.checkers.ui",1489967250283
+stopped,bundle,com.altera.debug.cdi.gdb.plugin,12.1.1.243,"com.altera.debug.cdi.gdb.plugin",1489967250284
+stopped,bundle,com.altera.sbtgui.launch,12.1.1.243,"com.altera.sbtgui.launch",1489967251284
+stopped,bundle,com.altera.sbtgui.ui,12.1.1.243,"com.altera.sbtgui.ui",1489967251285
+stopped,bundle,com.altera.sbtgui.project,12.1.1.243,"com.altera.sbtgui.project",1489967251285
+stopped,bundle,org.eclipse.cdt.codan.checkers,1.0.1.201202111925,"org.eclipse.cdt.codan.checkers",1489967251285
+stopped,bundle,org.eclipse.cdt.codan.ui.cxx,2.0.0.201202111925,"org.eclipse.cdt.codan.ui.cxx",1489967251285
+stopped,bundle,org.eclipse.cdt.codan.core.cxx,1.0.0.201202111925,"org.eclipse.cdt.codan.core.cxx",1489967251285
+stopped,bundle,org.eclipse.cdt.launch.remote,2.3.0.201202111925,"org.eclipse.cdt.launch.remote",1489967251286
+stopped,bundle,org.eclipse.cdt.debug.mi.ui,6.1.1.201202111925,"org.eclipse.cdt.debug.mi.ui",1489967251286
+stopped,bundle,org.eclipse.cdt.debug.mi.core,7.1.1.201202111925,"org.eclipse.cdt.debug.mi.core",1489967251286
+stopped,bundle,org.eclipse.cdt.debug.ui.memory.memorybrowser,1.2.100.201202111925,"org.eclipse.cdt.debug.ui.memory.memorybrowser",1489967251288
+stopped,bundle,org.eclipse.cdt.debug.ui.memory.search,1.2.1.201202111925,"org.eclipse.cdt.debug.ui.memory.search",1489967251289
+stopped,bundle,org.eclipse.cdt.dsf.gdb.ui,2.2.1.201202111925,"org.eclipse.cdt.dsf.gdb.ui",1489967251289
+stopped,bundle,org.eclipse.cdt.dsf.ui,2.2.1.201202111925,"org.eclipse.cdt.dsf.ui",1489967251290
+stopped,bundle,org.eclipse.cdt.gdb.ui,7.0.0.201202111925,"org.eclipse.cdt.gdb.ui",1489967251318
+stopped,bundle,org.eclipse.cdt.dsf.gdb,4.0.2.201202111925,"org.eclipse.cdt.dsf.gdb",1489967251318
+stopped,bundle,org.eclipse.cdt.launch,7.0.0.201202111925,"org.eclipse.cdt.launch",1489967251318
+stopped,bundle,org.eclipse.cdt.debug.ui,7.1.2.201202111925,"org.eclipse.cdt.debug.ui",1489967251318
+stopped,bundle,org.eclipse.cdt.debug.ui.memory.traditional,1.2.1.201202111925,"org.eclipse.cdt.debug.ui.memory.traditional",1489967251328
+stopped,bundle,org.eclipse.cdt.dsf,2.2.0.201202111925,"org.eclipse.cdt.dsf",1489967251328
+stopped,bundle,org.eclipse.cdt.debug.core,7.1.0.201202111925,"org.eclipse.cdt.debug.core",1489967251328

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Mon Mar 13 16:29:25 MDT 2017
+ * Generated: Sun Mar 19 17:45:16 MDT 2017
  */
 
 /*
@@ -68,7 +68,7 @@
 #define BUTTONS_DATA_WIDTH 4
 #define BUTTONS_DO_TEST_BENCH_WIRING 0
 #define BUTTONS_DRIVEN_SIM_VALUE 0x0
-#define BUTTONS_EDGE_TYPE "RISING"
+#define BUTTONS_EDGE_TYPE "FALLING"
 #define BUTTONS_FREQ 50000000u
 #define BUTTONS_HAS_IN 1
 #define BUTTONS_HAS_OUT 0
@@ -456,7 +456,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1489441364
+#define SYSID_QSYS_0_TIMESTAMP 1489966914
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
