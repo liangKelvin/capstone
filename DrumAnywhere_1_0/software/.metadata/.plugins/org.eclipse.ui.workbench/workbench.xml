@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="34" version="2.0">
+<workbench progressCount="35" version="2.0">
 <workbenchAdvisor/>
 <window height="613" maximized="true" width="717" x="265" y="28">
 <fastViewData fastViewLocation="1024"/>
@@ -32,21 +32,26 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" partName="audio.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile/audio.c" title="audio.c" tooltip="capstone_Volatile/audio.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile/main.c" title="main.c" tooltip="capstone_Volatile/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_Volatile/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6078" selectionTopPixel="1334"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="buttons.c" partName="buttons.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile/buttons.c" title="buttons.c" tooltip="capstone_Volatile/buttons.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_Volatile/buttons.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2403" selectionTopPixel="1274"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" partName="audio.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile/audio.c" title="audio.c" tooltip="capstone_Volatile/audio.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_Volatile/audio.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5452" selectionTopPixel="1861"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2492" selectionTopPixel="910"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" partName="system.h" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/system.h" title="system.h" tooltip="capstone_Volatile_bsp/system.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_Volatile_bsp/system.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="6816" selectionTopPixel="7645"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="ucos_ii.h" partName="ucos_ii.h" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/UCOSII/inc/ucos_ii.h" title="ucos_ii.h" tooltip="capstone_Volatile_bsp/UCOSII/inc/ucos_ii.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_Volatile_bsp/UCOSII/inc/ucos_ii.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="51141" selectionTopPixel="16020"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="DrumAnyWhere.h" partName="DrumAnyWhere.h" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile/DrumAnyWhere.h" title="DrumAnyWhere.h" tooltip="capstone_Volatile/DrumAnyWhere.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/capstone_Volatile/DrumAnyWhere.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1331" selectionTopPixel="855"/>
 </editor>
 </editors>
 <views>
@@ -272,14 +277,14 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.17634709" ratioLeft="252" ratioRight="1177" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottom" ratio="0.6554252" ratioLeft="447" ratioRight="235" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.5].1.0" appearance="2" expanded="2">
+<folder activePageID="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.6].1.0" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
-<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.5].1.0" label="Nios II Console"/>
+<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.6].1.0" label="Nios II Console"/>
+<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.5].1.0" label="LabelNotFound"/>
 <page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.8].1.0" label="LabelNotFound"/>
-<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [2-1.6].1.0" label="LabelNotFound"/>
 <page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:*" label="LabelNotFound"/>
 <page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
@@ -394,159 +399,73 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/audio.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile_bsp/UCOSII/inc/ucos_ii.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile_bsp/system.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/buttons.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/save.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/audio.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/capstone_Volatile/DrumAnyWhere.h"/>
 </editors>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10705" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="701" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10727" y="0"/>
+<item historyLabel="audio.c" index="1">
+<position info="not_deleted" x="440" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10749" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="701" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10778" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10827" y="0"/>
+<item historyLabel="buttons.c" index="3">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10849" y="0"/>
+<item historyLabel="save.c" index="4">
+<position info="not_deleted" x="250" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10871" y="0"/>
+<item historyLabel="buttons.c" index="3">
+<position info="not_deleted" x="1138" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10901" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="5780" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10951" y="0"/>
+<item historyLabel="buttons.c" index="3">
+<position info="not_deleted" x="1782" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10973" y="0"/>
+<item historyLabel="audio.c" index="5">
+<position info="not_deleted" x="2492" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10995" y="0"/>
+<item historyLabel="buttons.c" index="3">
+<position info="not_deleted" x="1782" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11022" y="0"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="6078" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11069" y="0"/>
+<item historyLabel="audio.c" index="5">
+<position info="not_deleted" x="2492" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11091" y="0"/>
+<item historyLabel="DrumAnyWhere.h" index="6">
+<position info="not_deleted" x="1646" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11113" y="0"/>
+<item historyLabel="buttons.c" index="3">
+<position info="not_deleted" x="2383" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11141" y="0"/>
+<item historyLabel="audio.c" index="5">
+<position info="not_deleted" x="2492" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11189" y="0"/>
+<item historyLabel="DrumAnyWhere.h" index="6">
+<position info="not_deleted" x="1646" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11211" y="0"/>
+<item historyLabel="audio.c" index="5">
+<position info="not_deleted" x="2492" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11233" y="0"/>
+<item historyLabel="buttons.c" index="3">
+<position info="not_deleted" x="2403" y="0"/>
 </item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11261" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11309" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11331" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="5950" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="6349" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="6735" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10225" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10394" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10416" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10417" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10429" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10490" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="10491" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11288" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="4197" y="17"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="8013" y="0"/>
-</item>
-<item historyLabel="ucos_ii.h" index="1">
-<position info="not_deleted" x="51141" y="0"/>
-</item>
-<item historyLabel="system.h" index="2">
-<position info="not_deleted" x="6816" y="11"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="8103" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="7654" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11862" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position info="not_deleted" x="11376" y="0"/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item historyLabel="audio.c" index="0">
-<position/>
-</item>
-<item active="true" historyLabel="audio.c" index="0">
-<position info="not_deleted" x="8558" y="0"/>
+<item active="true" historyLabel="DrumAnyWhere.h" index="6">
+<position info="not_deleted" x="1646" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -566,14 +485,26 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="DrumAnyWhere.h" tooltip="capstone_Volatile/DrumAnyWhere.h">
+<persistable path="/capstone_Volatile/DrumAnyWhere.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" tooltip="capstone_Volatile/audio.c">
+<persistable path="/capstone_Volatile/audio.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="save.c" tooltip="capstone_Volatile/save.c">
+<persistable path="/capstone_Volatile/save.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="buttons.c" tooltip="capstone_Volatile/buttons.c">
+<persistable path="/capstone_Volatile/buttons.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="capstone_Volatile/main.c">
+<persistable path="/capstone_Volatile/main.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ucos_ii.h" tooltip="capstone_Volatile_bsp/UCOSII/inc/ucos_ii.h">
 <persistable path="/capstone_Volatile_bsp/UCOSII/inc/ucos_ii.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="capstone_Volatile_bsp/system.h">
 <persistable path="/capstone_Volatile_bsp/system.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="audio.c" tooltip="capstone_Volatile/audio.c">
-<persistable path="/capstone_Volatile/audio.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="capstone_bsp/system.h">
 <persistable path="/capstone_bsp/system.h"/>
@@ -598,18 +529,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="attempt2/hello_ucosii.c">
 <persistable path="/attempt2/hello_ucosii.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_up_avalon_character_lcd.h" tooltip="capstone_bsp/drivers/inc/altera_up_avalon_character_lcd.h">
-<persistable path="/capstone_bsp/drivers/inc/altera_up_avalon_character_lcd.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_up_avalon_audio.h" tooltip="capstone_bsp/drivers/inc/altera_up_avalon_audio.h">
-<persistable path="/capstone_bsp/drivers/inc/altera_up_avalon_audio.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="buttonTest2/hello_ucosii.c">
-<persistable path="/buttonTest2/hello_ucosii.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="alt_exception_entry.S" tooltip="capstone_bsp/HAL/src/alt_exception_entry.S">
-<persistable path="/capstone_bsp/HAL/src/alt_exception_entry.S"/>
 </file>
 </mruList>
 </workbench>

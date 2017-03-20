@@ -1,5 +1,7 @@
-#ifndef DrumAnyWhere_H_   /* Include guard */
+#ifndef DrumAnyWhere_H_
 #define DrumAnyWHere_H_
+
+
 
 #include <stdio.h>
 #include <system.h>
@@ -27,9 +29,12 @@ void sdInit(EmbeddedFileSystem *efsl, File *readFile);
 // audio 
 void audioInit(alt_up_av_config_dev * audio_config_dev);
 void audio_isr(void* context, alt_u32 id);
+void synthesize();
 
 // buttons
-static void init_button_pio();
+void init_button_pio();
+void interrupt_isr_buttonPress(void *context, alt_u32 id);
+void setDrum(int drum);
 
 typedef struct {
 	unsigned int* waveform;
@@ -38,7 +43,7 @@ typedef struct {
 	int numberOfSamples;
 }Drum;
 
-#define numDrums
+#define numDrums 7
 Drum* drums[numDrums];
 
 
@@ -63,9 +68,17 @@ alt_up_audio_dev * audio_dev;
 #define crashNumberSamples 63342
 #define hihatNumberSamples 98218
 #define hihat2NumberSamples 6313
-#define kickNumberSamples 25448
+#define kickNumberSamples 5000 // check this value, I reduced it because the original number is wrong
 #define tomNumberSamples 57006
-#define tom2NumberSamples 16926
+#define tom2NumberSamples 37500 // check this value, I reduced it because the original number is wrong
+
+#define snareSize 29102
+#define crashSize 253412
+#define hihatSize 392916
+#define hihat2Size 25296
+#define kickSize 89054
+#define tomSize 228186
+#define tom2Size 180580
 
 #define snareConst 0
 #define crashConst 1
@@ -85,11 +98,10 @@ unsigned int kick[kickNumberSamples];
 unsigned int tom[tomNumberSamples];
 unsigned int tom2[tom2NumberSamples];
 
-int isPlaying[numDrums] = {0, 0, 0, 0, 0, 0, 0};
+int isPlaying[numDrums];
 unsigned int nextToPlay[SAMPLE_SIZE];
 
 OS_EVENT* semaphore;
-int count = 0;
 volatile int edge_capture;
 
 #endif

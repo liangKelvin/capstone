@@ -1,0 +1,93 @@
+/* Created By Kelvin Liang and Justin Ferris 
+   Drum Anywhere G4
+   Date: Feb 22, 2017
+   Description: audio.c contains code to initalize the audio codec on the Altera DE2
+   				contains code to play sounds from the altera DE2
+*/
+
+
+// sets our codec up, sets the appropriate registers
+// set up fro sampling rate of 44100
+void audioInit(alt_up_av_config_dev * audio_config_dev) {
+
+	if ( audio_config_dev == NULL)
+		printf("Error: could not open audio config device \n");
+	else
+		printf("Opened audio config device \n");
+
+	audio_dev = alt_up_audio_open_dev ("/dev/audio_0");
+	if ( audio_dev == NULL)
+		printf("Error: could not open audio device \n");
+	else
+		printf("Opened audio device \n");
+
+	alt_up_av_config_reset(audio_config_dev);
+	alt_up_audio_reset_audio_core(audio_dev);
+
+	/* Write to configuration registers in the audio codec; see datasheet for what these values mean */
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x0, 0x17);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x1, 0x17);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x2, 0x68);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x3, 0x68);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x4, 0x15);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x5, 0x06);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x6, 0x00);
+	alt_up_av_config_write_audio_cfg_register(audio_config_dev, 0x8, 0x22);
+
+	alt_up_audio_disable_read_interrupt(audio_dev);
+	alt_up_audio_disable_write_interrupt(audio_dev);
+
+	alt_irq_register(AUDIO_0_IRQ, 0x0, audio_isr);
+	alt_irq_enable(AUDIO_0_IRQ);
+}
+
+
+// audio interrupt fires upon having FIFO 75% empty
+// will try to play from nextToPlay which contains
+// sound waves that are to play
+void audio_isr(void* context, alt_u32 id) {
+	//FIFO 75% empty
+	int i;
+	int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+
+	if(fifospace >= SAMPLE_SIZE) {
+		alt_up_audio_write_fifo(audio_dev, nextToPlay, SAMPLE_SIZE, ALT_UP_AUDIO_RIGHT);
+		alt_up_audio_write_fifo(audio_dev, nextToPlay, SAMPLE_SIZE, ALT_UP_AUDIO_LEFT);
+		for(i = 0; i < SAMPLE_SIZE; i++) {
+			nextToPlay[i] = 0;
+		}
+		INT8U error;
+		error = OSSemPost(semaphore);
+	}
+	alt_up_audio_disable_write_interrupt(audio_dev);
+}
+
+
+// handles the digital signal processing
+// for the DE2, adds the waveforms together, 
+// scaling and decay. 
+void synthesize(void* pdata) {
+	int i;
+	int k;
+	while(1) {
+		// check for new sounds
+		for(i = 0; i < 7; i++) {
+			if(isPlaying[i] == 1) {
+				// append waveforms if needed
+				for(k = 0; k < SAMPLE_SIZE; k++) {
+					nextToPlay[k] += drums[i]->waveform[drums[i]->index + k] * drums[i]->scale;
+				}
+
+				drums[i]->index += SAMPLE_SIZE;
+				if(drums[i]->index >= drums[i]->numberOfSamples - SAMPLE_SIZE) {
+					drums[i]->index = 0;
+					isPlaying[i] = 0;
+				}
+			}
+		}
+		alt_up_audio_enable_write_interrupt(audio_dev);
+		//PEND SEM
+		INT8U err;
+		OSSemPend(semaphore, 0, &err);
+	}
+}

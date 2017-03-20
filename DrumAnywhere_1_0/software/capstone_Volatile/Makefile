@@ -162,6 +162,9 @@ C_SRCS += efsl/sd.c
 C_SRCS += efsl/time.c
 C_SRCS += efsl/ui.c
 C_SRCS += save.c
+C_SRCS += buttons.c
+C_SRCS += main.c
+C_SRCS += sd.c
 CXX_SRCS :=
 ASM_SRCS :=
 

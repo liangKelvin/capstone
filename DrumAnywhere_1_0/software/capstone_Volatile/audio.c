@@ -5,6 +5,7 @@
    				contains code to play sounds from the altera DE2
 */
 
+#include "DrumAnyWhere.h"
 
 // sets our codec up, sets the appropriate registers
 // set up fro sampling rate of 44100
@@ -61,7 +62,6 @@ void audio_isr(void* context, alt_u32 id) {
 	}
 	alt_up_audio_disable_write_interrupt(audio_dev);
 }
-
 
 // handles the digital signal processing
 // for the DE2, adds the waveforms together, 

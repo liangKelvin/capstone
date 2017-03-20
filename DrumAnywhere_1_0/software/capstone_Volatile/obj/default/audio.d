@@ -1,5 +1,5 @@
-obj/default/audio.o: audio.c ../capstone_Volatile_bsp/system.h \
-  ../capstone_Volatile_bsp/linker.h \
+obj/default/audio.o: audio.c DrumAnyWhere.h \
+  ../capstone_Volatile_bsp/system.h ../capstone_Volatile_bsp/linker.h \
   ../capstone_Volatile_bsp//HAL/inc/includes.h \
   ../capstone_Volatile_bsp//HAL/inc/os_cpu.h \
   ../capstone_Volatile_bsp//HAL/inc/sys/alt_irq.h \
@@ -34,6 +34,8 @@ obj/default/audio.o: audio.c ../capstone_Volatile_bsp/system.h \
   efsl/disc.h efsl/error.h efsl/ioman.h efsl/plibc.h efsl/extract.h \
   efsl/partition.h efsl/fs.h efsl/time.h efsl/file.h efsl/dir.h \
   efsl/fat.h efsl/ui.h efsl/ls.h
+
+DrumAnyWhere.h:
 
 ../capstone_Volatile_bsp/system.h:
 

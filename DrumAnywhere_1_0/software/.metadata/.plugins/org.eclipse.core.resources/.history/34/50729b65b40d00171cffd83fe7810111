@@ -1,0 +1,124 @@
+/* Created By Kelvin Liang and Justin Ferris 
+   Drum Anywhere G4
+   Date: Feb 22, 2017
+   Description: buttons.c contains code for
+   				button operation on DE2
+   				buttons are used as a substitute for 
+   				IMU's. We use this to test our synthesizer.
+*/
+
+#include "DrumAnyWhere.h"
+
+
+void init_button_pio() {
+	void* edge_capture_ptr = (void*) &edge_capture;
+	/* Enable all 4 button interrupts. */
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BUTTONS_BASE, 0xf);
+	/* Reset the edge capture register. */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x0);
+	/* Register the ISR. */
+	alt_irq_register(BUTTONS_IRQ, edge_capture_ptr, interrupt_isr_buttonPress);
+}
+
+
+void interrupt_isr_buttonPress(void *context, alt_u32 id) {
+
+	volatile int* edge_capture_ptr = (volatile int*) context;
+	*edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE);
+
+	button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+	alt_up_audio_enable_write_interrupt(audio_dev);
+
+	switch (button) {
+
+		case 7 :
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "tom");
+
+			if(isPlaying[tomConst] == 0) {
+				isPlaying[tomConst] = 1;
+			} else {
+				drums[tomConst]->index = 0;
+			}
+			break;
+
+		case 9:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "crash/snare");
+
+			if(isPlaying[crashConst] == 0) {
+				isPlaying[crashConst] = 1;
+			} else {
+				drums[crashConst]->index = 0;
+			}
+
+			if(isPlaying[snareConst] == 0) {
+				isPlaying[snareConst] = 1;
+			} else {
+				drums[snareConst]->index = 0;
+			}
+			break;
+
+		case 10:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "crash/hihat");
+
+			setDrum(hihatConst);
+			setDrum(crashConst);
+			break;
+
+
+		case 11:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "Crash");
+
+			setDrum(crashConst);
+			break;
+
+		case 12:
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "hihat/snare");
+
+			setDrum(hihatConst);
+			setDrum(snareConst);
+			break;
+
+		case 13:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "Snare");
+
+			setDrum(snareConst);
+			break;
+
+		case 14:
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, "hihat");
+
+			setDrum(hihatConst);
+			break;
+	}
+
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x01);
+	IORD_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE);
+}
+
+void setDrum(int drum) {
+	if(isPlaying[drum] == 0) {
+		isPlaying[drum] = 1;
+	} else {
+		drums[drum]->index = 0;
+	}
+}

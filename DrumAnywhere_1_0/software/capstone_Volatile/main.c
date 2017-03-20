@@ -52,22 +52,26 @@ int main(void) {
 
 	// Drum Sounds filenames
 	char *fileNames[7];
-	fileNames[0] = "snare2.wav";
-	fileNames[1] = "crash.wav";
-	fileNames[2] = "hihat.wav";
-	fileNames[3] = "hithat2.wav";
-	fileNames[4] = "kick.wav";
-	fileNames[5] = "tom.wav";
-	fileNames[6] = "tom2.wav";
+	fileNames[snareConst] = "snare2.wav";
+	fileNames[crashConst] = "crash.wav";
+	fileNames[hihatConst] = "hihat.wav";
+	fileNames[hihat2Const] = "hithat2.wav";
+	fileNames[kickConst] = "kick.wav";
+	fileNames[tomConst] = "tom.wav";
+	fileNames[tom2Const] = "tom2.wav";
+	int i;
+	for (i = 0; i < numDrums; i++) {
+		isPlaying[i] = 0;
+	}
 
 	// arrays for reading all data from sd card
-	euint8* snareTemp = malloc(29102 * sizeof(eint8));
-	euint8* crashTemp = malloc(253412 * sizeof(eint8));
-	euint8* hihatTemp = malloc(392916 * sizeof(eint8));
-	euint8* hihat2Temp  = malloc(25296 * sizeof(eint8));
-	euint8* kickTemp = malloc(104548 * sizeof(eint8));
-	euint8* tomTemp = malloc(228186 * sizeof(eint8));
-	euint8* tom2Temp = malloc(67748 * sizeof(eint8));
+	euint8* snareTemp = malloc(snareSize * sizeof(eint8));
+	euint8* crashTemp = malloc(crashSize * sizeof(eint8));
+	euint8* hihatTemp = malloc(hihatSize * sizeof(eint8));
+	euint8* hihat2Temp  = malloc(hihat2Size * sizeof(eint8));
+	euint8* kickTemp = malloc(kickSize * sizeof(eint8));
+	euint8* tomTemp = malloc(tomSize * sizeof(eint8));
+	euint8* tom2Temp = malloc(tom2Size * sizeof(eint8));
 
 	// init lcd
 	alt_up_character_lcd_init(myLCD);
@@ -78,13 +82,14 @@ int main(void) {
 	sdInit(&efsl, &readFile);
 
 	// read files from sd card
-	snareTemp = sdRead(fileNames[0], &efsl, &readFile);
-	crashTemp = sdRead(fileNames[1], &efsl, &readFile);
-	hihatTemp = sdRead(fileNames[2], &efsl, &readFile);
-	hihat2Temp = sdRead(fileNames[3], &efsl, &readFile);
-	kickTemp = sdRead(fileNames[4], &efsl, &readFile);
-	tomTemp = sdRead(fileNames[5], &efsl, &readFile);
-	tom2Temp = sdRead(fileNames[6], &efsl, &readFile);
+	snareTemp = sdRead(fileNames[snareConst], &efsl, &readFile);
+	crashTemp = sdRead(fileNames[crashConst], &efsl, &readFile);
+	hihatTemp = sdRead(fileNames[hihatConst], &efsl, &readFile);
+	hihat2Temp = sdRead(fileNames[hihat2Const], &efsl, &readFile);
+	kickTemp = sdRead(fileNames[kickConst], &efsl, &readFile);
+	tomTemp = sdRead(fileNames[tomConst], &efsl, &readFile);
+	tom2Temp = sdRead(fileNames[tom2Const], &efsl, &readFile);
+
 
 	// parse the actual data from the .wav files
 	parseWav(snareTemp, snareNumberSamples, snare);
@@ -97,39 +102,39 @@ int main(void) {
 
 
 	// init structs for waveform info
-	int i;
 	for(i = 0; i < 7; i++) {
 		drums[i] = malloc(sizeof(Drum));
 		drums[i]->waveform = malloc(hihatNumberSamples * sizeof(unsigned int));
 	}
-	drums[0]->waveform = snare;
-	drums[0]->numberOfSamples = snareNumberSamples;
-	drums[0]->index = 0;
-	drums[0]->scale = 1;
-	drums[1]->waveform = crash;
-	drums[1]->numberOfSamples = crashNumberSamples;
-	drums[1]->index = 0;
-	drums[1]->scale = 1;
-	drums[2]->waveform = hihat;
-	drums[2]->numberOfSamples = hihatNumberSamples;
-	drums[2]->index = 0;
-	drums[2]->scale = 1;
-	drums[3]->waveform = hihat2;
-	drums[3]->numberOfSamples = hihat2NumberSamples;
-	drums[3]->index = 0;
-	drums[3]->scale = 0;
-	drums[4]->waveform = tom;
-	drums[4]->numberOfSamples = tomNumberSamples;
-	drums[4]->index = 0;
-	drums[4]->scale = 2;
-	drums[5]->waveform = tom2;
-	drums[5]->numberOfSamples = tom2NumberSamples;
-	drums[5]->index = 0;
-	drums[5]->scale = 1;
-	drums[6]->waveform = kick;
-	drums[6]->numberOfSamples = kickNumberSamples;
-	drums[6]->index = 0;
-	drums[6]->scale = 1;
+
+	drums[snareConst]->waveform = snare;
+	drums[snareConst]->numberOfSamples = snareNumberSamples;
+	drums[snareConst]->index = 0;
+	drums[snareConst]->scale = 1;
+	drums[crashConst]->waveform = crash;
+	drums[crashConst]->numberOfSamples = crashNumberSamples;
+	drums[crashConst]->index = 0;
+	drums[crashConst]->scale = 1;
+	drums[hihatConst]->waveform = hihat;
+	drums[hihatConst]->numberOfSamples = hihatNumberSamples;
+	drums[hihatConst]->index = 0;
+	drums[hihatConst]->scale = 1;
+	drums[hihat2Const]->waveform = hihat2;
+	drums[hihat2Const]->numberOfSamples = hihat2NumberSamples;
+	drums[hihat2Const]->index = 0;
+	drums[hihat2Const]->scale = 1;
+	drums[tomConst]->waveform = tom;
+	drums[tomConst]->numberOfSamples = tomNumberSamples;
+	drums[tomConst]->index = 0;
+	drums[tomConst]->scale = 2;
+	drums[tom2Const]->waveform = tom2;
+	drums[tom2Const]->numberOfSamples = tom2NumberSamples;
+	drums[tom2Const]->index = 0;
+	drums[tom2Const]->scale = 1;
+	drums[kickConst]->waveform = kick;
+	drums[kickConst]->numberOfSamples = kickNumberSamples;
+	drums[kickConst]->index = 0;
+	drums[kickConst]->scale = 1;
 
 	// audio init, Button INit
 	audioInit(audio_config_dev);
