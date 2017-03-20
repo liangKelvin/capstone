@@ -1,0 +1,122 @@
+// takes in wav file and number of samples
+// plays given sound once
+//void playSound(unsigned long NumberSamples, unsigned int* wav) {
+//	int count = 0;
+//	int bool = 0;
+//
+//	int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+//	if(fifospace >= 128) {
+//			alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_RIGHT);
+//			alt_up_audio_write_fifo(audio_dev, wav + count, 128, ALT_UP_AUDIO_LEFT);
+//			bool = 1;
+//	}
+//	// clear buffer
+//	int i;
+//	for(i = 0; i < 128; i++) {
+//		wav[i] = 0;
+//	}
+//
+//}
+
+
+//void playSoundAmp(unsigned long NumberSamples, unsigned int* wav, int scale) {
+//	int count = 0;
+//	int bool = 0;
+//	unsigned int temp[128];
+//	while(count <= NumberSamples - 128) {
+//		int k;
+//		for(k = 0; k < 128; k++) {
+//			temp[k] = scale*wav[k+count];
+//		}
+//		int fifospace = alt_up_audio_write_fifo_space(audio_dev, ALT_UP_AUDIO_RIGHT);
+//		if(fifospace >= 128) {
+//				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_RIGHT);
+//				alt_up_audio_write_fifo(audio_dev, temp, 128, ALT_UP_AUDIO_LEFT);
+//				count += 128;
+//				bool = 1;
+//		}
+//	}
+//}
+
+
+void addWav(unsigned int* wav1, unsigned int* wav2, unsigned int* arr) {
+// 	int k;
+// 	for(k = 0; k < 128; k++) {
+// 		arr[k] = wav1[k] + wav2[k];
+// 	}
+// }
+
+
+
+/* Prints "Hello World" and sleeps for three seconds */
+void pollSound(void* pdata) {
+	while(1) {
+	// currently using magic number due to problems with system.h header
+
+		button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+		alt_up_audio_enable_write_interrupt(audio_dev);
+
+		switch (button) {
+
+			case 7 :
+
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "tom");
+
+				if(isPlaying[tomConst] == 0) {
+					isPlaying[tomConst] = 1;
+				} else {
+					drums[tomConst]->index = 0;
+				}
+				OSTimeDlyHMSM(0,0,0,2);
+//				while(button == 7)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 11:
+
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Crash");
+				count = 0;
+
+				if(isPlaying[crashConst] == 0) {
+					isPlaying[crashConst] = 1;
+				} else {
+					drums[crashConst]->index = 0;
+				}
+				OSTimeDlyHMSM(0,0,0,2);
+//				while(button == 11)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 13:
+
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "Snare");
+
+				if(isPlaying[snareConst] == 0) {
+					isPlaying[snareConst] = 1;
+				} else {
+					drums[snareConst]->index = 0;
+				}
+				OSTimeDlyHMSM(0,0,0,2);
+//				while(button == 13)button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
+				break;
+
+			case 14:
+
+				alt_up_character_lcd_init(myLCD);
+				alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+				alt_up_character_lcd_string(myLCD, "hihat");
+
+				if(isPlaying[hihatConst] == 0) {
+					isPlaying[hihatConst] = 1;
+				} else {
+					drums[hihatConst]->index = 0;
+				}
+				break;
+		}
+		OSTimeDlyHMSM(0,0,0,5);
+	}
+}
