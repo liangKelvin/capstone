@@ -20,11 +20,27 @@
          type = "int";
       }
    }
+   element I2C_SCL_2
+   {
+      datum _sortIndex
+      {
+         value = "20";
+         type = "int";
+      }
+   }
    element I2C_SDA
    {
       datum _sortIndex
       {
          value = "19";
+         type = "int";
+      }
+   }
+   element I2C_SDA_2
+   {
+      datum _sortIndex
+      {
+         value = "21";
          type = "int";
       }
    }
@@ -56,7 +72,7 @@
    {
       datum baseAddress
       {
-         value = "17862800";
+         value = "17862832";
          type = "String";
       }
    }
@@ -64,7 +80,7 @@
    {
       datum baseAddress
       {
-         value = "17862784";
+         value = "17862816";
          type = "String";
       }
    }
@@ -72,7 +88,7 @@
    {
       datum baseAddress
       {
-         value = "17862864";
+         value = "17862896";
          type = "String";
       }
    }
@@ -80,7 +96,7 @@
    {
       datum baseAddress
       {
-         value = "17862880";
+         value = "17862912";
          type = "String";
       }
    }
@@ -133,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "17862872";
+         value = "17862904";
          type = "String";
       }
    }
@@ -181,47 +197,15 @@
    {
       datum baseAddress
       {
-         value = "17862848";
+         value = "17862880";
          type = "String";
       }
    }
-   element timer_0.s1
+   element green_leds.s1
    {
       datum baseAddress
       {
-         value = "17862720";
-         type = "String";
-      }
-   }
-   element I2C_SCL.s1
-   {
-      datum baseAddress
-      {
-         value = "17862768";
-         type = "String";
-      }
-   }
-   element switch.s1
-   {
-      datum baseAddress
-      {
-         value = "17862816";
-         type = "String";
-      }
-   }
-   element I2C_SDA.s1
-   {
-      datum baseAddress
-      {
-         value = "17862752";
-         type = "String";
-      }
-   }
-   element onchip_memory2_0.s1
-   {
-      datum baseAddress
-      {
-         value = "17842176";
+         value = "17862864";
          type = "String";
       }
    }
@@ -233,11 +217,59 @@
          type = "String";
       }
    }
-   element green_leds.s1
+   element switch.s1
    {
       datum baseAddress
       {
-         value = "17862832";
+         value = "17862848";
+         type = "String";
+      }
+   }
+   element I2C_SCL.s1
+   {
+      datum baseAddress
+      {
+         value = "17862800";
+         type = "String";
+      }
+   }
+   element I2C_SCL_2.s1
+   {
+      datum baseAddress
+      {
+         value = "17862768";
+         type = "String";
+      }
+   }
+   element I2C_SDA_2.s1
+   {
+      datum baseAddress
+      {
+         value = "17862752";
+         type = "String";
+      }
+   }
+   element I2C_SDA.s1
+   {
+      datum baseAddress
+      {
+         value = "17862784";
+         type = "String";
+      }
+   }
+   element onchip_memory2_0.s1
+   {
+      datum baseAddress
+      {
+         value = "17842176";
+         type = "String";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "17862720";
          type = "String";
       }
    }
@@ -333,7 +365,7 @@
  <parameter name="projectName">DrumAnywhere_1_0.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1489442395632" />
+ <parameter name="timeStamp" value="1490048344767" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript><![CDATA[# request a specific version of the scripting API
 package require -exact qsys 12.1
@@ -399,6 +431,16 @@ proc compose {} {
  <interface
    name="i2c_sda_external_connection"
    internal="I2C_SDA.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="i2c_scl_2_external_connection"
+   internal="I2C_SCL_2.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="i2c_sda_2_external_connection"
+   internal="I2C_SDA_2.external_connection"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="12.1" enabled="1" name="clk_0">
@@ -507,7 +549,7 @@ proc compose {} {
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='sd_card_spi_master.spi_control_port' start='0x1109020' end='0x1109040' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='sd_card_spi_master.spi_control_port' start='0x1109020' end='0x1109040' /><slave name='timer_0.s1' start='0x1109040' end='0x1109060' /><slave name='I2C_SDA.s1' start='0x1109060' end='0x1109070' /><slave name='I2C_SCL.s1' start='0x1109070' end='0x1109080' /><slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x1109080' end='0x1109090' /><slave name='audio_0.avalon_audio_slave' start='0x1109090' end='0x11090A0' /><slave name='switch.s1' start='0x11090A0' end='0x11090B0' /><slave name='green_leds.s1' start='0x11090B0' end='0x11090C0' /><slave name='altpll_0.pll_slave' start='0x11090C0' end='0x11090D0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11090D0' end='0x11090D8' /><slave name='sysid_qsys_0.control_slave' start='0x11090D8' end='0x11090E0' /><slave name='character_lcd_0.avalon_lcd_slave' start='0x11090E0' end='0x11090E2' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_0.s1' start='0x800000' end='0x1000000' /><slave name='sram_0.avalon_sram_slave' start='0x1080000' end='0x1100000' /><slave name='onchip_memory2_0.s1' start='0x1104000' end='0x1108000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x1108800' end='0x1109000' /><slave name='sd_card_spi_master.spi_control_port' start='0x1109020' end='0x1109040' /><slave name='timer_0.s1' start='0x1109040' end='0x1109060' /><slave name='I2C_SDA_2.s1' start='0x1109060' end='0x1109070' /><slave name='I2C_SCL_2.s1' start='0x1109070' end='0x1109080' /><slave name='I2C_SDA.s1' start='0x1109080' end='0x1109090' /><slave name='I2C_SCL.s1' start='0x1109090' end='0x11090A0' /><slave name='audio_and_video_config_0.avalon_av_config_slave' start='0x11090A0' end='0x11090B0' /><slave name='audio_0.avalon_audio_slave' start='0x11090B0' end='0x11090C0' /><slave name='switch.s1' start='0x11090C0' end='0x11090D0' /><slave name='green_leds.s1' start='0x11090D0' end='0x11090E0' /><slave name='altpll_0.pll_slave' start='0x11090E0' end='0x11090F0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11090F0' end='0x11090F8' /><slave name='sysid_qsys_0.control_slave' start='0x11090F8' end='0x1109100' /><slave name='character_lcd_0.avalon_lcd_slave' start='0x1109100' end='0x1109102' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone II" />
   <parameter name="internalIrqMaskSystemInfo" value="7" />
@@ -933,6 +975,34 @@ proc compose {} {
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
+ <module kind="altera_avalon_pio" version="12.1" enabled="1" name="I2C_SCL_2">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
+ <module kind="altera_avalon_pio" version="12.1" enabled="1" name="I2C_SDA_2">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Bidir" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <connection
    kind="avalon"
    version="12.1"
@@ -970,7 +1040,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="altpll_0.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090c0" />
+  <parameter name="baseAddress" value="0x011090e0" />
  </connection>
  <connection
    kind="clock"
@@ -1043,7 +1113,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090d8" />
+  <parameter name="baseAddress" value="0x011090f8" />
  </connection>
  <connection
    kind="reset"
@@ -1079,7 +1149,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090d0" />
+  <parameter name="baseAddress" value="0x011090f0" />
  </connection>
  <connection
    kind="reset"
@@ -1109,7 +1179,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="character_lcd_0.avalon_lcd_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090e0" />
+  <parameter name="baseAddress" value="0x01109100" />
  </connection>
  <connection
    kind="reset"
@@ -1127,7 +1197,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="green_leds.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090b0" />
+  <parameter name="baseAddress" value="0x011090d0" />
  </connection>
  <connection
    kind="reset"
@@ -1145,7 +1215,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="switch.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x011090a0" />
+  <parameter name="baseAddress" value="0x011090c0" />
  </connection>
  <connection
    kind="interrupt"
@@ -1218,7 +1288,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="audio_0.avalon_audio_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109090" />
+  <parameter name="baseAddress" value="0x011090b0" />
  </connection>
  <connection
    kind="avalon"
@@ -1226,7 +1296,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="audio_and_video_config_0.avalon_av_config_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109080" />
+  <parameter name="baseAddress" value="0x011090a0" />
  </connection>
  <connection
    kind="clock"
@@ -1348,7 +1418,7 @@ proc compose {} {
    start="nios2_qsys_0.data_master"
    end="I2C_SCL.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01109070" />
+  <parameter name="baseAddress" value="0x01109090" />
  </connection>
  <connection kind="clock" version="12.1" start="altpll_0.c1" end="I2C_SDA.clk" />
  <connection
@@ -1371,6 +1441,44 @@ proc compose {} {
    version="12.1"
    start="nios2_qsys_0.data_master"
    end="I2C_SDA.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01109080" />
+ </connection>
+ <connection kind="clock" version="12.1" start="altpll_0.c1" end="I2C_SCL_2.clk" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="I2C_SCL_2.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clk_0.clk_reset"
+   end="I2C_SCL_2.reset" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="nios2_qsys_0.data_master"
+   end="I2C_SCL_2.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01109070" />
+ </connection>
+ <connection kind="clock" version="12.1" start="altpll_0.c1" end="I2C_SDA_2.clk" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="I2C_SDA_2.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clk_0.clk_reset"
+   end="I2C_SDA_2.reset" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="nios2_qsys_0.data_master"
+   end="I2C_SDA_2.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x01109060" />
  </connection>

@@ -34,17 +34,17 @@ module niosII_system_addr_router_default_decode
      parameter DEFAULT_CHANNEL = 2,
                DEFAULT_DESTID = 2 
    )
-  (output [89 - 86 : 0] default_destination_id,
-   output [16-1 : 0] default_src_channel
+  (output [91 - 87 : 0] default_destination_id,
+   output [18-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[89 - 86 : 0];
+    DEFAULT_DESTID[91 - 87 : 0];
   generate begin : default_decode
     if (DEFAULT_CHANNEL == -1)
       assign default_src_channel = '0;
     else
-      assign default_src_channel = 16'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 18'b1 << DEFAULT_CHANNEL;
   end
   endgenerate
 
@@ -63,7 +63,7 @@ module niosII_system_addr_router
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [100-1 : 0]    sink_data,
+    input  [102-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -72,8 +72,8 @@ module niosII_system_addr_router
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [100-1    : 0] src_data,
-    output reg [16-1 : 0] src_channel,
+    output reg [102-1    : 0] src_data,
+    output reg [18-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -84,10 +84,10 @@ module niosII_system_addr_router
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 60;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 89;
-    localparam PKT_DEST_ID_L = 86;
-    localparam ST_DATA_W = 100;
-    localparam ST_CHANNEL_W = 16;
+    localparam PKT_DEST_ID_H = 91;
+    localparam PKT_DEST_ID_L = 87;
+    localparam ST_DATA_W = 102;
+    localparam ST_CHANNEL_W = 18;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 63;
@@ -132,7 +132,7 @@ module niosII_system_addr_router
     assign src_endofpacket   = sink_endofpacket;
 
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [16-1 : 0] default_src_channel;
+    wire [18-1 : 0] default_src_channel;
 
 
 
@@ -154,31 +154,31 @@ module niosII_system_addr_router
 
         // ( 0x800000 .. 0x1000000 )
         if ( {address[RG:PAD0],{PAD0{1'b0}}} == 25'h800000 ) begin
-            src_channel = 16'b00100;
+            src_channel = 18'b00100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
         end
 
         // ( 0x1080000 .. 0x1100000 )
         if ( {address[RG:PAD1],{PAD1{1'b0}}} == 25'h1080000 ) begin
-            src_channel = 16'b01000;
+            src_channel = 18'b01000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
         end
 
         // ( 0x1104000 .. 0x1108000 )
         if ( {address[RG:PAD2],{PAD2{1'b0}}} == 25'h1104000 ) begin
-            src_channel = 16'b00010;
+            src_channel = 18'b00010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
         end
 
         // ( 0x1108800 .. 0x1109000 )
         if ( {address[RG:PAD3],{PAD3{1'b0}}} == 25'h1108800 ) begin
-            src_channel = 16'b00001;
+            src_channel = 18'b00001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
         end
 
         // ( 0x1109020 .. 0x1109040 )
         if ( {address[RG:PAD4],{PAD4{1'b0}}} == 25'h1109020 ) begin
-            src_channel = 16'b10000;
+            src_channel = 18'b10000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
         end
 

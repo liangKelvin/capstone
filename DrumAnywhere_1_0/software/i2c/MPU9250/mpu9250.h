@@ -190,11 +190,11 @@
 
 void getAres(float* aRes);
 void getGres(float* gRes);
-void readAccelData(alt_16 * destination);
-void readGyroData(alt_16 * destination);
-void initMPU9250();
-void calibrateMPU9250(float * gyroBias, float * accelBias);
-void MPU9250SelfTest(float * destination);
+void readAccelData(alt_16 * destination, alt_u32 scl_base, alt_u32 sda_base);
+void readGyroData(alt_16 * destination, alt_u32 scl_base, alt_u32 sda_base);
+void initMPU9250(alt_u32 scl_base, alt_u32 sda_base);
+void calibrateMPU9250(float * gyroBias, float * accelBias, alt_u32 scl_base, alt_u32 sda_base);
+void MPU9250SelfTest(float * destination, alt_u32 scl_base, alt_u32 sda_base);
 
 
 #endif // _MPU9250_H_

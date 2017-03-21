@@ -82,7 +82,8 @@ library ieee;
 		SD_CMD			: out			std_logic;
 		
 		--GPIO
-		GPIO_0 : inout std_logic_vector(35 downto 0) := (others => 'X')
+		GPIO_0 : inout std_logic_vector(35 downto 0) := (others => 'X');
+		GPIO_1 : inout std_logic_vector(35 downto 0) := (others => 'X')
 		
 	);
 end DrumAnywhere_1_0;
@@ -135,7 +136,9 @@ architecture structure of DrumAnywhere_1_0 is
             spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
             spi_0_external_SS_n                              : out   std_logic;                                         -- SS_n
 				i2c_scl_external_connection_export               : out   std_logic;                                        -- export
-            i2c_sda_external_connection_export               : inout std_logic                     := 'X' 
+            i2c_sda_external_connection_export               : inout std_logic                     := 'X';
+				i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
+            i2c_sda_2_external_connection_export             : inout std_logic                     := 'X'              -- export	
 		  );
     end component niosII_system;
 
@@ -199,7 +202,9 @@ begin
             spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
             spi_0_external_SS_n                              => SD_DAT3,                              --    
 				i2c_scl_external_connection_export               => GPIO_0(24),               --                 i2c_scl_external_connection.export
-            i2c_sda_external_connection_export               => GPIO_0(25)                --         
+            i2c_sda_external_connection_export               => GPIO_0(25),                --         
+				i2c_scl_2_external_connection_export             => GPIO_1(24),            --               i2c_scl_2_external_connection.export
+            i2c_sda_2_external_connection_export             => GPIO_1(25) 
 		 );
 
 end structure;

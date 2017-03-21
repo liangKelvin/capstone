@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="311" key="DIALOG_WIDTH"/>
-		<item value="359" key="DIALOG_Y_ORIGIN"/>
-		<item value="479" key="DIALOG_HEIGHT"/>
+		<item value="313" key="DIALOG_WIDTH"/>
+		<item value="358" key="DIALOG_Y_ORIGIN"/>
 		<item value="1026" key="DIALOG_X_ORIGIN"/>
+		<item value="480" key="DIALOG_HEIGHT"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="200" key="selection"/>
+		<item value="sda_base" key="selection"/>
 		<list key="findhistory">
+			<item value="I2C_SDA_BASE"/>
+			<item value="I2C_SCL_BASE"/>
 			<item value="200"/>
 			<item value="int"/>
 			<item value="int16_t"/>
 			<item value="uint8_t"/>
 			<item value="int32_t"/>
 			<item value="uint16_t"/>
-			<item value="uint8_t "/>
-			<item value="Ascale"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sda_base"/>
+			<item value="scl_base"/>
 			<item value="alt_16"/>
 			<item value="alt_u8"/>
 			<item value="alt_32"/>
 			<item value="alt_u16"/>
 			<item value="deviceAddress"/>
 			<item value="printf"/>
-			<item value="alt_u32"/>
-			<item value="alt"/>
 		</list>
 	</section>
 </section>
