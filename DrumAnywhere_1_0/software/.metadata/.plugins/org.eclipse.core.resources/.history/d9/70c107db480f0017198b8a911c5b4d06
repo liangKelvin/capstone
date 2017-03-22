@@ -39,13 +39,13 @@ void interrupt_isr_buttonPress(void *context, alt_u32 id) {
 		alt_up_character_lcd_init(myLCD);
 		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 		alt_up_character_lcd_string(myLCD, "hihat");
-		setDrum(kickConst);
+		setDrum(hihatConst);
 	}
 	if((button & 0x2) == 0) {
 		alt_up_character_lcd_init(myLCD);
 		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 		alt_up_character_lcd_string(myLCD, "hihat2");
-		setDrum(hihatConst);
+		setDrum(hihat2Const);
 	}
 	if((button & 0x1) == 0) {
 		alt_up_character_lcd_init(myLCD);
