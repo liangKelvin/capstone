@@ -4540,3 +4540,142 @@ Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.pa
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-03-20 18:15:20.298
 !MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+!SESSION 2017-03-22 14:15:11.525 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:16:25.511
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:16:26.983
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:34:13.623
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:34:13.854
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:34:15.223
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:35:30.073
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:35:30.304
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:35:31.692
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:36:16.902
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:36:18.299
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:40:06.578
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:40:08.138
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:40:26.103
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:40:27.660
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:42:49.761
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:42:51.315
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:44:22.472
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:44:23.868
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:58:08.530
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 14:58:09.924
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:00:13.330
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:00:13.572
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:00:14.941
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:10:55.463
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:10:55.676
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:10:57.042
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:11:28.982
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:11:29.238
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:11:30.599
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:13:03.845
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:13:04.050
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:13:05.412
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:16:40.869
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:16:41.078
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:16:42.447
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:18:57.013
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:18:57.221
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:18:58.588
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:30:57.457
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:30:57.666
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:30:59.032
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:34:58.224
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [2-1.6]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:34:58.435
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --stop --sidp=0x11090f8 --id=0x0 --timestamp=1490048747]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-22 15:34:59.801
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.6]' --device=1 --instance=0 --go --sidp=0x11090f8 --id=0x0 --timestamp=1490048747 /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/i2c.elf]

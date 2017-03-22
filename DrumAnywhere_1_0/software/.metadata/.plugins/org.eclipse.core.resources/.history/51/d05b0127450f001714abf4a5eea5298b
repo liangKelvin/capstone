@@ -199,24 +199,24 @@ void task1(void* pdata){
 	}
 
 	// Vertical shift tracking
-	if(gy < -70){
+	if(gy < 120){
 		drum1_gy_count_up++;
 	}
 	else{
 		drum1_gy_count_up = 0;
 	}
 
-	if(gy > 50){
+	if(gy > 120){
 		drum1_gy_count_down++;
 	}
 	else{
 		drum1_gy_count_down = 0;
 	}
 
-	if(drum1_gy_count_up > 14 && drum1_index < 3 ){
+	if(drum1_gy_count_up > 17 && drum1_index < 3 ){
 		drum1_index += 3;
 	}
-	if(drum1_gy_count_down > 13 && drum1_index > 2){
+	if(drum1_gy_count_down > 17 && drum1_index > 2){
 		drum1_index -= 3;
 	}
 
@@ -272,24 +272,24 @@ void task1(void* pdata){
 	}
 
 	// Vertical shift tracking
-	if(gy < -70){
+	if(gy < 120){
 		drum2_gy_count_up++;
 	}
 	else{
 		drum2_gy_count_up = 0;
 	}
 
-	if(gy > 50){
+	if(gy > 120){
 		drum2_gy_count_down++;
 	}
 	else{
 		drum2_gy_count_down = 0;
 	}
 
-	if(drum2_gy_count_up > 14 && drum2_index < 3 ){
+	if(drum2_gy_count_up > 17 && drum2_index < 3 ){
 		drum2_index += 3;
 	}
-	if(drum2_gy_count_down > 13 && drum2_index > 2){
+	if(drum2_gy_count_down > 17 && drum2_index > 2){
 		drum2_index -= 3;
 	}
 

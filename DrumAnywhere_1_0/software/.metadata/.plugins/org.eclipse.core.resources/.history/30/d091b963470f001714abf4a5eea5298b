@@ -206,7 +206,7 @@ void task1(void* pdata){
 		drum1_gy_count_up = 0;
 	}
 
-	if(gy > 50){
+	if(gy > 70){
 		drum1_gy_count_down++;
 	}
 	else{
@@ -216,7 +216,7 @@ void task1(void* pdata){
 	if(drum1_gy_count_up > 14 && drum1_index < 3 ){
 		drum1_index += 3;
 	}
-	if(drum1_gy_count_down > 13 && drum1_index > 2){
+	if(drum1_gy_count_down > 14 && drum1_index > 2){
 		drum1_index -= 3;
 	}
 
@@ -279,7 +279,7 @@ void task1(void* pdata){
 		drum2_gy_count_up = 0;
 	}
 
-	if(gy > 50){
+	if(gy > 70){
 		drum2_gy_count_down++;
 	}
 	else{
@@ -289,7 +289,7 @@ void task1(void* pdata){
 	if(drum2_gy_count_up > 14 && drum2_index < 3 ){
 		drum2_index += 3;
 	}
-	if(drum2_gy_count_down > 13 && drum2_index > 2){
+	if(drum2_gy_count_down > 14 && drum2_index > 2){
 		drum2_index -= 3;
 	}
 

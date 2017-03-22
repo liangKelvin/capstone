@@ -5,111 +5,50 @@ make all
 Info: Building ../i2c_bsp/
 make --no-print-directory -C ../i2c_bsp/
 [BSP build complete]
+Info: Compiling MPU9250/mpu9250.c to obj/default/MPU9250/mpu9250.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/MPU9250/mpu9250.o MPU9250/mpu9250.c
+MPU9250/mpu9250.c: In function 'initMPU9250':
+MPU9250/mpu9250.c:93: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:105: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:110: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:118: warning: passing argument 5 of 'I2C_ReadFromDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:129: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:135: warning: passing argument 5 of 'I2C_ReadFromDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:142: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
 Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+MPU9250/mpu9250.c:151: warning: passing argument 5 of 'I2C_ReadFromDeviceRegister' makes pointer from integer without a cast
 nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
-imu_i2c.c: In function 'task1':
+MPU9250/mpu9250.c:158: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
 Info: Linking i2c.elf
-imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
+MPU9250/mpu9250.c: In function 'calibrateMPU9250':
 nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
-imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 141 KBytes program size (code + initialized data).
-Info:           8043 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
-[i2c build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project i2c ****
-
-make all 
-Info: Building ../i2c_bsp/
-make --no-print-directory -C ../i2c_bsp/
-[BSP build complete]
-[i2c build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project i2c ****
-
-make all 
-Info: Building ../i2c_bsp/
-make --no-print-directory -C ../i2c_bsp/
-[BSP build complete]
-Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+MPU9250/mpu9250.c:193: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:197: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:214: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:219: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:231: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:234: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:312: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:313: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:314: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:315: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:316: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:317: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:393: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:394: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:395: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:396: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:397: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:398: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c: In function 'MPU9250SelfTest':
+MPU9250/mpu9250.c:434: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:436: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:438: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:440: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:483: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:485: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
+MPU9250/mpu9250.c:529: warning: passing argument 5 of 'I2C_WriteToDeviceRegister' makes pointer from integer without a cast
 imu_i2c.c: In function 'task1':
-imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
-imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
-Info: Linking i2c.elf
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 141 KBytes program size (code + initialized data).
-Info:           8043 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
-[i2c build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project i2c ****
-
-make all 
-Info: Building ../i2c_bsp/
-make --no-print-directory -C ../i2c_bsp/
-[BSP build complete]
-Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
-imu_i2c.c: In function 'task1':
-Info: Linking i2c.elf
-imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
-imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 141 KBytes program size (code + initialized data).
-Info:           8043 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
-[i2c build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project i2c ****
-
-make all 
-Info: Building ../i2c_bsp/
-make --no-print-directory -C ../i2c_bsp/
-[BSP build complete]
-Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
-imu_i2c.c: In function 'task1':
-Info: Linking i2c.elf
-imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
-imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
-imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 141 KBytes program size (code + initialized data).
-Info:           8043 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
-[i2c build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project i2c ****
-
-make all 
-Info: Building ../i2c_bsp/
-make --no-print-directory -C ../i2c_bsp/
-[BSP build complete]
-Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
-imu_i2c.c: In function 'task1':
-Info: Linking i2c.elf
-imu_i2c.c:188: warning: implicit declaration of function 'abs'
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
 imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
 imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
 imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
@@ -128,44 +67,6 @@ make all
 Info: Building ../i2c_bsp/
 make --no-print-directory -C ../i2c_bsp/
 [BSP build complete]
-Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
-imu_i2c.c: In function 'task1':
-Info: Linking i2c.elf
-imu_i2c.c:188: warning: implicit declaration of function 'abs'
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
-imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
-imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
-imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 141 KBytes program size (code + initialized data).
-Info:           8043 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
-[i2c build complete]
-
-**** Build Finished ****
-
-**** Build of configuration Nios II for project i2c ****
-
-make all 
-Info: Building ../i2c_bsp/
-make --no-print-directory -C ../i2c_bsp/
-[BSP build complete]
-Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
-nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
-imu_i2c.c: In function 'task1':
-imu_i2c.c:188: warning: implicit declaration of function 'abs'
-imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
-imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
-imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
-Info: Linking i2c.elf
-nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
-nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
-Info: (i2c.elf) 141 KBytes program size (code + initialized data).
-Info:           8043 KBytes free for stack + heap.
-Info: Creating i2c.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
 [i2c build complete]
 
 **** Build Finished ****
@@ -210,6 +111,246 @@ imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
 nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
 Info: (i2c.elf) 141 KBytes program size (code + initialized data).
 Info:           8043 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 141 KBytes program size (code + initialized data).
+Info:           8043 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:138: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:137: warning: unused variable 'gz_hit_flag_2'
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 141 KBytes program size (code + initialized data).
+Info:           8043 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+Info: Linking i2c.elf
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
+Info: Creating i2c.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
+[i2c build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project i2c ****
+
+make all 
+Info: Building ../i2c_bsp/
+make --no-print-directory -C ../i2c_bsp/
+[BSP build complete]
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+nios2-elf-gcc -xc -MP -MMD -c -I../i2c_bsp//UCOSII/inc -I../i2c_bsp//HAL/inc -I../i2c_bsp/ -I../i2c_bsp//drivers/inc -Ii2c  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c: In function 'task1':
+Info: Linking i2c.elf
+imu_i2c.c:142: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-g++  -T'../i2c_bsp//linker.x' -msys-crt0='../i2c_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../i2c_bsp/ -Li2c   -Wl,-Map=i2c.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o i2c.elf obj/default/MPU9250/mpu9250.o obj/default/i2c/I2C.o obj/default/imu_i2c.o -lm 
+imu_i2c.c:107: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-insert i2c.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090f8 --timestamp 1490048747 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/../../niosII_system.sopcinfo
+Info: (i2c.elf) 142 KBytes program size (code + initialized data).
+Info:           8042 KBytes free for stack + heap.
 Info: Creating i2c.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source i2c.elf >i2c.objdump
 [i2c build complete]

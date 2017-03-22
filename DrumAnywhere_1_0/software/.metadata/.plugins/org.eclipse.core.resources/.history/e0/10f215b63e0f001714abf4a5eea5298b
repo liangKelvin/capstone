@@ -433,7 +433,7 @@ void MPU9250SelfTest(float * destination, alt_u32 scl_base, alt_u32 sda_base)
   // Set gyro sample rate to 1 kHz and DLPF to 92 Hz
   I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, CONFIG, 0x02, 1);
   // Set full scale range for the gyro to 250 dps
-  I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, GYRO_CONFIG,  0x10, 1);
+  I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, GYRO_CONFIG,  1<<FS, 1);
   // Set accelerometer rate to 1 kHz and bandwidth to 92 Hz
   I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, ACCEL_CONFIG2, 0x02, 1);
   // Set full scale range for the accelerometer to 2 g
@@ -482,7 +482,7 @@ void MPU9250SelfTest(float * destination, alt_u32 scl_base, alt_u32 sda_base)
   // Enable self test on all three axes and set accelerometer range to +/- 2 g
   I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, ACCEL_CONFIG, 0xE0, 1);
   // Enable self test on all three axes and set gyro range to +/- 250 degrees/s
-  I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, GYRO_CONFIG, 0xF0, 1);
+  I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, GYRO_CONFIG, 0xE0, 1);
 
   I2C_Stop(scl_base, sda_base);
   OSTimeDlyHMSM(0, 0, 0, 25);  // Delay a while to let the device stabilize
@@ -526,7 +526,7 @@ void MPU9250SelfTest(float * destination, alt_u32 scl_base, alt_u32 sda_base)
   I2C_Stop(scl_base, sda_base);
   I2C_Start(scl_base, sda_base);
 
-  I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, GYRO_CONFIG, 0x10, 1);
+  I2C_WriteToDeviceRegister(scl_base, sda_base, deviceAddress, GYRO_CONFIG, 0x00, 1);
   OSTimeDlyHMSM(0, 0, 0, 25);;  // Delay a while to let the device stabilize
 
   // Retrieve accelerometer and gyro factory Self-Test Code from USR_Reg

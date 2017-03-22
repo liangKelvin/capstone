@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 20, 2017 4:49:40 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1490050180042</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 22, 2017 2:15:59 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1490213760000</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../niosII_system.sopcinfo</SopcDesignFile>
