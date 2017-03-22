@@ -15,6 +15,8 @@
 #include <ls.h>
 #include <errno.h>
 #include "altera_avalon_pio_regs.h"
+#include "i2c/I2C.h"
+#include "MPU9250/mpu9250.h"
 
 
 // method declarations
@@ -43,7 +45,6 @@ typedef struct {
 
 #define numDrums 7
 Drum* drums[numDrums];
-
 
 #define   TASK_STACKSIZE       2048
 OS_STK    task1_stk[TASK_STACKSIZE];
