@@ -77,7 +77,14 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
 	int i;
 	unsigned int temp;
 	for(i = 0; i < numberSamples; i++) {
-		temp = (unsigned int) ((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
-		fileBufL[i] = temp;
+		temp = (int) ((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
+		if(temp > 32768) {
+			temp = 65535 - temp;
+			temp /= 2;
+			temp = 65535 - temp;
+			fileBufL[i] = temp;
+		} else {
+			fileBufL[i] = temp/2;
+		}
 	}
 }

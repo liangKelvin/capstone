@@ -29,72 +29,29 @@ void interrupt_isr_buttonPress(void *context, alt_u32 id) {
 	button = IORD_ALTERA_AVALON_PIO_DATA(BUTTONS_BASE);
 	alt_up_audio_enable_write_interrupt(audio_dev);
 
-	switch (button) {
-
-		case 7 :
-
-			alt_up_character_lcd_init(myLCD);
-			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-			alt_up_character_lcd_string(myLCD, "tom");
-			setDrum(tomConst);
-
-			break;
-
-//		case 9:
-//
-//			alt_up_character_lcd_init(myLCD);
-//			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-//			alt_up_character_lcd_string(myLCD, "crash/snare");
-//
-//			setDrum(crashConst);
-//			setDrum(snareConst);
-//			break;
-
-//		case 10:
-//
-//			alt_up_character_lcd_init(myLCD);
-//			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-//			alt_up_character_lcd_string(myLCD, "crash/hihat");
-//
-//			setDrum(hihatConst);
-//			setDrum(crashConst);
-//			break;
-
-
-		case 11:
-
-			alt_up_character_lcd_init(myLCD);
-			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-			alt_up_character_lcd_string(myLCD, "tom2");
-			setDrum(tom2Const);
-			break;
-
-//		case 12:
-//			alt_up_character_lcd_init(myLCD);
-//			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-//			alt_up_character_lcd_string(myLCD, "hihat/snare");
-//
-//			setDrum(hihatConst);
-//			setDrum(snareConst);
-//			break;
-
-		case 13:
-
-			alt_up_character_lcd_init(myLCD);
-			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-			alt_up_character_lcd_string(myLCD, "Crash");
-
-			setDrum(crashConst);
-			break;
-
-		case 14:
-
-			alt_up_character_lcd_init(myLCD);
-			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-			alt_up_character_lcd_string(myLCD, "kick");
-
-			setDrum(kickConst);
-			break;
+	if((button & 0x8) == 0) {
+		alt_up_character_lcd_init(myLCD);
+		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+		alt_up_character_lcd_string(myLCD, "kick");
+		setDrum(kickConst);
+	}
+	if((button & 0x4) == 0) {
+		alt_up_character_lcd_init(myLCD);
+		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+		alt_up_character_lcd_string(myLCD, "hihat");
+		setDrum(hihatConst);
+	}
+	if((button & 0x2) == 0) {
+		alt_up_character_lcd_init(myLCD);
+		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+		alt_up_character_lcd_string(myLCD, "hihat2");
+		setDrum(hihat2Const);
+	}
+	if((button & 0x1) == 0) {
+		alt_up_character_lcd_init(myLCD);
+		alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+		alt_up_character_lcd_string(myLCD, "snare");
+		setDrum(snareConst);
 	}
 
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTONS_BASE, 0x01);

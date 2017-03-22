@@ -69,13 +69,22 @@ void audio_isr(void* context, alt_u32 id) {
 void synthesize(void* pdata) {
 	int i;
 	int k;
+	int temp;
 	while(1) {
 		// check for new sounds
 		for(i = 0; i < 7; i++) {
 			if(isPlaying[i] == 1) {
 				// append waveforms if needed
 				for(k = 0; k < SAMPLE_SIZE; k++) {
-					nextToPlay[k] += drums[i]->waveform[drums[i]->index + k] * drums[i]->scale;
+					temp = drums[i]->waveform[drums[i]->index + k];
+					if(temp > 32768) {
+						temp = 65535 - temp;
+						temp *= drums[i]->scale;
+						temp = 65535 - temp;
+					} else {
+						temp *= drums[i]->scale;
+					}
+					nextToPlay[k] += temp;
 				}
 
 				drums[i]->index += SAMPLE_SIZE;
