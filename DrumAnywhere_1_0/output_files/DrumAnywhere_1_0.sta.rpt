@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DrumAnywhere_1_0
-Sun Mar 19 17:44:05 2017
+Wed Mar 22 16:19:51 2017
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
 
 
@@ -283,10 +283,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 60    ; 60   ;
-; Unconstrained Input Port Paths  ; 64    ; 64   ;
-; Unconstrained Output Ports      ; 137   ; 137  ;
-; Unconstrained Output Port Paths ; 234   ; 234  ;
+; Unconstrained Input Ports       ; 62    ; 62   ;
+; Unconstrained Input Port Paths  ; 66    ; 66   ;
+; Unconstrained Output Ports      ; 141   ; 141  ;
+; Unconstrained Output Port Paths ; 240   ; 240  ;
 +---------------------------------+-------+------+
 
 
@@ -296,7 +296,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sun Mar 19 17:44:02 2017
+    Info: Processing started: Wed Mar 22 16:19:48 2017
 Info: Command: quartus_sta DrumAnywhere_1_0 -c DrumAnywhere_1_0
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -331,6 +331,12 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_stalled}] -to [get_registers {*|alt_jtag_atlantic:*|t_pause*}]
         Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_valid}]
     Info (332165): Entity altera_avalon_st_clock_crosser
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
         Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
         Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
         Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
@@ -489,8 +495,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 379 megabytes
-    Info: Processing ended: Sun Mar 19 17:44:05 2017
+    Info: Peak virtual memory: 382 megabytes
+    Info: Processing ended: Wed Mar 22 16:19:51 2017
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
