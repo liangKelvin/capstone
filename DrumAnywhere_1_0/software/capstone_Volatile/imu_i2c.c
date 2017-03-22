@@ -132,9 +132,13 @@ void pollIMU(void* pdata){
 	int drum2_gy_count_up = 0;
 	int drum2_gy_count_down = 0;
 
-  while (1)
-  {
-	// Variables to hold latest sensor data values
+
+	int i;
+	int k;
+	int temp;
+
+  while (1) {
+//	 Variables to hold latest sensor data values
 	float ax, ay, az, gx, gy, gz, d1_az_old, d2_az_old;
 
 	// Stores the 16-bit signed accelerometer and gyroscope sensor output
@@ -294,6 +298,33 @@ void pollIMU(void* pdata){
 	}
 	d2_az_old =az;
 
+//	if(sem == 0) {
+//		for(i = 0; i < 7; i++) {
+//			if(isPlaying[i] == 1) {
+//				// append waveforms if needed
+//				for(k = 0; k < SAMPLE_SIZE; k++) {
+//					temp = drums[i]->waveform[drums[i]->index + k];
+//					if(temp > 32768) {
+//						temp = 65535 - temp;
+//						temp *= drums[i]->scale;
+//						temp = 65535 - temp;
+//					} else {
+//						temp *= drums[i]->scale;
+//					}
+//					nextToPlay[k] += temp;
+//				}
+//
+//				drums[i]->index += SAMPLE_SIZE;
+//				if(drums[i]->index >= drums[i]->numberOfSamples - SAMPLE_SIZE) {
+//					drums[i]->index = 0;
+//					isPlaying[i] = 0;
+//				}
+//			}
+//		}
+//		//alt_up_audio_enable_write_interrupt(audio_dev);
+//		sem = 1;
+//	}
+//	alt_up_audio_enable_write_interrupt(audio_dev);
 	OSTimeDlyHMSM(0, 0, 0, 1);
   }
 }

@@ -36,6 +36,9 @@ void init_button_pio();
 void interrupt_isr_buttonPress(void *context, alt_u32 id);
 void setDrum(int drum);
 
+// IMU
+void pollIMU(void* pdata);
+
 typedef struct {
 	unsigned int* waveform;
 	int index;
@@ -51,8 +54,8 @@ OS_STK    task1_stk[TASK_STACKSIZE];
 OS_STK    task2_stk[TASK_STACKSIZE];
 
 /* Definition of Task Priorities */
-#define TASK1_PRIORITY      1
-#define TASK2_PRIORITY      2
+#define TASK1_PRIORITY      2
+#define TASK2_PRIORITY      1
 
 
 // globals 
@@ -100,6 +103,7 @@ unsigned int tom2[tom2NumberSamples];
 int isPlaying[numDrums];
 unsigned int nextToPlay[SAMPLE_SIZE];
 
+int sem;
 OS_EVENT* semaphore;
 volatile int edge_capture;
 

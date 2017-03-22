@@ -5,13 +5,200 @@ make all
 Info: Building ../capstone_Volatile_bsp/
 make --no-print-directory -C ../capstone_Volatile_bsp/
 [BSP build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+audio.c: In function 'audio_isr':
 Info: Compiling buttons.c to obj/default/buttons.o
-nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+audio.c:60: warning: unused variable 'error'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+imu_i2c.c: In function 'pollIMU':
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+imu_i2c.c:129: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c:94: warning: unused variable 'gy_hit_flag_1'
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sd.c to obj/default/sd.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/sd.o sd.c
 Info: Linking capstone_Volatile.elf
-nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
-nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11090b8 --timestamp 1489966914 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
-Info: (capstone_Volatile.elf) 1246 KBytes program size (code + initialized data).
-Info:                         6947 KBytes free for stack + heap.
+nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl -Li2c -LMPU9250   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/MPU9250/mpu9250.o obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/i2c/I2C.o obj/default/imu_i2c.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090f8 --timestamp 1490221043 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_Volatile.elf) 1273 KBytes program size (code + initialized data).
+Info:                         6919 KBytes free for stack + heap.
+Info: Creating capstone_Volatile.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source capstone_Volatile.elf >capstone_Volatile.objdump
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+audio.c: In function 'audio_isr':
+Info: Compiling buttons.c to obj/default/buttons.o
+audio.c:60: warning: unused variable 'error'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+imu_i2c.c: In function 'pollIMU':
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+imu_i2c.c:129: warning: unused variable 'gy_hit_flag_2'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c:94: warning: unused variable 'gy_hit_flag_1'
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+Info: Compiling sd.c to obj/default/sd.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/sd.o sd.c
+Info: Linking capstone_Volatile.elf
+nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl -Li2c -LMPU9250   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/MPU9250/mpu9250.o obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/i2c/I2C.o obj/default/imu_i2c.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090f8 --timestamp 1490221043 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_Volatile.elf) 1274 KBytes program size (code + initialized data).
+Info:                         6919 KBytes free for stack + heap.
+Info: Creating capstone_Volatile.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source capstone_Volatile.elf >capstone_Volatile.objdump
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+audio.c: In function 'audio_isr':
+Info: Compiling buttons.c to obj/default/buttons.o
+audio.c:60: warning: unused variable 'error'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+imu_i2c.c: In function 'pollIMU':
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+imu_i2c.c:138: warning: unused variable 'temp'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c:137: warning: unused variable 'k'
+Info: Compiling main.c to obj/default/main.o
+imu_i2c.c:136: warning: unused variable 'i'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+imu_i2c.c:129: warning: unused variable 'gy_hit_flag_2'
+Info: Compiling sd.c to obj/default/sd.o
+imu_i2c.c:94: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/sd.o sd.c
+Info: Linking capstone_Volatile.elf
+nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl -Li2c -LMPU9250   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/MPU9250/mpu9250.o obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/i2c/I2C.o obj/default/imu_i2c.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090f8 --timestamp 1490221043 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_Volatile.elf) 1273 KBytes program size (code + initialized data).
+Info:                         6920 KBytes free for stack + heap.
+Info: Creating capstone_Volatile.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source capstone_Volatile.elf >capstone_Volatile.objdump
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+audio.c: In function 'audio_isr':
+Info: Compiling buttons.c to obj/default/buttons.o
+audio.c:60: warning: unused variable 'error'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+imu_i2c.c: In function 'pollIMU':
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+imu_i2c.c:138: warning: unused variable 'temp'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c:137: warning: unused variable 'k'
+Info: Compiling main.c to obj/default/main.o
+imu_i2c.c:136: warning: unused variable 'i'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+imu_i2c.c:129: warning: unused variable 'gy_hit_flag_2'
+Info: Compiling sd.c to obj/default/sd.o
+imu_i2c.c:94: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/sd.o sd.c
+Info: Linking capstone_Volatile.elf
+nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl -Li2c -LMPU9250   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/MPU9250/mpu9250.o obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/i2c/I2C.o obj/default/imu_i2c.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090f8 --timestamp 1490221043 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_Volatile.elf) 1273 KBytes program size (code + initialized data).
+Info:                         6920 KBytes free for stack + heap.
+Info: Creating capstone_Volatile.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source capstone_Volatile.elf >capstone_Volatile.objdump
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+Info: Linking capstone_Volatile.elf
+nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl -Li2c -LMPU9250   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/MPU9250/mpu9250.o obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/i2c/I2C.o obj/default/imu_i2c.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090f8 --timestamp 1490221043 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_Volatile.elf) 1273 KBytes program size (code + initialized data).
+Info:                         6920 KBytes free for stack + heap.
+Info: Creating capstone_Volatile.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source capstone_Volatile.elf >capstone_Volatile.objdump
+[capstone_Volatile build complete]
+
+**** Build Finished ****
+
+**** Build of configuration Nios II for project capstone_Volatile ****
+
+make all 
+Info: Building ../capstone_Volatile_bsp/
+make --no-print-directory -C ../capstone_Volatile_bsp/
+[BSP build complete]
+Info: Compiling audio.c to obj/default/audio.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/audio.o audio.c
+Info: Compiling buttons.c to obj/default/buttons.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+imu_i2c.c: In function 'pollIMU':
+Info: Compiling imu_i2c.c to obj/default/imu_i2c.o
+imu_i2c.c:138: warning: unused variable 'temp'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/imu_i2c.o imu_i2c.c
+imu_i2c.c:137: warning: unused variable 'k'
+Info: Compiling main.c to obj/default/main.o
+imu_i2c.c:136: warning: unused variable 'i'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/main.o main.c
+imu_i2c.c:129: warning: unused variable 'gy_hit_flag_2'
+Info: Compiling sd.c to obj/default/sd.o
+imu_i2c.c:94: warning: unused variable 'gy_hit_flag_1'
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_Volatile_bsp//UCOSII/inc -I../capstone_Volatile_bsp//HAL/inc -I../capstone_Volatile_bsp/ -I../capstone_Volatile_bsp//drivers/inc -Iefsl -Ii2c -IMPU9250  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/sd.o sd.c
+Info: Linking capstone_Volatile.elf
+nios2-elf-g++  -T'../capstone_Volatile_bsp//linker.x' -msys-crt0='../capstone_Volatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_Volatile_bsp/ -Lefsl -Li2c -LMPU9250   -Wl,-Map=capstone_Volatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_Volatile.elf obj/default/MPU9250/mpu9250.o obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/i2c/I2C.o obj/default/imu_i2c.o obj/default/main.o obj/default/save.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_Volatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090f8 --timestamp 1490221043 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_Volatile.elf) 1273 KBytes program size (code + initialized data).
+Info:                         6920 KBytes free for stack + heap.
 Info: Creating capstone_Volatile.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source capstone_Volatile.elf >capstone_Volatile.objdump
 [capstone_Volatile build complete]

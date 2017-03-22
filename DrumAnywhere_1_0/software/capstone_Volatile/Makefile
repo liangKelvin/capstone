@@ -165,6 +165,9 @@ C_SRCS += save.c
 C_SRCS += buttons.c
 C_SRCS += main.c
 C_SRCS += sd.c
+C_SRCS += MPU9250/mpu9250.c
+C_SRCS += i2c/I2C.c
+C_SRCS += imu_i2c.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -202,8 +205,12 @@ SYS_LIB :=
 BSP_ROOT_DIR := ../capstone_Volatile_bsp/
 
 # List of application specific include directories, library directories and library names
-APP_INCLUDE_DIRS := efsl
-APP_LIBRARY_DIRS := efsl
+APP_INCLUDE_DIRS += efsl
+APP_INCLUDE_DIRS += i2c
+APP_INCLUDE_DIRS += MPU9250
+APP_LIBRARY_DIRS += efsl
+APP_LIBRARY_DIRS += i2c
+APP_LIBRARY_DIRS += MPU9250
 APP_LIBRARY_NAMES :=
 
 # Pre- and post- processor settings.
