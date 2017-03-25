@@ -1,4 +1,4 @@
-obj/default/audio.o: audio.c ../capstone_bsp/system.h \
+obj/default/audio.o: audio.c DrumAnyWhere.h ../capstone_bsp/system.h \
   ../capstone_bsp/linker.h ../capstone_bsp/HAL/inc/includes.h \
   ../capstone_bsp/HAL/inc/os_cpu.h ../capstone_bsp/HAL/inc/sys/alt_irq.h \
   ../capstone_bsp/HAL/inc/nios2.h ../capstone_bsp/HAL/inc/alt_types.h \
@@ -28,6 +28,8 @@ obj/default/audio.o: audio.c ../capstone_bsp/system.h \
   efsl/error.h efsl/ioman.h efsl/plibc.h efsl/extract.h efsl/partition.h \
   efsl/fs.h efsl/time.h efsl/file.h efsl/dir.h efsl/fat.h efsl/ui.h \
   efsl/ls.h
+
+DrumAnyWhere.h:
 
 ../capstone_bsp/system.h:
 

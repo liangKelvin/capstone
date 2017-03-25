@@ -151,7 +151,7 @@ void alt_main (void)
 #ifdef ALT_NO_EXIT
   main (alt_argc, alt_argv, alt_envp);
 #else
-  result = main (alt_argc, alt_argv, alt_envp);
+  result = main(alt_argc, alt_argv, alt_envp);
   close(STDOUT_FILENO);
   exit (result);
 #endif

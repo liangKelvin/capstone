@@ -5,16 +5,16 @@
    <void method="add"> 
     <object class="com.altera.embeddedsw.flash.model.internal.FileModel"> 
      <void property="baseAddress"> 
-      <string>0x0</string> 
+      <string>0x1400000</string> 
      </void> 
      <void property="bootloader"> 
       <string>/OPT/altera/12.1/nios2eds/components/altera_nios2/boot_loader_cfi.srec</string> 
      </void> 
      <void property="cpuResetAddress"> 
-      <string>0x0</string> 
+      <string>0x1400000</string> 
      </void> 
      <void property="endAddress"> 
-      <string>0x400000</string> 
+      <string>0x1800000</string> 
      </void> 
      <void property="extraArgs"> 
       <string></string> 
@@ -25,7 +25,7 @@
       </object> 
      </void> 
      <void property="filename"> 
-      <string>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone/capstone.elf</string> 
+      <string>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf</string> 
      </void> 
      <void property="memoryName"> 
       <string>generic_tristate_controller_0</string> 
@@ -80,15 +80,15 @@
    </void> 
    <void method="put"> 
     <string>acceptBadSysId</string> 
-    <string>false</string> 
+    <string>true</string> 
    </void> 
    <void method="put"> 
     <string>acceptBadTimestamp</string> 
-    <string>false</string> 
+    <string>true</string> 
    </void> 
    <void method="put"> 
     <string>processorCableName</string> 
-    <string>USB-Blaster on localhost [2-1.6]</string> 
+    <string>USB-Blaster on localhost [2-1.5]</string> 
    </void> 
    <void method="put"> 
     <string>processorDeviceIndex</string> 

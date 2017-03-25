@@ -86,9 +86,9 @@ library ieee;
 		FL_RST_N       : out       std_logic_vector(0 downto 0);
 		FL_WE_N        : out       std_logic_vector(0 downto 0);
 		
-		-- I2C 
-		GPIO_0 : inout std_logic_vector(35 downto 0) := (others =>'X');
-		GPIO_1 : inout std_logic_vector(35 downto 0) := (others =>'X')
+		-- DE2 connection
+		DE2_Poll       : in  		std_LOGIC_VECTOR(7 downto 0)
+		
 
 );
 end DrumAnywhere_1_0;
@@ -143,12 +143,8 @@ architecture structure of DrumAnywhere_1_0 is
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_write_n_out
-            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      : out   std_logic_vector(21 downto 0);                     -- generic_tristate_controller_0_tcm_address_out
-				i2c_scl_external_connection_export                                               : out   std_logic;                                        -- export
-            i2c_sda_external_connection_export                                               : inout std_logic                     := 'X';             -- export
-            i2c_scl_2_external_connection_export                                             : out   std_logic;                                        -- export
-            i2c_sda_2_external_connection_export                                             : inout std_logic                     := 'X';              -- export
-				pio_0_external_connection_export                                                 : in    std_logic                     := 'X'              -- export
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      : out   std_logic_vector(21 downto 0);                   -- generic_tristate_controller_0_tcm_address_out
+				de2_poll_external_connection_export : in    std_logic_vector(7 downto 0)  := (others => 'X')  -- export
         );
     end component niosII_system;
 
@@ -219,12 +215,8 @@ begin
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out => FL_CE_N, --                                            .generic_tristate_controller_0_tcm_chipselect_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      => FL_WE_N,     --                                            .generic_tristate_controller_0_tcm_write_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      => FL_ADDR,
-				i2c_scl_external_connection_export                                               => GPIO_0(24),                                               --                 i2c_scl_external_connection.export
-            i2c_sda_external_connection_export                                               => GPIO_0(25),                                               --                 i2c_sda_external_connection.export
-            i2c_scl_2_external_connection_export                                             => GPIO_1(24),                                             --               i2c_scl_2_external_connection.export
-            i2c_sda_2_external_connection_export                                             => GPIO_1(25),                                              --               i2c_sda_2_external_connection.export
-				pio_0_external_connection_export                                                 => GPIO_1(17)             -- export
-				
+				de2_poll_external_connection_export                                              => DE2_Poll
+			
 		);
 
 end structure;
