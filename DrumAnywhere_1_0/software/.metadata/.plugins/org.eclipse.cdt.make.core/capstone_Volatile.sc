@@ -4,6 +4,13 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.989769794;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.989769794.;cdt.managedbuild.tool.gnu.cpp.compiler.base.508375997;cdt.managedbuild.tool.gnu.cpp.compiler.input.830196854">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/drivers/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile/efsl"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile/i2c"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile/MPU9250"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/"/>
@@ -317,6 +324,13 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.989769794;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.989769794.;cdt.managedbuild.tool.gnu.c.compiler.base.1222699316;cdt.managedbuild.tool.gnu.c.compiler.input.795393321">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/drivers/inc"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile/efsl"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile/i2c"/>
+<includePath path="/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/software/capstone_Volatile/MPU9250"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_Volatile_bsp/"/>

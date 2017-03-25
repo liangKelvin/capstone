@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Wed Mar 22 16:23:17 MDT 2017
+ * Generated: Sat Mar 25 14:37:49 MDT 2017
  */
 
 /*
@@ -61,7 +61,7 @@
  */
 
 #define ALT_MODULE_CLASS_Buttons altera_avalon_pio
-#define BUTTONS_BASE 0x19090a0
+#define BUTTONS_BASE 0x19090b0
 #define BUTTONS_BIT_CLEARING_EDGE_REGISTER 0
 #define BUTTONS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BUTTONS_CAPTURE 1
@@ -176,7 +176,7 @@
  */
 
 #define ALT_MODULE_CLASS_I2C_SCL altera_avalon_pio
-#define I2C_SCL_BASE 0x1909090
+#define I2C_SCL_BASE 0x19090a0
 #define I2C_SCL_BIT_CLEARING_EDGE_REGISTER 0
 #define I2C_SCL_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define I2C_SCL_CAPTURE 0
@@ -203,7 +203,7 @@
  */
 
 #define ALT_MODULE_CLASS_I2C_SCL_2 altera_avalon_pio
-#define I2C_SCL_2_BASE 0x1909060
+#define I2C_SCL_2_BASE 0x1909070
 #define I2C_SCL_2_BIT_CLEARING_EDGE_REGISTER 0
 #define I2C_SCL_2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define I2C_SCL_2_CAPTURE 0
@@ -230,7 +230,7 @@
  */
 
 #define ALT_MODULE_CLASS_I2C_SDA altera_avalon_pio
-#define I2C_SDA_BASE 0x1909080
+#define I2C_SDA_BASE 0x1909090
 #define I2C_SDA_BIT_CLEARING_EDGE_REGISTER 0
 #define I2C_SDA_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define I2C_SDA_CAPTURE 0
@@ -257,7 +257,7 @@
  */
 
 #define ALT_MODULE_CLASS_I2C_SDA_2 altera_avalon_pio
-#define I2C_SDA_2_BASE 0x1909070
+#define I2C_SDA_2_BASE 0x1909080
 #define I2C_SDA_2_BIT_CLEARING_EDGE_REGISTER 0
 #define I2C_SDA_2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define I2C_SDA_2_CAPTURE 0
@@ -294,19 +294,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x19090f0
+#define ALT_STDERR_BASE 0x1909100
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x19090f0
+#define ALT_STDIN_BASE 0x1909100
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x19090f0
+#define ALT_STDOUT_BASE 0x1909100
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -319,7 +319,7 @@
  *
  */
 
-#define ALTPLL_0_BASE 0x19090e0
+#define ALTPLL_0_BASE 0x19090f0
 #define ALTPLL_0_IRQ -1
 #define ALTPLL_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define ALTPLL_0_NAME "/dev/altpll_0"
@@ -334,7 +334,7 @@
  */
 
 #define ALT_MODULE_CLASS_audio_0 altera_up_avalon_audio
-#define AUDIO_0_BASE 0x19090c0
+#define AUDIO_0_BASE 0x19090d0
 #define AUDIO_0_IRQ 3
 #define AUDIO_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define AUDIO_0_NAME "/dev/audio_0"
@@ -348,7 +348,7 @@
  */
 
 #define ALT_MODULE_CLASS_audio_and_video_config_0 altera_up_avalon_audio_and_video_config
-#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x19090b0
+#define AUDIO_AND_VIDEO_CONFIG_0_BASE 0x19090c0
 #define AUDIO_AND_VIDEO_CONFIG_0_IRQ -1
 #define AUDIO_AND_VIDEO_CONFIG_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define AUDIO_AND_VIDEO_CONFIG_0_NAME "/dev/audio_and_video_config_0"
@@ -362,7 +362,7 @@
  */
 
 #define ALT_MODULE_CLASS_character_lcd_0 altera_up_avalon_character_lcd
-#define CHARACTER_LCD_0_BASE 0x1909100
+#define CHARACTER_LCD_0_BASE 0x1909110
 #define CHARACTER_LCD_0_IRQ -1
 #define CHARACTER_LCD_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define CHARACTER_LCD_0_NAME "/dev/character_lcd_0"
@@ -385,33 +385,6 @@
 
 
 /*
- * green_leds configuration
- *
- */
-
-#define ALT_MODULE_CLASS_green_leds altera_avalon_pio
-#define GREEN_LEDS_BASE 0x19090d0
-#define GREEN_LEDS_BIT_CLEARING_EDGE_REGISTER 0
-#define GREEN_LEDS_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define GREEN_LEDS_CAPTURE 0
-#define GREEN_LEDS_DATA_WIDTH 8
-#define GREEN_LEDS_DO_TEST_BENCH_WIRING 0
-#define GREEN_LEDS_DRIVEN_SIM_VALUE 0x0
-#define GREEN_LEDS_EDGE_TYPE "NONE"
-#define GREEN_LEDS_FREQ 50000000u
-#define GREEN_LEDS_HAS_IN 0
-#define GREEN_LEDS_HAS_OUT 1
-#define GREEN_LEDS_HAS_TRI 0
-#define GREEN_LEDS_IRQ -1
-#define GREEN_LEDS_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define GREEN_LEDS_IRQ_TYPE "NONE"
-#define GREEN_LEDS_NAME "/dev/green_leds"
-#define GREEN_LEDS_RESET_VALUE 0x0
-#define GREEN_LEDS_SPAN 16
-#define GREEN_LEDS_TYPE "altera_avalon_pio"
-
-
-/*
  * hal configuration
  *
  */
@@ -427,7 +400,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x19090f0
+#define JTAG_UART_0_BASE 0x1909100
 #define JTAG_UART_0_IRQ 1
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -466,6 +439,33 @@
 #define ONCHIP_MEMORY2_0_SPAN 16384
 #define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
 #define ONCHIP_MEMORY2_0_WRITABLE 1
+
+
+/*
+ * pio_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pio_0 altera_avalon_pio
+#define PIO_0_BASE 0x1909060
+#define PIO_0_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_0_CAPTURE 1
+#define PIO_0_DATA_WIDTH 1
+#define PIO_0_DO_TEST_BENCH_WIRING 0
+#define PIO_0_DRIVEN_SIM_VALUE 0x0
+#define PIO_0_EDGE_TYPE "RISING"
+#define PIO_0_FREQ 50000000u
+#define PIO_0_HAS_IN 1
+#define PIO_0_HAS_OUT 0
+#define PIO_0_HAS_TRI 0
+#define PIO_0_IRQ 4
+#define PIO_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define PIO_0_IRQ_TYPE "LEVEL"
+#define PIO_0_NAME "/dev/pio_0"
+#define PIO_0_RESET_VALUE 0x0
+#define PIO_0_SPAN 16
+#define PIO_0_TYPE "altera_avalon_pio"
 
 
 /*
@@ -558,13 +558,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x19090f8
+#define SYSID_QSYS_0_BASE 0x1909108
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1490221043
+#define SYSID_QSYS_0_TIMESTAMP 1490474052
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

@@ -3,8 +3,8 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Ign)
-		Device PartName(EP2C35F672) MfrSpec(OpMask(0) FullPath("/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/output_files/DrumAnywhere_1_0.sof"));
+	P ActionCode(Cfg)
+		Device PartName(EP2C35F672) Path("/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/output_files/") File("DrumAnywhere_1_0.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

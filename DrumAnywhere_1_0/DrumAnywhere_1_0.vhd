@@ -21,9 +21,6 @@ library ieee;
 		KEY		: in  std_logic_vector (3 downto 0);
 		CLOCK_50	: in  std_logic;
 		
-		-- Green leds on board
-		LEDG		: out DE2_LED_GREEN;
-		
 		-- LCD on board
 		LCD_BLON	: out std_logic;
 		LCD_ON	: out std_logic;
@@ -115,7 +112,6 @@ architecture structure of DrumAnywhere_1_0 is
             sdram_0_wire_ras_n                      : out   std_logic;                                        -- ras_n
             sdram_0_wire_we_n                       : out   std_logic;                                        -- we_n
             altpll_0_c0_clk                         : out   std_logic;                                        -- clk
-            green_leds_external_connection_export   : out   DE2_LED_GREEN;                     -- export
             sram_0_external_interface_DQ            : inout DE2_SRAM_DATA_BUS := (others => 'X'); -- DQ
             sram_0_external_interface_ADDR          : out   DE2_SRAM_ADDR_BUS;                    -- ADDR
             sram_0_external_interface_LB_N          : out   std_logic;                                        -- LB_N
@@ -151,7 +147,8 @@ architecture structure of DrumAnywhere_1_0 is
 				i2c_scl_external_connection_export                                               : out   std_logic;                                        -- export
             i2c_sda_external_connection_export                                               : inout std_logic                     := 'X';             -- export
             i2c_scl_2_external_connection_export                                             : out   std_logic;                                        -- export
-            i2c_sda_2_external_connection_export                                             : inout std_logic                     := 'X'              -- export
+            i2c_sda_2_external_connection_export                                             : inout std_logic                     := 'X';              -- export
+				pio_0_external_connection_export                                                 : in    std_logic                     := 'X'              -- export
         );
     end component niosII_system;
 
@@ -189,8 +186,7 @@ begin
             sdram_0_wire_dqm                        => DQM,                        
             sdram_0_wire_ras_n                      => DRAM_RAS_N,                     
             sdram_0_wire_we_n                       => DRAM_WE_N,                       
-            altpll_0_c0_clk                         => DRAM_CLK,                        
-            green_leds_external_connection_export   => LEDG,       
+            altpll_0_c0_clk                         => DRAM_CLK,                            
             sram_0_external_interface_DQ            => SRAM_DQ,           
             sram_0_external_interface_ADDR          => SRAM_ADDR,          
             sram_0_external_interface_LB_N          => SRAM_LB_N,         
@@ -226,7 +222,9 @@ begin
 				i2c_scl_external_connection_export                                               => GPIO_0(24),                                               --                 i2c_scl_external_connection.export
             i2c_sda_external_connection_export                                               => GPIO_0(25),                                               --                 i2c_sda_external_connection.export
             i2c_scl_2_external_connection_export                                             => GPIO_1(24),                                             --               i2c_scl_2_external_connection.export
-            i2c_sda_2_external_connection_export                                             => GPIO_1(25)                                              --               i2c_sda_2_external_connection.export
+            i2c_sda_2_external_connection_export                                             => GPIO_1(25),                                              --               i2c_sda_2_external_connection.export
+				pio_0_external_connection_export                                                 => GPIO_1(17)             -- export
+				
 		);
 
 end structure;
