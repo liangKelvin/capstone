@@ -44,7 +44,8 @@
 			i2c_scl_external_connection_export               : out   std_logic;                                        -- export
 			i2c_sda_external_connection_export               : inout std_logic                     := 'X';             -- export
 			i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
-			i2c_sda_2_external_connection_export             : inout std_logic                     := 'X'              -- export
+			i2c_sda_2_external_connection_export             : inout std_logic                     := 'X';             -- export
+			drum_out_external_connection_export              : out   std_logic_vector(3 downto 0)                      -- export
 		);
 	end component niosII_system;
 

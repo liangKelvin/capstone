@@ -45,6 +45,7 @@ acceleration and gyration values using appropriate resolution functions.
 #include "includes.h"
 #include "i2c/I2C.h"
 #include "MPU9250/mpu9250.h"
+#include "altera_avalon_pio_regs.h"
 #include <time.h>
 
 /* Definition of Task Stacks */
@@ -104,7 +105,6 @@ void task1(void* pdata){
 
 	int hit_flag_1 = 0;
 	int gz_hit_flag_1 = 0;
-	int gy_hit_flag_1 = 0;
 
 	int drum1_index = 1;
 	int drum1_gy_count_up = 0;
@@ -139,7 +139,6 @@ void task1(void* pdata){
 	printf("DrumStick #2 initialized for active data mode....\n");
 	int hit_flag_2 = 0;
 	int gz_hit_flag_2 = 0;
-	int gy_hit_flag_2 = 0;
 
 	int drum2_index = 1;
 	int drum2_gy_count_up = 0;
@@ -224,6 +223,9 @@ void task1(void* pdata){
 	if((((az - d1_az_old)*1000) < -1000)){
 		if(!hit_flag_1){
 			printf("Hit One: Position %d\n", drum1_index);
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum1_index|0x08);
+			OSTimeDlyHMSM(0, 0, 0, 1);
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
 			hit_flag_1 = 1;
 		}
 	}
@@ -297,6 +299,9 @@ void task1(void* pdata){
 	if((((az - d2_az_old)*1000) < -1000)){
 		if(!hit_flag_2){
 			printf("Hit two: Position %d\n", drum2_index);
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum2_index|0x08);
+			OSTimeDlyHMSM(0, 0, 0, 1);
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
 			hit_flag_2 = 1;
 		}
 	}
