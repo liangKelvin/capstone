@@ -336,9 +336,11 @@ Memory Configuration
 
 Name             Origin             Length             Attributes
 sdram_0          0x00800000         0x00800000
-sram_0           0x01080000         0x00080000
-reset            0x01104000         0x00000020
-onchip_memory2_0 0x01104020         0x00003fe0
+reset            0x01400000         0x00000020
+generic_tristate_controller_0 0x01400020         0x003fffe0
+sram_0           0x01880000         0x00080000
+onchip_memory2_0_BEFORE_EXCEPTION 0x01904000         0x00000020
+onchip_memory2_0 0x01904020         0x00003fe0
 *default*        0x00000000         0xffffffff
 
 Linker script and memory map
@@ -357,67 +359,68 @@ LOAD ../i2c_bsp//libucosii_bsp.a
 END GROUP
 LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-elf/4.1.2/libgcc.a
                 0x00800000                __alt_mem_sdram_0 = 0x800000
-                0x01080000                __alt_mem_sram_0 = 0x1080000
-                0x01104000                __alt_mem_onchip_memory2_0 = 0x1104000
+                0x01400000                __alt_mem_generic_tristate_controller_0 = 0x1400000
+                0x01880000                __alt_mem_sram_0 = 0x1880000
+                0x01904000                __alt_mem_onchip_memory2_0 = 0x1904000
 
-.entry          0x01104000       0x20
+.entry          0x01400000       0x20
  *(.entry)
- .entry         0x01104000       0x20 ../i2c_bsp//obj/HAL/src/crt0.o
-                0x01104000                __reset
+ .entry         0x01400000       0x20 ../i2c_bsp//obj/HAL/src/crt0.o
+                0x01400000                __reset
 
-.exceptions     0x01104020      0x19c load address 0x00800000
-                0x01104020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
-                0x01104020                . = ALIGN (0x20)
+.exceptions     0x01904020      0x19c load address 0x00800000
+                0x01904020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x01904020                . = ALIGN (0x20)
  *(.irq)
  *(.exceptions.entry.label)
  .exceptions.entry.label
-                0x01104020        0x0 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
-                0x01104020                alt_irq_entry
+                0x01904020        0x0 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x01904020                alt_irq_entry
  .exceptions.entry.label
-                0x01104020        0x0 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
-                0x01104020                alt_exception
+                0x01904020        0x0 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x01904020                alt_exception
  *(.exceptions.entry.user)
  *(.exceptions.entry)
  .exceptions.entry
-                0x01104020       0x54 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x01904020       0x54 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
  *(.exceptions.irqtest.user)
  *(.exceptions.irqtest)
  .exceptions.irqtest
-                0x01104074       0x10 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x01904074       0x10 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
  *(.exceptions.irqhandler.user)
  *(.exceptions.irqhandler)
  .exceptions.irqhandler
-                0x01104084        0x4 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x01904084        0x4 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
  *(.exceptions.irqreturn.user)
  *(.exceptions.irqreturn)
  .exceptions.irqreturn
-                0x01104088        0x4 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x01904088        0x4 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
  *(.exceptions.notirq.label)
  .exceptions.notirq.label
-                0x0110408c        0x0 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x0190408c        0x0 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
  *(.exceptions.notirq.user)
  *(.exceptions.notirq)
  .exceptions.notirq
-                0x0110408c        0x8 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x0190408c        0x8 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
  *(.exceptions.soft.user)
  *(.exceptions.soft)
  *(.exceptions.unknown.user)
  *(.exceptions.unknown)
  .exceptions.unknown
-                0x01104094        0x4 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x01904094        0x4 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
  *(.exceptions.exit.label)
  .exceptions.exit.label
-                0x01104098        0x0 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
+                0x01904098        0x0 ../i2c_bsp//libucosii_bsp.a(alt_irq_entry.o)
  .exceptions.exit.label
-                0x01104098        0x0 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x01904098        0x0 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
  *(.exceptions.exit.user)
  *(.exceptions.exit)
  .exceptions.exit
-                0x01104098       0x54 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
+                0x01904098       0x54 ../i2c_bsp//libucosii_bsp.a(alt_exception_entry.o)
  *(.exceptions)
- .exceptions    0x011040ec       0xd0 ../i2c_bsp//libucosii_bsp.a(alt_irq_handler.o)
-                0x011040ec                alt_irq_handler
-                0x011041bc                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+ .exceptions    0x019040ec       0xd0 ../i2c_bsp//libucosii_bsp.a(alt_irq_handler.o)
+                0x019040ec                alt_irq_handler
+                0x019041bc                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
                 0x00800000                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
 
 .text           0x0080019c    0x1be60
@@ -1499,19 +1502,27 @@ LOAD /OPT/altera/12.1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin/../lib/gcc/nios2-
                 0x00825490                __alt_stack_base = ABSOLUTE (.)
                 0x00825490                PROVIDE (_alt_partition_sdram_0_load_addr, LOADADDR (.sdram_0))
 
-.sram_0         0x01080000        0x0 load address 0x00825490
-                0x01080000                PROVIDE (_alt_partition_sram_0_start, ABSOLUTE (.))
+.generic_tristate_controller_0
+                0x01400020        0x0 load address 0x00825490
+                0x01400020                PROVIDE (_alt_partition_generic_tristate_controller_0_start, ABSOLUTE (.))
+ *(.generic_tristate_controller_0. generic_tristate_controller_0.*)
+                0x01400020                . = ALIGN (0x4)
+                0x01400020                PROVIDE (_alt_partition_generic_tristate_controller_0_end, ABSOLUTE (.))
+                0x00825490                PROVIDE (_alt_partition_generic_tristate_controller_0_load_addr, LOADADDR (.generic_tristate_controller_0))
+
+.sram_0         0x01880000        0x0 load address 0x00825490
+                0x01880000                PROVIDE (_alt_partition_sram_0_start, ABSOLUTE (.))
  *(.sram_0. sram_0.*)
-                0x01080000                . = ALIGN (0x4)
-                0x01080000                PROVIDE (_alt_partition_sram_0_end, ABSOLUTE (.))
+                0x01880000                . = ALIGN (0x4)
+                0x01880000                PROVIDE (_alt_partition_sram_0_end, ABSOLUTE (.))
                 0x00825490                PROVIDE (_alt_partition_sram_0_load_addr, LOADADDR (.sram_0))
 
 .onchip_memory2_0
-                0x011041bc        0x0 load address 0x00825490
-                0x011041bc                PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
+                0x019041bc        0x0 load address 0x00825490
+                0x019041bc                PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
  *(.onchip_memory2_0. onchip_memory2_0.*)
-                0x011041bc                . = ALIGN (0x4)
-                0x011041bc                PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
+                0x019041bc                . = ALIGN (0x4)
+                0x019041bc                PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
                 0x00825490                PROVIDE (_alt_partition_onchip_memory2_0_load_addr, LOADADDR (.onchip_memory2_0))
 
 .stab
