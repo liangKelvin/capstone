@@ -96,8 +96,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 1048)
 		(input)
-		(text "de2_poll_external_connection_export[7..0]" (rect 0 0 166 12)(font "Arial" (font_size 8)))
-		(text "de2_poll_external_connection_export[7..0]" (rect 4 1037 250 1048)(font "Arial" (font_size 8)))
+		(text "de2_poll_external_connection_export[3..0]" (rect 0 0 166 12)(font "Arial" (font_size 8)))
+		(text "de2_poll_external_connection_export[3..0]" (rect 4 1037 250 1048)(font "Arial" (font_size 8)))
 		(line (pt 0 1048)(pt 432 1048)(line_width 3))
 	)
 	(port

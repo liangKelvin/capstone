@@ -20,6 +20,26 @@ void init_button_pio() {
 	alt_irq_register(BUTTONS_IRQ, edge_capture_ptr, interrupt_isr_buttonPress);
 }
 
+void DE2_conn_init() {
+	/* Enable interrupt. */
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(DE2_POLL_BASE, 0x08);
+	/* Register the ISR. */
+	alt_irq_register(DE2_POLL_IRQ, NULL , interrupt_isr_de2Poll);
+}
+
+void interrupt_isr_de2Poll (void *context, alt_u32 id) {
+	int drum = IORD_ALTERA_AVALON_PIO_DATA(DE2_POLL_BASE);
+	drum = drum ^ 0x08;
+	setDrum(drum);
+
+	char str[5];
+	sprintf(str, "%d", drum);
+
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, str);
+
+}
 
 void interrupt_isr_buttonPress(void *context, alt_u32 id) {
 

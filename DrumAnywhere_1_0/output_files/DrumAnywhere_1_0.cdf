@@ -4,10 +4,10 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("/afs/ualberta.ca/home/j/f/jferris/ECE492/capstone/capstone/DrumAnywhere_1_0/output_files/") File("DrumAnywhere_1_0.sof") MfrSpec(OpMask(1));
+		Device PartName(EPCS16) Path("/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/output_files/") File("DrumAnywhere_1_0.pof") MfrSpec(OpMask(1) Child_OpMask(1 1));
 
 ChainEnd;
 
 AlteraBegin;
-	ChainType(JTAG);
+	ChainType(asc);
 AlteraEnd;

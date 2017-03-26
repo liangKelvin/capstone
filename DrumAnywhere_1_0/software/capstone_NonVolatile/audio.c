@@ -71,6 +71,7 @@ void synthesize(void* pdata) {
 	int k;
 	int temp;
 	while(1) {
+
 		// check for new sounds
 		for(i = 0; i < 7; i++) {
 			if(isPlaying[i] == 1) {

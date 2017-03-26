@@ -13,5 +13,5 @@ elf2flash --input="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhe
 #
 # Programming File: "../flash/capstone_NonVolatile_generic_tristate_controller_0.flash" To Device: generic_tristate_controller_0
 #
-nios2-flash-programmer "../flash/capstone_NonVolatile_generic_tristate_controller_0.flash" --base=0x1400000 --sidp=0x1909108 --id=0x0 --accept-bad-sysid --device=1 --instance=0 '--cable=USB-Blaster on localhost [2-1.5]' --program 
+nios2-flash-programmer "../flash/capstone_NonVolatile_generic_tristate_controller_0.flash" --base=0x1400000 --sidp=0x19090B8 --id=0x0 --accept-bad-sysid --device=1 --instance=0 '--cable=USB-Blaster on localhost [2-1.6]' --program 
 

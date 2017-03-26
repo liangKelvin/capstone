@@ -6,6 +6,7 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "includes.h"
 #include "altera_up_avalon_audio.h"
 #include "altera_up_avalon_audio_and_video_config.h"
@@ -31,7 +32,9 @@ void synthesize();
 
 // buttons
 void init_button_pio();
+void DE2_conn_init();
 void interrupt_isr_buttonPress(void *context, alt_u32 id);
+void interrupt_isr_de2Poll (void *context, alt_u32 id);
 void setDrum(int drum);
 
 // IMU
@@ -81,12 +84,12 @@ alt_up_audio_dev * audio_dev;
 #define tom2Size 180580
 
 #define snareConst 0
-#define crashConst 1
-#define hihatConst 2
-#define hihat2Const 3
-#define kickConst 4
-#define tomConst 5
-#define tom2Const 6
+#define crashConst 3
+#define hihatConst 4
+#define hihat2Const 5
+#define kickConst 6
+#define tomConst 1
+#define tom2Const 2
 
 
 // arrays to hold waveforms
