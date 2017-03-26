@@ -61,21 +61,6 @@ library ieee;
 		--I2C interface
 		I2C_SCLK			:  out		std_logic;
 		I2C_SDAT			:  inout		std_logic;
-					 
-		--AUDIO 
-		AUD_ADCLRCK 	:  inout 	std_logic; 
-		AUD_ADCDAT 		:  in 		std_logic; 
-		AUD_DACLRCK 	:  inout 	std_logic; 
-		AUD_DACDAT 		:  out 		std_logic; 
-		AUD_XCK 			:  out 		std_logic; 
-		AUD_BCLK 		:  inout 	std_logic;
-		
-		--SD Card
-		
-		SD_DAT         : in       std_logic;
-		SD_DAT3			: out			std_logic;
-		SD_CLK			: out			std_logic;
-		SD_CMD			: out			std_logic;
 		
 		-- Flash
 		
@@ -88,7 +73,7 @@ library ieee;
 		
 		-- I2C 
 		GPIO_0 : inout std_logic_vector(35 downto 0) := (others =>'X');
-		GPIO_1 : inout std_logic_vector(35 downto 0) := (others =>'X')
+		GPIO_1 : out std_logic_vector(35 downto 0) := (others =>'X')
 
 );
 end DrumAnywhere_1_0;
@@ -125,20 +110,6 @@ architecture structure of DrumAnywhere_1_0 is
             character_lcd_0_external_interface_EN   : out   std_logic;                                        -- EN
             character_lcd_0_external_interface_RS   : out   std_logic;                                        -- RS
             character_lcd_0_external_interface_RW   : out   std_logic;                                         -- RW
-				clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
-            audio_and_video_config_0_external_interface_SDAT : inout std_logic;             -- SDAT
-            audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
-            audio_0_external_interface_ADCDAT                : in    std_logic;             -- ADCDAT
-            audio_0_external_interface_ADCLRCK               : in    std_logic;             -- ADCLRCK
-            audio_0_external_interface_BCLK                  : in    std_logic;             -- BCLK
-            audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
-            audio_0_external_interface_DACLRCK               : in    std_logic;
-				up_clocks_0_audio_clk_clk                        : out   std_logic;					-- clk				-- DACLRCK
-				spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
-            spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
-            spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
-            spi_0_external_SS_n                              : out   std_logic;                                        -- SS_n
-				buttons_external_connection_export               : in    std_logic_vector(3 downto 0)  := (others => 'X');  -- export
 				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_read_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
@@ -148,7 +119,7 @@ architecture structure of DrumAnywhere_1_0 is
             i2c_sda_external_connection_export                                               : inout std_logic                     := 'X';             -- export
             i2c_scl_2_external_connection_export                                             : out   std_logic;                                        -- export
             i2c_sda_2_external_connection_export                                             : inout std_logic                     := 'X';              -- export
-				pio_0_external_connection_export                                                 : in    std_logic                     := 'X'              -- export
+				drum_out_external_connection_export                                              : out   std_logic_vector(3 downto 0)                      -- export
         );
     end component niosII_system;
 
@@ -200,20 +171,6 @@ begin
             character_lcd_0_external_interface_EN   => LCD_EN,   
             character_lcd_0_external_interface_RS   => LCD_RS,   
             character_lcd_0_external_interface_RW   => LCD_RW,
-				clk_1_clk                                        => CLOCK_27,                                        --                                       clk_0.clk
-            audio_and_video_config_0_external_interface_SDAT => I2C_SDAT, 							-- audio_and_video_config_0_external_interface.SDAT
-            audio_and_video_config_0_external_interface_SCLK => I2C_SCLK, 							--                                            .SCLK
-            audio_0_external_interface_ADCDAT                => AUD_ADCDAT,                --                  audio_0_external_interface.ADCDAT
-            audio_0_external_interface_ADCLRCK               => AUD_ADCLRCK,               --                                            .ADCLRCK
-            audio_0_external_interface_BCLK                  => AUD_BCLK,                  --                                            .BCLK
-            audio_0_external_interface_DACDAT                => AUD_DACDAT,                --                                            .DACDAT
-            audio_0_external_interface_DACLRCK               => AUD_DACLRCK,                --
-				up_clocks_0_audio_clk_clk								 => AUD_XCK,
-				spi_0_external_MISO                              => SD_DAT,                              --                              spi_0_external.MISO
-            spi_0_external_MOSI                              => SD_CMD,                              --                                            .MOSI
-            spi_0_external_SCLK                              => SD_CLK,                              --                                            .SCLK
-            spi_0_external_SS_n                              => SD_DAT3, 
-				buttons_external_connection_export               => KEY(3 downto 0),             --                 buttons_external_connection.export			--    
 				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       => FL_OE_N,    --               tristate_conduit_bridge_0_out.generic_tristate_controller_0_tcm_read_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         => FL_DQ,        --                                            .generic_tristate_controller_0_tcm_data_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out => FL_CE_N, --                                            .generic_tristate_controller_0_tcm_chipselect_n_out
@@ -221,9 +178,9 @@ begin
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      => FL_ADDR,
 				i2c_scl_external_connection_export                                               => GPIO_0(24),                                               --                 i2c_scl_external_connection.export
             i2c_sda_external_connection_export                                               => GPIO_0(25),                                               --                 i2c_sda_external_connection.export
-            i2c_scl_2_external_connection_export                                             => GPIO_1(24),                                             --               i2c_scl_2_external_connection.export
-            i2c_sda_2_external_connection_export                                             => GPIO_1(25),                                              --               i2c_sda_2_external_connection.export
-				pio_0_external_connection_export                                                 => GPIO_1(17)             -- export
+            i2c_scl_2_external_connection_export                                             => GPIO_0(32),                                             --               i2c_scl_2_external_connection.export
+            i2c_sda_2_external_connection_export                                             => GPIO_0(33),                                              --               i2c_sda_2_external_connection.export
+				drum_out_external_connection_export                                              => GPIO_1(29 downto 26)
 				
 		);
 
