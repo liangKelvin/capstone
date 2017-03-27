@@ -597,4 +597,7 @@
 			</target>
 		</buildTargets>
 	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/capstone_Volatile"/>
+	</storageModule>
 </cproject>

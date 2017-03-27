@@ -88,7 +88,7 @@
    </void> 
    <void method="put"> 
     <string>processorCableName</string> 
-    <string>USB-Blaster on localhost [2-1.5]</string> 
+    <string>USB-Blaster on localhost [2-1.8]</string> 
    </void> 
    <void method="put"> 
     <string>processorDeviceIndex</string> 

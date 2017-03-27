@@ -215,7 +215,7 @@ begin
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out => FL_CE_N, --                                            .generic_tristate_controller_0_tcm_chipselect_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      => FL_WE_N,     --                                            .generic_tristate_controller_0_tcm_write_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      => FL_ADDR,
-				de2_poll_external_connection_export                                              => GPIO_1(29 downto 26)                                   --                de2_poll_external_connection.in_port
+				de2_poll_external_connection_export                                              => GPIO_1(29 downto 26)                                  --                de2_poll_external_connection.in_port
             
 		);
 end structure;

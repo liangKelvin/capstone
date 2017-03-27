@@ -149,27 +149,22 @@ int main(void) {
 	semaphore = OSSemCreate(0);
 	sem = 0;
 
-	printf("gpio: %d\n", IORD_ALTERA_AVALON_PIO_DATA(PIO_0_BASE));
 
-//	 OSTaskCreateExt(pollIMU,
+	unsigned int r_buf;
+
+	while(1) {
+		alt_up_audio_read_fifo (audio_dev, &(r_buf), 1, ALT_UP_AUDIO_RIGHT);
+	}
+
+//	OSTaskCreateExt(synthesize,
 //	                  NULL,
-//	                  (void *)&task1_stk[TASK_STACKSIZE-1],
-//	                  TASK1_PRIORITY,
-//	                  TASK1_PRIORITY,
-//	                  task1_stk,
+//	                  (void *)&task2_stk[TASK_STACKSIZE-1],
+//	                  TASK2_PRIORITY,
+//	                  TASK2_PRIORITY,
+//	                  task2_stk,
 //	                  TASK_STACKSIZE,
 //	                  NULL,
 //	                  0);
-
-	OSTaskCreateExt(synthesize,
-	                  NULL,
-	                  (void *)&task2_stk[TASK_STACKSIZE-1],
-	                  TASK2_PRIORITY,
-	                  TASK2_PRIORITY,
-	                  task2_stk,
-	                  TASK_STACKSIZE,
-	                  NULL,
-	                  0);
 	  OSStart();
 	  return 0;
 }

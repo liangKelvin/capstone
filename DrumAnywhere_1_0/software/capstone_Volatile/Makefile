@@ -205,12 +205,8 @@ SYS_LIB :=
 BSP_ROOT_DIR := ../capstone_Volatile_bsp/
 
 # List of application specific include directories, library directories and library names
-APP_INCLUDE_DIRS += efsl
-APP_INCLUDE_DIRS += i2c
-APP_INCLUDE_DIRS += MPU9250
-APP_LIBRARY_DIRS += efsl
-APP_LIBRARY_DIRS += i2c
-APP_LIBRARY_DIRS += MPU9250
+APP_INCLUDE_DIRS := efsl
+APP_LIBRARY_DIRS := efsl
 APP_LIBRARY_NAMES :=
 
 # Pre- and post- processor settings.

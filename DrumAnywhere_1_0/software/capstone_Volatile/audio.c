@@ -72,7 +72,6 @@ void synthesize(void* pdata) {
 	int temp;
 	while(1) {
 		// check for new sounds
-		printf("gpio 23: %d\n", IORD_ALTERA_AVALON_PIO_DATA(PIO_0_BASE));
 		for(i = 0; i < 7; i++) {
 			if(isPlaying[i] == 1) {
 				// append waveforms if needed

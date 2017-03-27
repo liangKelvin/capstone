@@ -5,6 +5,15 @@ make all
 Info: Building ../capstone_NonVolatile_bsp/
 make --no-print-directory -C ../capstone_NonVolatile_bsp/
 [BSP build complete]
+Info: Compiling buttons.c to obj/default/buttons.o
+nios2-elf-gcc -xc -MP -MMD -c -I../capstone_NonVolatile_bsp//UCOSII/inc -I../capstone_NonVolatile_bsp//HAL/inc -I../capstone_NonVolatile_bsp/ -I../capstone_NonVolatile_bsp//drivers/inc -Iefsl  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/buttons.o buttons.c
+Info: Linking capstone_NonVolatile.elf
+nios2-elf-g++  -T'../capstone_NonVolatile_bsp//linker.x' -msys-crt0='../capstone_NonVolatile_bsp//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../capstone_NonVolatile_bsp/ -Lefsl   -Wl,-Map=capstone_NonVolatile.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o capstone_NonVolatile.elf obj/default/audio.o obj/default/buttons.o obj/default/efsl/debug.o obj/default/efsl/dir.o obj/default/efsl/disc.o obj/default/efsl/efs.o obj/default/efsl/extract.o obj/default/efsl/fat.o obj/default/efsl/file.o obj/default/efsl/fs.o obj/default/efsl/ioman.o obj/default/efsl/ls.o obj/default/efsl/mkfs.o obj/default/efsl/nios2.o obj/default/efsl/nios2_ramdisk.o obj/default/efsl/partition.o obj/default/efsl/plibc.o obj/default/efsl/sd.o obj/default/efsl/time.o obj/default/efsl/ui.o obj/default/main.o obj/default/sd.o -lm 
+nios2-elf-insert capstone_NonVolatile.elf --thread_model ucosii --cpu_name nios2_qsys_0 --qsys true --simulation_enabled false --id 0 --sidp 0x19090c8 --timestamp 1490653117 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name niosII_system --quartus_project_dir "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0" --jdi /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile_bsp/../../DrumAnywhere_1_0.jdi --sopcinfo /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile_bsp/../../niosII_system.sopcinfo
+Info: (capstone_NonVolatile.elf) 1246 KBytes program size (code + initialized data).
+Info:                            6946 KBytes free for stack + heap.
+Info: Creating capstone_NonVolatile.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source capstone_NonVolatile.elf >capstone_NonVolatile.objdump
 [capstone_NonVolatile build complete]
 
 **** Build Finished ****

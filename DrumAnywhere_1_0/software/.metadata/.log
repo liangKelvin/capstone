@@ -1657,3 +1657,382 @@ java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capston
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2017-03-27 14:46:30.788 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-27 14:46:56.270
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-03-27 14:49:51.498
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2017-03-27 14:49:51.519
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2017-03-27 14:49:51.519
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2017-03-27 14:51:54.124 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-03-27 14:53:00.078
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2017-03-27 14:53:00.097
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2017-03-27 14:53:00.097
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2017-03-27 14:53:20.033 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-03-27 14:55:59.135
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2017-03-27 14:55:59.154
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2017-03-27 14:55:59.154
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2017-03-27 14:56:55.368 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:01:42.367
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=' --instance=-1 --stop --sidp=0x19090b8 --id=0x0 --timestamp=1490496080]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:01:43.423
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x19090b8, --id=0x0, --timestamp=1490496080] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:01:43.482
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=' --instance=-1 --go --sidp=0x19090b8 --id=0x0 --timestamp=1490496080 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:01:44.597
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --go, --sidp=0x19090b8, --id=0x0, --timestamp=1490496080, /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:01:44.616
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:02:15.510
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=' --instance=-1 --stop --sidp=0x19090b8 --id=0x0 --timestamp=1490496080]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:02:16.567
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x19090b8, --id=0x0, --timestamp=1490496080] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:02:16.633
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=' --instance=-1 --go --sidp=0x19090b8 --id=0x0 --timestamp=1490496080 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:02:17.750
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --go, --sidp=0x19090b8, --id=0x0, --timestamp=1490496080, /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:02:17.771
+!MESSAGE Downloading ELF Process failed
+!SESSION 2017-03-27 15:02:49.141 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:03:17.927
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=' --instance=-1 --stop --sidp=0x19090b8 --id=0x0 --timestamp=1490496080]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:03:18.988
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --stop, --sidp=0x19090b8, --id=0x0, --timestamp=1490496080] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:03:19.054
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=' --instance=-1 --go --sidp=0x19090b8 --id=0x0 --timestamp=1490496080 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:03:20.187
+!MESSAGE Failed Executing: [nios2-download, '--cable=', --instance=-1, --go, --sidp=0x19090b8, --id=0x0, --timestamp=1490496080, /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile/capstone_NonVolatile.elf] return code: 16
+
+!ENTRY com.altera.sbtgui.launch 4 0 2017-03-27 15:03:20.220
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 15:07:52.187
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-03-27 15:07:54.187
+!MESSAGE Indexed 'switch_test_bsp' (97 sources, 89 headers) in 1.77 sec: 2,775 declarations; 11,301 references; 122 unresolved inclusions; 5 syntax errors; 256 unresolved names (1.79%)
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 15:07:54.979
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-03-27 15:07:55.129
+!MESSAGE Indexed 'switch_test' (1 sources, 13 headers) in 0.05 sec: 8 declarations; 23 references; 15 unresolved inclusions; 0 syntax errors; 6 unresolved names (16.22%)
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 15:12:55.004
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:13:10.061
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.8]' --device=1 --instance=0 --stop --sidp=0x19090b8 --id=0x0 --timestamp=1490496080]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:13:11.627
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.8]' --device=1 --instance=0 --go --sidp=0x19090b8 --id=0x0 --timestamp=1490496080 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/switch_test/switch_test.elf]
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 15:18:01.211
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-03-27 15:35:36.142
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2017-03-27 15:35:36.174
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2017-03-27 15:35:36.175
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2017-03-27 15:35:38.662 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:36:09.956
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.8]' --device=1 --instance=0 --stop --sidp=0x19090c8 --id=0x0 --timestamp=1490650368]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-03-27 15:36:11.483
+!MESSAGE Executing: [/bin/bash, -c, nios2-download '--cable=USB-Blaster on localhost [2-1.8]' --device=1 --instance=0 --go --sidp=0x19090c8 --id=0x0 --timestamp=1490650368 /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/switch_test/switch_test.elf]
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 15:41:06.200
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-03-27 16:21:18.709
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2017-03-27 16:21:18.726
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2017-03-27 16:21:18.726
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2017-03-27 16:22:13.013 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 16:27:39.952
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 16:33:07.798
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 16:41:46.772
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2017-03-27 17:29:43.929
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.openAppend(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1685)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1768)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1167)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-03-27 17:29:49.221
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2017-03-27 17:29:49.239
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2017-03-27 17:29:49.239
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1576)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1656)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)

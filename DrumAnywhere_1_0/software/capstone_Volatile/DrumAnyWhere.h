@@ -15,8 +15,6 @@
 #include <ls.h>
 #include <errno.h>
 #include "altera_avalon_pio_regs.h"
-#include "i2c/I2C.h"
-#include "MPU9250/mpu9250.h"
 
 
 // method declarations

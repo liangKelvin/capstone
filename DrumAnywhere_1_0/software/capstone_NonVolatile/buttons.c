@@ -23,6 +23,8 @@ void init_button_pio() {
 void DE2_conn_init() {
 	/* Enable interrupt. */
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(DE2_POLL_BASE, 0x08);
+	/* Reset the edge capture register. */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, 0x08);
 	/* Register the ISR. */
 	alt_irq_register(DE2_POLL_IRQ, NULL , interrupt_isr_de2Poll);
 }
@@ -38,6 +40,8 @@ void interrupt_isr_de2Poll (void *context, alt_u32 id) {
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, str);
+
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, 0x08);
 
 }
 
