@@ -139,7 +139,8 @@ architecture structure of DrumAnywhere_1_0 is
             i2c_sda_external_connection_export               : inout std_logic                     := 'X';
 				i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
             i2c_sda_2_external_connection_export             : inout std_logic                     := 'X';              -- export	
-				drum_out_external_connection_export              : out   std_logic_vector(3 downto 0)                      -- export
+				drum_out_external_connection_export              : out   std_logic_vector(3 downto 0);
+				footpedal_external_connection_export             : in    std_logic                     := 'X'              -- export
 		  );
     end component niosII_system;
 
@@ -206,7 +207,8 @@ begin
             i2c_sda_external_connection_export               => GPIO_0(25),                --         
 				i2c_scl_2_external_connection_export             => GPIO_0(32),            --               i2c_scl_2_external_connection.export
             i2c_sda_2_external_connection_export             => GPIO_0(33),
-				drum_out_external_connection_export              => GPIO_1(29 downto 26)	
+				drum_out_external_connection_export              => GPIO_1(29 downto 26),
+				footpedal_external_connection_export             => GPIO_0(21)
 		 );
 
 end structure;

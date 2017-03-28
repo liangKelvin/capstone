@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Sat Mar 25 20:25:10 MDT 2017
+ * Generated: Mon Mar 27 17:57:52 MDT 2017
  */
 
 /*
@@ -370,6 +370,33 @@
 
 
 /*
+ * footpedal configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_footpedal altera_avalon_pio
+#define FOOTPEDAL_BASE 0x1109060
+#define FOOTPEDAL_BIT_CLEARING_EDGE_REGISTER 0
+#define FOOTPEDAL_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define FOOTPEDAL_CAPTURE 1
+#define FOOTPEDAL_DATA_WIDTH 1
+#define FOOTPEDAL_DO_TEST_BENCH_WIRING 0
+#define FOOTPEDAL_DRIVEN_SIM_VALUE 0x0
+#define FOOTPEDAL_EDGE_TYPE "FALLING"
+#define FOOTPEDAL_FREQ 50000000u
+#define FOOTPEDAL_HAS_IN 1
+#define FOOTPEDAL_HAS_OUT 0
+#define FOOTPEDAL_HAS_TRI 0
+#define FOOTPEDAL_IRQ 3
+#define FOOTPEDAL_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define FOOTPEDAL_IRQ_TYPE "EDGE"
+#define FOOTPEDAL_NAME "/dev/footpedal"
+#define FOOTPEDAL_RESET_VALUE 0x0
+#define FOOTPEDAL_SPAN 16
+#define FOOTPEDAL_TYPE "altera_avalon_pio"
+
+
+/*
  * green_leds configuration
  *
  */
@@ -576,7 +603,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1490494796
+#define SYSID_QSYS_0_TIMESTAMP 1490658884
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

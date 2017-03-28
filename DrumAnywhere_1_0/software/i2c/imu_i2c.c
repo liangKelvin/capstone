@@ -48,6 +48,9 @@ acceleration and gyration values using appropriate resolution functions.
 #include "altera_avalon_pio_regs.h"
 #include <time.h>
 
+void init_pedal_pio();
+void interrupt_isr_pedalPress(void *context, alt_u32 id);
+
 /* Definition of Task Stacks */
 #define   TASK_STACKSIZE       2048
 OS_STK    task1_stk[TASK_STACKSIZE];
@@ -146,6 +149,8 @@ void task1(void* pdata){
 
   while (1)
   {
+	//printf("pedal values %d\n",IORD_ALTERA_AVALON_PIO_DATA(FOOTPEDAL_BASE));
+
 	// Variables to hold latest sensor data values
 	float ax, ay, az, gx, gy, gz, d1_az_old, d2_az_old;
 
@@ -222,7 +227,7 @@ void task1(void* pdata){
 	// Hits
 	if((((az - d1_az_old)*1000) < -1000)){
 		if(!hit_flag_1){
-			printf("Hit One: Position %d\n", drum1_index);
+			//printf("Hit One: Position %d\n", drum1_index);
 			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum1_index|0x08);
 			OSTimeDlyHMSM(0, 0, 0, 1);
 			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
@@ -298,7 +303,7 @@ void task1(void* pdata){
 	// Hits
 	if((((az - d2_az_old)*1000) < -1000)){
 		if(!hit_flag_2){
-			printf("Hit two: Position %d\n", drum2_index);
+			//printf("Hit two: Position %d\n", drum2_index);
 			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum2_index|0x08);
 			OSTimeDlyHMSM(0, 0, 0, 1);
 			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
@@ -317,7 +322,8 @@ void task1(void* pdata){
 /* The main function creates two task and starts multi-tasking */
 int main(void)
 {
-  
+  init_pedal_pio();
+
   OSTaskCreateExt(task1,
                   NULL,
                   (void *)&task1_stk[TASK_STACKSIZE-1],
@@ -332,6 +338,28 @@ int main(void)
   return 0;
 }
 
+
+void init_pedal_pio() {
+	/* Enable all 4 button interrupts. */
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(FOOTPEDAL_BASE, 0x01);
+	/* Reset the edge capture register. */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE, 0x00);
+	/* Register the ISR. */
+	alt_irq_register(FOOTPEDAL_IRQ, NULL,  interrupt_isr_pedalPress);
+}
+
+
+void interrupt_isr_pedalPress(void *context, alt_u32 id) {
+
+	IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 6|0x08);
+	int i;
+	for (i = 0; i < 50; i++) {
+		IORD_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE);
+	}
+	IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE, 0x01);
+	IORD_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE);
+}
 /******************************************************************************
 *                                                                             *
 * License Agreement                                                           *

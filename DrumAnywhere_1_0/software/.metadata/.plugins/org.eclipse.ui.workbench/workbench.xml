@@ -34,7 +34,6 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
-<part id="6"/>
 </presentation>
 </folder>
 </info>
@@ -55,17 +54,13 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/MPU9250/mpu9250.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="20845" selectionTopPixel="6922"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="altera_avalon_pio_regs.h" partName="altera_avalon_pio_regs.h" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/drivers/inc/altera_avalon_pio_regs.h" title="altera_avalon_pio_regs.h" tooltip="i2c_bsp/drivers/inc/altera_avalon_pio_regs.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c_bsp/drivers/inc/altera_avalon_pio_regs.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="39" selectionOffset="2578" selectionTopPixel="301"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" partName="imu_i2c.c" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/imu_i2c.c" title="imu_i2c.c" tooltip="i2c/imu_i2c.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/imu_i2c.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="11069" selectionTopPixel="5075"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" partName="system.h" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/system.h" title="system.h" tooltip="i2c_bsp/system.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c_bsp/system.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="13" selectionOffset="10176" selectionTopPixel="5072"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" partName="imu_i2c.c" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c/imu_i2c.c" title="imu_i2c.c" tooltip="i2c/imu_i2c.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/imu_i2c.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9795" selectionTopPixel="4365"/>
+<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="10920" selectionTopPixel="5606"/>
 </editor>
 </editors>
 <views>
@@ -81,6 +76,7 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Warnings (1 item)"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="486" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -305,9 +301,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/imu_i2c.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/MPU9250/mpu9250.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c_bsp/system.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/MPU9250/mpu9250.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/MPU9250/mpu9250.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c_bsp/system.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c_bsp/drivers/inc/altera_avalon_pio_regs.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c_bsp/drivers/src/altera_up_avalon_audio_and_video_config.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/i2c/I2C.h"/>
@@ -319,53 +312,17 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/imu_i2c.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/i2c/I2C.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/imu_i2c.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c_bsp/system.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c_bsp/drivers/inc/altera_avalon_pio_regs.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/MPU9250/mpu9250.c"/>
 </editors>
-<item historyLabel="system.h" index="2">
-<position info="not_deleted" x="5537" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position/>
-</item>
-<item historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="6961" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="3386" y="0"/>
-</item>
 <item historyLabel="mpu9250.c" index="1">
-<position info="not_deleted" x="6356" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="3386" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="7026" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="7676" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="7223" y="0"/>
-</item>
-<item historyLabel="mpu9250.c" index="4">
-<position info="not_deleted" x="1223" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="8277" y="10"/>
-</item>
-<item historyLabel="mpu9250.c" index="4">
-<position info="not_deleted" x="1223" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="8277" y="10"/>
-</item>
-<item historyLabel="mpu9250.c" index="4">
 <position info="not_deleted" x="20845" y="11"/>
 </item>
 <item historyLabel="imu_i2c.c" index="0">
 <position info="not_deleted" x="6974" y="0"/>
 </item>
-<item historyLabel="mpu9250.c" index="4">
+<item historyLabel="mpu9250.c" index="1">
 <position info="not_deleted" x="20845" y="11"/>
 </item>
 <item historyLabel="imu_i2c.c" index="0">
@@ -377,98 +334,137 @@
 <item historyLabel="imu_i2c.c" index="0">
 <position info="not_deleted" x="7895" y="0"/>
 </item>
-<item historyLabel="system.h" index="5">
+<item historyLabel="system.h" index="2">
 <position info="not_deleted" x="5537" y="0"/>
 </item>
 <item historyLabel="imu_i2c.c" index="0">
 <position info="not_deleted" x="7964" y="0"/>
 </item>
-<item historyLabel="altera_avalon_pio_regs.h" index="6">
+<item historyLabel="altera_avalon_pio_regs.h" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="altera_up_avalon_audio_and_video_config.c" index="7">
+<item historyLabel="altera_up_avalon_audio_and_video_config.c" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="altera_avalon_pio_regs.h" index="6">
+<item historyLabel="altera_avalon_pio_regs.h" index="3">
 <position info="not_deleted" x="2578" y="39"/>
 </item>
 <item historyLabel="imu_i2c.c" index="0">
 <position info="not_deleted" x="7964" y="0"/>
 </item>
-<item historyLabel="altera_avalon_pio_regs.h" index="6">
+<item historyLabel="altera_avalon_pio_regs.h" index="3">
 <position info="not_deleted" x="2578" y="39"/>
 </item>
-<item historyLabel="system.h" index="5">
+<item historyLabel="system.h" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="altera_avalon_pio_regs.h" index="6">
+<item historyLabel="altera_avalon_pio_regs.h" index="3">
 <position info="not_deleted" x="2578" y="39"/>
 </item>
-<item historyLabel="system.h" index="5">
+<item historyLabel="system.h" index="2">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="I2C.h" index="5">
+<position info="not_deleted" x="2252" y="0"/>
+</item>
+<item historyLabel="imu_i2c.c" index="6">
+<position info="not_deleted" x="7964" y="0"/>
+</item>
+<item historyLabel="altera_avalon_pio_regs.h" index="7">
+<position info="not_deleted" x="2578" y="39"/>
 </item>
 <item historyLabel="I2C.h" index="8">
 <position info="not_deleted" x="2252" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="9">
-<position info="not_deleted" x="7964" y="0"/>
-</item>
-<item historyLabel="altera_avalon_pio_regs.h" index="10">
-<position info="not_deleted" x="2578" y="39"/>
-</item>
-<item historyLabel="I2C.h" index="11">
-<position info="not_deleted" x="2252" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="9">
+<item historyLabel="imu_i2c.c" index="6">
 <position info="not_deleted" x="9752" y="0"/>
 </item>
-<item historyLabel="system.h" index="12">
+<item historyLabel="system.h" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="system.h" index="12">
+<item historyLabel="system.h" index="9">
 <position info="not_deleted" x="8669" y="13"/>
 </item>
-<item historyLabel="imu_i2c.c" index="9">
+<item historyLabel="imu_i2c.c" index="6">
 <position info="not_deleted" x="9752" y="0"/>
 </item>
-<item historyLabel="system.h" index="12">
+<item historyLabel="system.h" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="system.h" index="12">
+<item historyLabel="system.h" index="9">
 <position info="not_deleted" x="10176" y="13"/>
 </item>
-<item historyLabel="imu_i2c.c" index="9">
+<item historyLabel="imu_i2c.c" index="6">
 <position info="not_deleted" x="8054" y="0"/>
 </item>
-<item historyLabel="altera_avalon_pio_regs.h" index="10">
+<item historyLabel="altera_avalon_pio_regs.h" index="7">
 <position info="not_deleted" x="2578" y="39"/>
 </item>
-<item historyLabel="imu_i2c.c" index="9">
+<item historyLabel="imu_i2c.c" index="6">
 <position info="not_deleted" x="8054" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="9">
+<item historyLabel="imu_i2c.c" index="6">
 <position info="not_deleted" x="9661" y="1"/>
 </item>
-<item historyLabel="I2C.h" index="13">
+<item historyLabel="I2C.h" index="10">
 <position info="not_deleted" x="2252" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="14">
+<item historyLabel="imu_i2c.c" index="11">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="14">
+<item historyLabel="imu_i2c.c" index="11">
 <position info="not_deleted" x="8157" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="14">
+<item historyLabel="imu_i2c.c" index="11">
 <position info="not_deleted" x="8195" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="14">
+<item historyLabel="imu_i2c.c" index="11">
 <position info="not_deleted" x="4778" y="0"/>
 </item>
-<item historyLabel="I2C.h" index="15">
+<item historyLabel="I2C.h" index="12">
 <position info="not_deleted" x="2252" y="0"/>
 </item>
-<item active="true" historyLabel="imu_i2c.c" index="16">
+<item historyLabel="imu_i2c.c" index="13">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="system.h" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="system.h" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="8119" y="0"/>
+</item>
+<item historyLabel="altera_avalon_pio_regs.h" index="15">
+<position info="not_deleted" x="2578" y="39"/>
+</item>
+<item historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="8119" y="0"/>
+</item>
+<item historyLabel="system.h" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="system.h" index="14">
+<position info="not_deleted" x="10920" y="14"/>
+</item>
+<item historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="8119" y="0"/>
+</item>
+<item historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="9942" y="11"/>
+</item>
+<item historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="6192" y="11"/>
+</item>
+<item historyLabel="mpu9250.c" index="16">
+<position info="not_deleted" x="20845" y="11"/>
+</item>
+<item historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="6208" y="0"/>
+</item>
+<item active="true" historyLabel="imu_i2c.c" index="13">
+<position info="not_deleted" x="11074" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -488,11 +484,11 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" tooltip="i2c/imu_i2c.c">
-<persistable path="/i2c/imu_i2c.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="i2c_bsp/system.h">
 <persistable path="/i2c_bsp/system.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" tooltip="i2c/imu_i2c.c">
+<persistable path="/i2c/imu_i2c.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_up_avalon_audio_and_video_config.c" tooltip="i2c_bsp/drivers/src/altera_up_avalon_audio_and_video_config.c">
 <persistable path="/i2c_bsp/drivers/src/altera_up_avalon_audio_and_video_config.c"/>
