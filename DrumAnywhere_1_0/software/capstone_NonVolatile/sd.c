@@ -78,6 +78,8 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
 	unsigned int temp;
 	for(i = 0; i < numberSamples; i++) {
 		temp = (int) ((fileBuffer[i*4+44] | (fileBuffer[i*4+45] << 8)));
+
+		// we half the base waveform in half to avoid clipping
 		if(temp > 32768) {
 			temp = 65535 - temp;
 			temp /= 2;

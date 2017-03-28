@@ -29,9 +29,10 @@ void DE2_conn_init() {
 	alt_irq_register(DE2_POLL_IRQ, NULL , interrupt_isr_de2Poll);
 }
 
+
 void interrupt_isr_de2Poll (void *context, alt_u32 id) {
 	int drum = IORD_ALTERA_AVALON_PIO_DATA(DE2_POLL_BASE);
-	drum = drum ^ 0x08;
+	drum = drum ^ DE2_mask;
 	setDrum(drum);
 
 	char str[5];
@@ -41,10 +42,12 @@ void interrupt_isr_de2Poll (void *context, alt_u32 id) {
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, str);
 
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, 0x08);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, DE2_mask);
 
 }
 
+
+// code for button use, not necessary for main demo
 void interrupt_isr_buttonPress(void *context, alt_u32 id) {
 
 	volatile int* edge_capture_ptr = (volatile int*) context;

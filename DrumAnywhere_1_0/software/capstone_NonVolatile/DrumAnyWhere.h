@@ -91,6 +91,8 @@ alt_up_audio_dev * audio_dev;
 #define tomConst 1
 #define tom2Const 2
 
+#define DE2_mask 0x08
+
 
 // arrays to hold waveforms
 unsigned int snare[snareNumberSamples];
