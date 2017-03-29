@@ -110,11 +110,11 @@ int main(void) {
 	drums[snareConst]->waveform = snare;
 	drums[snareConst]->numberOfSamples = snareNumberSamples;
 	drums[snareConst]->index = 0;
-	drums[snareConst]->scale = 1;
+	drums[snareConst]->scale = 3;
 	drums[crashConst]->waveform = crash;
 	drums[crashConst]->numberOfSamples = crashNumberSamples;
 	drums[crashConst]->index = 0;
-	drums[crashConst]->scale = 1;
+	drums[crashConst]->scale = 2;
 	drums[hihatConst]->waveform = hihat;
 	drums[hihatConst]->numberOfSamples = hihatNumberSamples;
 	drums[hihatConst]->index = 0;
