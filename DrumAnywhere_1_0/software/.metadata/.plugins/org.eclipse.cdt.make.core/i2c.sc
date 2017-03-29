@@ -4,6 +4,11 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1936074043;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1936074043.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1674054816;cdt.managedbuild.tool.gnu.cpp.compiler.input.2104314836">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/drivers/inc"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c/i2c"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/"/>
@@ -316,6 +321,11 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1936074043;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1936074043.;cdt.managedbuild.tool.gnu.c.compiler.base.365013201;cdt.managedbuild.tool.gnu.c.compiler.input.1027969087">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c_bsp/drivers/inc"/>
+<includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/i2c/i2c"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/capstone/DrumAnywhere_1_0/software/i2c_bsp/"/>

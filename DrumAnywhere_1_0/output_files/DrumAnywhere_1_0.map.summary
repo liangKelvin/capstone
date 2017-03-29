@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Mar 25 20:21:34 2017
+Analysis & Synthesis Status : Successful - Wed Mar 29 12:42:58 2017
 Quartus II 32-bit Version : 12.1 Build 243 01/31/2013 SP 1 SJ Full Version
 Revision Name : DrumAnywhere_1_0
 Top-level Entity Name : DrumAnywhere_1_0
 Family : Cyclone II
-Total logic elements : 6,276
-    Total combinational functions : 5,202
-    Dedicated logic registers : 3,785
-Total registers : 3785
-Total pins : 186
+Total logic elements : 6,633
+    Total combinational functions : 5,534
+    Dedicated logic registers : 3,977
+Total registers : 3977
+Total pins : 220
 Total virtual pins : 0
 Total memory bits : 204,160
 Embedded Multiplier 9-bit elements : 4

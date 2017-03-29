@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Thu Feb 23 18:04:20 MST 2017
+ * Generated: Mon Mar 27 17:25:44 MDT 2017
  */
 
 /*
@@ -51,15 +51,18 @@
 MEMORY
 {
     sdram_0 : ORIGIN = 0x800000, LENGTH = 8388608
-    sram_0 : ORIGIN = 0x1080000, LENGTH = 524288
-    reset : ORIGIN = 0x1104000, LENGTH = 32
-    onchip_memory2_0 : ORIGIN = 0x1104020, LENGTH = 16352
+    reset : ORIGIN = 0x1400000, LENGTH = 32
+    generic_tristate_controller_0 : ORIGIN = 0x1400020, LENGTH = 4194272
+    sram_0 : ORIGIN = 0x1880000, LENGTH = 524288
+    onchip_memory2_0_BEFORE_EXCEPTION : ORIGIN = 0x1904000, LENGTH = 32
+    onchip_memory2_0 : ORIGIN = 0x1904020, LENGTH = 16352
 }
 
 /* Define symbols for each memory base-address */
 __alt_mem_sdram_0 = 0x800000;
-__alt_mem_sram_0 = 0x1080000;
-__alt_mem_onchip_memory2_0 = 0x1104000;
+__alt_mem_generic_tristate_controller_0 = 0x1400000;
+__alt_mem_sram_0 = 0x1880000;
+__alt_mem_onchip_memory2_0 = 0x1904000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -351,7 +354,24 @@ SECTIONS
      *
      */
 
-    .sram_0 : AT ( LOADADDR (.sdram_0) + SIZEOF (.sdram_0) )
+    .generic_tristate_controller_0 : AT ( LOADADDR (.sdram_0) + SIZEOF (.sdram_0) )
+    {
+        PROVIDE (_alt_partition_generic_tristate_controller_0_start = ABSOLUTE(.));
+        *(.generic_tristate_controller_0. generic_tristate_controller_0.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_generic_tristate_controller_0_end = ABSOLUTE(.));
+    } > generic_tristate_controller_0
+
+    PROVIDE (_alt_partition_generic_tristate_controller_0_load_addr = LOADADDR(.generic_tristate_controller_0));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .sram_0 : AT ( LOADADDR (.generic_tristate_controller_0) + SIZEOF (.generic_tristate_controller_0) )
     {
         PROVIDE (_alt_partition_sram_0_start = ABSOLUTE(.));
         *(.sram_0. sram_0.*)

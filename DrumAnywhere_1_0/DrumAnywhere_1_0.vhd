@@ -76,10 +76,19 @@ library ieee;
 		
 		--SD Card
 		
-		SD_DAT         : in       std_logic;
+		SD_DAT         : in       	std_logic;
 		SD_DAT3			: out			std_logic;
 		SD_CLK			: out			std_logic;
 		SD_CMD			: out			std_logic;
+		
+		-- Flash
+		
+		FL_ADDR        : out       std_logic_vector(21 downto 0);
+		FL_CE_N        : out       std_logic_vector(0 downto 0);
+		FL_OE_N        : out       std_logic_vector(0 downto 0);
+		FL_DQ          : inout     std_logic_vector(7 downto 0);
+		FL_RST_N       : out       std_logic_vector(0 downto 0);
+		FL_WE_N 			: out 		std_logic_vector(0 downto 0);
 		
 		--GPIO
 		GPIO_0 : inout std_logic_vector(35 downto 0) := (others => 'X');
@@ -139,7 +148,13 @@ architecture structure of DrumAnywhere_1_0 is
             i2c_sda_external_connection_export               : inout std_logic                     := 'X';
 				i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
             i2c_sda_2_external_connection_export             : inout std_logic                     := 'X';              -- export	
-				drum_out_external_connection_export              : out   std_logic_vector(3 downto 0)                      -- export
+				drum_out_external_connection_export              : out   std_logic_vector(3 downto 0);
+				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_read_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_write_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      : out   std_logic_vector(21 downto 0);
+				footpedal_external_connection_export                                             : in    std_logic                     := 'X'              -- export			
 		  );
     end component niosII_system;
 
@@ -157,6 +172,8 @@ begin
 	
 	DRAM_UDQM <= DQM(1);
 	DRAM_LDQM <= DQM(0);
+	
+	FL_RST_N(0) <= '1';
 	
 	-- Component Instantiation Statement (optional)
 	
@@ -206,7 +223,13 @@ begin
             i2c_sda_external_connection_export               => GPIO_0(25),                --         
 				i2c_scl_2_external_connection_export             => GPIO_0(32),            --               i2c_scl_2_external_connection.export
             i2c_sda_2_external_connection_export             => GPIO_0(33),
-				drum_out_external_connection_export              => GPIO_1(29 downto 26)	
+				drum_out_external_connection_export              => GPIO_1(29 downto 26),
+				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       => FL_OE_N,       --               tristate_conduit_bridge_0_out.generic_tristate_controller_0_tcm_read_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         => FL_DQ,         --                                            .generic_tristate_controller_0_tcm_data_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out => FL_CE_N, --                                            .generic_tristate_controller_0_tcm_chipselect_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      => FL_WE_N,      --                                            .generic_tristate_controller_0_tcm_write_n_out
+            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      =>	FL_ADDR,
+				footpedal_external_connection_export                                             => GPIO_0(21)
 		 );
 
 end structure;
