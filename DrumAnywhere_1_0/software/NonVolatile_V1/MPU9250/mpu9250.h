@@ -188,6 +188,36 @@
 //alt_u8 Gscale = GFS_250DPS;
 //alt_u8 Ascale = AFS_2G;
 
+/*
+ * IMU Threshold Constants
+ */
+
+#define RIGHT_THRESHOLD -20
+#define LEFT_THRESHOLD 380
+#define UP_THRESHOLD -200
+#define DOWN_THRESHOLD 100
+#define HIT_THRESHOLD -500
+#define NO_HIT_THRESHOLD 600
+#define INTERRUPT_MASK 0x08
+#define INTERRUPT_RESET 0x00
+#define NEWTON_SCALE 1000
+#define SHIFT_ROW  3
+#define RIGHT_THRESHOLD_RESET 150
+#define LEFT_THRESHOLD_RESET 210
+#define SHIFT_UP_COUNT 9
+#define SHIFT_DOWN_COUNT 9
+
+
+
+#define snareConst 0
+#define tomConst 1
+#define tom2Const 2
+#define crashConst 3
+#define hihatConst 4
+#define hihat2Const 5
+#define kickConst 6
+
+
 void getAres(float* aRes);
 void getGres(float* gRes);
 void readAccelData(alt_16 * destination, alt_u32 scl_base, alt_u32 sda_base);
