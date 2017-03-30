@@ -84,9 +84,9 @@ alt_up_audio_dev * audio_dev;
 #define tom2Size 180580
 
 #define snareConst 0
-#define crashConst 3
-#define hihatConst 4
-#define hihat2Const 5
+#define crashConst 5
+#define hihatConst 3
+#define hihat2Const 4
 #define kickConst 6
 #define tomConst 1
 #define tom2Const 2

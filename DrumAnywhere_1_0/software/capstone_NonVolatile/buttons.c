@@ -32,6 +32,7 @@ void DE2_conn_init() {
 
 void interrupt_isr_de2Poll (void *context, alt_u32 id) {
 	int drum = IORD_ALTERA_AVALON_PIO_DATA(DE2_POLL_BASE);
+
 	drum = drum ^ DE2_mask;
 	setDrum(drum);
 

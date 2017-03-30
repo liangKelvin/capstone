@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 29, 2017 1:31:12 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1490815872437</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 30, 2017 5:40:19 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1490917219650</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/capstone_NonVolatile_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../niosII_system.sopcinfo</SopcDesignFile>
@@ -1715,22 +1715,22 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sd_card_spi_master</slaveDescriptor>
+                <slaveDescriptor>DE2_Poll</slaveDescriptor>
                 <addressRange>0x01909020 - 0x0190903F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>timer_0</slaveDescriptor>
+                <slaveDescriptor>sd_card_spi_master</slaveDescriptor>
                 <addressRange>0x01909040 - 0x0190905F</addressRange>
                 <addressSpan>32</addressSpan>
-                <attributes>timer</attributes>
+                <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>DE2_Poll</slaveDescriptor>
-                <addressRange>0x01909070 - 0x0190907F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
+                <slaveDescriptor>timer_0</slaveDescriptor>
+                <addressRange>0x01909060 - 0x0190907F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>Buttons</slaveDescriptor>

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'niosII_system'
  * SOPC Builder design path: ../../niosII_system.sopcinfo
  *
- * Generated: Mon Mar 27 16:22:32 MDT 2017
+ * Generated: Thu Mar 30 17:40:20 MDT 2017
  */
 
 /*
@@ -155,9 +155,9 @@
  */
 
 #define ALT_MODULE_CLASS_DE2_Poll altera_avalon_pio
-#define DE2_POLL_BASE 0x1909070
+#define DE2_POLL_BASE 0x1909020
 #define DE2_POLL_BIT_CLEARING_EDGE_REGISTER 1
-#define DE2_POLL_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DE2_POLL_BIT_MODIFYING_OUTPUT_REGISTER 1
 #define DE2_POLL_CAPTURE 1
 #define DE2_POLL_DATA_WIDTH 4
 #define DE2_POLL_DO_TEST_BENCH_WIRING 0
@@ -172,7 +172,7 @@
 #define DE2_POLL_IRQ_TYPE "EDGE"
 #define DE2_POLL_NAME "/dev/DE2_Poll"
 #define DE2_POLL_RESET_VALUE 0x0
-#define DE2_POLL_SPAN 16
+#define DE2_POLL_SPAN 32
 #define DE2_POLL_TYPE "altera_avalon_pio"
 
 
@@ -366,7 +366,7 @@
  */
 
 #define ALT_MODULE_CLASS_sd_card_spi_master altera_avalon_spi
-#define SD_CARD_SPI_MASTER_BASE 0x1909020
+#define SD_CARD_SPI_MASTER_BASE 0x1909040
 #define SD_CARD_SPI_MASTER_CLOCKMULT 1
 #define SD_CARD_SPI_MASTER_CLOCKPHASE 0
 #define SD_CARD_SPI_MASTER_CLOCKPOLARITY 0
@@ -456,7 +456,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1490653117
+#define SYSID_QSYS_0_TIMESTAMP 1490917028
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -467,7 +467,7 @@
 
 #define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
 #define TIMER_0_ALWAYS_RUN 0
-#define TIMER_0_BASE 0x1909040
+#define TIMER_0_BASE 0x1909060
 #define TIMER_0_COUNTER_SIZE 32
 #define TIMER_0_FIXED_PERIOD 0
 #define TIMER_0_FREQ 50000000u

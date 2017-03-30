@@ -108,13 +108,13 @@ module niosII_system_addr_router
     localparam PAD2 = log2ceil(64'h1900000 - 64'h1880000);
     localparam PAD3 = log2ceil(64'h1908000 - 64'h1904000);
     localparam PAD4 = log2ceil(64'h1909000 - 64'h1908800);
-    localparam PAD5 = log2ceil(64'h1909040 - 64'h1909020);
+    localparam PAD5 = log2ceil(64'h1909060 - 64'h1909040);
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h1909040;
+    localparam ADDR_RANGE = 64'h1909060;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -183,8 +183,8 @@ module niosII_system_addr_router
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
         end
 
-        // ( 0x1909020 .. 0x1909040 )
-        if ( {address[RG:PAD5],{PAD5{1'b0}}} == 25'h1909020 ) begin
+        // ( 0x1909040 .. 0x1909060 )
+        if ( {address[RG:PAD5],{PAD5{1'b0}}} == 25'h1909040 ) begin
             src_channel = 15'b010000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
         end

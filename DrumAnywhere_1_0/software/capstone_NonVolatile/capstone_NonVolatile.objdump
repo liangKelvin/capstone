@@ -75,7 +75,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  29 .jdi          000051db  00000000  00000000  000ba2cc  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     0008614e  00000000  00000000  000bf4a7  2**0
+ 30 .sopcinfo     0008614d  00000000  00000000  000bf4a7  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 01400000 l    d  .entry	00000000 .entry
@@ -1827,13 +1827,13 @@ void DE2_conn_init() {
 	/* Enable interrupt. */
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(DE2_POLL_BASE, 0x08);
   8005ac:	00c06474 	movhi	r3,401
-  8005b0:	18e41e04 	addi	r3,r3,-28552
+  8005b0:	18e40a04 	addi	r3,r3,-28632
   8005b4:	00800204 	movi	r2,8
   8005b8:	18800035 	stwio	r2,0(r3)
 	/* Reset the edge capture register. */
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, 0x08);
   8005bc:	00c06474 	movhi	r3,401
-  8005c0:	18e41f04 	addi	r3,r3,-28548
+  8005c0:	18e40b04 	addi	r3,r3,-28628
   8005c4:	00800204 	movi	r2,8
   8005c8:	18800035 	stwio	r2,0(r3)
 	/* Register the ISR. */
@@ -1852,6 +1852,7 @@ void DE2_conn_init() {
 
 008005f4 <interrupt_isr_de2Poll>:
 
+
 void interrupt_isr_de2Poll (void *context, alt_u32 id) {
   8005f4:	defff904 	addi	sp,sp,-28
   8005f8:	dfc00615 	stw	ra,24(sp)
@@ -1861,10 +1862,11 @@ void interrupt_isr_de2Poll (void *context, alt_u32 id) {
   800608:	e17fff15 	stw	r5,-4(fp)
 	int drum = IORD_ALTERA_AVALON_PIO_DATA(DE2_POLL_BASE);
   80060c:	00806474 	movhi	r2,401
-  800610:	10a41c04 	addi	r2,r2,-28560
+  800610:	10a40804 	addi	r2,r2,-28640
   800614:	10800037 	ldwio	r2,0(r2)
   800618:	e0bffb15 	stw	r2,-20(fp)
-	drum = drum ^ 0x08;
+
+	drum = drum ^ DE2_mask;
   80061c:	e0bffb17 	ldw	r2,-20(fp)
   800620:	1080021c 	xori	r2,r2,8
   800624:	e0bffb15 	stw	r2,-20(fp)
@@ -1893,9 +1895,9 @@ void interrupt_isr_de2Poll (void *context, alt_u32 id) {
   800660:	e17ffc04 	addi	r5,fp,-16
   800664:	081f5e80 	call	81f5e8 <alt_up_character_lcd_string>
 
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, 0x08);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, DE2_mask);
   800668:	00c06474 	movhi	r3,401
-  80066c:	18e41f04 	addi	r3,r3,-28548
+  80066c:	18e40b04 	addi	r3,r3,-28628
   800670:	00800204 	movi	r2,8
   800674:	18800035 	stwio	r2,0(r3)
 
@@ -1908,6 +1910,8 @@ void interrupt_isr_de2Poll (void *context, alt_u32 id) {
 
 0080068c <interrupt_isr_buttonPress>:
 
+
+// code for button use, not necessary for main demo
 void interrupt_isr_buttonPress(void *context, alt_u32 id) {
   80068c:	defffb04 	addi	sp,sp,-20
   800690:	dfc00415 	stw	ra,16(sp)
@@ -1998,7 +2002,7 @@ void interrupt_isr_buttonPress(void *context, alt_u32 id) {
   800788:	2943b004 	addi	r5,r5,3776
   80078c:	081f5e80 	call	81f5e8 <alt_up_character_lcd_string>
 		setDrum(crashConst);
-  800790:	010000c4 	movi	r4,3
+  800790:	01000144 	movi	r4,5
   800794:	08008080 	call	800808 <setDrum>
 	}
 	if((button & 0x1) == 0) {
@@ -12477,7 +12481,7 @@ void if_spiInit(hwInterface *iface)
 	euint8 i;
 	IOWR_ALTERA_AVALON_SPI_SLAVE_SEL(SPI_0_BASE, 1 );
   807b84:	00c06474 	movhi	r3,401
-  807b88:	18e40d04 	addi	r3,r3,-28620
+  807b88:	18e41504 	addi	r3,r3,-28588
   807b8c:	00800044 	movi	r2,1
   807b90:	18800035 	stwio	r2,0(r3)
 	printf("\n spi ini");
@@ -12511,14 +12515,14 @@ euint8 if_spiSend(hwInterface *iface, euint8 outgoing)
 	/* Set the SSO bit (force chipselect) */
 	IOWR_ALTERA_AVALON_SPI_CONTROL(SPI_0_BASE, 0x400);
   807bd4:	00c06474 	movhi	r3,401
-  807bd8:	18e40b04 	addi	r3,r3,-28628
+  807bd8:	18e41304 	addi	r3,r3,-28596
   807bdc:	00810004 	movi	r2,1024
   807be0:	18800035 	stwio	r2,0(r3)
 
 	do{
     	    status = IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE);//get status
   807be4:	00806474 	movhi	r2,401
-  807be8:	10a40a04 	addi	r2,r2,-28632
+  807be8:	10a41204 	addi	r2,r2,-28600
   807bec:	10800037 	ldwio	r2,0(r2)
   807bf0:	e0bffd05 	stb	r2,-12(fp)
 	}while (((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) == 0 ) &&
@@ -12538,13 +12542,13 @@ euint8 if_spiSend(hwInterface *iface, euint8 outgoing)
 	IOWR_ALTERA_AVALON_SPI_TXDATA(SPI_0_BASE, outgoing);
   807c1c:	e0ffff03 	ldbu	r3,-4(fp)
   807c20:	00806474 	movhi	r2,401
-  807c24:	10a40904 	addi	r2,r2,-28636
+  807c24:	10a41104 	addi	r2,r2,-28604
   807c28:	10c00035 	stwio	r3,0(r2)
     
 	/* Wait until the interface has finished transmitting */
 	do{status = IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE);}
   807c2c:	00806474 	movhi	r2,401
-  807c30:	10a40a04 	addi	r2,r2,-28632
+  807c30:	10a41204 	addi	r2,r2,-28600
   807c34:	10800037 	ldwio	r2,0(r2)
   807c38:	e0bffd05 	stb	r2,-12(fp)
 	while ((status & ALTERA_AVALON_SPI_STATUS_TMT_MSK) == 0);
@@ -12563,7 +12567,7 @@ euint8 if_spiSend(hwInterface *iface, euint8 outgoing)
   807c60:	1000051e 	bne	r2,zero,807c78 <if_spiSend+0xc4>
     	    SD_Data = IORD_ALTERA_AVALON_SPI_RXDATA(SPI_0_BASE);
   807c64:	00806474 	movhi	r2,401
-  807c68:	10a40804 	addi	r2,r2,-28640
+  807c68:	10a41004 	addi	r2,r2,-28608
   807c6c:	10800037 	ldwio	r2,0(r2)
   807c70:	e0bffd45 	stb	r2,-11(fp)
   807c74:	00000306 	br	807c84 <if_spiSend+0xd0>
@@ -12577,12 +12581,12 @@ euint8 if_spiSend(hwInterface *iface, euint8 outgoing)
  
 	IOWR_ALTERA_AVALON_SPI_SLAVE_SEL(SPI_0_BASE, 1);
   807c84:	00c06474 	movhi	r3,401
-  807c88:	18e40d04 	addi	r3,r3,-28620
+  807c88:	18e41504 	addi	r3,r3,-28588
   807c8c:	00800044 	movi	r2,1
   807c90:	18800035 	stwio	r2,0(r3)
 	IOWR_ALTERA_AVALON_SPI_CONTROL(SPI_0_BASE, 0);
   807c94:	00806474 	movhi	r2,401
-  807c98:	10a40b04 	addi	r2,r2,-28628
+  807c98:	10a41304 	addi	r2,r2,-28596
   807c9c:	10000035 	stwio	zero,0(r2)
  
 	if( (status & 0x100) !=0)
@@ -12622,7 +12626,7 @@ euint8 if_spi_sendbuf(hwInterface *iface, euint8 *buf, euint16 len)
     /* Set the SSO bit (force chipselect) */
     IOWR_ALTERA_AVALON_SPI_CONTROL(SPI_0_BASE, 0x400);
   807cf0:	00c06474 	movhi	r3,401
-  807cf4:	18e40b04 	addi	r3,r3,-28628
+  807cf4:	18e41304 	addi	r3,r3,-28596
   807cf8:	00810004 	movi	r2,1024
   807cfc:	18800035 	stwio	r2,0(r3)
 
@@ -12633,7 +12637,7 @@ euint8 if_spi_sendbuf(hwInterface *iface, euint8 *buf, euint16 len)
         do{
             status = IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE);//get status
   807d08:	00806474 	movhi	r2,401
-  807d0c:	10a40a04 	addi	r2,r2,-28632
+  807d0c:	10a41204 	addi	r2,r2,-28600
   807d10:	10800037 	ldwio	r2,0(r2)
   807d14:	e0bffc85 	stb	r2,-14(fp)
         }while ((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) == 0 );
@@ -12651,7 +12655,7 @@ euint8 if_spi_sendbuf(hwInterface *iface, euint8 *buf, euint16 len)
   807d38:	10800003 	ldbu	r2,0(r2)
   807d3c:	10c03fcc 	andi	r3,r2,255
   807d40:	00806474 	movhi	r2,401
-  807d44:	10a40904 	addi	r2,r2,-28636
+  807d44:	10a41104 	addi	r2,r2,-28604
   807d48:	10c00035 	stwio	r3,0(r2)
     alt_u16 i;
    
@@ -12672,7 +12676,7 @@ euint8 if_spi_sendbuf(hwInterface *iface, euint8 *buf, euint16 len)
     do{
         status = IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE);//get status
   807d64:	00806474 	movhi	r2,401
-  807d68:	10a40a04 	addi	r2,r2,-28632
+  807d68:	10a41204 	addi	r2,r2,-28600
   807d6c:	10800037 	ldwio	r2,0(r2)
   807d70:	e0bffc85 	stb	r2,-14(fp)
     }while ((status & ALTERA_AVALON_SPI_STATUS_TMT_MSK) == 0 );
@@ -12683,7 +12687,7 @@ euint8 if_spi_sendbuf(hwInterface *iface, euint8 *buf, euint16 len)
  
     IOWR_ALTERA_AVALON_SPI_CONTROL(SPI_0_BASE, 0);
   807d84:	00806474 	movhi	r2,401
-  807d88:	10a40b04 	addi	r2,r2,-28628
+  807d88:	10a41304 	addi	r2,r2,-28596
   807d8c:	10000035 	stwio	zero,0(r2)
     return (0);
   807d90:	0005883a 	mov	r2,zero
@@ -12711,13 +12715,13 @@ euint8 if_spi_readbuf(hwInterface *iface, euint8 *buf, euint16 len)
     /* Set the SSO bit (force chipselect) */
     IOWR_ALTERA_AVALON_SPI_CONTROL(SPI_0_BASE, 0x400);
   807dbc:	00c06474 	movhi	r3,401
-  807dc0:	18e40b04 	addi	r3,r3,-28628
+  807dc0:	18e41304 	addi	r3,r3,-28596
   807dc4:	00810004 	movi	r2,1024
   807dc8:	18800035 	stwio	r2,0(r3)
     /* Clear RX reg*/
     buf[0] = IORD_ALTERA_AVALON_SPI_RXDATA(SPI_0_BASE);
   807dcc:	00806474 	movhi	r2,401
-  807dd0:	10a40804 	addi	r2,r2,-28640
+  807dd0:	10a41004 	addi	r2,r2,-28608
   807dd4:	10800037 	ldwio	r2,0(r2)
   807dd8:	1007883a 	mov	r3,r2
   807ddc:	e0bffe17 	ldw	r2,-8(fp)
@@ -12726,7 +12730,7 @@ euint8 if_spi_readbuf(hwInterface *iface, euint8 *buf, euint16 len)
     do{
         status = IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE);//get status
   807de4:	00806474 	movhi	r2,401
-  807de8:	10a40a04 	addi	r2,r2,-28632
+  807de8:	10a41204 	addi	r2,r2,-28600
   807dec:	10800037 	ldwio	r2,0(r2)
   807df0:	e0bffc85 	stb	r2,-14(fp)
     }while ((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) == 0 );
@@ -12741,14 +12745,14 @@ euint8 if_spi_readbuf(hwInterface *iface, euint8 *buf, euint16 len)
     {
         IOWR_ALTERA_AVALON_SPI_TXDATA(SPI_0_BASE, DUMMY);
   807e0c:	00c06474 	movhi	r3,401
-  807e10:	18e40904 	addi	r3,r3,-28636
+  807e10:	18e41104 	addi	r3,r3,-28604
   807e14:	00803fc4 	movi	r2,255
   807e18:	18800035 	stwio	r2,0(r3)
         /* Wait until the interface has finished transmitting */
         
         while ((IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE) & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) == 0);
   807e1c:	00806474 	movhi	r2,401
-  807e20:	10a40a04 	addi	r2,r2,-28632
+  807e20:	10a41204 	addi	r2,r2,-28600
   807e24:	10800037 	ldwio	r2,0(r2)
   807e28:	1080200c 	andi	r2,r2,128
   807e2c:	1005003a 	cmpeq	r2,r2,zero
@@ -12761,7 +12765,7 @@ euint8 if_spi_readbuf(hwInterface *iface, euint8 *buf, euint16 len)
   807e3c:	e0bffe17 	ldw	r2,-8(fp)
   807e40:	1887883a 	add	r3,r3,r2
   807e44:	00806474 	movhi	r2,401
-  807e48:	10a40804 	addi	r2,r2,-28640
+  807e48:	10a41004 	addi	r2,r2,-28608
   807e4c:	10800037 	ldwio	r2,0(r2)
   807e50:	18800005 	stb	r2,0(r3)
     /* wait till transmit and ready ok */
@@ -12783,7 +12787,7 @@ euint8 if_spi_readbuf(hwInterface *iface, euint8 *buf, euint16 len)
  
     IOWR_ALTERA_AVALON_SPI_CONTROL(SPI_0_BASE, 0);
   807e6c:	00806474 	movhi	r2,401
-  807e70:	10a40b04 	addi	r2,r2,-28628
+  807e70:	10a41304 	addi	r2,r2,-28596
   807e74:	10000035 	stwio	zero,0(r2)
     return (0);
   807e78:	0005883a 	mov	r2,zero
@@ -15251,15 +15255,15 @@ int main(void) {
 	fileNames[crashConst] = "crash.wav";
   8097b0:	008020b4 	movhi	r2,130
   8097b4:	1084e604 	addi	r2,r2,5016
-  8097b8:	e0bffc15 	stw	r2,-16(fp)
+  8097b8:	e0bffe15 	stw	r2,-8(fp)
 	fileNames[hihatConst] = "hihat.wav";
   8097bc:	008020b4 	movhi	r2,130
   8097c0:	1084e904 	addi	r2,r2,5028
-  8097c4:	e0bffd15 	stw	r2,-12(fp)
+  8097c4:	e0bffc15 	stw	r2,-16(fp)
 	fileNames[hihat2Const] = "hithat2.wav";
   8097c8:	008020b4 	movhi	r2,130
   8097cc:	1084ec04 	addi	r2,r2,5040
-  8097d0:	e0bffe15 	stw	r2,-8(fp)
+  8097d0:	e0bffd15 	stw	r2,-12(fp)
 	fileNames[kickConst] = "kick.wav";
   8097d4:	008020b4 	movhi	r2,130
   8097d8:	1084ef04 	addi	r2,r2,5052
@@ -15363,19 +15367,19 @@ int main(void) {
   8098dc:	0809dc80 	call	809dc8 <sdRead>
   8098e0:	e0bd9915 	stw	r2,-2460(fp)
 	crashTemp = sdRead(fileNames[crashConst], &efsl, &readFile);
-  8098e4:	e13ffc17 	ldw	r4,-16(fp)
+  8098e4:	e13ffe17 	ldw	r4,-8(fp)
   8098e8:	e17d9c04 	addi	r5,fp,-2448
   8098ec:	e1bfe504 	addi	r6,fp,-108
   8098f0:	0809dc80 	call	809dc8 <sdRead>
   8098f4:	e0bd9815 	stw	r2,-2464(fp)
 	hihatTemp = sdRead(fileNames[hihatConst], &efsl, &readFile);
-  8098f8:	e13ffd17 	ldw	r4,-12(fp)
+  8098f8:	e13ffc17 	ldw	r4,-16(fp)
   8098fc:	e17d9c04 	addi	r5,fp,-2448
   809900:	e1bfe504 	addi	r6,fp,-108
   809904:	0809dc80 	call	809dc8 <sdRead>
   809908:	e0bd9715 	stw	r2,-2468(fp)
 	hihat2Temp = sdRead(fileNames[hihat2Const], &efsl, &readFile);
-  80990c:	e13ffe17 	ldw	r4,-8(fp)
+  80990c:	e13ffd17 	ldw	r4,-12(fp)
   809910:	e17d9c04 	addi	r5,fp,-2448
   809914:	e1bfe504 	addi	r6,fp,-108
   809918:	0809dc80 	call	809dc8 <sdRead>
@@ -15516,74 +15520,74 @@ int main(void) {
 	drums[crashConst]->waveform = crash;
   809ab0:	00802374 	movhi	r2,141
   809ab4:	10b45004 	addi	r2,r2,-11968
-  809ab8:	10c00317 	ldw	r3,12(r2)
+  809ab8:	10c00517 	ldw	r3,20(r2)
   809abc:	00802274 	movhi	r2,137
   809ac0:	10b4e204 	addi	r2,r2,-11384
   809ac4:	18800015 	stw	r2,0(r3)
 	drums[crashConst]->numberOfSamples = crashNumberSamples;
   809ac8:	00802374 	movhi	r2,141
   809acc:	10b45004 	addi	r2,r2,-11968
-  809ad0:	10c00317 	ldw	r3,12(r2)
+  809ad0:	10c00517 	ldw	r3,20(r2)
   809ad4:	00bddb94 	movui	r2,63342
   809ad8:	18800315 	stw	r2,12(r3)
 	drums[crashConst]->index = 0;
   809adc:	00802374 	movhi	r2,141
   809ae0:	10b45004 	addi	r2,r2,-11968
-  809ae4:	10800317 	ldw	r2,12(r2)
+  809ae4:	10800517 	ldw	r2,20(r2)
   809ae8:	10000115 	stw	zero,4(r2)
 	drums[crashConst]->scale = 1;
   809aec:	00802374 	movhi	r2,141
   809af0:	10b45004 	addi	r2,r2,-11968
-  809af4:	10c00317 	ldw	r3,12(r2)
+  809af4:	10c00517 	ldw	r3,20(r2)
   809af8:	00800044 	movi	r2,1
   809afc:	18800215 	stw	r2,8(r3)
 	drums[hihatConst]->waveform = hihat;
   809b00:	00802374 	movhi	r2,141
   809b04:	10b45004 	addi	r2,r2,-11968
-  809b08:	10c00417 	ldw	r3,16(r2)
+  809b08:	10c00317 	ldw	r3,12(r2)
   809b0c:	00802374 	movhi	r2,141
   809b10:	10909a04 	addi	r2,r2,17000
   809b14:	18800015 	stw	r2,0(r3)
 	drums[hihatConst]->numberOfSamples = hihatNumberSamples;
   809b18:	00802374 	movhi	r2,141
   809b1c:	10b45004 	addi	r2,r2,-11968
-  809b20:	10c00417 	ldw	r3,16(r2)
+  809b20:	10c00317 	ldw	r3,12(r2)
   809b24:	00800074 	movhi	r2,1
   809b28:	109fea84 	addi	r2,r2,32682
   809b2c:	18800315 	stw	r2,12(r3)
 	drums[hihatConst]->index = 0;
   809b30:	00802374 	movhi	r2,141
   809b34:	10b45004 	addi	r2,r2,-11968
-  809b38:	10800417 	ldw	r2,16(r2)
+  809b38:	10800317 	ldw	r2,12(r2)
   809b3c:	10000115 	stw	zero,4(r2)
 	drums[hihatConst]->scale = 1;
   809b40:	00802374 	movhi	r2,141
   809b44:	10b45004 	addi	r2,r2,-11968
-  809b48:	10c00417 	ldw	r3,16(r2)
+  809b48:	10c00317 	ldw	r3,12(r2)
   809b4c:	00800044 	movi	r2,1
   809b50:	18800215 	stw	r2,8(r3)
 	drums[hihat2Const]->waveform = hihat2;
   809b54:	00802374 	movhi	r2,141
   809b58:	10b45004 	addi	r2,r2,-11968
-  809b5c:	10c00517 	ldw	r3,20(r2)
+  809b5c:	10c00417 	ldw	r3,16(r2)
   809b60:	00802234 	movhi	r2,136
   809b64:	109c3904 	addi	r2,r2,28900
   809b68:	18800015 	stw	r2,0(r3)
 	drums[hihat2Const]->numberOfSamples = hihat2NumberSamples;
   809b6c:	00802374 	movhi	r2,141
   809b70:	10b45004 	addi	r2,r2,-11968
-  809b74:	10c00517 	ldw	r3,20(r2)
+  809b74:	10c00417 	ldw	r3,16(r2)
   809b78:	00862a44 	movi	r2,6313
   809b7c:	18800315 	stw	r2,12(r3)
 	drums[hihat2Const]->index = 0;
   809b80:	00802374 	movhi	r2,141
   809b84:	10b45004 	addi	r2,r2,-11968
-  809b88:	10800517 	ldw	r2,20(r2)
+  809b88:	10800417 	ldw	r2,16(r2)
   809b8c:	10000115 	stw	zero,4(r2)
 	drums[hihat2Const]->scale = 1;
   809b90:	00802374 	movhi	r2,141
   809b94:	10b45004 	addi	r2,r2,-11968
-  809b98:	10c00517 	ldw	r3,20(r2)
+  809b98:	10c00417 	ldw	r3,16(r2)
   809b9c:	00800044 	movi	r2,1
   809ba0:	18800215 	stw	r2,8(r3)
 	drums[tomConst]->waveform = tom;
@@ -15938,6 +15942,8 @@ void parseWav(euint8* fileBuffer, unsigned long numberSamples, unsigned int *fil
   809f58:	1004923a 	slli	r2,r2,8
   809f5c:	2084b03a 	or	r2,r4,r2
   809f60:	e0bffb15 	stw	r2,-20(fp)
+
+		// we half the base waveform in half to avoid clipping
 		if(temp > 32768) {
   809f64:	e0fffb17 	ldw	r3,-20(fp)
   809f68:	00a00014 	movui	r2,32768
@@ -42517,7 +42523,7 @@ void alt_sys_init( void )
   81d5ac:	d839883a 	mov	fp,sp
     ALTERA_AVALON_TIMER_INIT ( TIMER_0, timer_0);
   81d5b0:	01006474 	movhi	r4,401
-  81d5b4:	21241004 	addi	r4,r4,-28608
+  81d5b4:	21241804 	addi	r4,r4,-28576
   81d5b8:	000b883a 	mov	r5,zero
   81d5bc:	000d883a 	mov	r6,zero
   81d5c0:	01c0fa04 	movi	r7,1000
