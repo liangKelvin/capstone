@@ -193,12 +193,7 @@ void task1(void* pdata){
 
 	//printf("gx =  %f, gy = %f, gz = %f \n", gx, gy, gz);
 	//printf("%f\n", gy);
-	char str1[5];
-	sprintf(str1, "%f", gz);
 
-	alt_up_character_lcd_init(myLCD);
-	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-	alt_up_character_lcd_string(myLCD, str1);
 	// Horizontal Tracking
 	if((gz) < RIGHT_THRESHOLD){
 		if(!gz_hit_flag_1 && drum1_index != tom2Const && drum1_index != hihat2Const){
@@ -284,6 +279,12 @@ void task1(void* pdata){
 	gy = (float)gyroCount[1]*gRes;
 	gz = (float)gyroCount[2]*gRes;
 
+	char str1[10];
+	sprintf(str1, "%f", ax*1000);
+
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, str1);
 
 
 
