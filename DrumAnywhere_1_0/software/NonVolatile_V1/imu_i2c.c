@@ -47,6 +47,7 @@ acceleration and gyration values using appropriate resolution functions.
 #include "MPU9250/mpu9250.h"
 #include "altera_avalon_pio_regs.h"
 #include <time.h>
+#include "altera_up_avalon_character_lcd.h"
 
 void init_pedal_pio();
 void interrupt_isr_pedalPress(void *context, alt_u32 id);
@@ -59,9 +60,17 @@ OS_STK    task1_stk[TASK_STACKSIZE];
 
 #define TASK1_PRIORITY      1
 
+// globals
+alt_up_character_lcd_dev* myLCD;
+int kick_drum;
 
 /* This task initializes the IMUs using I2C communication and reads data from the registers */
 void task1(void* pdata){
+
+	// init lcd
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, "Self Testing");
 
 	//Temporary buffer to read into
 	alt_u8 ReadBuf[6];
@@ -147,8 +156,21 @@ void task1(void* pdata){
 	int drum2_gy_count_up = 0;
 	int drum2_gy_count_down = 0;
 
-  while (1)
-  {
+	// init lcd
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, "Done Testing");
+
+	kick_drum = 0;
+
+  while (1) {
+
+	if(kick_drum == 1){
+		IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 6|0x08);
+		OSTimeDlyHMSM(0, 0, 0, 1);
+		IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, INTERRUPT_RESET);
+		kick_drum = 0;
+	}
 	//printf("pedal values %d\n",IORD_ALTERA_AVALON_PIO_DATA(FOOTPEDAL_BASE));
 
 	// Variables to hold latest sensor data values
@@ -180,61 +202,77 @@ void task1(void* pdata){
 
 	//printf("gx =  %f, gy = %f, gz = %f \n", gx, gy, gz);
 	//printf("%f\n", gy);
+	char str1[5];
+	sprintf(str1, "%f", gz);
+
+	alt_up_character_lcd_init(myLCD);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, str1);
+
 
 	// Horizontal Tracking
-	if((gz) < -200){
-		if(!gz_hit_flag_1 && drum1_index != 2 && drum1_index != 5){
+	if((gz) < RIGHT_THRESHOLD){
+		if(!gz_hit_flag_1 && drum1_index != tom2Const && drum1_index != hihat2Const){
 			drum1_index += 1;
 			gz_hit_flag_1 = 1;
 		}
 	}
-	else if (gz < 30){
+	else if (gz < RIGHT_THRESHOLD_RESET){
 		gz_hit_flag_1 = 0;
 	}
 
-	if((gz) > 200){
-		if(!gz_hit_flag_1 && drum1_index != 0 && drum1_index != 3){
+	if((gz) > LEFT_THRESHOLD){
+		if(!gz_hit_flag_1 && drum1_index != snareConst && drum1_index != crashConst){
 			drum1_index -= 1;
 			gz_hit_flag_1 = 1;
 		}
 	}
-	else if (gz > 30){
+	else if (gz > LEFT_THRESHOLD_RESET){
 		gz_hit_flag_1 = 0;
 	}
 
 	// Vertical shift tracking
-	if(gy < -70){
+	if(gy < UP_THRESHOLD){
 		drum1_gy_count_up++;
 	}
 	else{
 		drum1_gy_count_up = 0;
 	}
 
-	if(gy > 50){
+	if(gy > DOWN_THRESHOLD){
 		drum1_gy_count_down++;
 	}
 	else{
 		drum1_gy_count_down = 0;
 	}
 
-	if(drum1_gy_count_up > 14 && drum1_index < 3 ){
-		drum1_index += 3;
+	if(drum1_gy_count_up > SHIFT_UP_COUNT && drum1_index < crashConst ){
+		drum1_index += SHIFT_ROW;
 	}
-	if(drum1_gy_count_down > 13 && drum1_index > 2){
-		drum1_index -= 3;
+	if(drum1_gy_count_down > SHIFT_DOWN_COUNT && drum1_index > tom2Const){
+		drum1_index -= SHIFT_ROW;
 	}
 
 	// Hits
-	if((((az - d1_az_old)*1000) < -1000)){
+	if((((az - d1_az_old)*NEWTON_SCALE) < HIT_THRESHOLD)){
 		if(!hit_flag_1){
 			//printf("Hit One: Position %d\n", drum1_index);
-			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum1_index|0x08);
+
+			char str1[5];
+			sprintf(str1, "%d", drum1_index);
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, str1);
+
+
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum1_index|INTERRUPT_MASK);
 			OSTimeDlyHMSM(0, 0, 0, 1);
-			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, INTERRUPT_RESET);
 			hit_flag_1 = 1;
 		}
 	}
-	else if ((((az - d1_az_old)*1000) > 1000)){
+	else if ((((az - d1_az_old)*NEWTON_SCALE) > NO_HIT_THRESHOLD)){
 		hit_flag_1 = 0;
 	}
 	d1_az_old =az;
@@ -257,60 +295,72 @@ void task1(void* pdata){
 	gy = (float)gyroCount[1]*gRes;
 	gz = (float)gyroCount[2]*gRes;
 
+
+
+
 	// Horizontal Tracking
-	if((gz) < -200){
-		if(!gz_hit_flag_2 && drum2_index != 2 && drum2_index != 5){
+	if((gz) < RIGHT_THRESHOLD){
+		if(!gz_hit_flag_2 && drum2_index != tom2Const && drum2_index != hihat2Const){
 			drum2_index += 1;
 			gz_hit_flag_2 = 1;
 		}
 	}
-	else if (gz < 30){
+	else if (gz < RIGHT_THRESHOLD_RESET){
 		gz_hit_flag_2 = 0;
 	}
 
-	if((gz) > 200){
-		if(!gz_hit_flag_2 && drum2_index != 0 && drum2_index != 3){
+	if((gz) > LEFT_THRESHOLD){
+		if(!gz_hit_flag_2 && drum2_index != snareConst && drum2_index != crashConst){
 			drum2_index -= 1;
 			gz_hit_flag_2 = 1;
 		}
 	}
-	else if (gz > 30){
+	else if (gz > LEFT_THRESHOLD_RESET){
 		gz_hit_flag_2 = 0;
 	}
 
 	// Vertical shift tracking
-	if(gy < -70){
+	if(gy < UP_THRESHOLD){
 		drum2_gy_count_up++;
 	}
 	else{
 		drum2_gy_count_up = 0;
 	}
 
-	if(gy > 50){
+	if(gy > DOWN_THRESHOLD){
 		drum2_gy_count_down++;
 	}
 	else{
 		drum2_gy_count_down = 0;
 	}
 
-	if(drum2_gy_count_up > 14 && drum2_index < 3 ){
-		drum2_index += 3;
+	if(drum2_gy_count_up > SHIFT_UP_COUNT && drum2_index < crashConst){
+		drum2_index += SHIFT_ROW;
 	}
-	if(drum2_gy_count_down > 13 && drum2_index > 2){
-		drum2_index -= 3;
+	if(drum2_gy_count_down > SHIFT_DOWN_COUNT && drum2_index > tom2Const){
+		drum2_index -= SHIFT_ROW;
 	}
 
 	// Hits
-	if((((az - d2_az_old)*1000) < -1000)){
+	if((((az - d2_az_old)*NEWTON_SCALE) < HIT_THRESHOLD)){
 		if(!hit_flag_2){
 			//printf("Hit two: Position %d\n", drum2_index);
-			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum2_index|0x08);
+
+			char str[5];
+			sprintf(str, "%d", drum2_index);
+
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, str);
+
+
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum2_index|INTERRUPT_MASK);
 			OSTimeDlyHMSM(0, 0, 0, 1);
-			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, INTERRUPT_RESET);
 			hit_flag_2 = 1;
 		}
 	}
-	else if ((((az - d2_az_old)*1000) > 1000)){
+	else if ((((az - d2_az_old)*NEWTON_SCALE) > NO_HIT_THRESHOLD)){
 		hit_flag_2 = 0;
 	}
 	d2_az_old =az;
@@ -322,6 +372,8 @@ void task1(void* pdata){
 /* The main function creates two task and starts multi-tasking */
 int main(void)
 {
+  myLCD = alt_up_character_lcd_open_dev(CHARACTER_LCD_0_NAME);
+  alt_up_character_lcd_init(myLCD);
   init_pedal_pio();
 
   OSTaskCreateExt(task1,
@@ -351,12 +403,13 @@ void init_pedal_pio() {
 
 void interrupt_isr_pedalPress(void *context, alt_u32 id) {
 
-	IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 6|0x08);
+	/*IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 6|0x08);
 	int i;
 	for (i = 0; i < 50; i++) {
 		IORD_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE);
 	}
-	IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);
+	IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 0x00);*/
+	kick_drum = 1;
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE, 0x01);
 	IORD_ALTERA_AVALON_PIO_EDGE_CAP(FOOTPEDAL_BASE);
 }
