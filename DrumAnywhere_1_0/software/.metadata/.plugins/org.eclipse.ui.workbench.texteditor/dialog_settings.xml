@@ -13,8 +13,9 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="ALTPLL_0_BASE" key="selection"/>
+		<item value="d2_az_old" key="selection"/>
 		<list key="findhistory">
+			<item value="d2_az_old"/>
 			<item value="drum"/>
 			<item value="gyro_config"/>
 			<item value="gyro_congig"/>
@@ -22,7 +23,6 @@
 			<item value="I2C_SDA_BASE"/>
 			<item value="I2C_SCL_BASE"/>
 			<item value="200"/>
-			<item value="int"/>
 		</list>
 		<list key="replacehistory">
 			<item value="sda_base"/>

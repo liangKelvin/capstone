@@ -148,7 +148,7 @@ architecture structure of DrumAnywhere_1_0 is
             i2c_sda_external_connection_export               : inout std_logic                     := 'X';
 				i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
             i2c_sda_2_external_connection_export             : inout std_logic                     := 'X';              -- export	
-				drum_out_external_connection_export              : out   std_logic_vector(3 downto 0);
+				drum_out_external_connection_export              : out   std_logic_vector(5 downto 0);
 				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_read_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
@@ -223,7 +223,7 @@ begin
             i2c_sda_external_connection_export               => GPIO_0(25),                --         
 				i2c_scl_2_external_connection_export             => GPIO_0(32),            --               i2c_scl_2_external_connection.export
             i2c_sda_2_external_connection_export             => GPIO_0(33),
-				drum_out_external_connection_export              => GPIO_1(29 downto 26),
+				drum_out_external_connection_export              => GPIO_1(29 downto 24),
 				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       => FL_OE_N,       --               tristate_conduit_bridge_0_out.generic_tristate_controller_0_tcm_read_n_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         => FL_DQ,         --                                            .generic_tristate_controller_0_tcm_data_out
             tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out => FL_CE_N, --                                            .generic_tristate_controller_0_tcm_chipselect_n_out

@@ -306,8 +306,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 1144)
 		(output)
-		(text "drum_out_external_connection_export[3..0]" (rect 0 0 173 12)(font "Arial" (font_size 8)))
-		(text "drum_out_external_connection_export[3..0]" (rect 4 1133 250 1144)(font "Arial" (font_size 8)))
+		(text "drum_out_external_connection_export[5..0]" (rect 0 0 173 12)(font "Arial" (font_size 8)))
+		(text "drum_out_external_connection_export[5..0]" (rect 4 1133 250 1144)(font "Arial" (font_size 8)))
 		(line (pt 0 1144)(pt 432 1144)(line_width 3))
 	)
 	(port

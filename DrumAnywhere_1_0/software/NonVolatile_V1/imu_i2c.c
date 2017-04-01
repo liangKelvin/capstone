@@ -162,25 +162,24 @@ void task1(void* pdata){
 	alt_up_character_lcd_string(myLCD, "Done Testing");
 
 	kick_drum = 0;
+	float d1_az_old = 0;
+	float d2_az_old = 0;
+	// Variables to hold latest sensor data values
+	float ax, ay, az, gx, gy, gz;
+	int d1_intensity, d2_intensity;
+	// Stores the 16-bit signed accelerometer and gyroscope sensor output
+	alt_16 accelCount[3];
+	alt_16 gyroCount[3];
 
   while (1) {
 
 	if(kick_drum == 1){
-		IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 6|0x08);
+		IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, 6|0x08|16);
 		OSTimeDlyHMSM(0, 0, 0, 1);
 		IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, INTERRUPT_RESET);
 		kick_drum = 0;
 	}
 	//printf("pedal values %d\n",IORD_ALTERA_AVALON_PIO_DATA(FOOTPEDAL_BASE));
-
-	// Variables to hold latest sensor data values
-	float ax, ay, az, gx, gy, gz, d1_az_old, d2_az_old;
-
-	// Stores the 16-bit signed accelerometer and gyroscope sensor output
-	alt_16 accelCount[3];
-	alt_16 gyroCount[3];
-	d1_az_old = 0;
-	d2_az_old = 0;
 
 	//********************* DRUMSTICK #1 *********************************************
 	// Read the x/y/z accelerometer values
@@ -202,13 +201,12 @@ void task1(void* pdata){
 
 	//printf("gx =  %f, gy = %f, gz = %f \n", gx, gy, gz);
 	//printf("%f\n", gy);
-	char str1[5];
-	sprintf(str1, "%f", gz);
-
+	/*char str1[7];
+	sprintf(str1, "%f", az*NEWTON_SCALE);
 	alt_up_character_lcd_init(myLCD);
 	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 	alt_up_character_lcd_string(myLCD, str1);
-
+*/
 
 	// Horizontal Tracking
 	if((gz) < RIGHT_THRESHOLD){
@@ -254,28 +252,38 @@ void task1(void* pdata){
 	}
 
 	// Hits
-	if((((az - d1_az_old)*NEWTON_SCALE) < HIT_THRESHOLD)){
-		if(!hit_flag_1){
-			//printf("Hit One: Position %d\n", drum1_index);
+	if((((az)*NEWTON_SCALE) < HIT_THRESHOLD)){
+		if(!hit_flag_1 && d1_az_old < az){
 
-			char str1[5];
-			sprintf(str1, "%d", drum1_index);
+			//printf("Hit One: Position %d\n", drum1_index);
+			if(d1_az_old*NEWTON_SCALE > SOFT_HIT ){
+				d1_intensity = 16;
+			}
+			if(d1_az_old*NEWTON_SCALE < SOFT_HIT && d1_az_old*NEWTON_SCALE > MEDIUM_HIT ){
+				d1_intensity = 32;
+			}
+			if(d1_az_old*NEWTON_SCALE < MEDIUM_HIT){
+				d1_intensity = 48;
+			}
+			/*char str1[5];
+			sprintf(str1, "%d", d1_intensity);
 
 			alt_up_character_lcd_init(myLCD);
 			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
 			alt_up_character_lcd_string(myLCD, str1);
-
-
-			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum1_index|INTERRUPT_MASK);
+*/
+			int index_or_intensity = drum1_index|d1_intensity;
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, index_or_intensity|INTERRUPT_MASK);
 			OSTimeDlyHMSM(0, 0, 0, 1);
 			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, INTERRUPT_RESET);
 			hit_flag_1 = 1;
 		}
+
 	}
-	else if ((((az - d1_az_old)*NEWTON_SCALE) > NO_HIT_THRESHOLD)){
+	else if ((((az)*NEWTON_SCALE) > NO_HIT_THRESHOLD)){
 		hit_flag_1 = 0;
 	}
-	d1_az_old =az;
+	d1_az_old = az;
 
 	// ************************ DRUMSTICK #2 **********************************
 	// Read the x/y/z accelerometer values
@@ -341,29 +349,47 @@ void task1(void* pdata){
 		drum2_index -= SHIFT_ROW;
 	}
 
-	// Hits
-	if((((az - d2_az_old)*NEWTON_SCALE) < HIT_THRESHOLD)){
-		if(!hit_flag_2){
-			//printf("Hit two: Position %d\n", drum2_index);
 
-			char str[5];
-			sprintf(str, "%d", drum2_index);
+	// Hits
+	if((((az)*NEWTON_SCALE) < HIT_THRESHOLD)){
+		if(!hit_flag_2 && ((d2_az_old*NEWTON_SCALE) < az*(NEWTON_SCALE))){
+
+			char str1[10];
+			sprintf(str1, "%f", az*NEWTON_SCALE);
+			alt_up_character_lcd_init(myLCD);
+			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+			alt_up_character_lcd_string(myLCD, str1);
+
+
+			//printf("Hit One: Position %d\n", drum1_index);
+			if(d2_az_old*NEWTON_SCALE > SOFT_HIT ){
+				d2_intensity = 16;
+			}
+			if(d2_az_old*NEWTON_SCALE < SOFT_HIT && d2_az_old*NEWTON_SCALE > MEDIUM_HIT ){
+				d2_intensity = 32;
+			}
+			if(d2_az_old*NEWTON_SCALE < MEDIUM_HIT){
+				d2_intensity = 48;
+			}
+
+			/*char str1[5];
+			sprintf(str1, "%d", d2_intensity);
 
 			alt_up_character_lcd_init(myLCD);
 			alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
-			alt_up_character_lcd_string(myLCD, str);
-
-
-			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, drum2_index|INTERRUPT_MASK);
+			alt_up_character_lcd_string(myLCD, str1);
+*/
+			int index_or_intensity = drum2_index|d2_intensity;
+			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, index_or_intensity|INTERRUPT_MASK);
 			OSTimeDlyHMSM(0, 0, 0, 1);
 			IOWR_ALTERA_AVALON_PIO_DATA(DRUM_OUT_BASE, INTERRUPT_RESET);
 			hit_flag_2 = 1;
 		}
 	}
-	else if ((((az - d2_az_old)*NEWTON_SCALE) > NO_HIT_THRESHOLD)){
+	else if ((((az)*NEWTON_SCALE) > NO_HIT_THRESHOLD)){
 		hit_flag_2 = 0;
 	}
-	d2_az_old =az;
+	d2_az_old = az;
 
 	OSTimeDlyHMSM(0, 0, 0, 1);
   }
