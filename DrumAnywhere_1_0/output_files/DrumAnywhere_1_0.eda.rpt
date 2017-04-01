@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DrumAnywhere_1_0
-Thu Mar 30 17:39:22 2017
+Fri Mar 31 13:45:20 2017
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Mar 30 17:39:22 2017 ;
+; EDA Netlist Writer Status ; Successful - Fri Mar 31 13:45:20 2017 ;
 ; Revision Name             ; DrumAnywhere_1_0                      ;
 ; Top-level Entity Name     ; DrumAnywhere_1_0                      ;
 ; Family                    ; Cyclone II                            ;
@@ -84,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Mar 30 17:39:16 2017
+    Info: Processing started: Fri Mar 31 13:45:13 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off DrumAnywhere_1_0 -c DrumAnywhere_1_0
 Info (204026): Generated files "DrumAnywhere_1_0.vho", "DrumAnywhere_1_0_fast.vho", "DrumAnywhere_1_0_vhd.sdo" and "DrumAnywhere_1_0_vhd_fast.sdo" in directory "/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 365 megabytes
-    Info: Processing ended: Thu Mar 30 17:39:23 2017
-    Info: Elapsed time: 00:00:07
+    Info: Processing ended: Fri Mar 31 13:45:21 2017
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:05
 
 

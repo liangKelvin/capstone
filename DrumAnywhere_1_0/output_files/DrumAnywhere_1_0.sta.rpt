@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DrumAnywhere_1_0
-Thu Mar 30 17:39:14 2017
+Fri Mar 31 13:45:12 2017
 Quartus II 32-bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
 
 
@@ -283,8 +283,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 64    ; 64   ;
-; Unconstrained Input Port Paths  ; 72    ; 72   ;
+; Unconstrained Input Ports       ; 66    ; 66   ;
+; Unconstrained Input Port Paths  ; 76    ; 76   ;
 ; Unconstrained Output Ports      ; 129   ; 129  ;
 ; Unconstrained Output Port Paths ; 226   ; 226  ;
 +---------------------------------+-------+------+
@@ -296,7 +296,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Mar 30 17:39:11 2017
+    Info: Processing started: Fri Mar 31 13:45:09 2017
 Info: Command: quartus_sta DrumAnywhere_1_0 -c DrumAnywhere_1_0
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -489,8 +489,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 382 megabytes
-    Info: Processing ended: Thu Mar 30 17:39:14 2017
+    Info: Peak virtual memory: 377 megabytes
+    Info: Processing ended: Fri Mar 31 13:45:12 2017
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

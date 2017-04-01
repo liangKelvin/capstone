@@ -34,14 +34,21 @@ void interrupt_isr_de2Poll (void *context, alt_u32 id) {
 	int drum = IORD_ALTERA_AVALON_PIO_DATA(DE2_POLL_BASE);
 
 	drum = drum ^ DE2_mask;
-	setDrum(drum);
+	int scale = drum >> 4;
+	int pos = drum & 0xf;
+	setDrum(pos);
+	drums[pos]->scale = scale;
 
-	char str[5];
-	sprintf(str, "%d", drum);
+	char str[10];
+	char str2[10];
+	sprintf(str, "scale: %d", scale);
+	sprintf(str2, "pos: %d", pos);
 
 	alt_up_character_lcd_init(myLCD);
-	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 0);
 	alt_up_character_lcd_string(myLCD, str);
+	alt_up_character_lcd_set_cursor_pos(myLCD, 0, 1);
+	alt_up_character_lcd_string(myLCD, str2);
 
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(DE2_POLL_BASE, DE2_mask);
 

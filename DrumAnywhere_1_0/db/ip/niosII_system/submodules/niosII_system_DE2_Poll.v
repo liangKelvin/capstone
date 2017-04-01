@@ -39,27 +39,27 @@ module niosII_system_DE2_Poll (
   input   [  1: 0] address;
   input            chipselect;
   input            clk;
-  input   [  3: 0] in_port;
+  input   [  5: 0] in_port;
   input            reset_n;
   input            write_n;
   input   [ 31: 0] writedata;
 
   wire             clk_en;
-  reg     [  3: 0] d1_data_in;
-  reg     [  3: 0] d2_data_in;
-  wire    [  3: 0] data_in;
-  reg     [  3: 0] edge_capture;
+  reg     [  5: 0] d1_data_in;
+  reg     [  5: 0] d2_data_in;
+  wire    [  5: 0] data_in;
+  reg     [  5: 0] edge_capture;
   wire             edge_capture_wr_strobe;
-  wire    [  3: 0] edge_detect;
+  wire    [  5: 0] edge_detect;
   wire             irq;
-  reg     [  3: 0] irq_mask;
-  wire    [  3: 0] read_mux_out;
+  reg     [  5: 0] irq_mask;
+  wire    [  5: 0] read_mux_out;
   reg     [ 31: 0] readdata;
   assign clk_en = 1;
   //s1, which is an e_avalon_slave
-  assign read_mux_out = ({4 {(address == 0)}} & data_in) |
-    ({4 {(address == 2)}} & irq_mask) |
-    ({4 {(address == 3)}} & edge_capture);
+  assign read_mux_out = ({6 {(address == 0)}} & data_in) |
+    ({6 {(address == 2)}} & irq_mask) |
+    ({6 {(address == 3)}} & edge_capture);
 
   always @(posedge clk or negedge reset_n)
     begin
@@ -76,7 +76,7 @@ module niosII_system_DE2_Poll (
       if (reset_n == 0)
           irq_mask <= 0;
       else if (chipselect && ~write_n && (address == 2))
-          irq_mask <= writedata[3 : 0];
+          irq_mask <= writedata[5 : 0];
     end
 
 
@@ -127,6 +127,30 @@ module niosII_system_DE2_Poll (
               edge_capture[3] <= 0;
           else if (edge_detect[3])
               edge_capture[3] <= -1;
+    end
+
+
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          edge_capture[4] <= 0;
+      else if (clk_en)
+          if (edge_capture_wr_strobe && writedata[4])
+              edge_capture[4] <= 0;
+          else if (edge_detect[4])
+              edge_capture[4] <= -1;
+    end
+
+
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          edge_capture[5] <= 0;
+      else if (clk_en)
+          if (edge_capture_wr_strobe && writedata[5])
+              edge_capture[5] <= 0;
+          else if (edge_detect[5])
+              edge_capture[5] <= -1;
     end
 
 

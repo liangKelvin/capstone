@@ -185,6 +185,14 @@
          type = "String";
       }
    }
+   element Buttons.s1
+   {
+      datum baseAddress
+      {
+         value = "26251392";
+         type = "String";
+      }
+   }
    element onchip_memory2_0.s1
    {
       datum baseAddress
@@ -214,14 +222,6 @@
       datum baseAddress
       {
          value = "26251296";
-         type = "String";
-      }
-   }
-   element Buttons.s1
-   {
-      datum baseAddress
-      {
-         value = "26251392";
          type = "String";
       }
    }
@@ -325,7 +325,7 @@
  <parameter name="projectName">DrumAnywhere_1_0.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1490913719205" />
+ <parameter name="timeStamp" value="1490988962289" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript><![CDATA[# request a specific version of the scripting API
 package require -exact qsys 12.1
@@ -963,7 +963,7 @@ proc compose {} {
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="4" />
+  <parameter name="width" value="6" />
  </module>
  <connection
    kind="avalon"
