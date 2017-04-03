@@ -4,6 +4,10 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1171246083;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1171246083.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1975019795;cdt.managedbuild.tool.gnu.cpp.compiler.input.1646831256">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/drivers/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/"/>
@@ -314,6 +318,10 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1171246083;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1171246083.;cdt.managedbuild.tool.gnu.c.compiler.base.536135020;cdt.managedbuild.tool.gnu.c.compiler.input.1983680034">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/UCOSII/inc"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/HAL/inc"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/"/>
+<includePath path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/drivers/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/UCOSII/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/HAL/inc"/>
 <includePath path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1_bsp/"/>

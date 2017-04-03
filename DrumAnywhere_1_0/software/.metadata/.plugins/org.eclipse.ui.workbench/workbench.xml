@@ -34,13 +34,13 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu9250.h" partName="mpu9250.h" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1/MPU9250/mpu9250.h" title="mpu9250.h" tooltip="NonVolatile_V1/MPU9250/mpu9250.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NonVolatile_V1/MPU9250/mpu9250.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6869" selectionTopPixel="2827"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" partName="imu_i2c.c" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/i2c/imu_i2c.c" title="imu_i2c.c" tooltip="i2c/imu_i2c.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/i2c/imu_i2c.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1171"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" partName="imu_i2c.c" path="/afs/ualberta.ca/home/s/i/singla1/Desktop/NonVolatile/capstone/DrumAnywhere_1_0/software/NonVolatile_V1/imu_i2c.c" title="imu_i2c.c" tooltip="NonVolatile_V1/imu_i2c.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NonVolatile_V1/imu_i2c.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8200" selectionTopPixel="3033"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu9250.h" partName="mpu9250.h" path="/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/software/NonVolatile_V1/MPU9250/mpu9250.h" title="mpu9250.h" tooltip="NonVolatile_V1/MPU9250/mpu9250.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NonVolatile_V1/MPU9250/mpu9250.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7169" selectionTopPixel="3061"/>
 </editor>
 </editors>
 <views>
@@ -54,6 +54,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (40 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="486" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -71,7 +74,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.altera.sbtgui.ui.cPerspective">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="com.altera.sbtgui.ui.cPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -240,7 +243,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.16585025" ratioLeft="237" ratioRight="1192" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottom" ratio="0.72140765" ratioLeft="492" ratioRight="190" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.6158358" ratioLeft="420" ratioRight="262" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -273,160 +276,31 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/NonVolatile_V1/imu_i2c.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/NonVolatile_V1/MPU9250/mpu9250.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/NonVolatile_V1/MPU9250/mpu9250.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/NonVolatile/hello_ucosii.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/NonVolatile/imu_i2c.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/i2c/imu_i2c.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/NonVolatile_V1/MPU9250/mpu9250.h"/>
 </editors>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9216" y="0"/>
+<item historyLabel="hello_ucosii.c" index="0">
+<position/>
 </item>
-<item historyLabel="mpu9250.h" index="1">
-<position info="not_deleted" x="7143" y="0"/>
+<item historyLabel="hello_ucosii.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11914" y="0"/>
+<item historyLabel="imu_i2c.c" index="1">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7144" y="0"/>
+<item historyLabel="imu_i2c.c" index="1">
+<position info="not_deleted" x="8515" y="0"/>
 </item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9418" y="2"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="6865" y="3"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9418" y="2"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="6865" y="3"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9103" y="14"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7144" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9103" y="14"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7168" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="12523" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7168" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11886" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="6850" y="13"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11639" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="6850" y="13"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="8162" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7169" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11957" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7168" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11957" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7317" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9127" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7094" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9127" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7094" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11923" y="8"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7143" y="1"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11902" y="13"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7143" y="1"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="12194" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7143" y="1"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11592" y="9"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="6865" y="3"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11603" y="26"/>
-</item>
-<item historyLabel="mpu9250.h" index="2">
-<position info="not_deleted" x="7035" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11603" y="26"/>
+<item historyLabel="imu_i2c.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="7036" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11638" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="7168" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="11950" y="2"/>
-</item>
-<item historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="6898" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="9410" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="6761" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="8200" y="0"/>
-</item>
-<item historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="6761" y="0"/>
-</item>
-<item historyLabel="imu_i2c.c" index="0">
-<position info="not_deleted" x="8200" y="0"/>
+<position info="not_deleted" x="7782" y="0"/>
 </item>
 <item active="true" historyLabel="mpu9250.h" index="3">
-<position info="not_deleted" x="6761" y="0"/>
+<position info="not_deleted" x="6897" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -434,6 +308,9 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="topLeft"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -442,13 +319,11 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="imu_i2c.c" tooltip="NonVolatile_V1/imu_i2c.c">
-<persistable path="/NonVolatile_V1/imu_i2c.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu9250.h" tooltip="NonVolatile_V1/MPU9250/mpu9250.h">
 <persistable path="/NonVolatile_V1/MPU9250/mpu9250.h"/>
 </file>
@@ -490,6 +365,9 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_ucosii.c" tooltip="i2c/hello_ucosii.c">
 <persistable path="/i2c/hello_ucosii.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2cmaster.h" tooltip="i2ctest/i2c/i2cmaster.h">
+<persistable path="/i2ctest/i2c/i2cmaster.h"/>
 </file>
 </mruList>
 </workbench>
