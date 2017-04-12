@@ -102,60 +102,60 @@ architecture structure of DrumAnywhere_1_0 is
 
 	-- Declarations (optional)
 	
-	 component niosII_system is
-        port (
-            clk_clk                                 : in    std_logic                     := 'X';             -- clk
-            reset_reset_n                           : in    std_logic                     := 'X';             -- reset_n
-            sdram_0_wire_addr                       : out   DE2_SDRAM_ADDR_BUS;                    -- addr
-            sdram_0_wire_ba                         : out   std_logic_vector(1 downto 0);                     -- ba
-            sdram_0_wire_cas_n                      : out   std_logic;                                        -- cas_n
-            sdram_0_wire_cke                        : out   std_logic;                                        -- cke
-            sdram_0_wire_cs_n                       : out   std_logic;                                        -- cs_n
-            sdram_0_wire_dq                         : inout DE2_SDRAM_DATA_BUS := (others => 'X'); -- dq
-            sdram_0_wire_dqm                        : out   std_logic_vector(1 downto 0);                     -- dqm
-            sdram_0_wire_ras_n                      : out   std_logic;                                        -- ras_n
-            sdram_0_wire_we_n                       : out   std_logic;                                        -- we_n
-            altpll_0_c0_clk                         : out   std_logic;                                        -- clk
-            green_leds_external_connection_export   : out   DE2_LED_GREEN;                     -- export
-            switch_external_connection_export       : in    std_logic                     := 'X';             -- export
-            sram_0_external_interface_DQ            : inout DE2_SRAM_DATA_BUS := (others => 'X'); -- DQ
-            sram_0_external_interface_ADDR          : out   DE2_SRAM_ADDR_BUS;                    -- ADDR
-            sram_0_external_interface_LB_N          : out   std_logic;                                        -- LB_N
-            sram_0_external_interface_UB_N          : out   std_logic;                                        -- UB_N
-            sram_0_external_interface_CE_N          : out   std_logic;                                        -- CE_N
-            sram_0_external_interface_OE_N          : out   std_logic;                                        -- OE_N
-            sram_0_external_interface_WE_N          : out   std_logic;                                        -- WE_N
-            character_lcd_0_external_interface_DATA : inout DE2_LCD_DATA_BUS  := (others => 'X'); -- DATA
-            character_lcd_0_external_interface_ON   : out   std_logic;                                        -- ON
-            character_lcd_0_external_interface_BLON : out   std_logic;                                        -- BLON
-            character_lcd_0_external_interface_EN   : out   std_logic;                                        -- EN
-            character_lcd_0_external_interface_RS   : out   std_logic;                                        -- RS
-            character_lcd_0_external_interface_RW   : out   std_logic;                                         -- RW
-				clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
-            audio_and_video_config_0_external_interface_SDAT : inout std_logic;             -- SDAT
-            audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
-            audio_0_external_interface_ADCDAT                : in    std_logic;             -- ADCDAT
-            audio_0_external_interface_ADCLRCK               : in    std_logic;             -- ADCLRCK
-            audio_0_external_interface_BCLK                  : in    std_logic;             -- BCLK
-            audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
-            audio_0_external_interface_DACLRCK               : in    std_logic;
-				up_clocks_0_audio_clk_clk                        : out   std_logic;					-- clk				-- DACLRCK
-				spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
-            spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
-            spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
-            spi_0_external_SS_n                              : out   std_logic;                                         -- SS_n
-				i2c_scl_external_connection_export               : out   std_logic;                                        -- export
-            i2c_sda_external_connection_export               : inout std_logic                     := 'X';
-				i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
-            i2c_sda_2_external_connection_export             : inout std_logic                     := 'X';              -- export	
-				drum_out_external_connection_export              : out   std_logic_vector(5 downto 0);
-				tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_read_n_out
-            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
-            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
-            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_write_n_out
-            tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      : out   std_logic_vector(21 downto 0);
-				footpedal_external_connection_export                                             : in    std_logic                     := 'X'              -- export			
-		  );
+	component niosII_system is
+		port (
+			clk_clk                                 : in    std_logic                     := 'X';             -- clk
+			reset_reset_n                           : in    std_logic                     := 'X';             -- reset_n
+			sdram_0_wire_addr                       : out   DE2_SDRAM_ADDR_BUS;                    -- addr
+			sdram_0_wire_ba                         : out   std_logic_vector(1 downto 0);                     -- ba
+			sdram_0_wire_cas_n                      : out   std_logic;                                        -- cas_n
+			sdram_0_wire_cke                        : out   std_logic;                                        -- cke
+			sdram_0_wire_cs_n                       : out   std_logic;                                        -- cs_n
+			sdram_0_wire_dq                         : inout DE2_SDRAM_DATA_BUS := (others => 'X'); -- dq
+			sdram_0_wire_dqm                        : out   std_logic_vector(1 downto 0);                     -- dqm
+			sdram_0_wire_ras_n                      : out   std_logic;                                        -- ras_n
+			sdram_0_wire_we_n                       : out   std_logic;                                        -- we_n
+			altpll_0_c0_clk                         : out   std_logic;                                        -- clk
+			green_leds_external_connection_export   : out   DE2_LED_GREEN;                     -- export
+			switch_external_connection_export       : in    std_logic                     := 'X';             -- export
+			sram_0_external_interface_DQ            : inout DE2_SRAM_DATA_BUS := (others => 'X'); -- DQ
+			sram_0_external_interface_ADDR          : out   DE2_SRAM_ADDR_BUS;                    -- ADDR
+			sram_0_external_interface_LB_N          : out   std_logic;                                        -- LB_N
+			sram_0_external_interface_UB_N          : out   std_logic;                                        -- UB_N
+			sram_0_external_interface_CE_N          : out   std_logic;                                        -- CE_N
+			sram_0_external_interface_OE_N          : out   std_logic;                                        -- OE_N
+			sram_0_external_interface_WE_N          : out   std_logic;                                        -- WE_N
+			character_lcd_0_external_interface_DATA : inout DE2_LCD_DATA_BUS  := (others => 'X'); -- DATA
+			character_lcd_0_external_interface_ON   : out   std_logic;                                        -- ON
+			character_lcd_0_external_interface_BLON : out   std_logic;                                        -- BLON
+			character_lcd_0_external_interface_EN   : out   std_logic;                                        -- EN
+			character_lcd_0_external_interface_RS   : out   std_logic;                                        -- RS
+			character_lcd_0_external_interface_RW   : out   std_logic;                                         -- RW
+			clk_1_clk                                        : in    std_logic                     := 'X';             -- clk
+			audio_and_video_config_0_external_interface_SDAT : inout std_logic;             -- SDAT
+			audio_and_video_config_0_external_interface_SCLK : out   std_logic;                                        -- SCLK
+			audio_0_external_interface_ADCDAT                : in    std_logic;             -- ADCDAT
+			audio_0_external_interface_ADCLRCK               : in    std_logic;             -- ADCLRCK
+			audio_0_external_interface_BCLK                  : in    std_logic;             -- BCLK
+			audio_0_external_interface_DACDAT                : out   std_logic;                                        -- DACDAT
+			audio_0_external_interface_DACLRCK               : in    std_logic;
+			up_clocks_0_audio_clk_clk                        : out   std_logic;					-- clk				-- DACLRCK
+			spi_0_external_MISO                              : in    std_logic                     := 'X';             -- MISO
+			spi_0_external_MOSI                              : out   std_logic;                                        -- MOSI
+			spi_0_external_SCLK                              : out   std_logic;                                        -- SCLK
+			spi_0_external_SS_n                              : out   std_logic;                                         -- SS_n
+			i2c_scl_external_connection_export               : out   std_logic;                                        -- export
+			i2c_sda_external_connection_export               : inout std_logic                     := 'X';
+			i2c_scl_2_external_connection_export             : out   std_logic;                                        -- export
+			i2c_sda_2_external_connection_export             : inout std_logic                     := 'X';              -- export	
+			drum_out_external_connection_export              : out   std_logic_vector(5 downto 0);
+			tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_read_n_out
+			tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- generic_tristate_controller_0_tcm_data_out
+			tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_chipselect_n_out
+			tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- generic_tristate_controller_0_tcm_write_n_out
+			tristate_conduit_bridge_0_out_generic_tristate_controller_0_tcm_address_out      : out   std_logic_vector(21 downto 0);
+			footpedal_external_connection_export                                             : in    std_logic                     := 'X'              -- export			
+		);
     end component niosII_system;
 
 --	These signals are for matching the provided IP core to

@@ -1,0 +1,18 @@
+Quartus II Archive log --	/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/DrumAnywhere_1_0.qarlog
+
+Archive:	/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/DrumAnywhere_1_0.qar
+Date:		Tue Apr 11 18:22:28 2017
+Quartus II 32-bit		12.1 Build 243 01/31/2013 SP 1 SJ Full Version
+
+	=========== Files Selected: ===========
+/OPT/altera/12.1/quartus/linux/assignment_defaults.qdf
+/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/DrumAnywhere_1_0.qpf
+/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/DrumAnywhere_1_0.qsf
+/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/DrumAnywhere_1_0.vhd
+/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/I2C_master_hw.tcl
+/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/incremental_db/compiled_partitions/DrumAnywhere_1_0.db_info
+/afs/ualberta.ca/home/l/i/liangmah/ECE492/capstone/DrumAnywhere_1_0/niosII_system.qsys
+	======= Total: 7 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
